@@ -1,0 +1,48 @@
+--- a/script/version_bump.py
++++ b/script/version_bump.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/opt/bin/python3
+ """Helper script to bump the current version."""
+ import argparse
+ from datetime import datetime
+--- a/script/lazytox.py
++++ b/script/lazytox.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/opt/bin/python3
+ """
+ Lazy 'tox' to quickly check if branch is up to PR standards.
+ 
+--- a/script/gen_requirements_all.py
++++ b/script/gen_requirements_all.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/opt/bin/python3
+ """Generate an updated requirements_all.txt."""
+ import difflib
+ import importlib
+--- a/script/inspect_schemas.py
++++ b/script/inspect_schemas.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/opt/bin/python3
+ """Inspect all component SCHEMAS."""
+ import importlib
+ import os
+--- a/script/translations/download.py
++++ b/script/translations/download.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/opt/bin/python3
+ """Merge all translation sources into a single JSON file."""
+ import json
+ import os
+--- a/script/translations/upload.py
++++ b/script/translations/upload.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/opt/bin/python3
+ """Merge all translation sources into a single JSON file."""
+ import json
+ import os

@@ -1,0 +1,22 @@
+--- a/homeassistant/components/fail2ban/sensor.py
++++ b/homeassistant/components/fail2ban/sensor.py
+@@ -16,7 +16,7 @@ _LOGGER = logging.getLogger(__name__)
+ CONF_JAILS = "jails"
+ 
+ DEFAULT_NAME = "fail2ban"
+-DEFAULT_LOG = "/var/log/fail2ban.log"
++DEFAULT_LOG = "/opt/var/log/fail2ban.log"
+ 
+ STATE_CURRENT_BANS = "current_bans"
+ STATE_ALL_BANS = "total_bans"
+--- a/homeassistant/components/roomba/const.py
++++ b/homeassistant/components/roomba/const.py
+@@ -6,7 +6,7 @@ CONF_CONTINUOUS = "continuous"
+ CONF_DELAY = "delay"
+ CONF_NAME = "name"
+ CONF_BLID = "blid"
+-DEFAULT_CERT = "/etc/ssl/certs/ca-certificates.crt"
++DEFAULT_CERT = "/opt/etc/ssl/certs/ca-certificates.crt"
+ DEFAULT_CONTINUOUS = True
+ DEFAULT_DELAY = 1
+ ROOMBA_SESSION = "roomba_session"

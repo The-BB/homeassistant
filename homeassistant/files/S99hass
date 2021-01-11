@@ -1,0 +1,14 @@
+#!/bin/sh
+
+if [ ! -d /opt/var/lib/homeassistant ]; then
+  mkdir -m 0755 -p /opt/var/lib/homeassistant
+fi
+
+ENABLED=yes
+PROCS=hass
+ARGS="-c /opt/var/lib/homeassistant"
+PREARGS=""
+DESC=$PROCS
+PATH=/opt/sbin:/opt/bin:/opt/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+. /opt/etc/init.d/rc.func
