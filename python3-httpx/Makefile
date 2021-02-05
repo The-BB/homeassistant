@@ -27,9 +27,9 @@ define Package/python3-httpx
   URL:=https://github.com/encode/httpx
   DEPENDS:= \
 	+python3-certifi \
-	+python3-sniffio \
+	+python3-httpcore \
 	+python3-rfc3986 \
-	+python3-httpcore
+	+python3-sniffio
 endef
 
 define Package/python3-httpx/description
