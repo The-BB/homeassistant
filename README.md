@@ -5,13 +5,17 @@ packages for homeassistant (python3; core)
 
 2. To use these packages, add the following line to the feeds.conf in the Entware buildroot, e.g.:
 
-```echo 'src-git homeassistant https://github.com/The-BB/homeassistant.git' >> feeds.conf```
+```
+echo 'src-git homeassistant https://github.com/The-BB/homeassistant.git' >> feeds.conf
+```
 
 To install all its package definitions, run:
 
-```./scripts/feeds update homeassistant```
+```
+./scripts/feeds update homeassistant
 
-```./scripts/feeds install -a -p homeassistant```
+./scripts/feeds install -a -p homeassistant
+```
 
 The homeassistant packages should now appear in menuconfig.
 
