@@ -6,11 +6,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
-PKG_VERSION:=2021.2.0
+PKG_VERSION:=2021.2.1
 PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=6bd593ead7e39627a47dd47af8216a7aba56f9963fe2c4d7b1f5c9e8e3fd72bf
+PKG_HASH:=4798aa353ef5acfd6954eddde1c9fcd616581a99c2ef27a00ad87d81c8d2158c
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -31,6 +31,7 @@ define Package/homeassistant
 	+python3-astral \
 	+python3-async-upnp-client \
 	+python3-attrs \
+	+python3-awesomeversion \
 	+python3-base36 \
 	+python3-bcrypt \
 	+python3-ciso8601 \
@@ -76,10 +77,6 @@ define Py3Package/homeassistant/install
 
 	$(INSTALL_DIR) $(1)/opt/etc/init.d
 	$(INSTALL_BIN) ./files/S99hass $(1)/opt/etc/init.d
-endef
-
-define Package/homeassistant/postrm
-rm -rf $(1)$(PYTHON3_PKG_DIR)/$(PKG_NAME)-$(PKG_VERSION)-py$(PYTHON3_VERSION).egg-info
 endef
 
 $(eval $(call Py3Package,homeassistant))
