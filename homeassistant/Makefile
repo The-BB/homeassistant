@@ -6,11 +6,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
-PKG_VERSION:=2021.1.5
+PKG_VERSION:=2021.2.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=6e9500e16e7e7ac1421d1d601c188cbb2dbc1b82b997a1a1606d330dc85a01fd
+PKG_HASH:=6bd593ead7e39627a47dd47af8216a7aba56f9963fe2c4d7b1f5c9e8e3fd72bf
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -27,28 +27,22 @@ define Package/homeassistant
   URL:=https://www.home-assistant.io
   DEPENDS:= \
 	+python3-aiohomekit \
-	+python3-aiohttp \
 	+python3-aiohttp-cors \
 	+python3-astral \
-	+python3-async-timeout \
 	+python3-async-upnp-client \
 	+python3-attrs \
 	+python3-base36 \
 	+python3-bcrypt \
-	+python3-certifi \
 	+python3-ciso8601 \
-	+python3-cryptography \
-	+python3-cryptodome \
-	+python3-defusedxml \
 	+python3-distro \
 	+python3-emoji \
 	+python3-fnvhash \
 	+python3-gtts \
-	+python3-h11 \
 	+python3-ha-ffmpeg \
 	+python3-hass-nabucasa \
 	+python3-home-assistant-frontend \
 	+python3-httpx \
+	+python3-httplib2 \
 	+python3-ifaddr \
 	+python3-jinja2 \
 	+python3-mutagen \
@@ -63,17 +57,12 @@ define Package/homeassistant
 	+python3-pyotp \
 	+python3-pyqrcode \
 	+python3-pyturbojpeg \
-	+python3-pytz \
-	+python3-requests \
 	+python3-ruamel-yaml \
 	+python3-slugify \
-	+python3-speedtest-cli \
 	+python3-sqlalchemy \
 	+python3-voluptuous-serialize \
-	+python3-voluptuous \
 	+python3-yaml \
-	+python3-yarl \
-	+python3-zeroconf
+	+scapy
 endef
 
 define Package/homeassistant/description

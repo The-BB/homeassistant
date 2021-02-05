@@ -1,3 +1,88 @@
+--- a/homeassistant/components/dlna_dmr/manifest.json
++++ b/homeassistant/components/dlna_dmr/manifest.json
+@@ -2,6 +2,6 @@
+   "domain": "dlna_dmr",
+   "name": "DLNA Digital Media Renderer",
+   "documentation": "https://www.home-assistant.io/integrations/dlna_dmr",
+-  "requirements": ["async-upnp-client==0.14.13"],
++  "requirements": ["async-upnp-client==0.14.14"],
+   "codeowners": []
+ }
+--- a/homeassistant/components/iqvia/manifest.json
++++ b/homeassistant/components/iqvia/manifest.json
+@@ -3,6 +3,6 @@
+   "name": "IQVIA",
+   "config_flow": true,
+   "documentation": "https://www.home-assistant.io/integrations/iqvia",
+-  "requirements": ["numpy==1.19.2", "pyiqvia==0.3.1"],
++  "requirements": ["numpy==1.20.0", "pyiqvia==0.3.1"],
+   "codeowners": ["@bachya"]
+ }
+--- a/homeassistant/components/mobile_app/manifest.json
++++ b/homeassistant/components/mobile_app/manifest.json
+@@ -3,7 +3,7 @@
+   "name": "Mobile App",
+   "config_flow": true,
+   "documentation": "https://www.home-assistant.io/integrations/mobile_app",
+-  "requirements": ["PyNaCl==1.3.0", "emoji==0.5.4"],
++  "requirements": ["PyNaCl==1.4.0", "emoji==0.6.0"],
+   "dependencies": ["http", "webhook", "person", "tag"],
+   "after_dependencies": ["cloud", "camera", "notify"],
+   "codeowners": ["@robbiet480"],
+--- a/homeassistant/components/opencv/manifest.json
++++ b/homeassistant/components/opencv/manifest.json
+@@ -2,6 +2,6 @@
+   "domain": "opencv",
+   "name": "OpenCV",
+   "documentation": "https://www.home-assistant.io/integrations/opencv",
+-  "requirements": ["numpy==1.19.2", "opencv-python-headless==4.3.0.36"],
++  "requirements": ["numpy==1.20.0", "opencv-python-headless==4.3.0.36"],
+   "codeowners": []
+ }
+--- a/homeassistant/components/owntracks/manifest.json
++++ b/homeassistant/components/owntracks/manifest.json
+@@ -3,7 +3,7 @@
+   "name": "OwnTracks",
+   "config_flow": true,
+   "documentation": "https://www.home-assistant.io/integrations/owntracks",
+-  "requirements": ["PyNaCl==1.3.0"],
++  "requirements": ["PyNaCl==1.4.0"],
+   "dependencies": ["webhook"],
+   "after_dependencies": ["mqtt", "cloud"],
+   "codeowners": []
+--- a/homeassistant/components/tensorflow/manifest.json
++++ b/homeassistant/components/tensorflow/manifest.json
+@@ -6,7 +6,7 @@
+     "tensorflow==2.3.0",
+     "tf-models-official==2.3.0",
+     "pycocotools==2.0.1",
+-    "numpy==1.19.2",
++    "numpy==1.20.0",
+     "pillow==8.1.0"
+   ],
+   "codeowners": []
+--- a/homeassistant/components/trend/manifest.json
++++ b/homeassistant/components/trend/manifest.json
+@@ -2,7 +2,7 @@
+   "domain": "trend",
+   "name": "Trend",
+   "documentation": "https://www.home-assistant.io/integrations/trend",
+-  "requirements": ["numpy==1.19.2"],
++  "requirements": ["numpy==1.20.0"],
+   "codeowners": [],
+   "quality_scale": "internal"
+ }
+--- a/homeassistant/components/upnp/manifest.json
++++ b/homeassistant/components/upnp/manifest.json
+@@ -3,7 +3,7 @@
+   "name": "UPnP",
+   "config_flow": true,
+   "documentation": "https://www.home-assistant.io/integrations/upnp",
+-  "requirements": ["async-upnp-client==0.14.13"],
++  "requirements": ["async-upnp-client==0.14.14"],
+   "codeowners": ["@StevenLooman"],
+   "ssdp": [
+     {
 --- a/homeassistant/package_constraints.txt
 +++ b/homeassistant/package_constraints.txt
 @@ -1,17 +1,17 @@
@@ -11,26 +96,17 @@
 -attrs==19.3.0
 +attrs==20.3.0
  bcrypt==3.1.7
- certifi>=2020.6.20
+ certifi>=2020.12.5
  ciso8601==2.1.3
 -cryptography==3.2
-+cryptography==3.2.1
++cryptography==3.3.1
  defusedxml==0.6.0
  distro==1.5.0
 -emoji==0.5.4
 +emoji==0.6.0
- hass-nabucasa==0.39.0
- home-assistant-frontend==20201229.1
+ hass-nabucasa==0.41.0
+ home-assistant-frontend==20210127.7
  httpx==0.16.1
-@@ -19,7 +19,7 @@ importlib-metadata==1.6.0;python_version
- jinja2>=2.11.2
- netdisco==2.8.2
- paho-mqtt==1.5.1
--pillow==7.2.0
-+pillow==8.0.1
- pip>=8.0.3,<20.3
- python-slugify==4.0.1
- pytz>=2020.1
 @@ -32,7 +32,7 @@ voluptuous==0.12.1
  yarl==1.6.3
  zeroconf==0.28.8
@@ -40,154 +116,6 @@
  
  # Constrain urllib3 to ensure we deal with CVE-2019-11236 & CVE-2019-11324
  urllib3>=1.24.3
---- a/homeassistant/components/dlna_dmr/manifest.json
-+++ b/homeassistant/components/dlna_dmr/manifest.json
-@@ -2,6 +2,6 @@
-   "domain": "dlna_dmr",
-   "name": "DLNA Digital Media Renderer",
-   "documentation": "https://www.home-assistant.io/integrations/dlna_dmr",
--  "requirements": ["async-upnp-client==0.14.13"],
-+  "requirements": ["async-upnp-client==0.14.14"],
-   "codeowners": []
- }
---- a/homeassistant/components/mobile_app/manifest.json
-+++ b/homeassistant/components/mobile_app/manifest.json
-@@ -3,7 +3,7 @@
-   "name": "Mobile App",
-   "config_flow": true,
-   "documentation": "https://www.home-assistant.io/integrations/mobile_app",
--  "requirements": ["PyNaCl==1.3.0", "emoji==0.5.4"],
-+  "requirements": ["PyNaCl==1.4.0", "emoji==0.6.0"],
-   "dependencies": ["http", "webhook", "person", "tag"],
-   "after_dependencies": ["cloud", "camera", "notify"],
-   "codeowners": ["@robbiet480"],
---- a/homeassistant/components/owntracks/manifest.json
-+++ b/homeassistant/components/owntracks/manifest.json
-@@ -3,7 +3,7 @@
-   "name": "OwnTracks",
-   "config_flow": true,
-   "documentation": "https://www.home-assistant.io/integrations/owntracks",
--  "requirements": ["PyNaCl==1.3.0"],
-+  "requirements": ["PyNaCl==1.4.0"],
-   "dependencies": ["webhook"],
-   "after_dependencies": ["mqtt", "cloud"],
-   "codeowners": []
---- a/homeassistant/components/upnp/manifest.json
-+++ b/homeassistant/components/upnp/manifest.json
-@@ -3,7 +3,7 @@
-   "name": "UPnP",
-   "config_flow": true,
-   "documentation": "https://www.home-assistant.io/integrations/upnp",
--  "requirements": ["async-upnp-client==0.14.13"],
-+  "requirements": ["async-upnp-client==0.14.14"],
-   "codeowners": ["@StevenLooman"],
-   "ssdp": [
-     {
---- a/homeassistant/components/opencv/manifest.json
-+++ b/homeassistant/components/opencv/manifest.json
-@@ -2,6 +2,6 @@
-   "domain": "opencv",
-   "name": "OpenCV",
-   "documentation": "https://www.home-assistant.io/integrations/opencv",
--  "requirements": ["numpy==1.19.2", "opencv-python-headless==4.3.0.36"],
-+  "requirements": ["numpy==1.19.4", "opencv-python-headless==4.3.0.36"],
-   "codeowners": []
- }
---- a/homeassistant/components/iqvia/manifest.json
-+++ b/homeassistant/components/iqvia/manifest.json
-@@ -3,6 +3,6 @@
-   "name": "IQVIA",
-   "config_flow": true,
-   "documentation": "https://www.home-assistant.io/integrations/iqvia",
--  "requirements": ["numpy==1.19.2", "pyiqvia==0.3.1"],
-+  "requirements": ["numpy==1.19.4", "pyiqvia==0.3.1"],
-   "codeowners": ["@bachya"]
- }
---- a/homeassistant/components/doods/manifest.json
-+++ b/homeassistant/components/doods/manifest.json
-@@ -2,6 +2,6 @@
-   "domain": "doods",
-   "name": "DOODS - Dedicated Open Object Detection Service",
-   "documentation": "https://www.home-assistant.io/integrations/doods",
--  "requirements": ["pydoods==1.0.2", "pillow==7.2.0"],
-+  "requirements": ["pydoods==1.0.2", "pillow==8.0.1"],
-   "codeowners": []
- }
---- a/homeassistant/components/tensorflow/manifest.json
-+++ b/homeassistant/components/tensorflow/manifest.json
-@@ -6,8 +6,8 @@
-     "tensorflow==2.3.0",
-     "tf-models-official==2.3.0",
-     "pycocotools==2.0.1",
--    "numpy==1.19.2",
--    "pillow==7.2.0"
-+    "numpy==1.19.4",
-+    "pillow==8.0.1"
-   ],
-   "codeowners": []
- }
---- a/homeassistant/components/proxy/manifest.json
-+++ b/homeassistant/components/proxy/manifest.json
-@@ -2,6 +2,6 @@
-   "domain": "proxy",
-   "name": "Camera Proxy",
-   "documentation": "https://www.home-assistant.io/integrations/proxy",
--  "requirements": ["pillow==7.2.0"],
-+  "requirements": ["pillow==8.0.1"],
-   "codeowners": []
- }
---- a/homeassistant/components/trend/manifest.json
-+++ b/homeassistant/components/trend/manifest.json
-@@ -2,7 +2,7 @@
-   "domain": "trend",
-   "name": "Trend",
-   "documentation": "https://www.home-assistant.io/integrations/trend",
--  "requirements": ["numpy==1.19.2"],
-+  "requirements": ["numpy==1.19.4"],
-   "codeowners": [],
-   "quality_scale": "internal"
- }
---- a/homeassistant/components/sighthound/manifest.json
-+++ b/homeassistant/components/sighthound/manifest.json
-@@ -2,6 +2,6 @@
-   "domain": "sighthound",
-   "name": "Sighthound",
-   "documentation": "https://www.home-assistant.io/integrations/sighthound",
--  "requirements": ["pillow==7.2.0", "simplehound==0.3"],
-+  "requirements": ["pillow==8.0.1", "simplehound==0.3"],
-   "codeowners": ["@robmarkcole"]
- }
---- a/homeassistant/components/image/manifest.json
-+++ b/homeassistant/components/image/manifest.json
-@@ -3,7 +3,7 @@
-   "name": "Image",
-   "config_flow": false,
-   "documentation": "https://www.home-assistant.io/integrations/image",
--  "requirements": ["pillow==7.2.0"],
-+  "requirements": ["pillow==8.0.1"],
-   "dependencies": ["http"],
-   "codeowners": ["@home-assistant/core"],
-   "quality_scale": "internal"
---- a/homeassistant/components/seven_segments/manifest.json
-+++ b/homeassistant/components/seven_segments/manifest.json
-@@ -2,6 +2,6 @@
-   "domain": "seven_segments",
-   "name": "Seven Segments OCR",
-   "documentation": "https://www.home-assistant.io/integrations/seven_segments",
--  "requirements": ["pillow==7.2.0"],
-+  "requirements": ["pillow==8.0.1"],
-   "codeowners": ["@fabaff"]
- }
---- a/homeassistant/components/qrcode/manifest.json
-+++ b/homeassistant/components/qrcode/manifest.json
-@@ -2,6 +2,6 @@
-   "domain": "qrcode",
-   "name": "QR Code",
-   "documentation": "https://www.home-assistant.io/integrations/qrcode",
--  "requirements": ["pillow==7.2.0", "pyzbar==0.1.7"],
-+  "requirements": ["pillow==8.0.1", "pyzbar==0.1.7"],
-   "codeowners": []
- }
 --- a/homeassistant.egg-info/requires.txt
 +++ b/homeassistant.egg-info/requires.txt
 @@ -1,14 +1,14 @@
@@ -197,16 +125,16 @@
 -attrs==19.3.0
 +attrs==20.3.0
  bcrypt==3.1.7
- certifi>=2020.6.20
+ certifi>=2020.12.5
  ciso8601==2.1.3
  httpx==0.16.1
  jinja2>=2.11.2
  PyJWT==1.7.1
 -cryptography==3.2
-+cryptography==3.2.1
++cryptography==3.3.1
  pip<20.3,>=8.0.3
  python-slugify==4.0.1
- pytz>=2020.1
+ pytz>=2020.5
 --- a/script/gen_requirements_all.py
 +++ b/script/gen_requirements_all.py
 @@ -60,7 +60,7 @@ CONSTRAINT_PATH = os.path.join(
@@ -227,14 +155,14 @@
 -    "attrs==19.3.0",
 +    "attrs==20.3.0",
      "bcrypt==3.1.7",
-     "certifi>=2020.6.20",
+     "certifi>=2020.12.5",
      "ciso8601==2.1.3",
-@@ -44,7 +44,7 @@ REQUIRES = [
+@@ -43,7 +43,7 @@ REQUIRES = [
      "jinja2>=2.11.2",
      "PyJWT==1.7.1",
      # PyJWT has loose dependency. We want the latest one.
 -    "cryptography==3.2",
-+    "cryptography==3.2.1",
++    "cryptography==3.3.1",
      "pip>=8.0.3,<20.3",
      "python-slugify==4.0.1",
-     "pytz>=2020.1",
+     "pytz>=2020.5",
