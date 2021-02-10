@@ -32,10 +32,6 @@ define Package/python3-home-assistant-frontend/description
   The Home Assistant frontend.
 endef
 
-define Package/python3-home-assistant-frontend/postrm
-rm -rf $(1)$(PYTHON3_PKG_DIR)/home_assistant_frontend-$(PKG_VERSION)-py$(PYTHON3_VERSION).egg-info
-endef
-
 $(eval $(call Py3Package,python3-home-assistant-frontend))
 $(eval $(call BuildPackage,python3-home-assistant-frontend))
 $(eval $(call BuildPackage,python3-home-assistant-frontend-src))
