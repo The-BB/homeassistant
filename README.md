@@ -1,7 +1,7 @@
 # homeassistant
 packages for homeassistant (python3; core)
 
-1. https://github.com/Entware/Entware/wiki/Compile-packages-from-sources
+1. Read [Compile packages from sources](https://github.com/Entware/Entware/wiki/Compile-packages-from-sources)
 
 2. To use these packages, add the following line to the feeds.conf in the Entware buildroot, e.g.:
 
@@ -19,4 +19,4 @@ To install all its package definitions, run:
 
 The homeassistant packages should now appear in menuconfig.
 
-3. Some packages from https://github.com/Entware/entware-packages needs manually changing.
+3. Some packages from [entware-packages](https://github.com/Entware/entware-packages) needs manually changing.
