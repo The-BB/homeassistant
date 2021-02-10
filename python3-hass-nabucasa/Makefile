@@ -40,10 +40,6 @@ define Package/python3-hass-nabucasa/description
   Home Assistant cloud integration by Nabu Casa, Inc.
 endef
 
-define Package/python3-hass-nabucasa/postrm
-rm -rf $(1)$(PYTHON3_PKG_DIR)/hass_nabucasa-$(PKG_VERSION)-py$(PYTHON3_VERSION).egg-info
-endef
-
 $(eval $(call Py3Package,python3-hass-nabucasa))
 $(eval $(call BuildPackage,python3-hass-nabucasa))
 $(eval $(call BuildPackage,python3-hass-nabucasa-src))
