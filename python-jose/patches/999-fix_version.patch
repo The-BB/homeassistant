@@ -5,7 +5,7 @@
      'pycryptodome': ['pycryptodome >=3.3.1, <4.0.0'] + pyasn1,
  }
 -legacy_backend_requires = ['ecdsa <0.15', 'rsa'] + pyasn1
-+legacy_backend_requires = ['ecdsa', 'rsa'] + pyasn1
++legacy_backend_requires = ['ecdsa==0.16.0', 'rsa'] + pyasn1
  install_requires = ['six <2.0']
  
  # TODO: work this into the extras selection instead.
@@ -16,5 +16,5 @@
  six
  rsa
 -ecdsa<0.15
-+ecdsa
++ecdsa==0.16.0
  pyasn1
