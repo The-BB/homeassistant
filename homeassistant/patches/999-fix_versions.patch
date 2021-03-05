@@ -50,8 +50,8 @@
    "dependencies": ["webhook"],
    "after_dependencies": ["mqtt", "cloud"],
    "codeowners": []
---- a/homeassistant/components/ssdp/manifest.json	2021-03-03 22:11:21.000000000 +0300
-+++ b/homeassistant/components/ssdp/manifest.json	2021-03-04 18:29:18.239921657 +0300
+--- a/homeassistant/components/ssdp/manifest.json
++++ b/homeassistant/components/ssdp/manifest.json
 @@ -2,7 +2,7 @@
    "domain": "ssdp",
    "name": "Simple Service Discovery Protocol (SSDP)",
