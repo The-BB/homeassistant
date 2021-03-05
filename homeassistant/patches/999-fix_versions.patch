@@ -15,7 +15,7 @@
    "config_flow": true,
    "documentation": "https://www.home-assistant.io/integrations/iqvia",
 -  "requirements": ["numpy==1.19.2", "pyiqvia==0.3.1"],
-+  "requirements": ["numpy==1.20.0", "pyiqvia==0.3.1"],
++  "requirements": ["numpy==1.20.1", "pyiqvia==0.3.1"],
    "codeowners": ["@bachya"]
  }
 --- a/homeassistant/components/mobile_app/manifest.json
@@ -24,8 +24,8 @@
    "name": "Mobile App",
    "config_flow": true,
    "documentation": "https://www.home-assistant.io/integrations/mobile_app",
--  "requirements": ["PyNaCl==1.3.0", "emoji==0.5.4"],
-+  "requirements": ["PyNaCl==1.4.0", "emoji==0.6.0"],
+-  "requirements": ["PyNaCl==1.3.0", "emoji==1.2.0"],
++  "requirements": ["PyNaCl==1.4.0", "emoji==1.2.0"],
    "dependencies": ["http", "webhook", "person", "tag"],
    "after_dependencies": ["cloud", "camera", "notify"],
    "codeowners": ["@robbiet480"],
@@ -36,7 +36,7 @@
    "name": "OpenCV",
    "documentation": "https://www.home-assistant.io/integrations/opencv",
 -  "requirements": ["numpy==1.19.2", "opencv-python-headless==4.3.0.36"],
-+  "requirements": ["numpy==1.20.0", "opencv-python-headless==4.3.0.36"],
++  "requirements": ["numpy==1.20.1", "opencv-python-headless==4.3.0.36"],
    "codeowners": []
  }
 --- a/homeassistant/components/owntracks/manifest.json
@@ -50,6 +50,17 @@
    "dependencies": ["webhook"],
    "after_dependencies": ["mqtt", "cloud"],
    "codeowners": []
+--- a/homeassistant/components/ssdp/manifest.json	2021-03-03 22:11:21.000000000 +0300
++++ b/homeassistant/components/ssdp/manifest.json	2021-03-04 18:29:18.239921657 +0300
+@@ -2,7 +2,7 @@
+   "domain": "ssdp",
+   "name": "Simple Service Discovery Protocol (SSDP)",
+   "documentation": "https://www.home-assistant.io/integrations/ssdp",
+-  "requirements": ["defusedxml==0.6.0", "netdisco==2.8.2", "async-upnp-client==0.14.13"],
++  "requirements": ["defusedxml==0.6.0", "netdisco==2.8.2", "async-upnp-client==0.14.14"],
+   "after_dependencies": ["zeroconf"],
+   "codeowners": []
+ }
 --- a/homeassistant/components/tensorflow/manifest.json
 +++ b/homeassistant/components/tensorflow/manifest.json
 @@ -6,7 +6,7 @@
@@ -57,8 +68,8 @@
      "tf-models-official==2.3.0",
      "pycocotools==2.0.1",
 -    "numpy==1.19.2",
-+    "numpy==1.20.0",
-     "pillow==8.1.0"
++    "numpy==1.20.1",
+     "pillow==8.1.1"
    ],
    "codeowners": []
 --- a/homeassistant/components/trend/manifest.json
@@ -68,7 +79,7 @@
    "name": "Trend",
    "documentation": "https://www.home-assistant.io/integrations/trend",
 -  "requirements": ["numpy==1.19.2"],
-+  "requirements": ["numpy==1.20.0"],
++  "requirements": ["numpy==1.20.1"],
    "codeowners": [],
    "quality_scale": "internal"
  }
@@ -85,30 +96,22 @@
      {
 --- a/homeassistant/package_constraints.txt
 +++ b/homeassistant/package_constraints.txt
-@@ -1,18 +1,18 @@
+@@ -1,11 +1,11 @@
  PyJWT==1.7.1
 -PyNaCl==1.3.0
 +PyNaCl==1.4.0
- aiohttp==3.7.3
+ aiohttp==3.7.4
  aiohttp_cors==0.7.0
  astral==1.10.1
+-async-upnp-client==0.14.13
++async-upnp-client==0.14.14
  async_timeout==3.0.1
 -attrs==19.3.0
 +attrs==20.3.0
- awesomeversion==21.2.2
+ awesomeversion==21.2.3
  bcrypt==3.1.7
  certifi>=2020.12.5
- ciso8601==2.1.3
--cryptography==3.2
-+cryptography==3.3.1
- defusedxml==0.6.0
- distro==1.5.0
--emoji==0.5.4
-+emoji==0.6.0
- hass-nabucasa==0.41.0
- home-assistant-frontend==20210127.7
- httpx==0.16.1
-@@ -33,7 +33,7 @@ voluptuous==0.12.1
+@@ -34,7 +34,7 @@ voluptuous==0.12.1
  yarl==1.6.3
  zeroconf==0.28.8
  
@@ -120,26 +123,17 @@
 --- a/homeassistant.egg-info/requires.txt
 +++ b/homeassistant.egg-info/requires.txt
 @@ -1,7 +1,7 @@
- aiohttp==3.7.3
+ aiohttp==3.7.4
  astral==1.10.1
  async_timeout==3.0.1
 -attrs==19.3.0
 +attrs==20.3.0
- awesomeversion==21.2.2
+ awesomeversion==21.2.3
  bcrypt==3.1.7
  certifi>=2020.12.5
-@@ -9,7 +9,7 @@ ciso8601==2.1.3
- httpx==0.16.1
- jinja2>=2.11.2
- PyJWT==1.7.1
--cryptography==3.2
-+cryptography==3.3.1
- pip<20.3,>=8.0.3
- python-slugify==4.0.1
- pytz>=2020.5
 --- a/script/gen_requirements_all.py
 +++ b/script/gen_requirements_all.py
-@@ -60,7 +60,7 @@ CONSTRAINT_PATH = os.path.join(
+@@ -58,7 +58,7 @@ CONSTRAINT_PATH = os.path.join(
      os.path.dirname(__file__), "../homeassistant/package_constraints.txt"
  )
  CONSTRAINT_BASE = """
@@ -151,20 +145,11 @@
 --- a/setup.py
 +++ b/setup.py
 @@ -35,7 +35,7 @@ REQUIRES = [
-     "aiohttp==3.7.3",
+     "aiohttp==3.7.4",
      "astral==1.10.1",
      "async_timeout==3.0.1",
 -    "attrs==19.3.0",
 +    "attrs==20.3.0",
-     "awesomeversion==21.2.2",
+     "awesomeversion==21.2.3",
      "bcrypt==3.1.7",
      "certifi>=2020.12.5",
-@@ -44,7 +44,7 @@ REQUIRES = [
-     "jinja2>=2.11.2",
-     "PyJWT==1.7.1",
-     # PyJWT has loose dependency. We want the latest one.
--    "cryptography==3.2",
-+    "cryptography==3.3.1",
-     "pip>=8.0.3,<20.3",
-     "python-slugify==4.0.1",
-     "pytz>=2020.5",

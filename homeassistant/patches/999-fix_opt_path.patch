@@ -11,9 +11,9 @@
  STATE_ALL_BANS = "total_bans"
 --- a/homeassistant/components/roomba/const.py
 +++ b/homeassistant/components/roomba/const.py
-@@ -6,7 +6,7 @@ CONF_CONTINUOUS = "continuous"
- CONF_DELAY = "delay"
- CONF_NAME = "name"
+@@ -4,7 +4,7 @@ COMPONENTS = ["sensor", "binary_sensor",
+ CONF_CERT = "certificate"
+ CONF_CONTINUOUS = "continuous"
  CONF_BLID = "blid"
 -DEFAULT_CERT = "/etc/ssl/certs/ca-certificates.crt"
 +DEFAULT_CERT = "/opt/etc/ssl/certs/ca-certificates.crt"
