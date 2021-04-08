@@ -1,23 +1,3 @@
---- a/homeassistant/components/dlna_dmr/manifest.json
-+++ b/homeassistant/components/dlna_dmr/manifest.json
-@@ -2,6 +2,6 @@
-   "domain": "dlna_dmr",
-   "name": "DLNA Digital Media Renderer",
-   "documentation": "https://www.home-assistant.io/integrations/dlna_dmr",
--  "requirements": ["async-upnp-client==0.14.13"],
-+  "requirements": ["async-upnp-client==0.14.14"],
-   "codeowners": []
- }
---- a/homeassistant/components/iqvia/manifest.json
-+++ b/homeassistant/components/iqvia/manifest.json
-@@ -3,6 +3,6 @@
-   "name": "IQVIA",
-   "config_flow": true,
-   "documentation": "https://www.home-assistant.io/integrations/iqvia",
--  "requirements": ["numpy==1.19.2", "pyiqvia==0.3.1"],
-+  "requirements": ["numpy==1.20.1", "pyiqvia==0.3.1"],
-   "codeowners": ["@bachya"]
- }
 --- a/homeassistant/components/mobile_app/manifest.json
 +++ b/homeassistant/components/mobile_app/manifest.json
 @@ -3,7 +3,7 @@
@@ -29,16 +9,6 @@
    "dependencies": ["http", "webhook", "person", "tag"],
    "after_dependencies": ["cloud", "camera", "notify"],
    "codeowners": ["@robbiet480"],
---- a/homeassistant/components/opencv/manifest.json
-+++ b/homeassistant/components/opencv/manifest.json
-@@ -2,6 +2,6 @@
-   "domain": "opencv",
-   "name": "OpenCV",
-   "documentation": "https://www.home-assistant.io/integrations/opencv",
--  "requirements": ["numpy==1.19.2", "opencv-python-headless==4.3.0.36"],
-+  "requirements": ["numpy==1.20.1", "opencv-python-headless==4.3.0.36"],
-   "codeowners": []
- }
 --- a/homeassistant/components/owntracks/manifest.json
 +++ b/homeassistant/components/owntracks/manifest.json
 @@ -3,7 +3,7 @@
@@ -50,87 +20,24 @@
    "dependencies": ["webhook"],
    "after_dependencies": ["mqtt", "cloud"],
    "codeowners": []
---- a/homeassistant/components/ssdp/manifest.json
-+++ b/homeassistant/components/ssdp/manifest.json
-@@ -2,7 +2,7 @@
-   "domain": "ssdp",
-   "name": "Simple Service Discovery Protocol (SSDP)",
-   "documentation": "https://www.home-assistant.io/integrations/ssdp",
--  "requirements": ["defusedxml==0.6.0", "netdisco==2.8.2", "async-upnp-client==0.14.13"],
-+  "requirements": ["defusedxml==0.6.0", "netdisco==2.8.2", "async-upnp-client==0.14.14"],
-   "after_dependencies": ["zeroconf"],
-   "codeowners": []
- }
---- a/homeassistant/components/tensorflow/manifest.json
-+++ b/homeassistant/components/tensorflow/manifest.json
-@@ -6,7 +6,7 @@
-     "tensorflow==2.3.0",
-     "tf-models-official==2.3.0",
-     "pycocotools==2.0.1",
--    "numpy==1.19.2",
-+    "numpy==1.20.1",
-     "pillow==8.1.1"
-   ],
-   "codeowners": []
---- a/homeassistant/components/trend/manifest.json
-+++ b/homeassistant/components/trend/manifest.json
-@@ -2,7 +2,7 @@
-   "domain": "trend",
-   "name": "Trend",
-   "documentation": "https://www.home-assistant.io/integrations/trend",
--  "requirements": ["numpy==1.19.2"],
-+  "requirements": ["numpy==1.20.1"],
-   "codeowners": [],
-   "quality_scale": "internal"
- }
---- a/homeassistant/components/upnp/manifest.json
-+++ b/homeassistant/components/upnp/manifest.json
-@@ -3,7 +3,7 @@
-   "name": "UPnP",
-   "config_flow": true,
-   "documentation": "https://www.home-assistant.io/integrations/upnp",
--  "requirements": ["async-upnp-client==0.14.13"],
-+  "requirements": ["async-upnp-client==0.14.14"],
-   "codeowners": ["@StevenLooman"],
-   "ssdp": [
-     {
 --- a/homeassistant/package_constraints.txt
 +++ b/homeassistant/package_constraints.txt
-@@ -1,11 +1,11 @@
+@@ -1,5 +1,5 @@
  PyJWT==1.7.1
 -PyNaCl==1.3.0
 +PyNaCl==1.4.0
- aiohttp==3.7.4
+ aiodiscover==1.3.3
+ aiohttp==3.7.4.post0
  aiohttp_cors==0.7.0
- astral==1.10.1
--async-upnp-client==0.14.13
-+async-upnp-client==0.14.14
- async_timeout==3.0.1
--attrs==19.3.0
-+attrs==20.3.0
- awesomeversion==21.2.3
- bcrypt==3.1.7
- certifi>=2020.12.5
-@@ -34,7 +34,7 @@ voluptuous==0.12.1
+@@ -35,7 +35,7 @@ voluptuous==0.12.1
  yarl==1.6.3
- zeroconf==0.28.8
+ zeroconf==0.29.0
  
 -pycryptodome>=3.6.6
 +pycryptodome==3.9.7
  
  # Constrain urllib3 to ensure we deal with CVE-2019-11236 & CVE-2019-11324
  urllib3>=1.24.3
---- a/homeassistant.egg-info/requires.txt
-+++ b/homeassistant.egg-info/requires.txt
-@@ -1,7 +1,7 @@
- aiohttp==3.7.4
- astral==1.10.1
- async_timeout==3.0.1
--attrs==19.3.0
-+attrs==20.3.0
- awesomeversion==21.2.3
- bcrypt==3.1.7
- certifi>=2020.12.5
 --- a/script/gen_requirements_all.py
 +++ b/script/gen_requirements_all.py
 @@ -58,7 +58,7 @@ CONSTRAINT_PATH = os.path.join(
@@ -142,14 +49,3 @@
  
  # Constrain urllib3 to ensure we deal with CVE-2019-11236 & CVE-2019-11324
  urllib3>=1.24.3
---- a/setup.py
-+++ b/setup.py
-@@ -35,7 +35,7 @@ REQUIRES = [
-     "aiohttp==3.7.4",
-     "astral==1.10.1",
-     "async_timeout==3.0.1",
--    "attrs==19.3.0",
-+    "attrs==20.3.0",
-     "awesomeversion==21.2.3",
-     "bcrypt==3.1.7",
-     "certifi>=2020.12.5",

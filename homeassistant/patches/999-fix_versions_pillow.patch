@@ -1,0 +1,83 @@
+--- a/homeassistant/components/doods/manifest.json
++++ b/homeassistant/components/doods/manifest.json
+@@ -2,6 +2,6 @@
+   "domain": "doods",
+   "name": "DOODS - Dedicated Open Object Detection Service",
+   "documentation": "https://www.home-assistant.io/integrations/doods",
+-  "requirements": ["pydoods==1.0.2", "pillow==8.1.2"],
++  "requirements": ["pydoods==1.0.2", "pillow==8.2.0"],
+   "codeowners": []
+ }
+--- a/homeassistant/components/image/manifest.json
++++ b/homeassistant/components/image/manifest.json
+@@ -3,7 +3,7 @@
+   "name": "Image",
+   "config_flow": false,
+   "documentation": "https://www.home-assistant.io/integrations/image",
+-  "requirements": ["pillow==8.1.2"],
++  "requirements": ["pillow==8.2.0"],
+   "dependencies": ["http"],
+   "codeowners": ["@home-assistant/core"],
+   "quality_scale": "internal"
+--- a/homeassistant/components/proxy/manifest.json
++++ b/homeassistant/components/proxy/manifest.json
+@@ -2,6 +2,6 @@
+   "domain": "proxy",
+   "name": "Camera Proxy",
+   "documentation": "https://www.home-assistant.io/integrations/proxy",
+-  "requirements": ["pillow==8.1.2"],
++  "requirements": ["pillow==8.2.0"],
+   "codeowners": []
+ }
+--- a/homeassistant/components/qrcode/manifest.json
++++ b/homeassistant/components/qrcode/manifest.json
+@@ -2,6 +2,6 @@
+   "domain": "qrcode",
+   "name": "QR Code",
+   "documentation": "https://www.home-assistant.io/integrations/qrcode",
+-  "requirements": ["pillow==8.1.2", "pyzbar==0.1.7"],
++  "requirements": ["pillow==8.2.0", "pyzbar==0.1.7"],
+   "codeowners": []
+ }
+--- a/homeassistant/components/seven_segments/manifest.json
++++ b/homeassistant/components/seven_segments/manifest.json
+@@ -2,6 +2,6 @@
+   "domain": "seven_segments",
+   "name": "Seven Segments OCR",
+   "documentation": "https://www.home-assistant.io/integrations/seven_segments",
+-  "requirements": ["pillow==8.1.2"],
++  "requirements": ["pillow==8.2.0"],
+   "codeowners": ["@fabaff"]
+ }
+--- a/homeassistant/components/sighthound/manifest.json
++++ b/homeassistant/components/sighthound/manifest.json
+@@ -2,6 +2,6 @@
+   "domain": "sighthound",
+   "name": "Sighthound",
+   "documentation": "https://www.home-assistant.io/integrations/sighthound",
+-  "requirements": ["pillow==8.1.2", "simplehound==0.3"],
++  "requirements": ["pillow==8.2.0", "simplehound==0.3"],
+   "codeowners": ["@robmarkcole"]
+ }
+--- a/homeassistant/components/tensorflow/manifest.json
++++ b/homeassistant/components/tensorflow/manifest.json
+@@ -7,7 +7,7 @@
+     "tf-models-official==2.3.0",
+     "pycocotools==2.0.1",
+     "numpy==1.20.2",
+-    "pillow==8.1.2"
++    "pillow==8.2.0"
+   ],
+   "codeowners": []
+ }
+--- a/homeassistant/package_constraints.txt
++++ b/homeassistant/package_constraints.txt
+@@ -21,7 +21,7 @@ httpx==0.17.1
+ jinja2>=2.11.3
+ netdisco==2.8.2
+ paho-mqtt==1.5.1
+-pillow==8.1.2
++pillow==8.2.0
+ pip>=8.0.3,<20.3
+ python-slugify==4.0.1
+ pytz>=2021.1

@@ -36,8 +36,8 @@
 -#!/usr/bin/env python3
 +#!/opt/bin/python3
  """Merge all translation sources into a single JSON file."""
- import json
- import os
+ from __future__ import annotations
+ 
 --- a/script/translations/upload.py
 +++ b/script/translations/upload.py
 @@ -1,4 +1,4 @@

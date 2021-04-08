@@ -1,6 +1,6 @@
 --- a/homeassistant/components/fail2ban/sensor.py
 +++ b/homeassistant/components/fail2ban/sensor.py
-@@ -16,7 +16,7 @@ _LOGGER = logging.getLogger(__name__)
+@@ -15,7 +15,7 @@ _LOGGER = logging.getLogger(__name__)
  CONF_JAILS = "jails"
  
  DEFAULT_NAME = "fail2ban"
@@ -11,7 +11,7 @@
  STATE_ALL_BANS = "total_bans"
 --- a/homeassistant/components/roomba/const.py
 +++ b/homeassistant/components/roomba/const.py
-@@ -4,7 +4,7 @@ COMPONENTS = ["sensor", "binary_sensor",
+@@ -4,7 +4,7 @@ PLATFORMS = ["sensor", "binary_sensor",
  CONF_CERT = "certificate"
  CONF_CONTINUOUS = "continuous"
  CONF_BLID = "blid"

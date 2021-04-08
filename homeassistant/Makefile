@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
-PKG_VERSION:=2021.3.4
+PKG_VERSION:=2021.4.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=fedcef096e10bd52f504fc86ac8888d750f49056077cba1a0e3b0efe596d385f
+PKG_HASH:=0c7de8c51941a4ec905e2fef44dd80186c54a12abdb8ce7e9d05ac66f2c61382
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -23,6 +23,7 @@ define Package/homeassistant
   TITLE:=home automation platform
   URL:=https://www.home-assistant.io
   DEPENDS:= \
+	+python3-aiodiscover \
 	+python3-aiohomekit \
 	+python3-aiohttp-cors \
 	+python3-astral \
