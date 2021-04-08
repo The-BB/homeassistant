@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-home-assistant-frontend
-PKG_VERSION:=20210302.6
+PKG_VERSION:=20210407.1
 PKG_RELEASE:=1
 
 PYPI_NAME:=home-assistant-frontend
-PKG_HASH:=8778c2a9f00f83ecfabec74b9b93ddafeecf084596e7c1821bdbe2233dcc8bae
+PKG_HASH:=ee480be88c65735399fb7b1402ebc977bbe063a14180f1442a2eb186aedf8817
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
