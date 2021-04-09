@@ -77,6 +77,10 @@ define Py3Package/homeassistant/install
 	$(INSTALL_BIN) ./files/S99hass $(1)/opt/etc/init.d
 endef
 
+define Package/homeassistant/postrm
+rm -rf $(1)$(PYTHON3_PKG_DIR)/$(PKG_NAME)-$(PKG_VERSION)-py$(PYTHON3_VERSION).egg-info
+endef
+
 $(eval $(call Py3Package,homeassistant))
 $(eval $(call BuildPackage,homeassistant))
 $(eval $(call BuildPackage,homeassistant-src))
