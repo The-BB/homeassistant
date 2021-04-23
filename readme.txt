@@ -2,7 +2,7 @@
 
 ➜ git diff
 diff --git a/lang/python/Jinja2/Makefile b/lang/python/Jinja2/Makefile
-index ad727d06..650c537a 100644
+index ad727d0..650c537 100644
 --- a/lang/python/Jinja2/Makefile
 +++ b/lang/python/Jinja2/Makefile
 @@ -1,15 +1,16 @@
@@ -25,30 +25,16 @@ index ad727d06..650c537a 100644
  PKG_MAINTAINER:=Daniel Golle <daniel@makrotopia.org>
  PKG_LICENSE:=BSD-3-Clause
 diff --git a/lang/python/numpy/Makefile b/lang/python/numpy/Makefile
-index 31d4989b..a08cbff1 100644
+index 6b417a7..a08cbff 100644
 --- a/lang/python/numpy/Makefile
 +++ b/lang/python/numpy/Makefile
-@@ -6,11 +6,11 @@
- include $(TOPDIR)/rules.mk
- 
- PKG_NAME:=numpy
--PKG_VERSION:=1.20.1
-+PKG_VERSION:=1.20.2
- PKG_RELEASE:=1
- 
- PYPI_NAME:=$(PKG_NAME)
--PKG_HASH:=3bc63486a870294683980d76ec1e3efc786295ae00128f9ea38e2c6e74d5a60a
-+PKG_HASH:=878922bf5ad7550aa044aa9301d417e2d3ae50f0f577de92051d739ac6096cee
- 
- PKG_MAINTAINER:=Alexandru Ardelean <ardeleanalex@gmail.com>
- 
 @@ -26,13 +26,18 @@ include ../pypi.mk
  include $(INCLUDE_DIR)/package.mk
  include ../python3-package.mk
  
 +PYTHON3_PKG_SETUP_GLOBAL_ARGS += \
-+       build_ext \
-+       --fcompiler=none
++	build_ext \
++	--fcompiler=none
 +
  define Package/python3-numpy
    SUBMENU:=Python
@@ -67,44 +53,22 @@ index 31d4989b..a08cbff1 100644
  endef
  
 +define Build/Prepare
-+       $(call Build/Prepare/Default)
-+       ( \
-+               echo '[DEFAULT]'; \
-+               echo 'library_dirs = "$(STAGING_DIR)/opt/lib:$(TOOLCHAIN_DIR)/lib"'; \
-+               echo 'include_dirs = "$(STAGING_DIR)/opt/include:$(TOOLCHAIN_DIR)/include"'; \
-+       ) > $(PKG_BUILD_DIR)/site.cfg
++	$(call Build/Prepare/Default)
++	( \
++		echo '[DEFAULT]'; \
++		echo 'library_dirs = "$(STAGING_DIR)/opt/lib:$(TOOLCHAIN_DIR)/lib"'; \
++		echo 'include_dirs = "$(STAGING_DIR)/opt/include:$(TOOLCHAIN_DIR)/include"'; \
++	) > $(PKG_BUILD_DIR)/site.cfg
 +endef
 +
  $(eval $(call Py3Package,python3-numpy))
  $(eval $(call BuildPackage,python3-numpy))
  $(eval $(call BuildPackage,python3-numpy-src))
-diff --git a/lang/python/pillow/Makefile b/lang/python/pillow/Makefile
-index 8652f84b..9c41e371 100644
---- a/lang/python/pillow/Makefile
-+++ b/lang/python/pillow/Makefile
-@@ -7,11 +7,11 @@
- include $(TOPDIR)/rules.mk
- 
- PKG_NAME:=pillow
--PKG_VERSION:=8.1.0
-+PKG_VERSION:=8.2.0
- PKG_RELEASE:=1
- 
- PYPI_NAME:=Pillow
--PKG_HASH:=887668e792b7edbfb1d3c9d8b5d8c859269a0f0eba4dda562adb95500f60dbba
-+PKG_HASH:=a787ab10d7bb5494e5f76536ac460741788f1fbce851068d73a87ca7c35fc3e1
- 
- PKG_MAINTAINER:=Alexandru Ardelean <ardeleanalex@gmail.com>
- PKG_LICENSE:=HPND
 diff --git a/lang/python/python-aiohttp/Makefile b/lang/python/python-aiohttp/Makefile
-index 60baf9ee..d7b053e9 100644
+index 6620534..d7b053e 100644
 --- a/lang/python/python-aiohttp/Makefile
 +++ b/lang/python/python-aiohttp/Makefile
-@@ -1,18 +1,19 @@
- #
--# Copyright (C) 2019-2020 CZ.NIC, z. s. p. o. (https://www.nic.cz/)
-+# Copyright (C) 2019-2021 CZ.NIC, z. s. p. o. (https://www.nic.cz/)
- #
+@@ -4,15 +4,16 @@
  # This is free software, licensed under the GNU General Public License v2.
  # See /LICENSE for more information.
  #
@@ -113,28 +77,18 @@ index 60baf9ee..d7b053e9 100644
  include $(TOPDIR)/rules.mk
  
  PKG_NAME:=aiohttp
--PKG_VERSION:=3.7.1
+-PKG_VERSION:=3.7.4
 +PKG_VERSION:=3.7.4.post0
  PKG_RELEASE:=1
  
  PYPI_NAME:=$(PKG_NAME)
--PKG_HASH:=04f9d70f6c4d089be5068d7df6281e638f6820d4f1b1ec3dc012b0b43fa997d2
+-PKG_HASH:=5d84ecc73141d0a0d61ece0742bb7ff5751b0657dab8405f899d3ceb104cc7de
 +PKG_HASH:=493d3299ebe5f5a7c66b9819eacdcfbbaaf1a8e84911ddffcdc48888497afecf
  
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
-@@ -39,7 +40,8 @@ define Package/python3-aiohttp
-        +python3-logging \
-        +python3-codecs \
-        +python3-cgi \
--       +python3-openssl
-+       +python3-openssl \
-+       +python3-typing-extensions
- endef
- 
- define Package/python3-aiohttp/description
 diff --git a/lang/python/python-boto3/Makefile b/lang/python/python-boto3/Makefile
-index 27f69b3c..646aa910 100644
+index 27f69b3..646aa91 100644
 --- a/lang/python/python-boto3/Makefile
 +++ b/lang/python/python-boto3/Makefile
 @@ -1,11 +1,13 @@
@@ -155,7 +109,7 @@ index 27f69b3c..646aa910 100644
  PKG_MAINTAINER:=Daniel Danzberger <daniel@dd-wrt.com>
  PKG_LICENSE:=Apache-2.0
 diff --git a/lang/python/python-botocore/Makefile b/lang/python/python-botocore/Makefile
-index 739be112..1ee71759 100644
+index 739be11..1ee7175 100644
 --- a/lang/python/python-botocore/Makefile
 +++ b/lang/python/python-botocore/Makefile
 @@ -1,11 +1,13 @@
@@ -176,7 +130,7 @@ index 739be112..1ee71759 100644
  PKG_MAINTAINER:=Daniel Danzberger <daniel@dd-wrt.com>
  PKG_LICENSE:=MIT
 diff --git a/lang/python/python-certifi/Makefile b/lang/python/python-certifi/Makefile
-index 35370caa..7cba1eb3 100644
+index 35370ca..7cba1eb 100644
 --- a/lang/python/python-certifi/Makefile
 +++ b/lang/python/python-certifi/Makefile
 @@ -2,11 +2,12 @@
@@ -203,7 +157,7 @@ index 35370caa..7cba1eb3 100644
  include ../pypi.mk
  include $(INCLUDE_DIR)/package.mk
 diff --git a/lang/python/python-netdisco/Makefile b/lang/python/python-netdisco/Makefile
-index 377afead..fb78401c 100644
+index 377afea..fb78401 100644
 --- a/lang/python/python-netdisco/Makefile
 +++ b/lang/python/python-netdisco/Makefile
 @@ -4,15 +4,16 @@
@@ -227,7 +181,7 @@ index 377afead..fb78401c 100644
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
 diff --git a/lang/python/python-s3transfer/Makefile b/lang/python/python-s3transfer/Makefile
-index a6e04f9f..8ab5ce88 100644
+index a6e04f9..8ab5ce8 100644
 --- a/lang/python/python-s3transfer/Makefile
 +++ b/lang/python/python-s3transfer/Makefile
 @@ -1,11 +1,13 @@
@@ -248,7 +202,7 @@ index a6e04f9f..8ab5ce88 100644
  PKG_MAINTAINER:=Daniel Danzberger <daniel@dd-wrt.com>
  PKG_LICENSE:=MIT
 diff --git a/lang/python/python-urllib3/Makefile b/lang/python/python-urllib3/Makefile
-index 8812c0e4..fefce2a1 100644
+index 8812c0e..fefce2a 100644
 --- a/lang/python/python-urllib3/Makefile
 +++ b/lang/python/python-urllib3/Makefile
 @@ -4,11 +4,12 @@
@@ -275,7 +229,7 @@ index 8812c0e4..fefce2a1 100644
  include ../pypi.mk
  include $(INCLUDE_DIR)/package.mk
 diff --git a/lang/python/python-yaml/Makefile b/lang/python/python-yaml/Makefile
-index a26b5724..7c735464 100644
+index a26b572..cd18e2f 100644
 --- a/lang/python/python-yaml/Makefile
 +++ b/lang/python/python-yaml/Makefile
 @@ -4,21 +4,24 @@
@@ -299,7 +253,7 @@ index a26b5724..7c735464 100644
  PKG_MAINTAINER:=Josef Schlehofer <josef.schlehofer@nic.cz>
  PKG_LICENSE:=MIT
 diff --git a/lang/python/python-yarl/Makefile b/lang/python/python-yarl/Makefile
-index daab0519..d5a3283f 100644
+index daab051..d5a3283 100644
 --- a/lang/python/python-yarl/Makefile
 +++ b/lang/python/python-yarl/Makefile
 @@ -4,15 +4,16 @@
@@ -321,40 +275,11 @@ index daab0519..d5a3283f 100644
  
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
-diff --git a/lang/python/python-zeroconf/Makefile b/lang/python/python-zeroconf/Makefile
-index a7fa752d..121a3f97 100644
---- a/lang/python/python-zeroconf/Makefile
-+++ b/lang/python/python-zeroconf/Makefile
-@@ -1,5 +1,5 @@
- #
--# Copyright (C) 2019-2020 CZ.NIC, z. s. p. o. (https://www.nic.cz/)
-+# Copyright (C) 2019-2021 CZ.NIC, z. s. p. o. (https://www.nic.cz/)
- #
- # This is free software, licensed under the GNU General Public License v2.
- # See /LICENSE for more information.
-@@ -8,11 +8,11 @@
- include $(TOPDIR)/rules.mk
- 
- PKG_NAME:=python-zeroconf
--PKG_VERSION:=0.28.5
-+PKG_VERSION:=0.29.0
- PKG_RELEASE:=1
- 
- PYPI_NAME:=zeroconf
--PKG_HASH:=c08dbb90c116626cb6c5f19ebd14cd4846cffe7151f338c19215e6938d334980
-+PKG_HASH:=7aefbb658b452b1fd7e51124364f938c6f5e42d6ea893fa2557bea8c06c540af
- 
- PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
- PKG_LICENSE:=Apache-2.0
 diff --git a/lang/python/python3-pyroute2/Makefile b/lang/python/python3-pyroute2/Makefile
-index 9383069f..732d4c3b 100644
+index 1f8cf55..732d4c3 100644
 --- a/lang/python/python3-pyroute2/Makefile
 +++ b/lang/python/python3-pyroute2/Makefile
-@@ -1,18 +1,19 @@
- #
--# Copyright (C) 2019-2020 CZ.NIC, z. s. p. o. (https://www.nic.cz/)
-+# Copyright (C) 2019-2021 CZ.NIC, z. s. p. o. (https://www.nic.cz/)
- #
+@@ -4,15 +4,16 @@
  # This is free software, licensed under the GNU General Public License v2.
  # See /LICENSE for more information.
  #
@@ -363,28 +288,28 @@ index 9383069f..732d4c3b 100644
  include $(TOPDIR)/rules.mk
  
  PKG_NAME:=python3-pyroute2
--PKG_VERSION:=0.5.14
+-PKG_VERSION:=0.5.16
 +PKG_VERSION:=0.5.17
  PKG_RELEASE:=1
  
  PYPI_NAME:=pyroute2
--PKG_HASH:=774c5ecf05fe40f0f601a7ab33c19ca0b24f00bf4a094e58deaa5333b7ca49b5
+-PKG_HASH:=fe681a2d008cac815b9f287250d69a333fbfc2b2d89c37d58798104057149989
 +PKG_HASH:=12d51066ea5628a6fa76fc244f301a8eea5d25d71a9d664016976edfa3889733
  
  PKG_MAINTAINER:=Martin Matějek <martin.matejek@nic.cz>
  PKG_LICENSE:=GPL-2.0-or-later Apache-2.0
 @@ -34,7 +35,8 @@ define Package/python3-pyroute2
-          +python3-logging \
-          +python3-multiprocessing \
-          +python3-sqlite3 \
--         +python3-ctypes
-+         +python3-ctypes \
-+         +python3-psutil
+ 	  +python3-logging \
+ 	  +python3-multiprocessing \
+ 	  +python3-sqlite3 \
+-	  +python3-ctypes
++	  +python3-ctypes \
++	  +python3-psutil
  endef
  
  define Package/python3-pyroute2/description
 diff --git a/lang/python/python3-speedtest-cli/Makefile b/lang/python/python3-speedtest-cli/Makefile
-index 9c87f8b4..8fad05bf 100644
+index 9c87f8b..8fad05b 100644
 --- a/lang/python/python3-speedtest-cli/Makefile
 +++ b/lang/python/python3-speedtest-cli/Makefile
 @@ -1,11 +1,13 @@
