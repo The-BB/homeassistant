@@ -19,4 +19,8 @@ To install all its package definitions, run:
 
 The homeassistant packages should now appear in menuconfig.
 
-3. Some packages from [entware-packages](https://github.com/Entware/entware-packages) needs manually changing (see readme.txt).
+3. Some packages from [entware-packages](https://github.com/Entware/entware-packages) needs manually changing (see [patches](https://github.com/The-BB/homeassistant/tree/master/patches) dir).
+```
+cd ./feeds/homeassistant
+patch -p1 -d ../packages < ./patches/fix-for-homeassistant.patch
+```
