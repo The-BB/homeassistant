@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
-PKG_VERSION:=2021.4.6
+PKG_VERSION:=2021.5.1
 PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=dfc79a8e1b069c1626e03f46e8e61616488b363019ce13f284ffb649c16f8ed3
+PKG_HASH:=6b21e778685ff317ab5df9919bb25ba10a1263713127c9a680eb673bd7ee70b3
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -55,6 +55,7 @@ define Package/homeassistant
 	+python3-pynacl \
 	+python3-pyotp \
 	+python3-pyqrcode \
+	+python3-pyroute2 \
 	+python3-pyturbojpeg \
 	+python3-ruamel-yaml \
 	+python3-slugify \
