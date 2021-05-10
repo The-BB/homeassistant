@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-aiodiscover
-PKG_VERSION:=1.3.4
+PKG_VERSION:=1.4.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=aiodiscover
-PKG_HASH:=624235e610ccd59dc32e3c0148c5bbee7d2147b7df48a109f5fff06775decabb
+PKG_HASH:=107b15d545bc7601b1a40a055fa4e93969df23fcbb3f5b16f78543e49a53e3a4
 
 PKG_LICENSE:=Apache-2.0
 
@@ -22,7 +22,7 @@ define Package/python3-aiodiscover
   TITLE:=Async Host discovery
   URL:=https://github.com/bdraco/aiodiscover
   DEPENDS:= \
-	+python3-async-dns \
+	+python3-dns \
 	+python3-ifaddr \
 	+python3-pyroute2
 endef
