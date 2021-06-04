@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
-PKG_VERSION:=2021.5.5
+PKG_VERSION:=2021.6.2
 PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=135bc9ebef7c7c6b7371306a91389b6a8acdecbf9bba6044dca2fa071abb4a62
+PKG_HASH:=bce0ddeec49bb71445e84f9867231c1b76d460d2ddd59e183cc43184f1892173
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -42,7 +42,6 @@ define Package/homeassistant
 	+python3-home-assistant-frontend \
 	+python3-httpx \
 	+python3-httplib2 \
-	+python3-ifaddr \
 	+python3-jinja2 \
 	+python3-mutagen \
 	+python3-netdisco \
