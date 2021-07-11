@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
-PKG_VERSION:=2021.6.6
+PKG_VERSION:=2021.7.1
 PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=5fd0aa0b24b39da12f09fbda113415c3c740e71f282eac9f4c28d4d9ea8b039b
+PKG_HASH:=614cdfb0d5c88111867847f9bc7452655b599bc798d6fc573d8b7011c3d92b65
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -44,7 +44,6 @@ define Package/homeassistant
 	+python3-httplib2 \
 	+python3-jinja2 \
 	+python3-mutagen \
-	+python3-netdisco \
 	+python3-paho-mqtt \
 	+python3-pillow \
 	+python3-pip \
