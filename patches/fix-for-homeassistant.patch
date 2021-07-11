@@ -1,5 +1,5 @@
 diff --git a/lang/python/Jinja2/Makefile b/lang/python/Jinja2/Makefile
-index ad727d0..9ec7d6a 100644
+index d608f2e..9ec7d6a 100644
 --- a/lang/python/Jinja2/Makefile
 +++ b/lang/python/Jinja2/Makefile
 @@ -1,15 +1,16 @@
@@ -11,12 +11,12 @@ index ad727d0..9ec7d6a 100644
  include $(TOPDIR)/rules.mk
  
  PKG_NAME:=Jinja2
--PKG_VERSION:=2.11.2
+-PKG_VERSION:=2.11.3
 +PKG_VERSION:=3.0.1
  PKG_RELEASE:=1
  
  PYPI_NAME:=$(PKG_NAME)
--PKG_HASH:=89aab215427ef59c34ad58735269eb58b1a5808103067f7bb9d5836c651b3bb0
+-PKG_HASH:=a6d58433de0ae800347cab1fa3043cebbabe8baa9d29e668f1c768cb87a333c6
 +PKG_HASH:=703f484b47a6af502e743c9122595cc812b0271f661722403114f71a79d0f5a4
  
  PKG_MAINTAINER:=Daniel Golle <daniel@makrotopia.org>
@@ -45,6 +45,13 @@ index cd95185..8815671 100644
  
  PKG_MAINTAINER:=Daniel Golle <daniel@makrotopia.org>
  PKG_LICENSE:=BSD-3-Clause
+diff --git a/lang/python/host-pip-requirements/PyYAML.txt b/lang/python/host-pip-requirements/PyYAML.txt
+index b0ec1fe..125ee03 100644
+--- a/lang/python/host-pip-requirements/PyYAML.txt
++++ b/lang/python/host-pip-requirements/PyYAML.txt
+@@ -1 +1 @@
+-PyYAML==5.3.1 --hash=sha256:b8eac752c5e14d3eca0e6dd9199cd627518cb5ec06add0de9d32baeee6fe645d
++PyYAML==5.4.1 --hash=sha256:607774cbba28732bfa802b54baa7484215f530991055bb562efbed5b2f20a45e
 diff --git a/lang/python/numpy/Makefile b/lang/python/numpy/Makefile
 index 6b417a7..6c9e701 100644
 --- a/lang/python/numpy/Makefile
@@ -150,29 +157,6 @@ index b5fe47d..27c262a 100644
 +PKG_HASH:=e41d9967d5c48be421346552f0f4dedad43ff39a83574f5ff2ad32b6627b6fbe
  
  PKG_LICENSE:=Apache-2.0
- PKG_LICENSE_FILES:=LICENSE
-diff --git a/lang/python/python-attrs/Makefile b/lang/python/python-attrs/Makefile
-index 506dee7..a05e9d5 100644
---- a/lang/python/python-attrs/Makefile
-+++ b/lang/python/python-attrs/Makefile
-@@ -4,15 +4,16 @@
- # This is free software, licensed under the GNU General Public License v2.
- # See /LICENSE for more information.
- #
-+# XXX bump
- 
- include $(TOPDIR)/rules.mk
- 
- PKG_NAME:=python-attrs
--PKG_VERSION:=20.3.0
-+PKG_VERSION:=21.2.0
- PKG_RELEASE:=1
- 
- PYPI_NAME:=attrs
--PKG_HASH:=832aa3cde19744e49938b91fea06d69ecb9e649c93ba974535d08ad92164f700
-+PKG_HASH:=ef6aaac3ca6cd92904cdd0d83f629a15f18053ec84e6432106f7a4d04ae4f5fb
- 
- PKG_LICENSE:=MIT
  PKG_LICENSE_FILES:=LICENSE
 diff --git a/lang/python/python-boto3/Makefile b/lang/python/python-boto3/Makefile
 index 27f69b3..646aa91 100644
@@ -297,7 +281,7 @@ index 2c71f07..9f3c2aa 100644
  PKG_LICENSE:=ISC
  PKG_LICENSE_FILES:=LICENSE
 diff --git a/lang/python/python-netdisco/Makefile b/lang/python/python-netdisco/Makefile
-index 377afea..9c8f363 100644
+index 377afea..3c93586 100644
 --- a/lang/python/python-netdisco/Makefile
 +++ b/lang/python/python-netdisco/Makefile
 @@ -4,15 +4,16 @@
@@ -311,12 +295,12 @@ index 377afea..9c8f363 100644
  PKG_NAME:=python-netdisco
 -PKG_VERSION:=2.6.0
 -PKG_RELEASE:=2
-+PKG_VERSION:=2.8.3
++PKG_VERSION:=2.9.0
 +PKG_RELEASE:=1
  
  PYPI_NAME:=netdisco
 -PKG_HASH:=2b3aca14a1807712a053f11fd80dc251dd821ee4899aefece515287981817762
-+PKG_HASH:=e164bd3e212b07a53b42e7a34ef6eb3a69c77ad6c4e52e33694ca12c26f28a13
++PKG_HASH:=3a92c533ed199a18202754ae2e848efaa58b70a7294bae6c77bbb6ce4ccfcace
  
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
@@ -355,7 +339,7 @@ index a6e04f9..8ab5ce8 100644
  PKG_MAINTAINER:=Daniel Danzberger <daniel@dd-wrt.com>
  PKG_LICENSE:=MIT
 diff --git a/lang/python/python-sqlalchemy/Makefile b/lang/python/python-sqlalchemy/Makefile
-index 52b9a14..af05475 100644
+index 52b9a14..e92acd6 100644
 --- a/lang/python/python-sqlalchemy/Makefile
 +++ b/lang/python/python-sqlalchemy/Makefile
 @@ -4,15 +4,16 @@
@@ -368,12 +352,12 @@ index 52b9a14..af05475 100644
  
  PKG_NAME:=python-sqlalchemy
 -PKG_VERSION:=1.3.23
-+PKG_VERSION:=1.4.13
++PKG_VERSION:=1.4.17
  PKG_RELEASE:=1
  
  PYPI_NAME:=SQLAlchemy
 -PKG_HASH:=6fca33672578666f657c131552c4ef8979c1606e494f78cd5199742dfb26918b
-+PKG_HASH:=1d8a71c2bf21437d6216ba1963507d4d1a37920429eafd09d85387d0d078fa5a
++PKG_HASH:=651cdb3adcee13624ba22d5ff3e96f91e16a115d2ca489ddc16a8e4c217e8509
  
  PKG_MAINTAINER:=Josef Schlehofer <josef.schlehofer@nic.cz>
  PKG_LICENSE:=MIT
@@ -405,7 +389,7 @@ index 8812c0e..fefce2a 100644
  include ../pypi.mk
  include $(INCLUDE_DIR)/package.mk
 diff --git a/lang/python/python-yaml/Makefile b/lang/python/python-yaml/Makefile
-index a26b572..cd18e2f 100644
+index 4e31d7c..cda2cff 100644
 --- a/lang/python/python-yaml/Makefile
 +++ b/lang/python/python-yaml/Makefile
 @@ -4,15 +4,16 @@
@@ -418,7 +402,7 @@ index a26b572..cd18e2f 100644
  
  PKG_NAME:=python-yaml
 -PKG_VERSION:=5.3.1
--PKG_RELEASE:=2
+-PKG_RELEASE:=2a
 +PKG_VERSION:=5.4.1
 +PKG_RELEASE:=1
  
@@ -428,12 +412,6 @@ index a26b572..cd18e2f 100644
  
  PKG_MAINTAINER:=Josef Schlehofer <josef.schlehofer@nic.cz>
  PKG_LICENSE:=MIT
- PKG_LICENSE_FILES:=LICENSE
- PKG_CPE_ID:=cpe:/a:pyyaml_project:pyyaml
- 
- include ../pypi.mk
- include $(INCLUDE_DIR)/package.mk
- include ../python3-package.mk
 diff --git a/lang/python/python-yarl/Makefile b/lang/python/python-yarl/Makefile
 index daab051..d5a3283 100644
 --- a/lang/python/python-yarl/Makefile
@@ -458,7 +436,7 @@ index daab051..d5a3283 100644
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
 diff --git a/lang/python/python-zeroconf/Makefile b/lang/python/python-zeroconf/Makefile
-index 121a3f9..fad0602 100644
+index 121a3f9..f582070 100644
 --- a/lang/python/python-zeroconf/Makefile
 +++ b/lang/python/python-zeroconf/Makefile
 @@ -4,15 +4,16 @@
@@ -471,12 +449,12 @@ index 121a3f9..fad0602 100644
  
  PKG_NAME:=python-zeroconf
 -PKG_VERSION:=0.29.0
-+PKG_VERSION:=0.31.0
++PKG_VERSION:=0.32.1
  PKG_RELEASE:=1
  
  PYPI_NAME:=zeroconf
 -PKG_HASH:=7aefbb658b452b1fd7e51124364f938c6f5e42d6ea893fa2557bea8c06c540af
-+PKG_HASH:=53a180248471c6f81bd1fffcbce03ed93d7d8eaf10905c9121ac1ea996d19844
++PKG_HASH:=75e6616401f6d4a51f522f558b5d8a329da1407adc3e876134a4533e29acd279
  
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
@@ -534,56 +512,41 @@ index 9c87f8b..8fad05b 100644
  
  PKG_MAINTAINER:=Jaymin Patel <jem.patel@gmail.com>
  PKG_LICENSE:=Apache-2.0
-diff --git a/lang/python/python3/Makefile b/lang/python/python3/Makefile
-index ec581a0..3ce03e3 100644
---- a/lang/python/python3/Makefile
-+++ b/lang/python/python3/Makefile
-@@ -4,7 +4,7 @@
- # This is free software, licensed under the GNU General Public License v2.
- # See /LICENSE for more information.
- #
--# Entware specific: CONFIGURE_ARGS+= --with-system-expat="$(STAGING_DIR)/opt"
-+# Entware specific: CONFIGURE_ARGS+= --with-system-expat="$(STAGING_DIR)/opt" --with-tzpath=
+diff --git a/lang/python/python3-version.mk b/lang/python/python3-version.mk
+index 9cf078d..46f05ae 100644
+--- a/lang/python/python3-version.mk
++++ b/lang/python/python3-version.mk
+@@ -12,7 +12,7 @@ PYTHON3_VERSION_MICRO:=5
  
- include $(TOPDIR)/rules.mk
+ PYTHON3_VERSION:=$(PYTHON3_VERSION_MAJOR).$(PYTHON3_VERSION_MINOR)
  
-@@ -12,7 +12,7 @@ include $(TOPDIR)/rules.mk
- include ../python3-version.mk
+-PYTHON3_SETUPTOOLS_PKG_RELEASE:=1
++PYTHON3_SETUPTOOLS_PKG_RELEASE:=1a
+ PYTHON3_PIP_PKG_RELEASE:=1
  
- PKG_NAME:=python3
--PKG_RELEASE:=1
-+PKG_RELEASE:=1a
- PKG_VERSION:=$(PYTHON3_VERSION).$(PYTHON3_VERSION_MICRO)
- 
- PKG_SOURCE:=Python-$(PKG_VERSION).tar.xz
-@@ -145,6 +145,7 @@ DISABLE_BLUETOOTH:= \
- CONFIGURE_ARGS+= \
- 	--sysconfdir=/opt/etc \
- 	--with-system-expat="$(STAGING_DIR)/opt" \
-+	--with-tzpath="/opt/share/zoneinfo:/usr/share/zoneinfo" \
- 	--enable-optimizations \
- 	--enable-shared \
- 	--with-system-ffi \
+ PYTHON3_SETUPTOOLS_VERSION:=56.0.0
+diff --git a/lang/python/python3/files/python3-package-setuptools.mk b/lang/python/python3/files/python3-package-setuptools.mk
+index b051416..92f2272 100644
+--- a/lang/python/python3/files/python3-package-setuptools.mk
++++ b/lang/python/python3/files/python3-package-setuptools.mk
+@@ -20,6 +20,7 @@ define Py3Package/python3-setuptools/install
+ 	$(CP) \
+ 		$(PKG_BUILD_DIR)/install-setuptools/opt/lib/python$(PYTHON3_VERSION)/site-packages/setuptools \
+ 		$(PKG_BUILD_DIR)/install-setuptools/opt/lib/python$(PYTHON3_VERSION)/site-packages/setuptools-$(PYTHON3_SETUPTOOLS_VERSION).dist-info \
++		$(PKG_BUILD_DIR)/install-setuptools/opt/lib/python$(PYTHON3_VERSION)/site-packages/_distutils_hack \
+ 		$(1)/opt/lib/python$(PYTHON3_VERSION)/site-packages
+ 	find $(1)/opt/lib/python$(PYTHON3_VERSION)/site-packages/ -path '*/__pycache__/*' -delete
+ 	find $(1)/opt/lib/python$(PYTHON3_VERSION)/site-packages/ -type d -name __pycache__ -delete
 diff --git a/net/scapy/Makefile b/net/scapy/Makefile
-index 1d1c098..1dcb58e 100644
+index 6cf711b..987872e 100644
 --- a/net/scapy/Makefile
 +++ b/net/scapy/Makefile
-@@ -4,15 +4,16 @@
- # This is free software, licensed under the GNU General Public License v2.
- # See /LICENSE for more information.
- #
-+# XXX bump
- 
- include $(TOPDIR)/rules.mk
+@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
  
  PKG_NAME:=scapy
--PKG_VERSION:=2.4.4
-+PKG_VERSION:=2.4.5
- PKG_RELEASE:=1
+ PKG_VERSION:=2.4.5
+-PKG_RELEASE:=$(AUTORELEASE)
++PKG_RELEASE:=1
  
  PYPI_NAME:=$(PKG_NAME)
--PKG_HASH:=ecfd7a14cd9c3ef0eb08d28d5bb71d97219edff1454ccbdff229f676b27900ee
-+PKG_HASH:=bc707e3604784496b6665a9e5b2a69c36cc9fb032af4864b29051531b24c8593
- 
- PKG_MAINTAINER:=W. Michael Petullo <mike@flyn.org>
- PKG_LICENSE:=GPL-2.0-only
+ PKG_HASH:=bc707e3604784496b6665a9e5b2a69c36cc9fb032af4864b29051531b24c8593
