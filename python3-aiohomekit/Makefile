@@ -22,7 +22,9 @@ define Package/python3-aiohomekit
   SUBMENU:=Python
   TITLE:=an asyncio HomeKit client
   URL:=https://github.com/Jc2k/aiohomekit
-  DEPENDS:=+python3-zeroconf
+  DEPENDS:= \
+	+python3-commentjson \
+	+python3-zeroconf
 endef
 
 define Package/python3-aiohomekit/description
