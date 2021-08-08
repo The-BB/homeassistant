@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-aiohomekit
-PKG_VERSION:=0.5.1
+PKG_VERSION:=0.6.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=aiohomekit
-PKG_HASH:=61a85e9b898dc96d8cf401c878207a430ca6d8d4c4a359ddc02595a279da8d26
+PKG_HASH:=0d003e70908f2a62df845deb1d96c420cf3d333a66f539f042cda6de25ce9886
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -24,6 +24,7 @@ define Package/python3-aiohomekit
   URL:=https://github.com/Jc2k/aiohomekit
   DEPENDS:= \
 	+python3-commentjson \
+	+python3-cryptography \
 	+python3-zeroconf
 endef
 
