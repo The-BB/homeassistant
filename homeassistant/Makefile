@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
-PKG_VERSION:=2021.7.4
+PKG_VERSION:=2021.8.3
 PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=702c2fe719dceb11d2a3b8832491f07a17dac5eba448cce1915e6bc5d3fe7425
+PKG_HASH:=30e14d05aae13be03c7bfbda679e6607190c6dfa60869f612b9f1a45b9b28dcc
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -23,44 +23,60 @@ define Package/homeassistant
   TITLE:=home automation platform
   URL:=https://www.home-assistant.io
   DEPENDS:= \
-	+python3-aiodiscover \
-	+python3-aiohomekit \
-	+python3-aiohttp-cors \
+	+python3-dev \
+	+python3-pip
+# core
+  DEPENDS+= \
+	+python3-aiohttp \
 	+python3-astral \
-	+python3-async-upnp-client \
+	+python3-async-timeout \
 	+python3-attrs \
 	+python3-awesomeversion \
-	+python3-base36 \
 	+python3-bcrypt \
+	+python3-certifi \
 	+python3-ciso8601 \
-	+python3-distro \
-	+python3-emoji \
-	+python3-fnvhash \
-	+python3-gtts \
-	+python3-ha-ffmpeg \
-	+python3-hass-nabucasa \
-	+python3-home-assistant-frontend \
+	+python3-cryptography \
 	+python3-httpx \
-	+python3-httplib2 \
 	+python3-jinja2 \
-	+python3-mutagen \
-	+python3-paho-mqtt \
-	+python3-pillow \
-	+python3-pip \
-	+python3-pyhap \
 	+python3-pyjwt \
-	+python3-pymetno \
-	+python3-pynacl \
-	+python3-pyotp \
-	+python3-pyqrcode \
-	+python3-pyroute2 \
-	+python3-pyturbojpeg \
+	+python3-requests \
 	+python3-ruamel-yaml \
 	+python3-slugify \
-	+python3-sqlalchemy \
+	+python3-voluptuous \
 	+python3-voluptuous-serialize \
 	+python3-yaml \
+	+python3-yarl
+# base
+  DEPENDS+= \
+	+python3-aiodiscover \
+	+python3-aiohttp-cors \
+	+python3-async-upnp-client \
+	+python3-defusedxml \
+	+python3-distro \
+	+python3-emoji \
+	+python3-hass-nabucasa \
+	+python3-home-assistant-frontend \
+	+python3-ifaddr \
+	+python3-pillow \
+	+python3-pynacl \
+	+python3-sqlalchemy \
+	+python3-zeroconf \
 	+scapy
+# ext
+# ? btlewrap, grpcio, pandas ? 
+  DEPENDS+= \
+	+python3-cryptodome \
+	+python3-gtts \
+	+python3-h11 \
+	+python3-httplib2 \
+	+python3-mutagen \
+	+python3-paho-mqtt \
+	+python3-pymetno \
+	+python3-pyotp \
+	+python3-pyqrcode \
+	+python3-urllib3 \
+	+python3-websocket-client \
+	+python3-xmltodict
 endef
 
 define Package/homeassistant/description
@@ -76,10 +92,20 @@ define Py3Package/homeassistant/install
 	$(INSTALL_BIN) ./files/S99hass $(1)/opt/etc/init.d
 endef
 
+define Package/homeassistant/postinst
+#!/bin/sh
+
+echo -e "\n\t *** Prepare your device to use the homeassistant ***\n\n\t \
+	Please read the wiki:\n\t\t \
+	https://github.com/Entware/Entware/wiki/Self-installation-of-python-modules\n"
+endef
+
 define Package/homeassistant/postrm
+#!/bin/sh
+
 rm -rf $(1)$(PYTHON3_PKG_DIR)/$(PKG_NAME)-$(PKG_VERSION)-py$(PYTHON3_VERSION).egg-info
 endef
 
 $(eval $(call Py3Package,homeassistant))
 $(eval $(call BuildPackage,homeassistant))
-$(eval $(call BuildPackage,homeassistant-src))
+#$(eval $(call BuildPackage,homeassistant-src))
