@@ -436,7 +436,7 @@ index daab051..d5a3283 100644
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
 diff --git a/lang/python/python-zeroconf/Makefile b/lang/python/python-zeroconf/Makefile
-index 121a3f9..f582070 100644
+index 121a3f9..925e3ae 100644
 --- a/lang/python/python-zeroconf/Makefile
 +++ b/lang/python/python-zeroconf/Makefile
 @@ -4,15 +4,16 @@
@@ -449,12 +449,12 @@ index 121a3f9..f582070 100644
  
  PKG_NAME:=python-zeroconf
 -PKG_VERSION:=0.29.0
-+PKG_VERSION:=0.32.1
++PKG_VERSION:=0.33.4
  PKG_RELEASE:=1
  
  PYPI_NAME:=zeroconf
 -PKG_HASH:=7aefbb658b452b1fd7e51124364f938c6f5e42d6ea893fa2557bea8c06c540af
-+PKG_HASH:=75e6616401f6d4a51f522f558b5d8a329da1407adc3e876134a4533e29acd279
++PKG_HASH:=95b4fd11e0498ec8e38d0a0ff50e3bd7250be2b02d131ef8501b12cd3a499d66
  
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
@@ -513,7 +513,7 @@ index 9c87f8b..8fad05b 100644
  PKG_MAINTAINER:=Jaymin Patel <jem.patel@gmail.com>
  PKG_LICENSE:=Apache-2.0
 diff --git a/net/scapy/Makefile b/net/scapy/Makefile
-index 6cf711b..987872e 100644
+index 6cf711b..79b11c7 100644
 --- a/net/scapy/Makefile
 +++ b/net/scapy/Makefile
 @@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
@@ -521,7 +521,7 @@ index 6cf711b..987872e 100644
  PKG_NAME:=scapy
  PKG_VERSION:=2.4.5
 -PKG_RELEASE:=$(AUTORELEASE)
-+PKG_RELEASE:=1
++PKG_RELEASE:=1a
  
  PYPI_NAME:=$(PKG_NAME)
  PKG_HASH:=bc707e3604784496b6665a9e5b2a69c36cc9fb032af4864b29051531b24c8593
