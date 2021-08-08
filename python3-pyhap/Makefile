@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-pyhap
-PKG_VERSION:=3.5.1
+PKG_VERSION:=3.6.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=HAP-python
-PKG_HASH:=55f5c893724a129784807e855b780d3616a7c431ab859081fc61b83e7ba70629
+PKG_HASH:=74f1c04535a9af9b8d41d0025e656c86ece03d2a5c614209175e2f7c8421993f
 
 PKG_LICENSE:=Apache-2.0
 
@@ -23,8 +23,6 @@ define Package/python3-pyhap
   URL:=https://github.com/ikalchev/HAP-python
   DEPENDS:= \
 	+python3-cryptography \
-	+python3-curve25519-donna \
-	+python3-ed25519 \
 	+python3-h11 \
 	+python3-zeroconf
 endef
