@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
-PKG_VERSION:=2021.8.3
+PKG_VERSION:=2021.8.5
 PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=30e14d05aae13be03c7bfbda679e6607190c6dfa60869f612b9f1a45b9b28dcc
+PKG_HASH:=68ebeb81e22c72a8bbbed4dfb8410299a0c1052e2a8a00e2a4081a0c575e382c
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -63,7 +63,7 @@ define Package/homeassistant
 	+python3-zeroconf \
 	+scapy
 # ext
-# ? btlewrap, grpcio, pandas ? 
+# ? btlewrap, google-cloud-pubsub, grpcio, pandas ? 
   DEPENDS+= \
 	+python3-cryptodome \
 	+python3-gtts \
@@ -95,7 +95,7 @@ endef
 define Package/homeassistant/postinst
 #!/bin/sh
 
-echo -e "\n\t *** Prepare your device to use the homeassistant ***\n\n\t \
+echo -e "\n\t *** Prepare your device to use the Home Assistant ***\n\n\t \
 	Please read the wiki:\n\t\t \
 	https://github.com/Entware/Entware/wiki/Self-installation-of-python-modules\n"
 endef
