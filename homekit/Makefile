@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homekit
 PKG_VERSION:=0.0.1
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PKG_SOURCE:=
 PKG_SOURCE_URL:=
@@ -19,7 +19,6 @@ define Package/homekit
   TITLE:=HomeKit (metapackage)
   URL:=https://www.home-assistant.io/integrations/homekit
   PKG_DEFAULT_DEPENDS:= \
-	+homeassistant \
 	+python3-aiohomekit \
 	+python3-base36 \
 	+python3-fnvhash \
@@ -39,6 +38,12 @@ Build/Compile:=:
 
 define Package/homekit/install
 	true
+endef
+
+define Package/homekit/postinst
+#!/bin/sh
+
+echo -e "\n\t *** Please install homeassistant package manually ***\n"
 endef
 
 $(eval $(call BuildPackage,homekit))
