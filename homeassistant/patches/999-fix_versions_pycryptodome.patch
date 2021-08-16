@@ -2,7 +2,7 @@
 +++ b/homeassistant/package_constraints.txt
 @@ -35,7 +35,7 @@ voluptuous==0.12.1
  yarl==1.6.3
- zeroconf==0.34.3
+ zeroconf==0.35.0
  
 -pycryptodome>=3.6.6
 +pycryptodome==3.9.7
