@@ -259,6 +259,30 @@ index cf3e2f8..09a050f 100644
  endef
  
  define Package/python3-psutil/description
+diff --git a/lang/python/python-pyserial/Makefile b/lang/python/python-pyserial/Makefile
+index e74cc88..3423e35 100644
+--- a/lang/python/python-pyserial/Makefile
++++ b/lang/python/python-pyserial/Makefile
+@@ -4,15 +4,16 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=python-pyserial
+-PKG_VERSION:=3.4
+-PKG_RELEASE:=2
++PKG_VERSION:=3.5
++PKG_RELEASE:=1
+ 
+ PYPI_NAME:=pyserial
+-PKG_HASH:=6e2d401fdee0eab996cf734e67773a0143b932772ca8b42451440cfed942c627
++PKG_HASH:=3c77e014170dfffbd816e6ffc205e9842efb10be9f58ec16d3e8675b4925cddb
+ 
+ PKG_LICENSE:=BSD
+ PKG_MAINTAINER:=Micke Prag <micke.prag@telldus.se>
 diff --git a/lang/python/python-requests/Makefile b/lang/python/python-requests/Makefile
 index 5853897..97a72f5 100644
 --- a/lang/python/python-requests/Makefile
@@ -302,6 +326,29 @@ index a6e04f9..8ab5ce8 100644
 +PKG_HASH:=921a37e2aefc64145e7b73d50c71bb4f26f46e4c9f414dc648c6245ff92cf7db
  
  PKG_MAINTAINER:=Daniel Danzberger <daniel@dd-wrt.com>
+ PKG_LICENSE:=MIT
+diff --git a/lang/python/python-sqlalchemy/Makefile b/lang/python/python-sqlalchemy/Makefile
+index f15cbb3..c68cdce 100644
+--- a/lang/python/python-sqlalchemy/Makefile
++++ b/lang/python/python-sqlalchemy/Makefile
+@@ -4,15 +4,16 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=python-sqlalchemy
+-PKG_VERSION:=1.4.22
++PKG_VERSION:=1.4.23
+ PKG_RELEASE:=1
+ 
+ PYPI_NAME:=SQLAlchemy
+-PKG_HASH:=ec1be26cdccd60d180359a527d5980d959a26269a2c7b1b327a1eea0cab37ed8
++PKG_HASH:=76ff246881f528089bf19385131b966197bb494653990396d2ce138e2a447583
+ 
+ PKG_MAINTAINER:=Josef Schlehofer <josef.schlehofer@nic.cz>
  PKG_LICENSE:=MIT
 diff --git a/lang/python/python-urllib3/Makefile b/lang/python/python-urllib3/Makefile
 index 8812c0e..fefce2a 100644
@@ -378,7 +425,7 @@ index daab051..d5a3283 100644
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
 diff --git a/lang/python/python-zeroconf/Makefile b/lang/python/python-zeroconf/Makefile
-index 121a3f9..df9c7dd 100644
+index 121a3f9..2bf1552 100644
 --- a/lang/python/python-zeroconf/Makefile
 +++ b/lang/python/python-zeroconf/Makefile
 @@ -4,15 +4,16 @@
@@ -391,12 +438,12 @@ index 121a3f9..df9c7dd 100644
  
  PKG_NAME:=python-zeroconf
 -PKG_VERSION:=0.29.0
-+PKG_VERSION:=0.35.0
++PKG_VERSION:=0.36.2
  PKG_RELEASE:=1
  
  PYPI_NAME:=zeroconf
 -PKG_HASH:=7aefbb658b452b1fd7e51124364f938c6f5e42d6ea893fa2557bea8c06c540af
-+PKG_HASH:=23478a7bce3ec51db5b2539e21677c539eb542a3fe0df1d173e31d34f9630672
++PKG_HASH:=9f00378e0510bf02e2e9e77ce5816b1783fdbf62704eb15753a8b5d6d615b811
  
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
