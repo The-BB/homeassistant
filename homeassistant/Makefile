@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
-PKG_VERSION:=2021.8.8
-PKG_RELEASE:=2
+PKG_VERSION:=2021.9.3
+PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=3343989b8ebecbabfd9808ea0783d12de801fef9d7085b6e419f478db36f5a10
+PKG_HASH:=ad332fd3bbbb9275d8efd54d4090857f6ed20d555acdd68f28e2346dc12803bf
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -52,18 +52,19 @@ define Package/homeassistant
 	+python3-aiohttp-cors \
 	+python3-async-upnp-client \
 	+python3-defusedxml \
-	+python3-distro \
 	+python3-emoji \
 	+python3-hass-nabucasa \
 	+python3-home-assistant-frontend \
 	+python3-ifaddr \
 	+python3-pillow \
 	+python3-pynacl \
+	+python3-pyserial \
+	+python3-pyudev \
 	+python3-sqlalchemy \
 	+python3-zeroconf \
 	+scapy
 # ext
-# ? btlewrap, google-cloud-pubsub, grpcio, pandas ? 
+# ? btlewrap, google-cloud-pubsub, google-api-core, grpcio, pandas ? 
   DEPENDS+= \
 	+python3-cryptodome \
 	+python3-gtts \
