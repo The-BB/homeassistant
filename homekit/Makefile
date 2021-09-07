@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homekit
 PKG_VERSION:=0.0.1
-PKG_RELEASE:=2
+PKG_RELEASE:=3
 
 PKG_SOURCE:=
 PKG_SOURCE_URL:=
@@ -24,8 +24,7 @@ define Package/homekit
 	+python3-fnvhash \
 	+python3-ha-ffmpeg \
 	+python3-pyhap \
-	+python3-pyqrcode \
-	+python3-pyturbojpeg
+	+python3-pyqrcode
 endef
 
 define Package/homekit/description
