@@ -38,4 +38,4 @@ endef
 
 $(eval $(call Py3Package,python3-mutagen))
 $(eval $(call BuildPackage,python3-mutagen))
-$(eval $(call BuildPackage,python3-mutagen-src))
+#$(eval $(call BuildPackage,python3-mutagen-src))
