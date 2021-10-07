@@ -38,4 +38,4 @@ endef
 
 $(eval $(call Py3Package,python3-httpx))
 $(eval $(call BuildPackage,python3-httpx))
-$(eval $(call BuildPackage,python3-httpx-src))
+#$(eval $(call BuildPackage,python3-httpx-src))
