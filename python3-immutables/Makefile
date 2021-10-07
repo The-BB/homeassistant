@@ -36,4 +36,4 @@ endef
 
 $(eval $(call Py3Package,python3-immutables))
 $(eval $(call BuildPackage,python3-immutables))
-$(eval $(call BuildPackage,python3-immutables-src))
+#$(eval $(call BuildPackage,python3-immutables-src))
