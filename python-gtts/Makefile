@@ -35,4 +35,4 @@ endef
 
 $(eval $(call Py3Package,python3-gtts))
 $(eval $(call BuildPackage,python3-gtts))
-$(eval $(call BuildPackage,python3-gtts-src))
+#$(eval $(call BuildPackage,python3-gtts-src))
