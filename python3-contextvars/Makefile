@@ -32,4 +32,4 @@ endef
 
 $(eval $(call Py3Package,python3-contextvars))
 $(eval $(call BuildPackage,python3-contextvars))
-$(eval $(call BuildPackage,python3-contextvars-src))
+#$(eval $(call BuildPackage,python3-contextvars-src))
