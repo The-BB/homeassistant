@@ -35,4 +35,4 @@ endef
 
 $(eval $(call Py3Package,python3-josepy))
 $(eval $(call BuildPackage,python3-josepy))
-$(eval $(call BuildPackage,python3-josepy-src))
+#$(eval $(call BuildPackage,python3-josepy-src))
