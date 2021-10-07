@@ -31,4 +31,4 @@ endef
 
 $(eval $(call Py3Package,python3-pyturbojpeg))
 $(eval $(call BuildPackage,python3-pyturbojpeg))
-$(eval $(call BuildPackage,python3-pyturbojpeg-src))
+#$(eval $(call BuildPackage,python3-pyturbojpeg-src))
