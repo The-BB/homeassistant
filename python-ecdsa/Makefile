@@ -31,4 +31,4 @@ endef
 
 $(eval $(call Py3Package,python3-ecdsa))
 $(eval $(call BuildPackage,python3-ecdsa))
-$(eval $(call BuildPackage,python3-ecdsa-src))
+#$(eval $(call BuildPackage,python3-ecdsa-src))
