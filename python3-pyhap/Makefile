@@ -36,4 +36,4 @@ endef
 
 $(eval $(call Py3Package,python3-pyhap))
 $(eval $(call BuildPackage,python3-pyhap))
-$(eval $(call BuildPackage,python3-pyhap-src))
+#$(eval $(call BuildPackage,python3-pyhap-src))
