@@ -39,4 +39,4 @@ endef
 
 $(eval $(call Py3Package,python3-hass-nabucasa))
 $(eval $(call BuildPackage,python3-hass-nabucasa))
-$(eval $(call BuildPackage,python3-hass-nabucasa-src))
+#$(eval $(call BuildPackage,python3-hass-nabucasa-src))
