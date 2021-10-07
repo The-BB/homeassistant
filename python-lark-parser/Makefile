@@ -33,4 +33,4 @@ endef
 
 $(eval $(call Py3Package,python3-lark-parser))
 $(eval $(call BuildPackage,python3-lark-parser))
-$(eval $(call BuildPackage,python3-lark-parser-src))
+#$(eval $(call BuildPackage,python3-lark-parser-src))
