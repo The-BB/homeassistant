@@ -31,4 +31,4 @@ endef
 
 $(eval $(call Py3Package,python3-home-assistant-frontend))
 $(eval $(call BuildPackage,python3-home-assistant-frontend))
-$(eval $(call BuildPackage,python3-home-assistant-frontend-src))
+#$(eval $(call BuildPackage,python3-home-assistant-frontend-src))
