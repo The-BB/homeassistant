@@ -34,4 +34,4 @@ endef
 
 $(eval $(call Py3Package,python3-commentjson))
 $(eval $(call BuildPackage,python3-commentjson))
-$(eval $(call BuildPackage,python3-commentjson-src))
+#$(eval $(call BuildPackage,python3-commentjson-src))
