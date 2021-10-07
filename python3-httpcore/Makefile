@@ -34,4 +34,4 @@ endef
 
 $(eval $(call Py3Package,python3-httpcore))
 $(eval $(call BuildPackage,python3-httpcore))
-$(eval $(call BuildPackage,python3-httpcore-src))
+#$(eval $(call BuildPackage,python3-httpcore-src))
