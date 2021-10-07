@@ -31,4 +31,4 @@ endef
 
 $(eval $(call Py3Package,python3-pyudev))
 $(eval $(call BuildPackage,python3-pyudev))
-$(eval $(call BuildPackage,python3-pyudev-src))
+#$(eval $(call BuildPackage,python3-pyudev-src))
