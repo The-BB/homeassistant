@@ -33,4 +33,4 @@ endef
 
 $(eval $(call Py3Package,python3-sniffio))
 $(eval $(call BuildPackage,python3-sniffio))
-$(eval $(call BuildPackage,python3-sniffio-src))
+#$(eval $(call BuildPackage,python3-sniffio-src))
