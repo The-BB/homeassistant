@@ -31,4 +31,4 @@ endef
 
 $(eval $(call Py3Package,python3-terminaltables))
 $(eval $(call BuildPackage,python3-terminaltables))
-$(eval $(call BuildPackage,python3-terminaltables-src))
+#$(eval $(call BuildPackage,python3-terminaltables-src))
