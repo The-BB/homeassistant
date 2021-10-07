@@ -31,4 +31,4 @@ endef
 
 $(eval $(call Py3Package,python3-rfc3986))
 $(eval $(call BuildPackage,python3-rfc3986))
-$(eval $(call BuildPackage,python3-rfc3986-src))
+#$(eval $(call BuildPackage,python3-rfc3986-src))
