@@ -30,4 +30,4 @@ endef
 
 $(eval $(call Py3Package,python3-async-dns))
 $(eval $(call BuildPackage,python3-async-dns))
-$(eval $(call BuildPackage,python3-async-dns-src))
+#$(eval $(call BuildPackage,python3-async-dns-src))
