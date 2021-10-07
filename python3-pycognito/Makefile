@@ -36,4 +36,4 @@ endef
 
 $(eval $(call Py3Package,python3-pycognito))
 $(eval $(call BuildPackage,python3-pycognito))
-$(eval $(call BuildPackage,python3-pycognito-src))
+#$(eval $(call BuildPackage,python3-pycognito-src))
