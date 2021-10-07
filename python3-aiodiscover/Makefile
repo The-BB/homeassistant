@@ -33,4 +33,4 @@ endef
 
 $(eval $(call Py3Package,python3-aiodiscover))
 $(eval $(call BuildPackage,python3-aiodiscover))
-$(eval $(call BuildPackage,python3-aiodiscover-src))
+#$(eval $(call BuildPackage,python3-aiodiscover-src))
