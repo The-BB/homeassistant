@@ -32,4 +32,4 @@ endef
 
 $(eval $(call Py3Package,python3-httplib2))
 $(eval $(call BuildPackage,python3-httplib2))
-$(eval $(call BuildPackage,python3-httplib2-src))
+#$(eval $(call BuildPackage,python3-httplib2-src))
