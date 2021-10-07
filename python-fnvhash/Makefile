@@ -33,4 +33,4 @@ endef
 
 $(eval $(call Py3Package,python3-fnvhash))
 $(eval $(call BuildPackage,python3-fnvhash))
-$(eval $(call BuildPackage,python3-fnvhash-src))
+#$(eval $(call BuildPackage,python3-fnvhash-src))
