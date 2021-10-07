@@ -41,4 +41,4 @@ endef
 
 $(eval $(call Py3Package,python3-jose))
 $(eval $(call BuildPackage,python3-jose))
-$(eval $(call BuildPackage,python3-jose-src))
+#$(eval $(call BuildPackage,python3-jose-src))
