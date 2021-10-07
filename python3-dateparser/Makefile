@@ -35,4 +35,4 @@ endef
 
 $(eval $(call Py3Package,python3-dateparser))
 $(eval $(call BuildPackage,python3-dateparser))
-$(eval $(call BuildPackage,python3-dateparser-src))
+#$(eval $(call BuildPackage,python3-dateparser-src))
