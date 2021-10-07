@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
-PKG_VERSION:=2021.9.7
+PKG_VERSION:=2021.10.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=da587c9fbdfd41169aeb4802d1458dac81a46f026644c29b29b5a8cbcdcb7719
+PKG_HASH:=35df95b2b75c1cc877dba56848f963ab115a12722b4e0236181a0af5b1125c9f
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -40,7 +40,6 @@ define Package/homeassistant
 	+python3-jinja2 \
 	+python3-pyjwt \
 	+python3-requests \
-	+python3-ruamel-yaml \
 	+python3-slugify \
 	+python3-voluptuous \
 	+python3-voluptuous-serialize \
@@ -51,7 +50,6 @@ define Package/homeassistant
 	+python3-aiodiscover \
 	+python3-aiohttp-cors \
 	+python3-async-upnp-client \
-	+python3-defusedxml \
 	+python3-emoji \
 	+python3-hass-nabucasa \
 	+python3-home-assistant-frontend \
