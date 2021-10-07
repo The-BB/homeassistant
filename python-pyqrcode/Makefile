@@ -33,4 +33,4 @@ endef
 
 $(eval $(call Py3Package,python3-pyqrcode))
 $(eval $(call BuildPackage,python3-pyqrcode))
-$(eval $(call BuildPackage,python3-pyqrcode-src))
+#$(eval $(call BuildPackage,python3-pyqrcode-src))
