@@ -31,4 +31,4 @@ endef
 
 $(eval $(call Py3Package,python3-tabulate))
 $(eval $(call BuildPackage,python3-tabulate))
-$(eval $(call BuildPackage,python3-tabulate-src))
+#$(eval $(call BuildPackage,python3-tabulate-src))
