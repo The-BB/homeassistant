@@ -34,4 +34,4 @@ endef
 
 $(eval $(call Py3Package,python3-pypng))
 $(eval $(call BuildPackage,python3-pypng))
-$(eval $(call BuildPackage,python3-pypng-src))
+#$(eval $(call BuildPackage,python3-pypng-src))
