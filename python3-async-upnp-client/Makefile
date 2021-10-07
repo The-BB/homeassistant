@@ -36,4 +36,4 @@ endef
 
 $(eval $(call Py3Package,python3-async-upnp-client))
 $(eval $(call BuildPackage,python3-async-upnp-client))
-$(eval $(call BuildPackage,python3-async-upnp-client-src))
+#$(eval $(call BuildPackage,python3-async-upnp-client-src))
