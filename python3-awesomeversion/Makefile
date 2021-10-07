@@ -32,4 +32,4 @@ endef
 
 $(eval $(call Py3Package,python3-awesomeversion))
 $(eval $(call BuildPackage,python3-awesomeversion))
-$(eval $(call BuildPackage,python3-awesomeversion-src))
+#$(eval $(call BuildPackage,python3-awesomeversion-src))
