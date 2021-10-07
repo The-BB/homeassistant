@@ -32,4 +32,4 @@ endef
 
 $(eval $(call Py3Package,python3-h11))
 $(eval $(call BuildPackage,python3-h11))
-$(eval $(call BuildPackage,python3-h11-src))
+#$(eval $(call BuildPackage,python3-h11-src))
