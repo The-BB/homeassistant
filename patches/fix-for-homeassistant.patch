@@ -1,3 +1,10 @@
+diff --git a/lang/python/host-pip-requirements/Cython.txt b/lang/python/host-pip-requirements/Cython.txt
+index bf3e501..0b3d03d 100644
+--- a/lang/python/host-pip-requirements/Cython.txt
++++ b/lang/python/host-pip-requirements/Cython.txt
+@@ -1 +1 @@
+-Cython==0.29.23 --hash=sha256:6a0d31452f0245daacb14c979c77e093eb1a546c760816b5eed0047686baad8e
++Cython==0.29.24 --hash=sha256:cdf04d07c3600860e8c2ebaad4e8f52ac3feb212453c1764a49ac08c827e8443
 diff --git a/lang/python/host-pip-requirements/PyYAML.txt b/lang/python/host-pip-requirements/PyYAML.txt
 index b0ec1fe..125ee03 100644
 --- a/lang/python/host-pip-requirements/PyYAML.txt
@@ -6,30 +13,64 @@ index b0ec1fe..125ee03 100644
 -PyYAML==5.3.1 --hash=sha256:b8eac752c5e14d3eca0e6dd9199cd627518cb5ec06add0de9d32baeee6fe645d
 +PyYAML==5.4.1 --hash=sha256:607774cbba28732bfa802b54baa7484215f530991055bb562efbed5b2f20a45e
 diff --git a/lang/python/numpy/Makefile b/lang/python/numpy/Makefile
-index f3b38a8..9c21d0a 100644
+index f3b38a8..10a322e 100644
 --- a/lang/python/numpy/Makefile
 +++ b/lang/python/numpy/Makefile
-@@ -29,13 +29,17 @@ include ../pypi.mk
- include $(INCLUDE_DIR)/package.mk
- include ../python3-package.mk
+@@ -2,15 +2,16 @@
+ # Copyright (C) 2019 Jakub Piotr Cłapa <jpc@loee.pl>
+ # Copyright (C) 2020 Alexandru Ardelean <ardeleanalex@gmail.com>
+ #
++# XXX bump
  
-+PYTHON3_PKG_SETUP_GLOBAL_ARGS += \
-+	build_ext \
-+	--fcompiler=none
-+
- define Package/python3-numpy
-   SUBMENU:=Python
-   SECTION:=lang
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=numpy
+-PKG_VERSION:=1.21.1
+-PKG_RELEASE:=2
++PKG_VERSION:=1.21.2
++PKG_RELEASE:=1
+ 
+ PYPI_NAME:=$(PKG_NAME)
+-PKG_HASH:=dff4af63638afcc57a3dfb9e4b26d434a7a602d225b42d746ea7fe2edf1342fd
++PKG_HASH:=423216d8afc5923b15df86037c6053bf030d15cc9e3224206ef868c2d63dd6dc
+ 
+ PKG_MAINTAINER:=Alexandru Ardelean <ardeleanalex@gmail.com>
+ 
+@@ -35,34 +36,35 @@ define Package/python3-numpy
    CATEGORY:=Languages
    TITLE:=The fundamental package for scientific computing with Python
    URL:=https://www.numpy.org/
 -  DEPENDS:=@!SOFT_FLOAT +INSTALL_GFORTRAN:libgfortran +python3 \
-+  DEPENDS:=+python3 \
- 	   +NUMPY_OPENBLAS_SUPPORT:openblas
+-	   +NUMPY_OPENBLAS_SUPPORT:openblas
++#  DEPENDS:=@!SOFT_FLOAT +INSTALL_GFORTRAN:libgfortran +python3 \
++#	   +NUMPY_OPENBLAS_SUPPORT:openblas
++  DEPENDS:=+python3
  endef
  
-@@ -55,12 +59,12 @@ endef
- ifdef CONFIG_NUMPY_OPENBLAS_SUPPORT
+ # We need to duplicate the omitted arhitectures same as openblas
+-define Package/python3-numpy/config
+-menu "Configuration"
+-depends on !powerpc
+-depends on !arc
++#define Package/python3-numpy/config
++#menu "Configuration"
++#depends on !powerpc
++#depends on !arc
+ 
+-config NUMPY_OPENBLAS_SUPPORT
+-        bool "Enable OpenBLAS support"
+-        default n
++#config NUMPY_OPENBLAS_SUPPORT
++#        bool "Enable OpenBLAS support"
++#        default n
+ 
+-endmenu
+-endef
++#endmenu
++#endef
+ 
+-ifdef CONFIG_NUMPY_OPENBLAS_SUPPORT
++#ifdef CONFIG_NUMPY_OPENBLAS_SUPPORT
  define Build/Prepare/numpy-sitecfg
  	echo "[DEFAULT]"                                 >  $(PKG_BUILD_DIR)/site.cfg
 -	echo "library_dirs = $(STAGING_DIR)/usr/lib"     >> $(PKG_BUILD_DIR)/site.cfg
@@ -37,13 +78,46 @@ index f3b38a8..9c21d0a 100644
 +	echo "library_dirs = $(STAGING_DIR)/opt/lib"     >> $(PKG_BUILD_DIR)/site.cfg
 +	echo "include_dirs = $(STAGING_DIR)/opt/include" >> $(PKG_BUILD_DIR)/site.cfg
  	echo                                             >> $(PKG_BUILD_DIR)/site.cfg
- 	echo "[openblas]"                                >> $(PKG_BUILD_DIR)/site.cfg
- 	echo "libraries = openblas"                      >> $(PKG_BUILD_DIR)/site.cfg
+-	echo "[openblas]"                                >> $(PKG_BUILD_DIR)/site.cfg
+-	echo "libraries = openblas"                      >> $(PKG_BUILD_DIR)/site.cfg
 -	echo "runtime_library_dirs = /usr/lib"           >> $(PKG_BUILD_DIR)/site.cfg
-+	echo "runtime_library_dirs = /opt/lib"           >> $(PKG_BUILD_DIR)/site.cfg
++#	echo "[openblas]"                                >> $(PKG_BUILD_DIR)/site.cfg
++#	echo "libraries = openblas"                      >> $(PKG_BUILD_DIR)/site.cfg
++#	echo "runtime_library_dirs = /opt/lib"           >> $(PKG_BUILD_DIR)/site.cfg
  endef
- endif
+-endif
++#endif
  
+ define Build/Prepare
+ 	$(call Build/Prepare/Default)
+diff --git a/lang/python/pyjwt/Makefile b/lang/python/pyjwt/Makefile
+index 15f131a..012efba 100644
+--- a/lang/python/pyjwt/Makefile
++++ b/lang/python/pyjwt/Makefile
+@@ -2,19 +2,20 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=pyjwt
+-PKG_VERSION:=1.7.1
+-PKG_RELEASE:=2
++PKG_VERSION:=2.1.0
++PKG_RELEASE:=1
+ 
+ PKG_MAINTAINER:=Eneas U de Queiroz <cote2004-github@yahoo.com>
+ PKG_LICENSE:=MIT
+ PKG_LICENSE_FILES:=LICENSE
+ 
+ PYPI_NAME:=PyJWT
+-PKG_HASH:=8d59a976fb773f3e6a39c85636357c4f0e242707394cadadd9814f5cbaa20e96
++PKG_HASH:=fba44e7898bbca160a2b2b501f492824fc8382485d3a6f11ba5d0c1937ce6130
+ 
+ include ../pypi.mk
+ include $(INCLUDE_DIR)/package.mk
 diff --git a/lang/python/python-aiohttp/Makefile b/lang/python/python-aiohttp/Makefile
 index 6620534..d7b053e 100644
 --- a/lang/python/python-aiohttp/Makefile
@@ -134,7 +208,7 @@ index 739be11..1ee7175 100644
  PKG_MAINTAINER:=Daniel Danzberger <daniel@dd-wrt.com>
  PKG_LICENSE:=MIT
 diff --git a/lang/python/python-certifi/Makefile b/lang/python/python-certifi/Makefile
-index 35370ca..7cba1eb 100644
+index 35370ca..ea6c727 100644
 --- a/lang/python/python-certifi/Makefile
 +++ b/lang/python/python-certifi/Makefile
 @@ -2,11 +2,12 @@
@@ -147,7 +221,7 @@ index 35370ca..7cba1eb 100644
  
  PKG_NAME:=python-certifi
 -PKG_VERSION:=2020.6.20
-+PKG_VERSION:=2020.12.5
++PKG_VERSION:=2021.5.30
  PKG_RELEASE:=1
  
  PKG_MAINTAINER:=Eneas U de Queiroz <cotequeiroz@gmail.com>
@@ -156,10 +230,56 @@ index 35370ca..7cba1eb 100644
  
  PYPI_NAME:=certifi
 -PKG_HASH:=5930595817496dd21bb8dc35dad090f1c2cd0adfaf21204bf6732ca5d8ee34d3
-+PKG_HASH:=1a4995114262bffbc2413b159f2a1a480c969de6e6eb13ee966d470af86af59c
++PKG_HASH:=2bbf76fd432960138b3ef6dda3dde0544f27cbf8546c458e60baf371917ba9ee
  
  include ../pypi.mk
  include $(INCLUDE_DIR)/package.mk
+diff --git a/lang/python/python-ciso8601/Makefile b/lang/python/python-ciso8601/Makefile
+index 02a82cf..a2592c0 100644
+--- a/lang/python/python-ciso8601/Makefile
++++ b/lang/python/python-ciso8601/Makefile
+@@ -4,15 +4,16 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=python-ciso8601
+-PKG_VERSION:=2.1.3
++PKG_VERSION:=2.2.0
+ PKG_RELEASE:=1
+ 
+ PYPI_NAME:=ciso8601
+-PKG_HASH:=bdbb5b366058b1c87735603b23060962c439ac9be66f1ae91e8c7dbd7d59e262
++PKG_HASH:=14ad817ed31a698372d42afa81b0173d71cd1d0b48b7499a2da2a01dcc8695e6
+ 
+ PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
+ PKG_LICENSE:=MIT
+diff --git a/lang/python/python-cryptography/Makefile b/lang/python/python-cryptography/Makefile
+index 9764208..28bcbb7 100644
+--- a/lang/python/python-cryptography/Makefile
++++ b/lang/python/python-cryptography/Makefile
+@@ -4,15 +4,16 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=python-cryptography
+-PKG_VERSION:=3.4.7
++PKG_VERSION:=3.4.8
+ PKG_RELEASE:=1
+ 
+ PYPI_NAME:=cryptography
+-PKG_HASH:=3d10de8116d25649631977cb37da6cbdd2d6fa0e0281d014a5b7d337255ca713
++PKG_HASH:=94cc5ed4ceaefcbe5bf38c8fba6a21fc1d365bb8fb826ea1688e3370b2e24a1c
+ 
+ PKG_LICENSE:=Apache-2.0 BSD-3-Clause
+ PKG_LICENSE_FILES:=LICENSE.APACHE LICENSE.BSD
 diff --git a/lang/python/python-defusedxml/Makefile b/lang/python/python-defusedxml/Makefile
 index 144d343..409bb57 100644
 --- a/lang/python/python-defusedxml/Makefile
@@ -214,7 +334,7 @@ index 2c71f07..9f3c2aa 100644
  PKG_LICENSE:=ISC
  PKG_LICENSE_FILES:=LICENSE
 diff --git a/lang/python/python-netdisco/Makefile b/lang/python/python-netdisco/Makefile
-index 377afea..3c93586 100644
+index 377afea..5efe5cc 100644
 --- a/lang/python/python-netdisco/Makefile
 +++ b/lang/python/python-netdisco/Makefile
 @@ -4,15 +4,16 @@
@@ -228,12 +348,12 @@ index 377afea..3c93586 100644
  PKG_NAME:=python-netdisco
 -PKG_VERSION:=2.6.0
 -PKG_RELEASE:=2
-+PKG_VERSION:=2.9.0
++PKG_VERSION:=3.0.0
 +PKG_RELEASE:=1
  
  PYPI_NAME:=netdisco
 -PKG_HASH:=2b3aca14a1807712a053f11fd80dc251dd821ee4899aefece515287981817762
-+PKG_HASH:=3a92c533ed199a18202754ae2e848efaa58b70a7294bae6c77bbb6ce4ccfcace
++PKG_HASH:=4dbb590482f377ccc461e01742707ccbe8f1d2d1b28578af91dc9b7febcdcbd2
  
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
@@ -377,15 +497,38 @@ index 8812c0e..fefce2a 100644
  
  include ../pypi.mk
  include $(INCLUDE_DIR)/package.mk
-diff --git a/lang/python/python-yaml/Makefile b/lang/python/python-yaml/Makefile
-index 4e31d7c..cda2cff 100644
---- a/lang/python/python-yaml/Makefile
-+++ b/lang/python/python-yaml/Makefile
+diff --git a/lang/python/python-voluptuous/Makefile b/lang/python/python-voluptuous/Makefile
+index c5f04a2..e098a3e 100644
+--- a/lang/python/python-voluptuous/Makefile
++++ b/lang/python/python-voluptuous/Makefile
 @@ -4,15 +4,16 @@
  # This is free software, licensed under the GNU General Public License v2.
  # See /LICENSE for more information.
  #
 +# XXX bump
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=python-voluptuous
+-PKG_VERSION:=0.12.1
++PKG_VERSION:=0.12.2
+ PKG_RELEASE:=1
+ 
+ PYPI_NAME:=voluptuous
+-PKG_HASH:=663572419281ddfaf4b4197fd4942d181630120fb39b333e3adad70aeb56444b
++PKG_HASH:=4db1ac5079db9249820d49c891cb4660a6f8cae350491210abce741fabf56513
+ 
+ PKG_LICENSE:=BSD-3-Clause
+ PKG_LICENSE_FILES:=COPYING
+diff --git a/lang/python/python-yaml/Makefile b/lang/python/python-yaml/Makefile
+index 4e31d7c..f53f2f5 100644
+--- a/lang/python/python-yaml/Makefile
++++ b/lang/python/python-yaml/Makefile
+@@ -4,22 +4,23 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump & Cython
  
  include $(TOPDIR)/rules.mk
  
@@ -401,6 +544,14 @@ index 4e31d7c..cda2cff 100644
  
  PKG_MAINTAINER:=Josef Schlehofer <josef.schlehofer@nic.cz>
  PKG_LICENSE:=MIT
+ PKG_LICENSE_FILES:=LICENSE
+ PKG_CPE_ID:=cpe:/a:pyyaml_project:pyyaml
+ 
+-HOST_PYTHON3_PACKAGE_BUILD_DEPENDS:=PyYAML # crawl & suricata
++HOST_PYTHON3_PACKAGE_BUILD_DEPENDS:=PyYAML Cython # crawl & suricata
+ 
+ include ../pypi.mk
+ include $(INCLUDE_DIR)/package.mk
 diff --git a/lang/python/python-yarl/Makefile b/lang/python/python-yarl/Makefile
 index daab051..d5a3283 100644
 --- a/lang/python/python-yarl/Makefile
@@ -425,7 +576,7 @@ index daab051..d5a3283 100644
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
 diff --git a/lang/python/python-zeroconf/Makefile b/lang/python/python-zeroconf/Makefile
-index 121a3f9..2bf1552 100644
+index 121a3f9..94cab1b 100644
 --- a/lang/python/python-zeroconf/Makefile
 +++ b/lang/python/python-zeroconf/Makefile
 @@ -4,15 +4,16 @@
@@ -438,12 +589,12 @@ index 121a3f9..2bf1552 100644
  
  PKG_NAME:=python-zeroconf
 -PKG_VERSION:=0.29.0
-+PKG_VERSION:=0.36.2
++PKG_VERSION:=0.36.7
  PKG_RELEASE:=1
  
  PYPI_NAME:=zeroconf
 -PKG_HASH:=7aefbb658b452b1fd7e51124364f938c6f5e42d6ea893fa2557bea8c06c540af
-+PKG_HASH:=9f00378e0510bf02e2e9e77ce5816b1783fdbf62704eb15753a8b5d6d615b811
++PKG_HASH:=0956a5cbfec9e443f1eedb984b9d1a1585dad8b905184dbfe03d7beab9f91c95
  
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
