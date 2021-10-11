@@ -576,7 +576,7 @@ index daab051..d5a3283 100644
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
 diff --git a/lang/python/python-zeroconf/Makefile b/lang/python/python-zeroconf/Makefile
-index 121a3f9..94cab1b 100644
+index 121a3f9..12c8290 100644
 --- a/lang/python/python-zeroconf/Makefile
 +++ b/lang/python/python-zeroconf/Makefile
 @@ -4,15 +4,16 @@
@@ -589,12 +589,12 @@ index 121a3f9..94cab1b 100644
  
  PKG_NAME:=python-zeroconf
 -PKG_VERSION:=0.29.0
-+PKG_VERSION:=0.36.7
++PKG_VERSION:=0.36.8
  PKG_RELEASE:=1
  
  PYPI_NAME:=zeroconf
 -PKG_HASH:=7aefbb658b452b1fd7e51124364f938c6f5e42d6ea893fa2557bea8c06c540af
-+PKG_HASH:=0956a5cbfec9e443f1eedb984b9d1a1585dad8b905184dbfe03d7beab9f91c95
++PKG_HASH:=9a13e0cdf9f1a142f1ba03df34d598d28b5e2fe4064e3e675c39310a33ec1a0f
  
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
