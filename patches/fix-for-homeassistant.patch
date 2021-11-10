@@ -1,3 +1,26 @@
+diff --git a/lang/python/Jinja2/Makefile b/lang/python/Jinja2/Makefile
+index 6e95524..b8eb290 100644
+--- a/lang/python/Jinja2/Makefile
++++ b/lang/python/Jinja2/Makefile
+@@ -1,15 +1,16 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# bump
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=Jinja2
+-PKG_VERSION:=3.0.1
++PKG_VERSION:=3.0.2
+ PKG_RELEASE:=1
+ 
+ PYPI_NAME:=$(PKG_NAME)
+-PKG_HASH:=703f484b47a6af502e743c9122595cc812b0271f661722403114f71a79d0f5a4
++PKG_HASH:=827a0e32839ab1600d4eb1c4c33ec5a8edfbc5cb42dafa13b81f182f97784b45
+ 
+ PKG_MAINTAINER:=Daniel Golle <daniel@makrotopia.org>
+ PKG_LICENSE:=BSD-3-Clause
 diff --git a/lang/python/host-pip-requirements/Cython.txt b/lang/python/host-pip-requirements/Cython.txt
 index bf3e501..0b3d03d 100644
 --- a/lang/python/host-pip-requirements/Cython.txt
@@ -6,12 +29,12 @@ index bf3e501..0b3d03d 100644
 -Cython==0.29.23 --hash=sha256:6a0d31452f0245daacb14c979c77e093eb1a546c760816b5eed0047686baad8e
 +Cython==0.29.24 --hash=sha256:cdf04d07c3600860e8c2ebaad4e8f52ac3feb212453c1764a49ac08c827e8443
 diff --git a/lang/python/host-pip-requirements/PyYAML.txt b/lang/python/host-pip-requirements/PyYAML.txt
-index b0ec1fe..125ee03 100644
+index b0ec1fe..49f3c04 100644
 --- a/lang/python/host-pip-requirements/PyYAML.txt
 +++ b/lang/python/host-pip-requirements/PyYAML.txt
 @@ -1 +1 @@
 -PyYAML==5.3.1 --hash=sha256:b8eac752c5e14d3eca0e6dd9199cd627518cb5ec06add0de9d32baeee6fe645d
-+PyYAML==5.4.1 --hash=sha256:607774cbba28732bfa802b54baa7484215f530991055bb562efbed5b2f20a45e
++PyYAML==6.0 --hash=sha256:68fb519c14306fec9720a2a5b45bc9f0c8d1b9c72adf45c37baedfcd949c35a2
 diff --git a/lang/python/numpy/Makefile b/lang/python/numpy/Makefile
 index f3b38a8..10a322e 100644
 --- a/lang/python/numpy/Makefile
@@ -187,7 +210,7 @@ index 27f69b3..646aa91 100644
  PKG_MAINTAINER:=Daniel Danzberger <daniel@dd-wrt.com>
  PKG_LICENSE:=Apache-2.0
 diff --git a/lang/python/python-botocore/Makefile b/lang/python/python-botocore/Makefile
-index 739be11..1ee7175 100644
+index 739be11..9014ae3 100644
 --- a/lang/python/python-botocore/Makefile
 +++ b/lang/python/python-botocore/Makefile
 @@ -1,11 +1,13 @@
@@ -199,7 +222,7 @@ index 739be11..1ee7175 100644
 -PKG_VERSION:=1.12.66
 -PKG_RELEASE:=2
 +PKG_VERSION:=1.19.3
-+PKG_RELEASE:=1
++PKG_RELEASE:=1a
  
  PYPI_NAME:=$(PKG_NAME)
 -PKG_HASH:=25c39ecc71356287cf79d66981ec77deca374e28043b19b2f818d48aa34272a1
@@ -471,7 +494,7 @@ index f15cbb3..c68cdce 100644
  PKG_MAINTAINER:=Josef Schlehofer <josef.schlehofer@nic.cz>
  PKG_LICENSE:=MIT
 diff --git a/lang/python/python-urllib3/Makefile b/lang/python/python-urllib3/Makefile
-index 8812c0e..fefce2a 100644
+index 8812c0e..054856a 100644
 --- a/lang/python/python-urllib3/Makefile
 +++ b/lang/python/python-urllib3/Makefile
 @@ -4,11 +4,12 @@
@@ -484,7 +507,7 @@ index 8812c0e..fefce2a 100644
  
  PKG_NAME:=python-urllib3
 -PKG_VERSION:=1.25.11
-+PKG_VERSION:=1.26.2
++PKG_VERSION:=1.26.5
  PKG_RELEASE:=1
  
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
@@ -493,7 +516,7 @@ index 8812c0e..fefce2a 100644
  
  PYPI_NAME:=urllib3
 -PKG_HASH:=8d7eaa5a82a1cac232164990f04874c594c9453ec55eef02eab885aa02fc17a2
-+PKG_HASH:=19188f96923873c92ccb987120ec4acaa12f0461fa9ce5d3d0772bc965a39e08
++PKG_HASH:=a7acd0977125325f516bda9735fa7142b909a8d01e8b2e4c8108d0984e6e0098
  
  include ../pypi.mk
  include $(INCLUDE_DIR)/package.mk
@@ -521,7 +544,7 @@ index c5f04a2..e098a3e 100644
  PKG_LICENSE:=BSD-3-Clause
  PKG_LICENSE_FILES:=COPYING
 diff --git a/lang/python/python-yaml/Makefile b/lang/python/python-yaml/Makefile
-index 4e31d7c..f53f2f5 100644
+index 4e31d7c..a437054 100644
 --- a/lang/python/python-yaml/Makefile
 +++ b/lang/python/python-yaml/Makefile
 @@ -4,22 +4,23 @@
@@ -535,12 +558,12 @@ index 4e31d7c..f53f2f5 100644
  PKG_NAME:=python-yaml
 -PKG_VERSION:=5.3.1
 -PKG_RELEASE:=2a
-+PKG_VERSION:=5.4.1
++PKG_VERSION:=6.0
 +PKG_RELEASE:=1
  
  PYPI_NAME:=PyYAML
 -PKG_HASH:=b8eac752c5e14d3eca0e6dd9199cd627518cb5ec06add0de9d32baeee6fe645d
-+PKG_HASH:=607774cbba28732bfa802b54baa7484215f530991055bb562efbed5b2f20a45e
++PKG_HASH:=68fb519c14306fec9720a2a5b45bc9f0c8d1b9c72adf45c37baedfcd949c35a2
  
  PKG_MAINTAINER:=Josef Schlehofer <josef.schlehofer@nic.cz>
  PKG_LICENSE:=MIT
@@ -576,7 +599,7 @@ index daab051..d5a3283 100644
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
 diff --git a/lang/python/python-zeroconf/Makefile b/lang/python/python-zeroconf/Makefile
-index 121a3f9..12c8290 100644
+index 121a3f9..fb4cfb8 100644
 --- a/lang/python/python-zeroconf/Makefile
 +++ b/lang/python/python-zeroconf/Makefile
 @@ -4,15 +4,16 @@
@@ -589,12 +612,12 @@ index 121a3f9..12c8290 100644
  
  PKG_NAME:=python-zeroconf
 -PKG_VERSION:=0.29.0
-+PKG_VERSION:=0.36.8
++PKG_VERSION:=0.36.11
  PKG_RELEASE:=1
  
  PYPI_NAME:=zeroconf
 -PKG_HASH:=7aefbb658b452b1fd7e51124364f938c6f5e42d6ea893fa2557bea8c06c540af
-+PKG_HASH:=9a13e0cdf9f1a142f1ba03df34d598d28b5e2fe4064e3e675c39310a33ec1a0f
++PKG_HASH:=1b4f2c070a703de055a7e0cc91a455b54fbe987abbd137c83b9a7505e0e2f7bb
  
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
