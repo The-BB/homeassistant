@@ -29,7 +29,7 @@ index bf3e501..0b3d03d 100644
 -Cython==0.29.23 --hash=sha256:6a0d31452f0245daacb14c979c77e093eb1a546c760816b5eed0047686baad8e
 +Cython==0.29.24 --hash=sha256:cdf04d07c3600860e8c2ebaad4e8f52ac3feb212453c1764a49ac08c827e8443
 diff --git a/lang/python/host-pip-requirements/PyYAML.txt b/lang/python/host-pip-requirements/PyYAML.txt
-index b0ec1fe..49f3c04 100644
+index b0ec1fe..71236e5 100644
 --- a/lang/python/host-pip-requirements/PyYAML.txt
 +++ b/lang/python/host-pip-requirements/PyYAML.txt
 @@ -1 +1 @@
@@ -429,6 +429,29 @@ index cf3e2f8..09a050f 100644
  endef
  
  define Package/python3-psutil/description
+index 9cda8ac..8b95ccf 100644
+--- a/lang/python/python-pyotp/Makefile
++++ b/lang/python/python-pyotp/Makefile
+@@ -4,15 +4,16 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=pyotp
+-PKG_VERSION:=2.3.0
+-PKG_RELEASE:=2
++PKG_VERSION:=2.6.0
++PKG_RELEASE:=1
+ 
+ PYPI_NAME:=$(PKG_NAME)
+-PKG_HASH:=fc537e8acd985c5cbf51e11b7d53c42276fee017a73aec7c07380695671ca1a1
++PKG_HASH:=d28ddfd40e0c1b6a6b9da961c7d47a10261fb58f378cb00f05ce88b26df9c432
+ 
+ PKG_MAINTAINER:=Josef Schlehofer <josef.schlehofer@nic.cz>
+ PKG_LICENSE:=MIT
 diff --git a/lang/python/python-pyserial/Makefile b/lang/python/python-pyserial/Makefile
 index e74cc88..3423e35 100644
 --- a/lang/python/python-pyserial/Makefile
