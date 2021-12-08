@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python-lark-parser
 PKG_VERSION:=0.7.8
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=lark-parser
 PKG_HASH:=26215ebb157e6fb2ee74319aa4445b9f3b7e456e26be215ce19fdaaa901c20a4
