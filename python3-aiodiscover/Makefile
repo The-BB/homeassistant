@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-aiodiscover
 PKG_VERSION:=1.4.5
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=aiodiscover
 PKG_HASH:=925654f4ed53ed7a4664e9a5c2fb3d6a1e760f211893d2e517d902fa8fcf7d07
