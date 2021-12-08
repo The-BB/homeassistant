@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-charset-normalizer
 PKG_VERSION:=2.0.4
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=charset-normalizer
 PKG_HASH:=f23667ebe1084be45f6ae0538e4a5a865206544097e4e8bbcacf42cd02a348f3
