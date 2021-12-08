@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-pyhap
 PKG_VERSION:=4.3.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=HAP-python
 PKG_HASH:=0c126f789afbc32a7379bb4218f748b5030cbeceeaefdde6bf89a00280bf4bf3
