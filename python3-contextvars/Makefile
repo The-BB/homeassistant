@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-contextvars
 PKG_VERSION:=2.4
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=contextvars
 PKG_HASH:=f38c908aaa59c14335eeea12abea5f443646216c4e29380d7bf34d2018e2c39e
