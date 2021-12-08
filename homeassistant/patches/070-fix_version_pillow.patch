@@ -5,7 +5,7 @@
    "name": "DOODS - Dedicated Open Object Detection Service",
    "documentation": "https://www.home-assistant.io/integrations/doods",
 -  "requirements": ["pydoods==1.0.2", "pillow==8.2.0"],
-+  "requirements": ["pydoods==1.0.2", "pillow==8.3.1"],
++  "requirements": ["pydoods==1.0.2", "pillow==8.4.0"],
    "codeowners": [],
    "iot_class": "local_polling"
  }
@@ -16,7 +16,7 @@
    "config_flow": false,
    "documentation": "https://www.home-assistant.io/integrations/image",
 -  "requirements": ["pillow==8.2.0"],
-+  "requirements": ["pillow==8.3.1"],
++  "requirements": ["pillow==8.4.0"],
    "dependencies": ["http"],
    "codeowners": ["@home-assistant/core"],
    "quality_scale": "internal"
@@ -27,7 +27,7 @@
    "name": "Camera Proxy",
    "documentation": "https://www.home-assistant.io/integrations/proxy",
 -  "requirements": ["pillow==8.2.0"],
-+  "requirements": ["pillow==8.3.1"],
++  "requirements": ["pillow==8.4.0"],
    "codeowners": []
  }
 --- a/homeassistant/components/qrcode/manifest.json
@@ -37,7 +37,7 @@
    "name": "QR Code",
    "documentation": "https://www.home-assistant.io/integrations/qrcode",
 -  "requirements": ["pillow==8.2.0", "pyzbar==0.1.7"],
-+  "requirements": ["pillow==8.3.1", "pyzbar==0.1.7"],
++  "requirements": ["pillow==8.4.0", "pyzbar==0.1.7"],
    "codeowners": [],
    "iot_class": "calculated"
  }
@@ -48,7 +48,7 @@
    "name": "Seven Segments OCR",
    "documentation": "https://www.home-assistant.io/integrations/seven_segments",
 -  "requirements": ["pillow==8.2.0"],
-+  "requirements": ["pillow==8.3.1"],
++  "requirements": ["pillow==8.4.0"],
    "codeowners": ["@fabaff"],
    "iot_class": "local_polling"
  }
@@ -59,7 +59,7 @@
    "name": "Sighthound",
    "documentation": "https://www.home-assistant.io/integrations/sighthound",
 -  "requirements": ["pillow==8.2.0", "simplehound==0.3"],
-+  "requirements": ["pillow==8.3.1", "simplehound==0.3"],
++  "requirements": ["pillow==8.4.0", "simplehound==0.3"],
    "codeowners": ["@robmarkcole"],
    "iot_class": "cloud_polling"
  }
@@ -70,7 +70,7 @@
      "pycocotools==2.0.1",
      "numpy==1.21.2",
 -    "pillow==8.2.0"
-+    "pillow==8.3.1"
++    "pillow==8.4.0"
    ],
    "codeowners": [],
    "iot_class": "local_polling"
@@ -81,7 +81,7 @@
  jinja2==3.0.2
  paho-mqtt==1.6.1
 -pillow==8.2.0
-+pillow==8.3.1
- pip>=8.0.3,<=21.1.3
++pillow==8.4.0
+ pip>=8.0.3,<=21.2.3
  pyserial==3.5
  python-slugify==4.0.1
