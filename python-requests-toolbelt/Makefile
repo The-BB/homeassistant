@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python-requests-toolbelt
 PKG_VERSION:=0.9.1
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=requests-toolbelt
 PKG_HASH:=968089d4584ad4ad7c171454f0a5c6dac23971e9472521ea3b6d49d610aa6fc0
