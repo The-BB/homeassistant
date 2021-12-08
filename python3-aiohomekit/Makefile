@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-aiohomekit
 PKG_VERSION:=0.6.3
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=aiohomekit
 PKG_HASH:=9769f3aa4f055ec992d3636d1c6fd2691155eea77a1688d457cf6a9a6e70c1b6
