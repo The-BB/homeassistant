@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-mutagen
 PKG_VERSION:=1.45.1
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=mutagen
 PKG_HASH:=6397602efb3c2d7baebd2166ed85731ae1c1d475abca22090b7141ff5034b3e1
