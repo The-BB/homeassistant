@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-async-dns
 PKG_VERSION:=1.1.9
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=async_dns
 PKG_HASH:=153ced1555e0b803a4fc1ca78d33e7e46202044b603c8a3825bfa591eb3c3c84
