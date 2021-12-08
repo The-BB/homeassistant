@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python-pyturbojpeg
 PKG_VERSION:=1.6.1
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=PyTurboJPEG
 PKG_HASH:=4625a40e80444cc62280075bc5d8f9c5be61b7d990e6ace27c4d689aa4d5665a
