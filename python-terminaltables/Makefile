@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python-terminaltables
 PKG_VERSION:=3.1.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=terminaltables
 PKG_HASH:=f3eb0eb92e3833972ac36796293ca0906e998dc3be91fbe1f8615b331b853b81
