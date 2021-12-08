@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python-jose
 PKG_VERSION:=3.2.0
-PKG_RELEASE:=2
+PKG_RELEASE:=3
 
 PYPI_NAME:=python-jose
 PKG_HASH:=4e4192402e100b5fb09de5a8ea6bcc39c36ad4526341c123d401e2561720335b
