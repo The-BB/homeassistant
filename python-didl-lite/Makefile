@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python-didl-lite
 PKG_VERSION:=1.3.1
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=python-didl-lite
 PKG_HASH:=094d4910baa5b014d0f1479ee6716b9c8891612ef8548dfc91f8dbe3b41f997d
