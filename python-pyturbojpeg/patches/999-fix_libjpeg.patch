@@ -8,7 +8,7 @@
          '/usr/lib/x86_64-linux-gnu/libturbojpeg.so.0',
          '/usr/lib64/libturbojpeg.so.0',
          '/opt/libjpeg-turbo/lib64/libturbojpeg.so'
-@@ -888,7 +889,7 @@ class TurboJPEG(object):
+@@ -887,7 +888,7 @@ class TurboJPEG(object):
          if platform.system() == 'Linux' and 'LD_LIBRARY_PATH' in os.environ:
              ld_library_path = os.environ['LD_LIBRARY_PATH']
              for path in ld_library_path.split(':'):
