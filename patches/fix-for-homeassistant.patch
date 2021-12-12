@@ -56,8 +56,86 @@ index bf71978..7f65771 100644
  
  define Build/Prepare
  	$(call Build/Prepare/Default)
+diff --git a/lang/python/python-aiohttp/Makefile b/lang/python/python-aiohttp/Makefile
+index 007f41b..e0fcf07 100644
+--- a/lang/python/python-aiohttp/Makefile
++++ b/lang/python/python-aiohttp/Makefile
+@@ -4,15 +4,16 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=aiohttp
+-PKG_VERSION:=3.7.4.post0
++PKG_VERSION:=3.8.1
+ PKG_RELEASE:=1
+ 
+ PYPI_NAME:=$(PKG_NAME)
+-PKG_HASH:=493d3299ebe5f5a7c66b9819eacdcfbbaaf1a8e84911ddffcdc48888497afecf
++PKG_HASH:=fc5471e1a54de15ef71c1bc6ebe80d4dc681ea600e68bfd1cbce40427f0b7578
+ 
+ PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
+ PKG_LICENSE:=Apache-2.0
+@@ -32,15 +33,16 @@ define Package/python3-aiohttp
+   DEPENDS:= \
+ 	+python3-light \
+ 	+python3-attrs \
+-	+python3-chardet \
++	+python3-charset-normalizer \
+ 	+python3-multidict \
+ 	+python3-async-timeout \
+ 	+python3-yarl \
++	+python3-frozenlist \
++	+python3-aiosignal \
+ 	+python3-logging \
+ 	+python3-codecs \
+ 	+python3-cgi \
+-	+python3-openssl \
+-	+python3-typing-extensions
++	+python3-openssl
+ endef
+ 
+ define Package/python3-aiohttp/description
+diff --git a/lang/python/python-async-timeout/Makefile b/lang/python/python-async-timeout/Makefile
+index cb66dd0..d485ea6 100644
+--- a/lang/python/python-async-timeout/Makefile
++++ b/lang/python/python-async-timeout/Makefile
+@@ -4,16 +4,17 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=async-timeout
+-PKG_VERSION:=3.0.1
+-PKG_RELEASE:=2
++PKG_VERSION:=4.0.0
++PKG_RELEASE:=1
+ 
+ PYPI_NAME:=async_timeout
+ PYPI_SOURCE_NAME:=async-timeout
+-PKG_HASH:=0c3c816a028d47f659d6ff5c745cb2acf1f966da1fe5c19c77a70282b25f4c5f
++PKG_HASH:=7d87a4e8adba8ededb52e579ce6bc8276985888913620c935094c2276fd83382
+ 
+ PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
+ PKG_LICENSE:=Apache-2.0
+@@ -31,7 +32,8 @@ define Package/python3-async-timeout
+   URL:=https://github.com/aio-libs/async-timeout
+   DEPENDS:= \
+   +python3-light \
+-  +python3-asyncio
++  +python3-asyncio \
++  +python3-typing-extensions
+ endef
+ 
+ define Package/python3-async-timeout/description
 diff --git a/lang/python/python-awesomeversion/Makefile b/lang/python/python-awesomeversion/Makefile
-index 73fc231..a7af072 100644
+index 73fc231..2667a70 100644
 --- a/lang/python/python-awesomeversion/Makefile
 +++ b/lang/python/python-awesomeversion/Makefile
 @@ -4,15 +4,16 @@
@@ -71,12 +149,12 @@ index 73fc231..a7af072 100644
  PKG_NAME:=python-awesomeversion
 -PKG_VERSION:=21.8.1
 -PKG_RELEASE:=$(AUTORELEASE)
-+PKG_VERSION:=21.10.1
++PKG_VERSION:=21.11.0
 +PKG_RELEASE:=1
  
  PYPI_NAME:=awesomeversion
 -PKG_HASH:=a72f3fff12df257e30f5e25a8550fc4da62e7591d5fdb70714f5c96827c37645
-+PKG_HASH:=871318fbb7940d0e36ba6f9b3a07cc5ce84d810986522ef19262e82b55be5c8b
++PKG_HASH:=ef8f7bb458a6dd16ec95e28553df3b6c556de8bc93fb13f142eb95a357cfc3a0
  
  PKG_MAINTAINER:=Josef Schlehofer <josef.schlehofer@nic.cz>
  PKG_LICENSE:=MIT
@@ -309,7 +387,7 @@ index a6e04f9..8ab5ce8 100644
  PKG_MAINTAINER:=Daniel Danzberger <daniel@dd-wrt.com>
  PKG_LICENSE:=MIT
 diff --git a/lang/python/python-sqlalchemy/Makefile b/lang/python/python-sqlalchemy/Makefile
-index f15cbb3..c68cdce 100644
+index f15cbb3..bda4fe0 100644
 --- a/lang/python/python-sqlalchemy/Makefile
 +++ b/lang/python/python-sqlalchemy/Makefile
 @@ -4,15 +4,16 @@
@@ -322,15 +400,25 @@ index f15cbb3..c68cdce 100644
  
  PKG_NAME:=python-sqlalchemy
 -PKG_VERSION:=1.4.22
-+PKG_VERSION:=1.4.23
++PKG_VERSION:=1.4.27
  PKG_RELEASE:=1
  
  PYPI_NAME:=SQLAlchemy
 -PKG_HASH:=ec1be26cdccd60d180359a527d5980d959a26269a2c7b1b327a1eea0cab37ed8
-+PKG_HASH:=76ff246881f528089bf19385131b966197bb494653990396d2ce138e2a447583
++PKG_HASH:=d768359daeb3a86644f3854c6659e4496a3e6bba2b4651ecc87ce7ad415b320c
  
  PKG_MAINTAINER:=Josef Schlehofer <josef.schlehofer@nic.cz>
  PKG_LICENSE:=MIT
+@@ -33,7 +34,8 @@ define Package/python3-sqlalchemy
+ 	+python3-light \
+ 	+python3-urllib \
+ 	+python3-decimal \
+-	+python3-logging
++	+python3-logging \
++	+python3-greenlet
+ endef
+ 
+ define Package/python3-sqlalchemy/description
 diff --git a/lang/python/python-urllib3/Makefile b/lang/python/python-urllib3/Makefile
 index 8812c0e..054856a 100644
 --- a/lang/python/python-urllib3/Makefile
@@ -382,7 +470,7 @@ index c5f04a2..e098a3e 100644
  PKG_LICENSE:=BSD-3-Clause
  PKG_LICENSE_FILES:=COPYING
 diff --git a/lang/python/python-zeroconf/Makefile b/lang/python/python-zeroconf/Makefile
-index 121a3f9..ebdaa93 100644
+index 121a3f9..e124f13 100644
 --- a/lang/python/python-zeroconf/Makefile
 +++ b/lang/python/python-zeroconf/Makefile
 @@ -4,15 +4,16 @@
@@ -395,12 +483,12 @@ index 121a3f9..ebdaa93 100644
  
  PKG_NAME:=python-zeroconf
 -PKG_VERSION:=0.29.0
-+PKG_VERSION:=0.36.13
++PKG_VERSION:=0.37.0
  PKG_RELEASE:=1
  
  PYPI_NAME:=zeroconf
 -PKG_HASH:=7aefbb658b452b1fd7e51124364f938c6f5e42d6ea893fa2557bea8c06c540af
-+PKG_HASH:=196fa1bd6e166f0333e3e9fff076f9991bf2719c4788287eaec577c241ef96bf
++PKG_HASH:=f901eda390160bc270aeba95ef2d6aa0a736503301dac393e7d5fd95fa17043a
  
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
