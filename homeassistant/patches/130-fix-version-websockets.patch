@@ -1,0 +1,19 @@
+--- a/homeassistant/package_constraints.txt
++++ b/homeassistant/package_constraints.txt
+@@ -83,4 +83,4 @@ anyio>=3.3.1
+ 
+ # websockets 10.0 is broken with AWS
+ # https://github.com/aaugustin/websockets/issues/1065
+-websockets==9.1
++websockets>=10.1
+--- a/script/gen_requirements_all.py
++++ b/script/gen_requirements_all.py
+@@ -109,7 +109,7 @@ anyio>=3.3.1
+ 
+ # websockets 10.0 is broken with AWS
+ # https://github.com/aaugustin/websockets/issues/1065
+-websockets==9.1
++websockets>=10.1
+ """
+ 
+ IGNORE_PRE_COMMIT_HOOK_ID = (
