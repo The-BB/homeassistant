@@ -493,7 +493,7 @@ index c5f04a2..e098a3e 100644
  PKG_LICENSE:=BSD-3-Clause
  PKG_LICENSE_FILES:=COPYING
 diff --git a/lang/python/python-zeroconf/Makefile b/lang/python/python-zeroconf/Makefile
-index 121a3f9..e124f13 100644
+index 121a3f9..fdb52c6 100644
 --- a/lang/python/python-zeroconf/Makefile
 +++ b/lang/python/python-zeroconf/Makefile
 @@ -4,15 +4,16 @@
@@ -506,12 +506,12 @@ index 121a3f9..e124f13 100644
  
  PKG_NAME:=python-zeroconf
 -PKG_VERSION:=0.29.0
-+PKG_VERSION:=0.37.0
++PKG_VERSION:=0.38.1
  PKG_RELEASE:=1
  
  PYPI_NAME:=zeroconf
 -PKG_HASH:=7aefbb658b452b1fd7e51124364f938c6f5e42d6ea893fa2557bea8c06c540af
-+PKG_HASH:=f901eda390160bc270aeba95ef2d6aa0a736503301dac393e7d5fd95fa17043a
++PKG_HASH:=10c501b25d8881b656e56c34674d98fe6bc752240a572e74f918bc849c93ba9c
  
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
