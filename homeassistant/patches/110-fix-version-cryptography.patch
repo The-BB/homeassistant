@@ -18,8 +18,8 @@
 -cryptography==35.0.0
 +cryptography==3.4.8
  emoji==1.5.0
- hass-nabucasa==0.50.0
- home-assistant-frontend==20211229.0
+ hass-nabucasa==0.51.0
+ home-assistant-frontend==20211229.1
 --- a/setup.py
 +++ b/setup.py
 @@ -47,7 +47,7 @@ REQUIRES = [
