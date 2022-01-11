@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python-josepy
-PKG_VERSION:=1.4.0
-PKG_RELEASE:=2
+PKG_VERSION:=1.9.0
+PKG_RELEASE:=1
 
 PYPI_NAME:=josepy
-PKG_HASH:=c37ff4b93606e6a452b72cdb992da5e0544be12912fac01b31ddbdd61f6d5bd0
+PKG_HASH:=51cce8d97ced0556aae0ce3161b26d5f0f54bc42c749d3c606edc6d97d9802dc
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.txt
@@ -25,8 +25,7 @@ define Package/python3-josepy
   DEPENDS:= \
 	+python3-cryptography \
 	+python3-pyopenssl \
-	+python3-setuptools \
-	+python3-six
+	+python3-setuptools
 endef
 
 define Package/python3-josepy/description
