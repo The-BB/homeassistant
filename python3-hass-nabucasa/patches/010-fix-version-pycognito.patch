@@ -1,0 +1,19 @@
+--- a/hass_nabucasa.egg-info/requires.txt
++++ b/hass_nabucasa.egg-info/requires.txt
+@@ -1,4 +1,4 @@
+-pycognito==2022.01.0
++pycognito==2022.1.0
+ snitun==0.30.0
+ acme==1.22.0
+ cryptography<37.0,>=2.8
+--- a/setup.py
++++ b/setup.py
+@@ -30,7 +30,7 @@ setup(
+     packages=["hass_nabucasa"],
+     python_requires=">=3.8",
+     install_requires=[
+-        "pycognito==2022.01.0",
++        "pycognito==2022.1.0",
+         "snitun==0.30.0",
+         "acme==1.22.0",
+         "cryptography>=2.8,<37.0",

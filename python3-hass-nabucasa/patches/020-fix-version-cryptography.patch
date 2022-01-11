@@ -1,0 +1,22 @@
+--- a/hass_nabucasa.egg-info/requires.txt
++++ b/hass_nabucasa.egg-info/requires.txt
+@@ -1,7 +1,7 @@
+ pycognito==2022.1.0
+ snitun==0.30.0
+ acme==1.22.0
+-cryptography<37.0,>=2.8
++cryptography<4.0,>=2.8
+ attrs>=19.3
+ pytz>=2019.3
+ aiohttp>=3.6.1
+--- a/setup.py
++++ b/setup.py
+@@ -33,7 +33,7 @@ setup(
+         "pycognito==2022.1.0",
+         "snitun==0.30.0",
+         "acme==1.22.0",
+-        "cryptography>=2.8,<37.0",
++        "cryptography>=2.8,<4.0",
+         "attrs>=19.3",
+         "pytz>=2019.3",
+         "aiohttp>=3.6.1",
