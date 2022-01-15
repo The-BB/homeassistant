@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant-cli
 PKG_VERSION:=0.9.4
-PKG_RELEASE:=2
+PKG_RELEASE:=3
 
 PYPI_NAME:=$(PKG_NAME)
 PKG_HASH:=4e74591d6400c7b1ba93e8967d39ce00c2789523508406c6cbc8fd712ff6710e
@@ -30,9 +30,33 @@ define Package/homeassistant-cli
 	+python3-jsonpath-ng \
 	+python3-netdisco \
 	+python3-regex \
-	+python3-ruamel-yaml \
 	+python3-requests \
+	+python3-ruamel-yaml \
 	+python3-tabulate
+# ext
+  DEPENDS+= \
+	+python3-aiohttp-cors \
+	+python3-astral \
+	+python3-async-timeout \
+	+python3-attrs \
+	+python3-awesomeversion \
+	+python3-btlewrap \
+	+python3-certifi \
+	+python3-ciso8601 \
+	+python3-cryptodome \
+	+python3-cryptography \
+	+python3-h11 \
+	+python3-httpcore \
+	+python3-httpx \
+	+python3-pip \
+	+python3-pyjwt \
+	+python3-pytz \
+	+python3-urllib3 \
+	+python3-voluptuous-serialize \
+	+python3-voluptuous \
+	+python3-yaml \
+	+python3-yarl \
+	+python3-zeroconf
 endef
 
 define Package/homeassistant-cli/description
