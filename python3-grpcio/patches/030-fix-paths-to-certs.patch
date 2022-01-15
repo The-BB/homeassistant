@@ -1,0 +1,44 @@
+--- a/src/core/lib/security/security_connector/load_system_roots_linux.cc
++++ b/src/core/lib/security/security_connector/load_system_roots_linux.cc
+@@ -52,12 +52,11 @@ namespace grpc_core {
+ namespace {
+ 
+ const char* kLinuxCertFiles[] = {
+-    "/etc/ssl/certs/ca-certificates.crt", "/etc/pki/tls/certs/ca-bundle.crt",
+-    "/etc/ssl/ca-bundle.pem", "/etc/pki/tls/cacert.pem",
+-    "/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem"};
++    "/opt/etc/ssl/certs/ca-certificates.crt", "/opt/etc/pki/tls/certs/ca-bundle.crt",
++    "/opt/etc/ssl/ca-bundle.pem", "/opt/etc/pki/tls/cacert.pem",
++    "/opt/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem"};
+ const char* kLinuxCertDirectories[] = {
+-    "/etc/ssl/certs", "/system/etc/security/cacerts", "/usr/local/share/certs",
+-    "/etc/pki/tls/certs", "/etc/openssl/certs"};
++    "/opt/etc/ssl/certs", "/opt/etc/pki/tls/certs"};
+ 
+ grpc_slice GetSystemRootCerts() {
+   grpc_slice valid_bundle_slice = grpc_empty_slice();
+--- a/src/core/lib/security/security_connector/ssl_utils.cc
++++ b/src/core/lib/security/security_connector/ssl_utils.cc
+@@ -45,9 +45,9 @@
+ static const char* installed_roots_path = GRPC_ROOT_PEM_PATH;
+ #elif defined(INSTALL_PREFIX)
+ static const char* installed_roots_path =
+-    INSTALL_PREFIX "/usr/share/grpc/roots.pem";
++    INSTALL_PREFIX "/share/grpc/roots.pem";
+ #else
+-static const char* installed_roots_path = "/usr/share/grpc/roots.pem";
++static const char* installed_roots_path = "/opt/share/grpc/roots.pem";
+ #endif
+ 
+ #ifndef TSI_OPENSSL_ALPN_SUPPORT
+--- a/third_party/boringssl-with-bazel/src/crypto/x509/x509_def.c
++++ b/third_party/boringssl-with-bazel/src/crypto/x509/x509_def.c
+@@ -62,7 +62,7 @@
+ #if defined(OPENSSL_FUCHSIA)
+ #define OPENSSLDIR "/config/ssl"
+ #else
+-#define OPENSSLDIR "/etc/ssl"
++#define OPENSSLDIR "/opt/etc/ssl"
+ #endif
+ 
+ #define X509_CERT_AREA          OPENSSLDIR

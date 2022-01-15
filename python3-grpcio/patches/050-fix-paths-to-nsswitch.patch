@@ -1,0 +1,58 @@
+--- a/third_party/cares/cares/ares_init.c
++++ b/third_party/cares/cares/ares_init.c
+@@ -1723,7 +1723,7 @@ static int init_by_resolv_conf(ares_chan
+ 
+     if ((status == ARES_EOF) && (!channel->lookups)) {
+       /* Many systems (Solaris, Linux, BSD's) use nsswitch.conf */
+-      fp = fopen("/etc/nsswitch.conf", "r");
++      fp = fopen("/opt/etc/nsswitch.conf", "r");
+       if (fp) {
+         while ((status = ares__read_line(fp, &line, &linesize)) ==
+                ARES_SUCCESS)
+@@ -1743,7 +1743,7 @@ static int init_by_resolv_conf(ares_chan
+           DEBUGF(fprintf(stderr, "fopen() failed with error: %d %s\n",
+                          error, strerror(error)));
+           DEBUGF(fprintf(stderr, "Error opening file: %s\n",
+-                         "/etc/nsswitch.conf"));
++                         "/opt/etc/nsswitch.conf"));
+         }
+ 
+         /* ignore error, maybe we will get luck in next if clause */
+--- a/third_party/cares/cares/test/ares-test-init.cc
++++ b/third_party/cares/cares/test/ares-test-init.cc
+@@ -330,7 +330,7 @@ NameContentList filelist = {
+                        "sortlist 1.2.3.4/16 2.3.4.5\n"
+                        "search first.com second.com\n"},
+   {"/etc/hosts", "3.4.5.6 ahostname.com\n"},
+-  {"/etc/nsswitch.conf", "hosts: files\n"}};
++  {"/opt/etc/nsswitch.conf", "hosts: files\n"}};
+ CONTAINED_TEST_F(LibraryTest, ContainerChannelInit,
+                  "myhostname", "mydomainname.org", filelist) {
+   ares_channel channel = nullptr;
+@@ -493,7 +493,7 @@ CONTAINED_TEST_F(LibraryTest, ContainerN
+                  "myhostname", "mydomainname.org", filelist) {
+   ares_channel channel = nullptr;
+   // Unavailable /etc/nsswitch.conf falls back to defaults.
+-  MakeUnreadable hide("/etc/nsswitch.conf");
++  MakeUnreadable hide("/opt/etc/nsswitch.conf");
+   EXPECT_EQ(ARES_SUCCESS, ares_init(&channel));
+ 
+   struct ares_options opts;
+@@ -592,7 +592,7 @@ CONTAINED_TEST_F(LibraryTest, ContainerB
+ NameContentList multiresolv = {
+   {"/etc/resolv.conf", " nameserver 1::2 ;  ;;\n"
+                        " domain first.com\n"},
+-  {"/etc/nsswitch.conf", "hosts: files\n"}};
++  {"/opt/etc/nsswitch.conf", "hosts: files\n"}};
+ CONTAINED_TEST_F(LibraryTest, ContainerMultiResolvInit,
+                  "myhostname", "mydomainname.org", multiresolv) {
+   ares_channel channel = nullptr;
+@@ -615,7 +615,7 @@ CONTAINED_TEST_F(LibraryTest, ContainerM
+ NameContentList systemdresolv = {
+   {"/etc/resolv.conf", "nameserver 1.2.3.4\n"
+                        "domain first.com\n"},
+-  {"/etc/nsswitch.conf", "hosts: junk resolve files\n"}};
++  {"/opt/etc/nsswitch.conf", "hosts: junk resolve files\n"}};
+ CONTAINED_TEST_F(LibraryTest, ContainerSystemdResolvInit,
+                  "myhostname", "mydomainname.org", systemdresolv) {
+   ares_channel channel = nullptr;

@@ -1,0 +1,49 @@
+--- a/third_party/abseil-cpp/absl/time/internal/cctz/src/time_zone_info.cc
++++ b/third_party/abseil-cpp/absl/time/internal/cctz/src/time_zone_info.cc
+@@ -632,7 +632,7 @@ std::unique_ptr<ZoneInfoSource> FileZone
+   // Map the time-zone name to a path name.
+   std::string path;
+   if (pos == name.size() || name[pos] != '/') {
+-    const char* tzdir = "/usr/share/zoneinfo";
++    const char* tzdir = "/opt/share/zoneinfo";
+     char* tzdir_env = nullptr;
+ #if defined(_MSC_VER)
+     _dupenv_s(&tzdir_env, nullptr, "TZDIR");
+--- a/third_party/abseil-cpp/absl/time/internal/cctz/src/time_zone_lookup.cc
++++ b/third_party/abseil-cpp/absl/time/internal/cctz/src/time_zone_lookup.cc
+@@ -210,7 +210,7 @@ time_zone local_time_zone() {
+     // System-specific default is just "localtime".
+     _dupenv_s(&localtime_env, nullptr, "LOCALTIME");
+ #else
+-    zone = "/etc/localtime";  // System-specific default.
++    zone = "/opt/etc/localtime";  // System-specific default.
+     localtime_env = std::getenv("LOCALTIME");
+ #endif
+     if (localtime_env) zone = localtime_env;
+--- a/third_party/abseil-cpp/absl/time/internal/cctz/src/tzfile.h
++++ b/third_party/abseil-cpp/absl/time/internal/cctz/src/tzfile.h
+@@ -22,11 +22,11 @@
+ */
+ 
+ #ifndef TZDIR
+-#define TZDIR "/usr/share/zoneinfo" /* Time zone object file directory */
++#define TZDIR "/opt/share/zoneinfo" /* Time zone object file directory */
+ #endif                              /* !defined TZDIR */
+ 
+ #ifndef TZDEFAULT
+-#define TZDEFAULT "/etc/localtime"
++#define TZDEFAULT "/opt/etc/localtime"
+ #endif /* !defined TZDEFAULT */
+ 
+ #ifndef TZDEFRULES
+--- a/third_party/abseil-cpp/absl/time/internal/test_util.cc
++++ b/third_party/abseil-cpp/absl/time/internal/test_util.cc
+@@ -76,7 +76,7 @@ const struct ZoneInfo {
+     {"localtime",  //
+      reinterpret_cast<char*>(America_Los_Angeles), America_Los_Angeles_len},
+ #else
+-    {"/etc/localtime",  //
++    {"/opt/etc/localtime",  //
+      reinterpret_cast<char*>(America_Los_Angeles), America_Los_Angeles_len},
+ #endif
+ };

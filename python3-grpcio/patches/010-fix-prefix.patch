@@ -1,0 +1,11 @@
+--- a/Makefile
++++ b/Makefile
+@@ -252,7 +252,7 @@ DEFINES_ubsan = NDEBUG GRPC_UBSAN
+ # General settings.
+ # You may want to change these depending on your system.
+ 
+-prefix ?= /usr/local
++prefix ?= /opt
+ 
+ DTRACE ?= dtrace
+ CONFIG ?= opt
