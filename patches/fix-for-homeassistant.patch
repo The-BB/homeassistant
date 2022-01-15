@@ -1,5 +1,5 @@
 diff --git a/lang/python/numpy/Makefile b/lang/python/numpy/Makefile
-index bf71978..7f65771 100644
+index bf71978..f148139 100644
 --- a/lang/python/numpy/Makefile
 +++ b/lang/python/numpy/Makefile
 @@ -35,34 +35,35 @@ define Package/python3-numpy
@@ -56,6 +56,21 @@ index bf71978..7f65771 100644
  
  define Build/Prepare
  	$(call Build/Prepare/Default)
+@@ -77,6 +78,14 @@ For some modules to be available, the INSTALL_GFORTRAN symbol needs
+ to be enabled in the OpenWrt core/toolchain.
+ endef
+ 
++define Build/InstallDev
++	$(INSTALL_DIR) $(1)/opt/include/numpy
++	$(CP) $(PKG_BUILD_DIR)/numpy/core/include/numpy/* $(1)/opt/include/numpy
++	$(CP) \
++		$(PKG_BUILD_DIR)/build/src.linux-$(ARCH)-$(PYTHON3_VERSION)/numpy/core/include/numpy/*.h \
++			$(1)/opt/include/numpy
++endef
++
+ $(eval $(call Py3Package,python3-numpy))
+ $(eval $(call BuildPackage,python3-numpy))
+ $(eval $(call BuildPackage,python3-numpy-src))
 diff --git a/lang/python/python-aiohttp/Makefile b/lang/python/python-aiohttp/Makefile
 index 007f41b..e0fcf07 100644
 --- a/lang/python/python-aiohttp/Makefile
@@ -492,6 +507,29 @@ index c5f04a2..e098a3e 100644
  
  PKG_LICENSE:=BSD-3-Clause
  PKG_LICENSE_FILES:=COPYING
+diff --git a/lang/python/python-websockets/Makefile b/lang/python/python-websockets/Makefile
+index b669fa7..1b0e9f1 100644
+--- a/lang/python/python-websockets/Makefile
++++ b/lang/python/python-websockets/Makefile
+@@ -4,15 +4,16 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=python-websockets
+-PKG_VERSION:=10.0
++PKG_VERSION:=10.1
+ PKG_RELEASE:=$(AUTORELEASE)
+ 
+ PYPI_NAME:=websockets
+-PKG_HASH:=c4fc9a1d242317892590abe5b61a9127f1a61740477bfb121743f290b8054002
++PKG_HASH:=181d2b25de5a437b36aefedaf006ecb6fa3aa1328ec0236cdde15f32f9d3ff6d
+ 
+ PKG_MAINTAINER:=Michal Vasilek <michal.vasilek@nic.cz>
+ PKG_LICENSE:=BSD-3-Clause
 diff --git a/lang/python/python-zeroconf/Makefile b/lang/python/python-zeroconf/Makefile
 index 121a3f9..fdb52c6 100644
 --- a/lang/python/python-zeroconf/Makefile
@@ -548,6 +586,21 @@ index 1f8cf55..f3615b7 100644
  endef
  
  define Package/python3-pyroute2/description
+diff --git a/libs/libre2/Makefile b/libs/libre2/Makefile
+index 972cbf2..d48ac93 100644
+--- a/libs/libre2/Makefile
++++ b/libs/libre2/Makefile
+@@ -39,8 +39,8 @@ TARGET_LDFLAGS += \
+ 	-Wl,--as-needed,--gc-sections
+ 
+ define Package/re2/install
+-	$(INSTALL_DIR) $(1)/usr/lib
+-	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/usr/lib/libre2.so $(1)/usr/lib/
++	$(INSTALL_DIR) $(1)/opt/lib
++	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/opt/lib/libre2.so $(1)/opt/lib/
+ endef
+ 
+ $(eval $(call BuildPackage,re2))
 diff --git a/net/scapy/Makefile b/net/scapy/Makefile
 index 6cf711b..79b11c7 100644
 --- a/net/scapy/Makefile
