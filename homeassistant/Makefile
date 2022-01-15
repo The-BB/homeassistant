@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
 PKG_VERSION:=2021.12.9
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=$(PKG_NAME)
 PKG_HASH:=803db7362686f460cf231a1396e48f432f538a6a9612cc6a763eb7fa246180e2
@@ -64,7 +64,6 @@ define Package/homeassistant
 	+python3-zeroconf \
 	+scapy
 # ext
-# ? btlewrap, google-cloud-pubsub, google-api-core, grpcio, pandas ? 
   DEPENDS+= \
 	+python3-cryptodome \
 	+python3-gtts \
@@ -75,9 +74,18 @@ define Package/homeassistant
 	+python3-pymetno \
 	+python3-pyotp \
 	+python3-pyqrcode \
+	+python3-regex \
 	+python3-urllib3 \
 	+python3-websocket-client \
+	+python3-websockets \
 	+python3-xmltodict
+# ? btlewrap, google-cloud-pubsub, google-api-core, grpcio, pandas ?
+  DEPENDS+= \
+	+python3-btlewrap \
+	+python3-google-api-core \
+	+python3-google-cloud-pubsub \
+	+python3-grpcio \
+	+python3-pandas
 endef
 
 define Package/homeassistant/description
@@ -96,8 +104,8 @@ endef
 define Package/homeassistant/postinst
 #!/bin/sh
 
-echo -e "\n\t *** Prepare your device to use the Home Assistant ***\n\n\t \
-	Please read the wiki:\n\t\t \
+echo -e "\n\t *** Prepare your device to use the Home Assistant ***\n\n\t
+	Please read the wiki:\n\t\t
 	https://github.com/Entware/Entware/wiki/Self-installation-of-python-modules\n"
 endef
 
