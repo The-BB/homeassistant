@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-hass-nabucasa
 PKG_VERSION:=0.51.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=hass-nabucasa
 PKG_HASH:=06190e26af0da018c1909f12c4f60ae2b72f24037b43351918c0e2eec95cc83b
