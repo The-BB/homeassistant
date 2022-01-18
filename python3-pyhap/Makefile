@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-pyhap
-PKG_VERSION:=4.3.0
-PKG_RELEASE:=2
+PKG_VERSION:=4.4.0
+PKG_RELEASE:=1
 
 PYPI_NAME:=HAP-python
-PKG_HASH:=0c126f789afbc32a7379bb4218f748b5030cbeceeaefdde6bf89a00280bf4bf3
+PKG_HASH:=8a6dbe335de434fc96486a9dcad668a85d44cb7c95241f4f9fb68fd32c5ab484
 
 PKG_LICENSE:=Apache-2.0
 
@@ -25,6 +25,10 @@ define Package/python3-pyhap
 	+python3-cryptography \
 	+python3-h11 \
 	+python3-zeroconf
+#[QRCode]
+  DEPENDS+= \
+	+python3-base36 \
+	+python3-pyqrcode
 endef
 
 define Package/python3-pyhap/description
