@@ -174,7 +174,7 @@ index 73fc231..2667a70 100644
  PKG_MAINTAINER:=Josef Schlehofer <josef.schlehofer@nic.cz>
  PKG_LICENSE:=MIT
 diff --git a/lang/python/python-boto3/Makefile b/lang/python/python-boto3/Makefile
-index 27f69b3..646aa91 100644
+index 27f69b3..ae4c3ec 100644
 --- a/lang/python/python-boto3/Makefile
 +++ b/lang/python/python-boto3/Makefile
 @@ -1,11 +1,13 @@
@@ -185,17 +185,17 @@ index 27f69b3..646aa91 100644
  PKG_NAME:=boto3
 -PKG_VERSION:=1.9.135
 -PKG_RELEASE:=2
-+PKG_VERSION:=1.16.3
++PKG_VERSION:=1.16.52
 +PKG_RELEASE:=1
  
  PYPI_NAME:=$(PKG_NAME)
 -PKG_HASH:=5e5805992e873e5687b5ef3b4c56c386ccb4df1c3364f8b8601d289e2f275be1
-+PKG_HASH:=e2857738affb394bbe96473de2ed01331685d6e313bb1a3328fd5f47841429cc
++PKG_HASH:=360a9f805b11f2e468d48815193c55278765fb30b64350893ab63236a5034726
  
  PKG_MAINTAINER:=Daniel Danzberger <daniel@dd-wrt.com>
  PKG_LICENSE:=Apache-2.0
 diff --git a/lang/python/python-botocore/Makefile b/lang/python/python-botocore/Makefile
-index 739be11..9014ae3 100644
+index 739be11..9416690 100644
 --- a/lang/python/python-botocore/Makefile
 +++ b/lang/python/python-botocore/Makefile
 @@ -1,11 +1,13 @@
@@ -206,12 +206,12 @@ index 739be11..9014ae3 100644
  PKG_NAME:=botocore
 -PKG_VERSION:=1.12.66
 -PKG_RELEASE:=2
-+PKG_VERSION:=1.19.3
-+PKG_RELEASE:=1a
++PKG_VERSION:=1.19.52
++PKG_RELEASE:=1
  
  PYPI_NAME:=$(PKG_NAME)
 -PKG_HASH:=25c39ecc71356287cf79d66981ec77deca374e28043b19b2f818d48aa34272a1
-+PKG_HASH:=4ea4c74d244c1b4701387fd1abe6a5e1833dc621c6d39f8888f0bfa95ddd82f5
++PKG_HASH:=dc5ec23deadbe9327d3c81d03fddf80805c549059baabd80dea605941fe6a221
  
  PKG_MAINTAINER:=Daniel Danzberger <daniel@dd-wrt.com>
  PKG_LICENSE:=MIT
@@ -586,6 +586,68 @@ index 1f8cf55..f3615b7 100644
  endef
  
  define Package/python3-pyroute2/description
+diff --git a/libs/libjpeg-turbo/Makefile b/libs/libjpeg-turbo/Makefile
+index 6e61b0f..4b2962f 100644
+--- a/libs/libjpeg-turbo/Makefile
++++ b/libs/libjpeg-turbo/Makefile
+@@ -2,7 +2,7 @@ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=libjpeg-turbo
+ PKG_VERSION:=2.1.1
+-PKG_RELEASE:=1
++PKG_RELEASE:=1a
+ 
+ PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
+ PKG_SOURCE_URL:=@SF/$(PKG_NAME)
+@@ -30,6 +30,13 @@ define Package/libjpeg-turbo
+   PROVIDES:=libjpeg
+ endef
+ 
++define Package/libturbojpeg
++  $(call Package/libjpeg-turbo/Default)
++  SECTION:=libs
++  CATEGORY:=Libraries
++  TITLE+= runtime library
++endef
++
+ define Package/libjpeg-turbo-utils
+   $(call Package/libjpeg-turbo/Default)
+   SECTION:=utils
+@@ -60,7 +67,7 @@ CMAKE_OPTIONS += \
+ 	-DWITH_JPEG8=OFF \
+ 	-DWITH_MEM_SRCDST=ON \
+ 	-DWITH_SIMD=O$(if $(findstring mips,$(CONFIG_ARCH)),FF,N) \
+-	-DWITH_TURBOJPEG=OFF
++	-DWITH_TURBOJPEG=TRUE
+ 
+ ifneq ($(findstring arm,$(CONFIG_ARCH)),)
+ ifeq ($(findstring neon,$(CONFIG_CPU_TYPE)),)
+@@ -73,6 +80,7 @@ define Build/InstallDev
+ 	$(CP) $(PKG_INSTALL_DIR)/opt/include/*.h $(1)/opt/include/
+ 	$(INSTALL_DIR) $(1)/opt/lib
+ 	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libjpeg.so* $(1)/opt/lib/
++	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libturbojpeg.so* $(1)/opt/lib/
+ 	$(INSTALL_DIR) $(1)/opt/lib/pkgconfig
+ 	$(CP) $(PKG_INSTALL_DIR)/opt/lib/pkgconfig/*.pc $(1)/opt/lib/pkgconfig/
+ 	$(SED) 's,/opt/include,$$$${prefix}/include,g' $(1)/opt/lib/pkgconfig/libjpeg.pc
+@@ -86,6 +94,11 @@ define Package/libjpeg-turbo/install
+ 	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libjpeg.so* $(1)/opt/lib
+ endef
+ 
++define Package/libturbojpeg/install
++	$(INSTALL_DIR) $(1)/opt/lib
++	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libturbojpeg.so* $(1)/opt/lib
++endef
++
+ define Package/libjpeg-turbo-utils/install
+ 	$(INSTALL_DIR) $(1)/opt/bin
+ 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/rdjpgcom $(1)/opt/bin
+@@ -96,4 +109,5 @@ define Package/libjpeg-turbo-utils/install
+ endef
+ 
+ $(eval $(call BuildPackage,libjpeg-turbo))
++$(eval $(call BuildPackage,libturbojpeg))
+ $(eval $(call BuildPackage,libjpeg-turbo-utils))
 diff --git a/libs/libre2/Makefile b/libs/libre2/Makefile
 index 972cbf2..d48ac93 100644
 --- a/libs/libre2/Makefile
