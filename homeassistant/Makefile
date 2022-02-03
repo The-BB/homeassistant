@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
-PKG_VERSION:=2021.12.10
+PKG_VERSION:=2022.2.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=f99d64e0c5bcda1f45c34c9393a93afe6e8ea07dd1d855c7b5cad83d18bc993d
+PKG_HASH:=5459fd9c65a0dde86495c5122d4063706ff08e618d46dea0b01e27f8bbd8189f
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -43,6 +43,7 @@ define Package/homeassistant
 	+python3-pyjwt \
 	+python3-requests \
 	+python3-slugify \
+	+python3-typing-extensions \
 	+python3-voluptuous \
 	+python3-voluptuous-serialize \
 	+python3-yaml \
@@ -65,10 +66,13 @@ define Package/homeassistant
 	+scapy
 # ext
   DEPENDS+= \
+	+python3-colorlog \
 	+python3-cryptodome \
 	+python3-gtts \
 	+python3-h11 \
+	+python3-httpcore \
 	+python3-httplib2 \
+	+python3-libcst \
 	+python3-mutagen \
 	+python3-paho-mqtt \
 	+python3-pymetno \
@@ -79,13 +83,15 @@ define Package/homeassistant
 	+python3-websocket-client \
 	+python3-websockets \
 	+python3-xmltodict
-# ? btlewrap, google-cloud-pubsub, google-api-core, grpcio, pandas ?
+# ? btlewrap, grpcio, pandas ?
   DEPENDS+= \
 	+python3-btlewrap \
-	+python3-google-api-core \
-	+python3-google-cloud-pubsub \
 	+python3-grpcio \
-	+python3-pandas
+	+python3-pandas \
+	+python3-pytest-asyncio \
+	+python3-engineio \
+	+python3-socketio \
+	+python3-multidict
 endef
 
 define Package/homeassistant/description
