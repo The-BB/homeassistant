@@ -1,3 +1,13 @@
+diff --git a/lang/python/host-pip-requirements/setuptools-scm.txt b/lang/python/host-pip-requirements/setuptools-scm.txt
+index 83b57e1..52121cb 100644
+--- a/lang/python/host-pip-requirements/setuptools-scm.txt
++++ b/lang/python/host-pip-requirements/setuptools-scm.txt
+@@ -1 +1,4 @@
+-setuptools-scm==6.0.1 --hash=sha256:d1925a69cb07e9b29416a275b9fadb009a23c148ace905b2fb220649a6c18e92
++setuptools-scm==6.4.2 --hash=sha256:6833ac65c6ed9711a4d5d2266f8024cfa07c533a0e55f4c12f6eff280a5a9e30
++packaging==21.3 --hash=sha256:dd47c42927d89ab911e606518907cc2d3a1f38bbd026385970643f9c5b8ecfeb
++tomli==2.0.0 --hash=sha256:c292c34f58502a1eb2bbb9f5bbc9a5ebc37bee10ffb8c2d6bbdfa8eb13cc14e1
++pyparsing==3.0.7 --hash=sha256:18ee9022775d270c55187733956460083db60b37d0d0fb357445f3094eed3eea
 diff --git a/lang/python/numpy/Makefile b/lang/python/numpy/Makefile
 index bf71978..f148139 100644
 --- a/lang/python/numpy/Makefile
@@ -71,6 +81,29 @@ index bf71978..f148139 100644
  $(eval $(call Py3Package,python3-numpy))
  $(eval $(call BuildPackage,python3-numpy))
  $(eval $(call BuildPackage,python3-numpy-src))
+diff --git a/lang/python/pillow/Makefile b/lang/python/pillow/Makefile
+index ffacb83..46b12aa 100644
+--- a/lang/python/pillow/Makefile
++++ b/lang/python/pillow/Makefile
+@@ -3,15 +3,16 @@
+ # Copyright © 1995-2011 by Fredrik Lundh
+ # Copyright © 2016 by Alex Clark and contributors
+ #
++# XXX bump
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=pillow
+-PKG_VERSION:=8.4.0
++PKG_VERSION:=9.0.0
+ PKG_RELEASE:=1
+ 
+ PYPI_NAME:=Pillow
+-PKG_HASH:=b8e2f83c56e141920c39464b852de3719dfbfb6e3c99a2d8da0edf4fb33176ed
++PKG_HASH:=ee6e2963e92762923956fe5d3479b1fdc3b76c83f290aad131a2f98c3df0593e
+ 
+ PKG_MAINTAINER:=Alexandru Ardelean <ardeleanalex@gmail.com>
+ PKG_LICENSE:=HPND
 diff --git a/lang/python/python-aiohttp/Makefile b/lang/python/python-aiohttp/Makefile
 index 007f41b..e0fcf07 100644
 --- a/lang/python/python-aiohttp/Makefile
@@ -115,7 +148,7 @@ index 007f41b..e0fcf07 100644
  
  define Package/python3-aiohttp/description
 diff --git a/lang/python/python-async-timeout/Makefile b/lang/python/python-async-timeout/Makefile
-index cb66dd0..d485ea6 100644
+index cb66dd0..d2c64e5 100644
 --- a/lang/python/python-async-timeout/Makefile
 +++ b/lang/python/python-async-timeout/Makefile
 @@ -4,16 +4,17 @@
@@ -129,28 +162,18 @@ index cb66dd0..d485ea6 100644
  PKG_NAME:=async-timeout
 -PKG_VERSION:=3.0.1
 -PKG_RELEASE:=2
-+PKG_VERSION:=4.0.0
++PKG_VERSION:=4.0.2
 +PKG_RELEASE:=1
  
  PYPI_NAME:=async_timeout
  PYPI_SOURCE_NAME:=async-timeout
 -PKG_HASH:=0c3c816a028d47f659d6ff5c745cb2acf1f966da1fe5c19c77a70282b25f4c5f
-+PKG_HASH:=7d87a4e8adba8ededb52e579ce6bc8276985888913620c935094c2276fd83382
++PKG_HASH:=2163e1640ddb52b7a8c80d0a67a08587e5d245cc9c553a74a847056bc2976b15
  
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
-@@ -31,7 +32,8 @@ define Package/python3-async-timeout
-   URL:=https://github.com/aio-libs/async-timeout
-   DEPENDS:= \
-   +python3-light \
--  +python3-asyncio
-+  +python3-asyncio \
-+  +python3-typing-extensions
- endef
- 
- define Package/python3-async-timeout/description
 diff --git a/lang/python/python-awesomeversion/Makefile b/lang/python/python-awesomeversion/Makefile
-index 73fc231..2667a70 100644
+index 73fc231..a73f18c 100644
 --- a/lang/python/python-awesomeversion/Makefile
 +++ b/lang/python/python-awesomeversion/Makefile
 @@ -4,15 +4,16 @@
@@ -164,12 +187,12 @@ index 73fc231..2667a70 100644
  PKG_NAME:=python-awesomeversion
 -PKG_VERSION:=21.8.1
 -PKG_RELEASE:=$(AUTORELEASE)
-+PKG_VERSION:=21.11.0
++PKG_VERSION:=22.1.0
 +PKG_RELEASE:=1
  
  PYPI_NAME:=awesomeversion
 -PKG_HASH:=a72f3fff12df257e30f5e25a8550fc4da62e7591d5fdb70714f5c96827c37645
-+PKG_HASH:=ef8f7bb458a6dd16ec95e28553df3b6c556de8bc93fb13f142eb95a357cfc3a0
++PKG_HASH:=f3e111883c2d236840e8346cab65d32359cd39186d3f8a057e115209de11fae1
  
  PKG_MAINTAINER:=Josef Schlehofer <josef.schlehofer@nic.cz>
  PKG_LICENSE:=MIT
@@ -309,6 +332,19 @@ index cf3e2f8..09a050f 100644
  endef
  
  define Package/python3-psutil/description
+diff --git a/lang/python/python-py/Makefile b/lang/python/python-py/Makefile
+index ca20dbb..d6671b8 100644
+--- a/lang/python/python-py/Makefile
++++ b/lang/python/python-py/Makefile
+@@ -18,7 +18,7 @@ PKG_MAINTAINER:=Jan Pavlinec <jan.pavlinec1@gmail.com>
+ PKG_LICENSE:=MIT
+ PKG_LICENSE_FILES:=LICENSE
+ 
+-HOST_PYTHON3_PACKAGE_BUILD_DEPENDS:=setuptools-scm
++HOST_PYTHON3_PACKAGE_BUILD_DEPENDS:=setuptools-scm py
+ 
+ include ../pypi.mk
+ include $(INCLUDE_DIR)/package.mk
 diff --git a/lang/python/python-pyotp/Makefile b/lang/python/python-pyotp/Makefile
 index 9cda8ac..8b95ccf 100644
 --- a/lang/python/python-pyotp/Makefile
@@ -358,19 +394,33 @@ index e74cc88..3423e35 100644
  PKG_LICENSE:=BSD
  PKG_MAINTAINER:=Micke Prag <micke.prag@telldus.se>
 diff --git a/lang/python/python-requests/Makefile b/lang/python/python-requests/Makefile
-index 5853897..97a72f5 100644
+index 5853897..d27b7e6 100644
 --- a/lang/python/python-requests/Makefile
 +++ b/lang/python/python-requests/Makefile
-@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
+@@ -4,11 +4,12 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump
+ 
+ include $(TOPDIR)/rules.mk
  
  PKG_NAME:=python-requests
- PKG_VERSION:=2.26.0
--PKG_RELEASE:=1
-+PKG_RELEASE:=1a
+-PKG_VERSION:=2.26.0
++PKG_VERSION:=2.27.1
+ PKG_RELEASE:=1
  
  PKG_MAINTAINER:=Josef Schlehofer <josef.schlehofer@nic.cz>, Alexandru Ardelean <ardeleanalex@gmail.com>
- PKG_LICENSE:=Apache-2.0
-@@ -34,7 +34,8 @@ define Package/python3-requests
+@@ -17,7 +18,7 @@ PKG_LICENSE_FILES:=LICENSE
+ PKG_CPE_ID:=cpe:/a:python-requests:requests
+ 
+ PYPI_NAME:=requests
+-PKG_HASH:=b8aa58f8cf793ffd8782d3d8cb19e66ef36f7aba4353eec859e74678b01b07a7
++PKG_HASH:=68d7c56fd5a8999887728ef304a6d12edc7be74f1cfa47714fc8b414525c9a61
+ 
+ include ../pypi.mk
+ include $(INCLUDE_DIR)/package.mk
+@@ -34,7 +35,8 @@ define Package/python3-requests
  	  +python3-chardet  \
  	  +python3-idna  \
  	  +python3-urllib3  \
@@ -434,6 +484,30 @@ index f15cbb3..bda4fe0 100644
  endef
  
  define Package/python3-sqlalchemy/description
+diff --git a/lang/python/python-typing-extensions/Makefile b/lang/python/python-typing-extensions/Makefile
+index b60c9ad..5d2c082 100644
+--- a/lang/python/python-typing-extensions/Makefile
++++ b/lang/python/python-typing-extensions/Makefile
+@@ -4,16 +4,17 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=python-typing-extensions
+-PKG_VERSION:=3.10.0.0
++PKG_VERSION:=3.10.0.2
+ PKG_RELEASE:=1
+ 
+ PYPI_NAME:=typing-extensions
+ PYPI_SOURCE_NAME:=typing_extensions
+-PKG_HASH:=50b6f157849174217d0656f99dc82fe932884fb250826c18350e159ec6cdf342
++PKG_HASH:=49f75d16ff11f1cd258e1b988ccff82a3ca5570217d7ad8c5f48205dd99a677e
+ 
+ PKG_MAINTAINER:=Jan Pavlinec <jan.pavlinec1@gmail.com>
+ PKG_LICENSE:=PSF-2.0
 diff --git a/lang/python/python-urllib3/Makefile b/lang/python/python-urllib3/Makefile
 index 8812c0e..054856a 100644
 --- a/lang/python/python-urllib3/Makefile
@@ -530,8 +604,31 @@ index b669fa7..1b0e9f1 100644
  
  PKG_MAINTAINER:=Michal Vasilek <michal.vasilek@nic.cz>
  PKG_LICENSE:=BSD-3-Clause
+diff --git a/lang/python/python-yarl/Makefile b/lang/python/python-yarl/Makefile
+index 95383c8..70e7214 100644
+--- a/lang/python/python-yarl/Makefile
++++ b/lang/python/python-yarl/Makefile
+@@ -4,15 +4,16 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=yarl
+-PKG_VERSION:=1.6.3
++PKG_VERSION:=1.7.2
+ PKG_RELEASE:=1
+ 
+ PYPI_NAME:=$(PKG_NAME)
+-PKG_HASH:=8a9066529240171b68893d60dca86a763eae2139dd42f42106b03cf4b426bf10
++PKG_HASH:=45399b46d60c253327a460e99856752009fcee5f5d3c80b2f7c0cae1c38d56dd
+ 
+ PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
+ PKG_LICENSE:=Apache-2.0
 diff --git a/lang/python/python-zeroconf/Makefile b/lang/python/python-zeroconf/Makefile
-index 121a3f9..fdb52c6 100644
+index 121a3f9..f3a9ac7 100644
 --- a/lang/python/python-zeroconf/Makefile
 +++ b/lang/python/python-zeroconf/Makefile
 @@ -4,15 +4,16 @@
@@ -544,12 +641,12 @@ index 121a3f9..fdb52c6 100644
  
  PKG_NAME:=python-zeroconf
 -PKG_VERSION:=0.29.0
-+PKG_VERSION:=0.38.1
++PKG_VERSION:=0.38.3
  PKG_RELEASE:=1
  
  PYPI_NAME:=zeroconf
 -PKG_HASH:=7aefbb658b452b1fd7e51124364f938c6f5e42d6ea893fa2557bea8c06c540af
-+PKG_HASH:=10c501b25d8881b656e56c34674d98fe6bc752240a572e74f918bc849c93ba9c
++PKG_HASH:=1c1feb71f5cf53baa5e00ff2c550edd30b2e6a20779001332115afa2ef64af72
  
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
