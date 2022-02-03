@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-aiodiscover
-PKG_VERSION:=1.4.5
-PKG_RELEASE:=2
+PKG_VERSION:=1.4.7
+PKG_RELEASE:=1
 
 PYPI_NAME:=aiodiscover
-PKG_HASH:=925654f4ed53ed7a4664e9a5c2fb3d6a1e760f211893d2e517d902fa8fcf7d07
+PKG_HASH:=bfd9fdd96ce2129f87ac5e077691e822953dc3d46849430a84d5fd6c31486268
 
 PKG_LICENSE:=Apache-2.0
 
@@ -24,6 +24,7 @@ define Package/python3-aiodiscover
   DEPENDS:= \
 	+python3-dns \
 	+python3-ifaddr \
+	+python3-netifaces \
 	+python3-pyroute2
 endef
 
