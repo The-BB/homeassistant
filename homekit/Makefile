@@ -4,11 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homekit
 PKG_VERSION:=0.0.1
-PKG_RELEASE:=6
-
-PKG_SOURCE:=
-PKG_SOURCE_URL:=
-PKG_HASH:=unknown
+PKG_RELEASE:=7
 
 include $(INCLUDE_DIR)/package.mk
 
