@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-google-cloud-pubsub
-PKG_VERSION:=2.1.0
+PKG_VERSION:=2.9.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=google-cloud-pubsub
-PKG_HASH:=42b07d8652f0ff0d118430a04abc19ee1f6fd85ccbfe86fcbb01bf487079a80c
+PKG_HASH:=2b3d9336afab0e5df67201234976519a28da3ccb7c9a0e463be28e2827a9fdaa
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE
