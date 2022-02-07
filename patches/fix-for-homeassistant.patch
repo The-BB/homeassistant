@@ -82,7 +82,7 @@ index bf71978..f148139 100644
  $(eval $(call BuildPackage,python3-numpy))
  $(eval $(call BuildPackage,python3-numpy-src))
 diff --git a/lang/python/pillow/Makefile b/lang/python/pillow/Makefile
-index ffacb83..46b12aa 100644
+index ffacb83..8454302 100644
 --- a/lang/python/pillow/Makefile
 +++ b/lang/python/pillow/Makefile
 @@ -3,15 +3,16 @@
@@ -95,12 +95,12 @@ index ffacb83..46b12aa 100644
  
  PKG_NAME:=pillow
 -PKG_VERSION:=8.4.0
-+PKG_VERSION:=9.0.0
++PKG_VERSION:=9.0.1
  PKG_RELEASE:=1
  
  PYPI_NAME:=Pillow
 -PKG_HASH:=b8e2f83c56e141920c39464b852de3719dfbfb6e3c99a2d8da0edf4fb33176ed
-+PKG_HASH:=ee6e2963e92762923956fe5d3479b1fdc3b76c83f290aad131a2f98c3df0593e
++PKG_HASH:=6c8bc8238a7dfdaf7a75f5ec5a663f4173f8c367e5a39f87e720495e1eed75fa
  
  PKG_MAINTAINER:=Alexandru Ardelean <ardeleanalex@gmail.com>
  PKG_LICENSE:=HPND
