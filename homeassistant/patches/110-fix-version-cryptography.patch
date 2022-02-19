@@ -19,7 +19,7 @@
 +cryptography==36.0.0
  emoji==1.6.3
  hass-nabucasa==0.52.0
- home-assistant-frontend==20220203.0
+ home-assistant-frontend==20220203.1
 --- a/setup.cfg
 +++ b/setup.cfg
 @@ -44,7 +44,7 @@ install_requires =
