@@ -3,13 +3,13 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=frontend
-PKG_VERSION:=20220203.0
+PKG_VERSION:=20220203.1
 PKG_RELEASE:=1
 
 #PYPI_NAME:=home-assistant-frontend
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://codeload.github.com/home-assistant/frontend/tar.gz/refs/tags/$(PKG_VERSION)?
-PKG_HASH:=5caf2d999ff8a2f2d9b8d1290819e980bfffd9e8c8c0a74262d7e224411c0f8c
+PKG_HASH:=74fa1f70c7318e9c01f55a8e2b35ca3e0800771c278159bbd858b4ad23fb2af8
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
