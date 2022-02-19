@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
 PKG_VERSION:=2022.2.9
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=$(PKG_NAME)
 PKG_HASH:=1884f79017701c2e77754d763586dd18aaf188878b64ece7f623c1c1b504d228
@@ -56,7 +56,6 @@ define Package/homeassistant
 	+python3-async-upnp-client \
 	+python3-emoji \
 	+python3-hass-nabucasa \
-	+python3-home-assistant-frontend \
 	+python3-pillow \
 	+python3-pynacl \
 	+python3-pyserial \
