@@ -173,7 +173,7 @@ index cb66dd0..d2c64e5 100644
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
 diff --git a/lang/python/python-awesomeversion/Makefile b/lang/python/python-awesomeversion/Makefile
-index 73fc231..a73f18c 100644
+index 73fc231..69586c3 100644
 --- a/lang/python/python-awesomeversion/Makefile
 +++ b/lang/python/python-awesomeversion/Makefile
 @@ -4,15 +4,16 @@
@@ -187,12 +187,12 @@ index 73fc231..a73f18c 100644
  PKG_NAME:=python-awesomeversion
 -PKG_VERSION:=21.8.1
 -PKG_RELEASE:=$(AUTORELEASE)
-+PKG_VERSION:=22.1.0
++PKG_VERSION:=22.2.0
 +PKG_RELEASE:=1
  
  PYPI_NAME:=awesomeversion
 -PKG_HASH:=a72f3fff12df257e30f5e25a8550fc4da62e7591d5fdb70714f5c96827c37645
-+PKG_HASH:=f3e111883c2d236840e8346cab65d32359cd39186d3f8a057e115209de11fae1
++PKG_HASH:=d0f97caf565fadaee80347596b49edcca860690fc76293fe3aec9393e5e31097
  
  PKG_MAINTAINER:=Josef Schlehofer <josef.schlehofer@nic.cz>
  PKG_LICENSE:=MIT
@@ -286,6 +286,30 @@ index 2c71f07..9f3c2aa 100644
  
  PKG_LICENSE:=ISC
  PKG_LICENSE_FILES:=LICENSE
+diff --git a/lang/python/python-multidict/Makefile b/lang/python/python-multidict/Makefile
+index b757b2c..d08f556 100644
+--- a/lang/python/python-multidict/Makefile
++++ b/lang/python/python-multidict/Makefile
+@@ -4,15 +4,16 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=multidict
+-PKG_VERSION:=4.5.2
+-PKG_RELEASE:=2
++PKG_VERSION:=6.0.2
++PKG_RELEASE:=1
+ 
+ PYPI_NAME:=$(PKG_NAME)
+-PKG_HASH:=024b8129695a952ebd93373e45b5d341dbb87c17ce49637b34000093f243dd4f
++PKG_HASH:=5ff3bd75f38e4c43f1f470f2df7a4d430b821c4ce22be384e1459cb57d6bb013
+ 
+ PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
+ PKG_LICENSE:=Apache-2.0
 diff --git a/lang/python/python-netdisco/Makefile b/lang/python/python-netdisco/Makefile
 index 377afea..5efe5cc 100644
 --- a/lang/python/python-netdisco/Makefile
@@ -628,7 +652,7 @@ index 95383c8..70e7214 100644
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
 diff --git a/lang/python/python-zeroconf/Makefile b/lang/python/python-zeroconf/Makefile
-index 121a3f9..f3a9ac7 100644
+index 121a3f9..7e14eeb 100644
 --- a/lang/python/python-zeroconf/Makefile
 +++ b/lang/python/python-zeroconf/Makefile
 @@ -4,15 +4,16 @@
@@ -641,12 +665,12 @@ index 121a3f9..f3a9ac7 100644
  
  PKG_NAME:=python-zeroconf
 -PKG_VERSION:=0.29.0
-+PKG_VERSION:=0.38.3
++PKG_VERSION:=0.38.4
  PKG_RELEASE:=1
  
  PYPI_NAME:=zeroconf
 -PKG_HASH:=7aefbb658b452b1fd7e51124364f938c6f5e42d6ea893fa2557bea8c06c540af
-+PKG_HASH:=1c1feb71f5cf53baa5e00ff2c550edd30b2e6a20779001332115afa2ef64af72
++PKG_HASH:=080c540ea4b8b9defa9f3ac05823c1725ea2c8aacda917bfc0193f6758b95aeb
  
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
