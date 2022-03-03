@@ -1,0 +1,11 @@
+--- /dev/null
++++ b/setup.py
+@@ -0,0 +1,8 @@
++"""
++Entry point for setuptools. Required for editable installs.
++TODO: Remove file after updating to pip 21.3
++"""
++from setuptools import setup
++
++setup()
++

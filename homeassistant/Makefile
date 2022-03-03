@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
-PKG_VERSION:=2022.2.9
-PKG_RELEASE:=2
+PKG_VERSION:=2022.3.0
+PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=1884f79017701c2e77754d763586dd18aaf188878b64ece7f623c1c1b504d228
+PKG_HASH:=3493235f493eca5bedfdea6d4abab48bbe3d807beb4bd423adb9db6b0120db3e
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -54,7 +54,6 @@ define Package/homeassistant
 	+python3-aiohttp-cors \
 	+python3-anyio \
 	+python3-async-upnp-client \
-	+python3-emoji \
 	+python3-hass-nabucasa \
 	+python3-pillow \
 	+python3-pynacl \
@@ -86,7 +85,7 @@ define Package/homeassistant
   DEPENDS+= \
 	+python3-btlewrap \
 	+python3-grpcio \
-	+python3-pandas \
+	+python3-hyperframe \
 	+python3-pytest-asyncio \
 	+python3-engineio \
 	+python3-socketio \
