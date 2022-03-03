@@ -2,7 +2,7 @@
 +++ b/hass_nabucasa.egg-info/requires.txt
 @@ -1,7 +1,7 @@
  pycognito==2022.1.0
- snitun==0.30.0
+ snitun==0.31.0
  acme==1.22.0
 -cryptography<37.0,>=2.8
 +cryptography<37.0.0,>=2.8
@@ -13,7 +13,7 @@
 +++ b/setup.py
 @@ -33,7 +33,7 @@ setup(
          "pycognito==2022.1.0",
-         "snitun==0.30.0",
+         "snitun==0.31.0",
          "acme==1.22.0",
 -        "cryptography>=2.8,<37.0",
 +        "cryptography>=2.8,<37.0.0",
