@@ -5,22 +5,22 @@
                            CORE_C_FILES)
      CORE_C_FILES = filter(lambda x: 'src/boringssl' not in x, CORE_C_FILES)
 -    SSL_INCLUDE = (os.path.join('/usr', 'include', 'openssl'),)
-+    SSL_INCLUDE = (("${STAGING_DIR}/opt/include"),)
++    SSL_INCLUDE = ("STAGING_DIR/opt/include",)
  
  if BUILD_WITH_SYSTEM_ZLIB:
      CORE_C_FILES = filter(lambda x: 'third_party/zlib' not in x, CORE_C_FILES)
 -    ZLIB_INCLUDE = (os.path.join('/usr', 'include'),)
-+    ZLIB_INCLUDE = (("${STAGING_DIR}/opt/include"),)
++    ZLIB_INCLUDE = ("STAGING_DIR/opt/include",)
  
  if BUILD_WITH_SYSTEM_CARES:
      CORE_C_FILES = filter(lambda x: 'third_party/cares' not in x, CORE_C_FILES)
 -    CARES_INCLUDE = (os.path.join('/usr', 'include'),)
-+    CARES_INCLUDE = (("${STAGING_DIR}/opt/include"),)
++    CARES_INCLUDE = ("STAGING_DIR/opt/include",)
  
  if BUILD_WITH_SYSTEM_RE2:
      CORE_C_FILES = filter(lambda x: 'third_party/re2' not in x, CORE_C_FILES)
 -    RE2_INCLUDE = (os.path.join('/usr', 'include', 're2'),)
-+    RE2_INCLUDE = (("${STAGING_DIR}/opt/include"),)
++    RE2_INCLUDE = ("STAGING_DIR/opt/include",)
  
  EXTENSION_INCLUDE_DIRECTORIES = ((PYTHON_STEM,) + CORE_INCLUDE + ABSL_INCLUDE +
                                   ADDRESS_SORTING_INCLUDE + CARES_INCLUDE +
