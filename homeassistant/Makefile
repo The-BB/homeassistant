@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
-PKG_VERSION:=2022.3.5
+PKG_VERSION:=2022.3.6
 PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=12aca2c1b5732717b28d4af61057ebdb4b52c5e78326f536f3ad6a906f2d10c7
+PKG_HASH:=0898947ab499538ffef0b41978350375d1b3ca935607f6bafb7babf2ddb8e4dd
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -83,6 +83,7 @@ define Package/homeassistant
 	+python3-xmltodict
 # ? btlewrap, grpcio, pandas ?
   DEPENDS+= \
+	+python3-authlib \
 	+python3-btlewrap \
 	+python3-grpcio \
 	+python3-hyperframe \
