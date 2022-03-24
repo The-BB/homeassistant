@@ -12,7 +12,7 @@ PKG_HASH:=6d895b02432c028e6957d25fc936494e78c6305736e785d9fee408b1efbc7ff4
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE
 
-HOST_PYTHON3_PACKAGE_BUILD_DEPENDS:=setuptools-scm
+HOST_PYTHON3_PACKAGE_BUILD_DEPENDS:=./setuptools-scm.txt
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
