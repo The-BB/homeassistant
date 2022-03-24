@@ -1,13 +1,3 @@
-diff --git a/lang/python/host-pip-requirements/setuptools-scm.txt b/lang/python/host-pip-requirements/setuptools-scm.txt
-index 83b57e1..52121cb 100644
---- a/lang/python/host-pip-requirements/setuptools-scm.txt
-+++ b/lang/python/host-pip-requirements/setuptools-scm.txt
-@@ -1 +1,4 @@
--setuptools-scm==6.0.1 --hash=sha256:d1925a69cb07e9b29416a275b9fadb009a23c148ace905b2fb220649a6c18e92
-+setuptools-scm==6.4.2 --hash=sha256:6833ac65c6ed9711a4d5d2266f8024cfa07c533a0e55f4c12f6eff280a5a9e30
-+packaging==21.3 --hash=sha256:dd47c42927d89ab911e606518907cc2d3a1f38bbd026385970643f9c5b8ecfeb
-+tomli==2.0.0 --hash=sha256:c292c34f58502a1eb2bbb9f5bbc9a5ebc37bee10ffb8c2d6bbdfa8eb13cc14e1
-+pyparsing==3.0.7 --hash=sha256:18ee9022775d270c55187733956460083db60b37d0d0fb357445f3094eed3eea
 diff --git a/lang/python/numpy/Makefile b/lang/python/numpy/Makefile
 index bf71978..f148139 100644
 --- a/lang/python/numpy/Makefile
@@ -356,19 +346,6 @@ index cf3e2f8..09a050f 100644
  endef
  
  define Package/python3-psutil/description
-diff --git a/lang/python/python-py/Makefile b/lang/python/python-py/Makefile
-index ca20dbb..d6671b8 100644
---- a/lang/python/python-py/Makefile
-+++ b/lang/python/python-py/Makefile
-@@ -18,7 +18,7 @@ PKG_MAINTAINER:=Jan Pavlinec <jan.pavlinec1@gmail.com>
- PKG_LICENSE:=MIT
- PKG_LICENSE_FILES:=LICENSE
- 
--HOST_PYTHON3_PACKAGE_BUILD_DEPENDS:=setuptools-scm
-+HOST_PYTHON3_PACKAGE_BUILD_DEPENDS:=setuptools-scm py
- 
- include ../pypi.mk
- include $(INCLUDE_DIR)/package.mk
 diff --git a/lang/python/python-pyotp/Makefile b/lang/python/python-pyotp/Makefile
 index 9cda8ac..8b95ccf 100644
 --- a/lang/python/python-pyotp/Makefile
