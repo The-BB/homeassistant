@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python-httplib2
-PKG_VERSION:=0.19.0
-PKG_RELEASE:=3
+PKG_VERSION:=0.20.4
+PKG_RELEASE:=1
 
 PYPI_NAME:=httplib2
-PKG_HASH:=e0d428dad43c72dbce7d163b7753ffc7a39c097e6788ef10f4198db69b92f08e
+PKG_HASH:=58a98e45b4b1a48273073f905d2961666ecf0fbac4250ea5b47aef259eb5c585
 
 PKG_LICENSE:=MIT
 
@@ -21,8 +21,8 @@ define Package/python3-httplib2
   SUBMENU:=Python
   TITLE:=A comprehensive HTTP client library
   URL:=https://github.com/pndurette/gTTS
-  DEPENDS:= \
-	+python3-pyparsing
+#  DEPENDS:= \
+#	+python3-pyparsing
 endef
 
 define Package/python3-httplib2/description
