@@ -1,9 +1,9 @@
 --- a/homeassistant.egg-info/requires.txt
 +++ b/homeassistant.egg-info/requires.txt
-@@ -11,7 +11,7 @@ httpx==0.21.3
+@@ -11,7 +11,7 @@ httpx==0.22.0
  ifaddr==0.1.7
- jinja2==3.0.3
- PyJWT==2.2.0
+ jinja2==3.1.0
+ PyJWT==2.3.0
 -cryptography==35.0.0
 +cryptography==36.0.0
  pip<22.1,>=21.0
@@ -17,15 +17,15 @@
  ciso8601==2.2.0
 -cryptography==35.0.0
 +cryptography==36.0.0
+ fnvhash==0.1.0
  hass-nabucasa==0.54.0
- home-assistant-frontend==20220301.2
- httpx==0.21.3
+ home-assistant-frontend==20220405.0
 --- a/setup.cfg
 +++ b/setup.cfg
 @@ -44,7 +44,7 @@ install_requires =
  	ifaddr==0.1.7
- 	jinja2==3.0.3
- 	PyJWT==2.2.0
+ 	jinja2==3.1.0
+ 	PyJWT==2.3.0
 -	cryptography==35.0.0
 +	cryptography==36.0.0
  	pip>=21.0,<22.1
