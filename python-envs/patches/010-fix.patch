@@ -1,0 +1,87 @@
+--- a/envs/__init__.py
++++ b/envs/__init__.py
+@@ -48,12 +48,14 @@ class Env(object):
+                 json.dump({'key': key, 'var_type': var_type, 'default': default, 'value': os.getenv(key)}, f)
+                 f.write(',')
+         value = os.getenv(key, default)
+-        if not value and not allow_none:
+-            raise EnvsValueException('{}: Environment Variable Not Set'.format(key))
+         if not var_type in self.valid_types.keys():
+             raise ValueError(
+                 'The var_type argument should be one of the following {0}'.format(
+                     ','.join(self.valid_types.keys())))
++        if value is None:
++            if not allow_none:
++                raise EnvsValueException('{}: Environment Variable Not Set'.format(key))
++            return value
+         return self.validate_type(value, self.valid_types[var_type], key)
+ 
+     def validate_type(self, value, klass, key):
+--- a/envs/tests.py
++++ b/envs/tests.py
+@@ -14,6 +14,7 @@ except ImportError:
+ import sys
+ 
+ from envs import env
++from envs.exceptions import EnvsValueException
+ 
+ class EnvTestCase(unittest.TestCase):
+     def setUp(self):
+@@ -113,6 +114,40 @@ class EnvTestCase(unittest.TestCase):
+         self.assertEqual(env('HELLO', 'true', var_type='boolean'), True)
+         self.assertEqual(env('HELLO', Decimal('3.14'), var_type='decimal'), Decimal('3.14'))
+ 
++    def test_without_defaults_allow_none(self):
++        self.assertEqual(env('HELLO'), None)
++        self.assertEqual(env('HELLO', var_type='integer'), None)
++        self.assertEqual(env('HELLO', var_type='float'), None)
++        self.assertEqual(env('HELLO', var_type='list'), None)
++
++    def test_without_defaults_disallow_none(self):
++        with self.assertRaises(EnvsValueException):
++            env('HELLO', allow_none=False)
++        with self.assertRaises(EnvsValueException):
++            env('HELLO', var_type='integer', allow_none=False)
++        with self.assertRaises(EnvsValueException):
++            env('HELLO', var_type='float', allow_none=False)
++        with self.assertRaises(EnvsValueException):
++            env('HELLO', var_type='list', allow_none=False)
++
++    def test_empty_values(self):
++        os.environ.setdefault('EMPTY', '')
++        self.assertEqual(env('EMPTY'), '')
++        with self.assertRaises(SyntaxError):
++            env('EMPTY', var_type='integer')
++        with self.assertRaises(SyntaxError):
++            env('EMPTY', var_type='float')
++        with self.assertRaises(SyntaxError):
++            env('EMPTY', var_type='list')
++        with self.assertRaises(SyntaxError):
++            env('EMPTY', var_type='dict')
++        with self.assertRaises(SyntaxError):
++            env('EMPTY', var_type='tuple')
++        with self.assertRaises(ValueError):
++            env('EMPTY', var_type='boolean')
++        with self.assertRaises(ArithmeticError):
++            env('EMPTY', var_type='decimal')
++
+ '''
+ Each CLI Test must be run outside of test suites in isolation
+ since Click CLI Runner alters the global context
+--- a/envs/util.py
++++ b/envs/util.py
+@@ -4,12 +4,12 @@ import json
+ import os
+ import sys
+ 
+-from click._compat import raw_input
+-
+ from . import Env, ENVS_RESULT_FILENAME
+ 
+ VAR_TYPES = Env.valid_types.keys()
+ 
++if sys.version_info >= (3, 0):
++    raw_input = input
+ 
+ def import_util(imp):
+     """
