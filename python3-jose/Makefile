@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python-jose
-PKG_VERSION:=3.2.0
-PKG_RELEASE:=3
+PKG_VERSION:=3.3.0
+PKG_RELEASE:=1
 
 PYPI_NAME:=python-jose
-PKG_HASH:=4e4192402e100b5fb09de5a8ea6bcc39c36ad4526341c123d401e2561720335b
+PKG_HASH:=55779b5e6ad599c6336191246e95eb2293a9ddebd555f796a65f838f07e5d78a
 
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
@@ -23,11 +23,10 @@ define Package/python3-jose
   TITLE:=JOSE implementation in Python
   URL:=http://github.com/mpdavis/python-jose
   DEPENDS:= \
-	+python3-cryptodome \
+	+python3-cryptography \
 	+python3-ecdsa \
 	+python3-pyasn1 \
-	+python3-rsa \
-	+python3-six
+	+python3-rsa
 endef
 
 define Package/python3-jose/description
