@@ -1,5 +1,28 @@
+diff --git a/lang/python/Jinja2/Makefile b/lang/python/Jinja2/Makefile
+index 2ee79c6..46d9d73 100644
+--- a/lang/python/Jinja2/Makefile
++++ b/lang/python/Jinja2/Makefile
+@@ -1,15 +1,16 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=Jinja2
+-PKG_VERSION:=3.0.3
++PKG_VERSION:=3.1.0
+ PKG_RELEASE:=1
+ 
+ PYPI_NAME:=$(PKG_NAME)
+-PKG_HASH:=611bb273cd68f3b993fabdc4064fc858c5b47a973cb5aa7999ec1ba405c87cd7
++PKG_HASH:=a2f09a92f358b96b5f6ca6ecb4502669c4acb55d8733bbb2b2c9c4af5564c605
+ 
+ PKG_MAINTAINER:=Josef Schlehofer <josef.schlehofer@nic.cz>
+ PKG_LICENSE:=BSD-3-Clause
 diff --git a/lang/python/numpy/Makefile b/lang/python/numpy/Makefile
-index bf71978..f148139 100644
+index b086061..40103d9 100644
 --- a/lang/python/numpy/Makefile
 +++ b/lang/python/numpy/Makefile
 @@ -35,34 +35,35 @@ define Package/python3-numpy
@@ -71,29 +94,6 @@ index bf71978..f148139 100644
  $(eval $(call Py3Package,python3-numpy))
  $(eval $(call BuildPackage,python3-numpy))
  $(eval $(call BuildPackage,python3-numpy-src))
-diff --git a/lang/python/pillow/Makefile b/lang/python/pillow/Makefile
-index ffacb83..8454302 100644
---- a/lang/python/pillow/Makefile
-+++ b/lang/python/pillow/Makefile
-@@ -3,15 +3,16 @@
- # Copyright © 1995-2011 by Fredrik Lundh
- # Copyright © 2016 by Alex Clark and contributors
- #
-+# XXX bump
- 
- include $(TOPDIR)/rules.mk
- 
- PKG_NAME:=pillow
--PKG_VERSION:=8.4.0
-+PKG_VERSION:=9.0.1
- PKG_RELEASE:=1
- 
- PYPI_NAME:=Pillow
--PKG_HASH:=b8e2f83c56e141920c39464b852de3719dfbfb6e3c99a2d8da0edf4fb33176ed
-+PKG_HASH:=6c8bc8238a7dfdaf7a75f5ec5a663f4173f8c367e5a39f87e720495e1eed75fa
- 
- PKG_MAINTAINER:=Alexandru Ardelean <ardeleanalex@gmail.com>
- PKG_LICENSE:=HPND
 diff --git a/lang/python/python-aiohttp/Makefile b/lang/python/python-aiohttp/Makefile
 index 007f41b..e0fcf07 100644
 --- a/lang/python/python-aiohttp/Makefile
@@ -251,31 +251,6 @@ index 02a82cf..a2592c0 100644
  
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=MIT
-diff --git a/lang/python/python-dns/Makefile b/lang/python/python-dns/Makefile
-index 2c71f07..9f3c2aa 100644
---- a/lang/python/python-dns/Makefile
-+++ b/lang/python/python-dns/Makefile
-@@ -4,16 +4,17 @@
- # This is free software, licensed under the GNU General Public License v2.
- # See /LICENSE for more information.
- #
-+# XXX bump
- 
- include $(TOPDIR)/rules.mk
- 
- PKG_NAME:=python-dns
--PKG_VERSION:=1.16.0
--PKG_RELEASE:=2
-+PKG_VERSION:=2.1.0
-+PKG_RELEASE:=1
- 
- PYPI_NAME:=dnspython
- PYPI_SOURCE_EXT:=zip
--PKG_HASH:=36c5e8e38d4369a08b6780b7f27d790a292b2b08eea01607865bf0936c558e01
-+PKG_HASH:=e4a87f0b573201a0f3727fa18a516b055fd1107e0e5477cded4a2de497df1dd4
- 
- PKG_LICENSE:=ISC
- PKG_LICENSE_FILES:=LICENSE
 diff --git a/lang/python/python-multidict/Makefile b/lang/python/python-multidict/Makefile
 index b757b2c..d08f556 100644
 --- a/lang/python/python-multidict/Makefile
@@ -324,28 +299,6 @@ index 377afea..5efe5cc 100644
  
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
-diff --git a/lang/python/python-psutil/Makefile b/lang/python/python-psutil/Makefile
-index cf3e2f8..09a050f 100644
---- a/lang/python/python-psutil/Makefile
-+++ b/lang/python/python-psutil/Makefile
-@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
- 
- PKG_NAME:=python-psutil
- PKG_VERSION:=5.8.0
--PKG_RELEASE:=1
-+PKG_RELEASE:=1a
- 
- PYPI_NAME:=psutil
- PKG_HASH:=0c9ccb99ab76025f2f0bbecf341d4656e9c1351db8cc8a03ccd62e318ab4b5c6
-@@ -30,7 +30,7 @@ define Package/python3-psutil
-   CATEGORY:=Languages
-   TITLE:=psutil (process and system utilities)
-   URL:=https://github.com/giampaolo/psutil
--  DEPENDS:=+python3-light
-+  DEPENDS:=+python3
- endef
- 
- define Package/python3-psutil/description
 diff --git a/lang/python/python-pyotp/Makefile b/lang/python/python-pyotp/Makefile
 index 9cda8ac..8b95ccf 100644
 --- a/lang/python/python-pyotp/Makefile
@@ -453,7 +406,7 @@ index a6e04f9..8ab5ce8 100644
  PKG_MAINTAINER:=Daniel Danzberger <daniel@dd-wrt.com>
  PKG_LICENSE:=MIT
 diff --git a/lang/python/python-sqlalchemy/Makefile b/lang/python/python-sqlalchemy/Makefile
-index f15cbb3..bda4fe0 100644
+index f15cbb3..beee293 100644
 --- a/lang/python/python-sqlalchemy/Makefile
 +++ b/lang/python/python-sqlalchemy/Makefile
 @@ -4,15 +4,16 @@
@@ -466,12 +419,12 @@ index f15cbb3..bda4fe0 100644
  
  PKG_NAME:=python-sqlalchemy
 -PKG_VERSION:=1.4.22
-+PKG_VERSION:=1.4.27
++PKG_VERSION:=1.4.32
  PKG_RELEASE:=1
  
  PYPI_NAME:=SQLAlchemy
 -PKG_HASH:=ec1be26cdccd60d180359a527d5980d959a26269a2c7b1b327a1eea0cab37ed8
-+PKG_HASH:=d768359daeb3a86644f3854c6659e4496a3e6bba2b4651ecc87ce7ad415b320c
++PKG_HASH:=6fdd2dc5931daab778c2b65b03df6ae68376e028a3098eb624d0909d999885bc
  
  PKG_MAINTAINER:=Josef Schlehofer <josef.schlehofer@nic.cz>
  PKG_LICENSE:=MIT
@@ -536,29 +489,6 @@ index 8812c0e..054856a 100644
  
  include ../pypi.mk
  include $(INCLUDE_DIR)/package.mk
-diff --git a/lang/python/python-voluptuous-serialize/Makefile b/lang/python/python-voluptuous-serialize/Makefile
-index 738d8a0..a45c7e8 100644
---- a/lang/python/python-voluptuous-serialize/Makefile
-+++ b/lang/python/python-voluptuous-serialize/Makefile
-@@ -4,15 +4,16 @@
- # This is free software, licensed under the GNU General Public License v2.
- # See /LICENSE for more information.
- #
-+# XXX bump
- 
- include $(TOPDIR)/rules.mk
- 
- PKG_NAME:=voluptuous-serialize
--PKG_VERSION:=2.4.0
-+PKG_VERSION:=2.5.0
- PKG_RELEASE:=1
- 
- PYPI_NAME:=$(PKG_NAME)
--PKG_HASH:=c6ba17cb0301c18e8b955d89b85fa4aa05c05c80ab1e4873810900f757dceae4
-+PKG_HASH:=5359f2e0a4f972ae03066e0777b4f0755c9226b2af099ca4fc55432efd1a447b
- 
- PKG_MAINTAINER:=Josef Schlehofer <josef.schlehofer@nic.cz>
- PKG_LICENSE:=Apache-2.0
 diff --git a/lang/python/python-voluptuous/Makefile b/lang/python/python-voluptuous/Makefile
 index c5f04a2..e098a3e 100644
 --- a/lang/python/python-voluptuous/Makefile
@@ -583,7 +513,7 @@ index c5f04a2..e098a3e 100644
  PKG_LICENSE:=BSD-3-Clause
  PKG_LICENSE_FILES:=COPYING
 diff --git a/lang/python/python-websockets/Makefile b/lang/python/python-websockets/Makefile
-index b669fa7..1b0e9f1 100644
+index b669fa7..f66bb2d 100644
 --- a/lang/python/python-websockets/Makefile
 +++ b/lang/python/python-websockets/Makefile
 @@ -4,15 +4,16 @@
@@ -596,12 +526,12 @@ index b669fa7..1b0e9f1 100644
  
  PKG_NAME:=python-websockets
 -PKG_VERSION:=10.0
-+PKG_VERSION:=10.1
++PKG_VERSION:=10.2
  PKG_RELEASE:=$(AUTORELEASE)
  
  PYPI_NAME:=websockets
 -PKG_HASH:=c4fc9a1d242317892590abe5b61a9127f1a61740477bfb121743f290b8054002
-+PKG_HASH:=181d2b25de5a437b36aefedaf006ecb6fa3aa1328ec0236cdde15f32f9d3ff6d
++PKG_HASH:=8351c3c86b08156337b0e4ece0e3c5ec3e01fcd14e8950996832a23c99416098
  
  PKG_MAINTAINER:=Michal Vasilek <michal.vasilek@nic.cz>
  PKG_LICENSE:=BSD-3-Clause
@@ -629,7 +559,7 @@ index 95383c8..70e7214 100644
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
 diff --git a/lang/python/python-zeroconf/Makefile b/lang/python/python-zeroconf/Makefile
-index 121a3f9..7e14eeb 100644
+index 9b3e220..7e14eeb 100644
 --- a/lang/python/python-zeroconf/Makefile
 +++ b/lang/python/python-zeroconf/Makefile
 @@ -4,15 +4,16 @@
@@ -641,16 +571,40 @@ index 121a3f9..7e14eeb 100644
  include $(TOPDIR)/rules.mk
  
  PKG_NAME:=python-zeroconf
--PKG_VERSION:=0.29.0
+-PKG_VERSION:=0.38.1
 +PKG_VERSION:=0.38.4
  PKG_RELEASE:=1
  
  PYPI_NAME:=zeroconf
--PKG_HASH:=7aefbb658b452b1fd7e51124364f938c6f5e42d6ea893fa2557bea8c06c540af
+-PKG_HASH:=10c501b25d8881b656e56c34674d98fe6bc752240a572e74f918bc849c93ba9c
 +PKG_HASH:=080c540ea4b8b9defa9f3ac05823c1725ea2c8aacda917bfc0193f6758b95aeb
  
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
+diff --git a/lang/python/python3-netifaces/Makefile b/lang/python/python3-netifaces/Makefile
+index 02fc5c2..849a90e 100644
+--- a/lang/python/python3-netifaces/Makefile
++++ b/lang/python/python3-netifaces/Makefile
+@@ -4,15 +4,16 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=python3-netifaces
+-PKG_VERSION:=0.10.9
+-PKG_RELEASE:=2
++PKG_VERSION:=0.11.0
++PKG_RELEASE:=1
+ 
+ PYPI_NAME:=netifaces
+-PKG_HASH:=2dee9ffdd16292878336a58d04a20f0ffe95555465fee7c9bd23b3490ef2abf3
++PKG_HASH:=043a79146eb2907edf439899f262b3dfe41717d34124298ed281139a8b93ca32
+ 
+ PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
+ PKG_LICENSE:=MIT
 diff --git a/lang/python/python3-pyroute2/Makefile b/lang/python/python3-pyroute2/Makefile
 index 1f8cf55..f3615b7 100644
 --- a/lang/python/python3-pyroute2/Makefile
@@ -685,18 +639,9 @@ index 1f8cf55..f3615b7 100644
  
  define Package/python3-pyroute2/description
 diff --git a/libs/libjpeg-turbo/Makefile b/libs/libjpeg-turbo/Makefile
-index 6e61b0f..4b2962f 100644
+index 7cc012a..3f2c65d 100644
 --- a/libs/libjpeg-turbo/Makefile
 +++ b/libs/libjpeg-turbo/Makefile
-@@ -2,7 +2,7 @@ include $(TOPDIR)/rules.mk
- 
- PKG_NAME:=libjpeg-turbo
- PKG_VERSION:=2.1.1
--PKG_RELEASE:=1
-+PKG_RELEASE:=1a
- 
- PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
- PKG_SOURCE_URL:=@SF/$(PKG_NAME)
 @@ -30,6 +30,13 @@ define Package/libjpeg-turbo
    PROVIDES:=libjpeg
  endef
@@ -761,16 +706,3 @@ index 972cbf2..d48ac93 100644
  endef
  
  $(eval $(call BuildPackage,re2))
-diff --git a/net/scapy/Makefile b/net/scapy/Makefile
-index 6cf711b..79b11c7 100644
---- a/net/scapy/Makefile
-+++ b/net/scapy/Makefile
-@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
- 
- PKG_NAME:=scapy
- PKG_VERSION:=2.4.5
--PKG_RELEASE:=$(AUTORELEASE)
-+PKG_RELEASE:=1a
- 
- PYPI_NAME:=$(PKG_NAME)
- PKG_HASH:=bc707e3604784496b6665a9e5b2a69c36cc9fb032af4864b29051531b24c8593
