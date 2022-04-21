@@ -21,7 +21,7 @@ define Package/homeassistant-cli
   CATEGORY:=Utilities
   TITLE:=Home Assistant Command-line Interface (hass-cli)
   URL:=https://github.com/home-assistant-ecosystem/home-assistant-cli
-  DEPENDS:= \
+  DEPENDS:=@BROKEN \
 	+python3-aiohttp \
 	+python3-click-log \
 	+python3-click \
