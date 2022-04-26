@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-aiodiscover
-PKG_VERSION:=1.4.9
+PKG_VERSION:=1.4.11
 PKG_RELEASE:=1
 
 PYPI_NAME:=aiodiscover
-PKG_HASH:=1d82d9c7cd0ca06a9fdc3e6997c1eeba9d1ef2f1e78a7bea716ed059aabcce6d
+PKG_HASH:=f203036acb7cf4cf42798b42e7e0a4c3ec6999fe9dfdbff30b22934a8da3d354
 
 PKG_LICENSE:=Apache-2.0
 
