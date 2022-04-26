@@ -32,6 +32,6 @@ define Package/python3-aiodiscover/description
   Discover hosts by arp and ptr lookup.
 endef
 
-$(eval $(call Py3Package,python3-aiodiscover))
-$(eval $(call BuildPackage,python3-aiodiscover))
+#$(eval $(call Py3Package,python3-aiodiscover))
+#$(eval $(call BuildPackage,python3-aiodiscover))
 #$(eval $(call BuildPackage,python3-aiodiscover-src))
