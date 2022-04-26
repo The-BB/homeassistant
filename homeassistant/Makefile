@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
-PKG_VERSION:=2022.4.6
+PKG_VERSION:=2022.4.7
 PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=f289227ff0e031c8f6a8ece8d2df2a851e3967056802959c2ac963a282f644d4
+PKG_HASH:=176a91a467335c2fcb42c5fc2253d9d057168023bd4f0664766de02c43621b9f
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -50,7 +50,6 @@ define Package/homeassistant
 	+python3-yarl
 # base
   DEPENDS+= \
-	+python3-aiodiscover \
 	+python3-aiohttp-cors \
 	+python3-anyio \
 	+python3-async-upnp-client \
