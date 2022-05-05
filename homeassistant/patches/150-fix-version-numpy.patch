@@ -15,8 +15,8 @@
    "name": "IQVIA",
    "config_flow": true,
    "documentation": "https://www.home-assistant.io/integrations/iqvia",
--  "requirements": ["numpy==1.21.4", "pyiqvia==2021.11.0"],
-+  "requirements": ["numpy==1.21.5", "pyiqvia==2021.11.0"],
+-  "requirements": ["numpy==1.21.4", "pyiqvia==2022.04.0"],
++  "requirements": ["numpy==1.21.5", "pyiqvia==2022.04.0"],
    "codeowners": ["@bachya"],
    "iot_class": "cloud_polling",
    "loggers": ["pyiqvia"]
@@ -39,7 +39,7 @@
      "pycocotools==2.0.1",
 -    "numpy==1.21.4",
 +    "numpy==1.21.5",
-     "pillow==9.0.1"
+     "pillow==9.1.0"
    ],
    "codeowners": [],
 --- a/homeassistant/components/trend/manifest.json

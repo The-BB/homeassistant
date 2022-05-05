@@ -1,6 +1,6 @@
 --- a/homeassistant/package_constraints.txt
 +++ b/homeassistant/package_constraints.txt
-@@ -71,7 +71,7 @@ uuid==1000000000.0.0
+@@ -72,7 +72,7 @@ uuid==1000000000.0.0
  # regex causes segfault with version 2021.8.27
  # https://bitbucket.org/mrabarnett/mrab-regex/issues/421/2021827-results-in-fatal-python-error
  # This is fixed in 2021.8.28

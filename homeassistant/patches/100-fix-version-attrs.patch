@@ -12,7 +12,7 @@
 --- a/homeassistant/package_constraints.txt
 +++ b/homeassistant/package_constraints.txt
 @@ -7,7 +7,7 @@ astral==2.2
- async-upnp-client==0.27.0
+ async-upnp-client==0.29.0
  async_timeout==4.0.2
  atomicwrites==1.4.0
 -attrs==21.2.0
