@@ -22,10 +22,29 @@ index 2ee79c686..e79811f43 100644
  PKG_MAINTAINER:=Josef Schlehofer <josef.schlehofer@nic.cz>
  PKG_LICENSE:=BSD-3-Clause
 diff --git a/lang/python/numpy/Makefile b/lang/python/numpy/Makefile
-index b0860617c..40103d980 100644
+index b0860617c..5725f4b2d 100644
 --- a/lang/python/numpy/Makefile
 +++ b/lang/python/numpy/Makefile
-@@ -35,34 +35,35 @@ define Package/python3-numpy
+@@ -2,15 +2,16 @@
+ # Copyright (C) 2019 Jakub Piotr Cłapa <jpc@loee.pl>
+ # Copyright (C) 2020 Alexandru Ardelean <ardeleanalex@gmail.com>
+ #
++# XXX bump
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=numpy
+-PKG_VERSION:=1.21.5
++PKG_VERSION:=1.21.6
+ PKG_RELEASE:=$(AUTORELEASE)
+ 
+ PYPI_NAME:=$(PKG_NAME)
+-PKG_HASH:=6a5928bc6241264dce5ed509e66f33676fc97f464e7a919edc672fb5532221ee
++PKG_HASH:=ecb55251139706669fdec2ff073c98ef8e9a84473e51e716211b41aa0f18e656
+ 
+ PKG_MAINTAINER:=Alexandru Ardelean <ardeleanalex@gmail.com>
+ 
+@@ -35,34 +36,35 @@ define Package/python3-numpy
    CATEGORY:=Languages
    TITLE:=The fundamental package for scientific computing with Python
    URL:=https://www.numpy.org/
@@ -79,7 +98,7 @@ index b0860617c..40103d980 100644
  
  define Build/Prepare
  	$(call Build/Prepare/Default)
-@@ -77,6 +78,14 @@ For some modules to be available, the INSTALL_GFORTRAN symbol needs
+@@ -77,6 +79,14 @@ For some modules to be available, the INSTALL_GFORTRAN symbol needs
  to be enabled in the OpenWrt core/toolchain.
  endef
  
