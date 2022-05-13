@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
-PKG_VERSION:=2022.5.2
+PKG_VERSION:=2022.5.3
 PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=e6128f702d6a9d4cd65f450a0426f4c787fd0c622f236d53108b43df30baa9f9
+PKG_HASH:=d759f9acf87d2f6b0b8598c48700b5c5a6a72ad40cd8248f431266fe9d92e6f2
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -95,6 +95,12 @@ endef
 define Package/homeassistant/description
  Open source home automation that puts local control and privacy first.
  Powered by a worldwide community of tinkerers and DIY enthusiasts.
+endef
+
+# FIXME remove a fucking code
+define Build/Prepare
+	$(call Build/Prepare/Default)
+	$(RM) -r $(PKG_BUILD_DIR)/$(PKG_NAME)/components/ukraine_alarm
 endef
 
 define Py3Package/homeassistant/install
