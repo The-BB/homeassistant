@@ -1,5 +1,5 @@
 diff --git a/lang/python/Jinja2/Makefile b/lang/python/Jinja2/Makefile
-index 2ee79c686..e79811f43 100644
+index 2ee79c686..075b8f57a 100644
 --- a/lang/python/Jinja2/Makefile
 +++ b/lang/python/Jinja2/Makefile
 @@ -1,15 +1,16 @@
@@ -12,12 +12,12 @@ index 2ee79c686..e79811f43 100644
  
  PKG_NAME:=Jinja2
 -PKG_VERSION:=3.0.3
-+PKG_VERSION:=3.1.1
++PKG_VERSION:=3.1.2
  PKG_RELEASE:=1
  
  PYPI_NAME:=$(PKG_NAME)
 -PKG_HASH:=611bb273cd68f3b993fabdc4064fc858c5b47a973cb5aa7999ec1ba405c87cd7
-+PKG_HASH:=640bed4bb501cbd17194b3cace1dc2126f5b619cf068a726b98192a0fde74ae9
++PKG_HASH:=31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852
  
  PKG_MAINTAINER:=Josef Schlehofer <josef.schlehofer@nic.cz>
  PKG_LICENSE:=BSD-3-Clause
@@ -114,7 +114,7 @@ index b0860617c..5725f4b2d 100644
  $(eval $(call BuildPackage,python3-numpy))
  $(eval $(call BuildPackage,python3-numpy-src))
 diff --git a/lang/python/pillow/Makefile b/lang/python/pillow/Makefile
-index d5c34b992..a003117a5 100644
+index d5c34b992..90d2e762b 100644
 --- a/lang/python/pillow/Makefile
 +++ b/lang/python/pillow/Makefile
 @@ -3,15 +3,16 @@
@@ -127,12 +127,12 @@ index d5c34b992..a003117a5 100644
  
  PKG_NAME:=pillow
 -PKG_VERSION:=9.0.1
-+PKG_VERSION:=9.1.0
++PKG_VERSION:=9.1.1
  PKG_RELEASE:=1
  
  PYPI_NAME:=Pillow
 -PKG_HASH:=6c8bc8238a7dfdaf7a75f5ec5a663f4173f8c367e5a39f87e720495e1eed75fa
-+PKG_HASH:=f401ed2bbb155e1ade150ccc63db1a4f6c1909d3d378f7d1235a44e90d75fb97
++PKG_HASH:=7502539939b53d7565f3d11d87c78e7ec900d3c72945d4ee0e2f250d598309a0
  
  PKG_MAINTAINER:=Alexandru Ardelean <ardeleanalex@gmail.com>
  PKG_LICENSE:=HPND
@@ -205,7 +205,7 @@ index cb66dd01f..d2c64e544 100644
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
 diff --git a/lang/python/python-awesomeversion/Makefile b/lang/python/python-awesomeversion/Makefile
-index 73fc231eb..69586c35c 100644
+index 73fc231eb..18b0c0e5f 100644
 --- a/lang/python/python-awesomeversion/Makefile
 +++ b/lang/python/python-awesomeversion/Makefile
 @@ -4,15 +4,16 @@
@@ -219,12 +219,12 @@ index 73fc231eb..69586c35c 100644
  PKG_NAME:=python-awesomeversion
 -PKG_VERSION:=21.8.1
 -PKG_RELEASE:=$(AUTORELEASE)
-+PKG_VERSION:=22.2.0
++PKG_VERSION:=22.5.2
 +PKG_RELEASE:=1
  
  PYPI_NAME:=awesomeversion
 -PKG_HASH:=a72f3fff12df257e30f5e25a8550fc4da62e7591d5fdb70714f5c96827c37645
-+PKG_HASH:=d0f97caf565fadaee80347596b49edcca860690fc76293fe3aec9393e5e31097
++PKG_HASH:=051f89efd8ba0b157fb516bda5e1dad4d63f87e8f9c0c148930023d984fce62f
  
  PKG_MAINTAINER:=Josef Schlehofer <josef.schlehofer@nic.cz>
  PKG_LICENSE:=MIT
@@ -448,7 +448,7 @@ index a6e04f9f1..8ab5ce88c 100644
  PKG_MAINTAINER:=Daniel Danzberger <daniel@dd-wrt.com>
  PKG_LICENSE:=MIT
 diff --git a/lang/python/python-sqlalchemy/Makefile b/lang/python/python-sqlalchemy/Makefile
-index f15cbb3ff..fbe7ef4ba 100644
+index f15cbb3ff..ccac09185 100644
 --- a/lang/python/python-sqlalchemy/Makefile
 +++ b/lang/python/python-sqlalchemy/Makefile
 @@ -4,15 +4,16 @@
@@ -461,12 +461,12 @@ index f15cbb3ff..fbe7ef4ba 100644
  
  PKG_NAME:=python-sqlalchemy
 -PKG_VERSION:=1.4.22
-+PKG_VERSION:=1.4.36
++PKG_VERSION:=1.4.37
  PKG_RELEASE:=1
  
  PYPI_NAME:=SQLAlchemy
 -PKG_HASH:=ec1be26cdccd60d180359a527d5980d959a26269a2c7b1b327a1eea0cab37ed8
-+PKG_HASH:=64678ac321d64a45901ef2e24725ec5e783f1f4a588305e196431447e7ace243
++PKG_HASH:=3688f92c62db6c5df268e2264891078f17ecb91e3141b400f2e28d0f75796dea
  
  PKG_MAINTAINER:=Josef Schlehofer <josef.schlehofer@nic.cz>
  PKG_LICENSE:=MIT
@@ -601,7 +601,7 @@ index 95383c89d..70e721416 100644
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
 diff --git a/lang/python/python-zeroconf/Makefile b/lang/python/python-zeroconf/Makefile
-index 9b3e220c0..41bbb26ed 100644
+index 9b3e220c0..779ddb0db 100644
 --- a/lang/python/python-zeroconf/Makefile
 +++ b/lang/python/python-zeroconf/Makefile
 @@ -4,15 +4,16 @@
@@ -614,12 +614,12 @@ index 9b3e220c0..41bbb26ed 100644
  
  PKG_NAME:=python-zeroconf
 -PKG_VERSION:=0.38.1
-+PKG_VERSION:=0.38.5
++PKG_VERSION:=0.38.6
  PKG_RELEASE:=1
  
  PYPI_NAME:=zeroconf
 -PKG_HASH:=10c501b25d8881b656e56c34674d98fe6bc752240a572e74f918bc849c93ba9c
-+PKG_HASH:=a6e131323f21c2f7c7273e477607c2affb113a599d84142233bf1193b6f30bb7
++PKG_HASH:=c98f87a9145c58ad544cf1708b5eb2f444d40cd5defc69c88eeaac0527a28795
  
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
