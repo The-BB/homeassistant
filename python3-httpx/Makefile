@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-httpx
-PKG_VERSION:=0.22.0
+PKG_VERSION:=0.23.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=httpx
-PKG_HASH:=d8e778f76d9bbd46af49e7f062467e3157a5a3d2ae4876a4bbfd8a51ed9c9cb4
+PKG_HASH:=f28eac771ec9eb4866d3fb4ab65abd42d38c424739e80c08d8d20570de60b0ef
 
 PKG_LICENSE:=BSD-3-Clause
 PKG_LICENSE_FILES:=LICENSE.md
@@ -24,7 +24,6 @@ define Package/python3-httpx
   URL:=https://github.com/encode/httpx
   DEPENDS:= \
 	+python3-certifi \
-	+python3-charset-normalizer \
 	+python3-httpcore \
 	+python3-rfc3986 \
 	+python3-sniffio
