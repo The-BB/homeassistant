@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
-PKG_VERSION:=2022.6.5
+PKG_VERSION:=2022.6.6
 PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=1a30ea9459125752c2f7676457fd8cdf44125e869dfe9b496dfb0939e7bdf05c
+PKG_HASH:=5c899cb5c68f650ef60a9520be4084ec89c089f40e6bcb1246c472fefa36d19d
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -114,9 +114,9 @@ endef
 define Package/homeassistant/postinst
 #!/bin/sh
 
-echo -e "\n\t *** Prepare your device to use the Home Assistant ***\n\n\t
-	Please read the wiki:\n\t\t
-	https://github.com/Entware/Entware/wiki/Self-installation-of-python-modules\n"
+echo -e "\n\t*** Prepare your device to use the Home Assistant ***\n\n
+	\tPlease read the wiki:\n
+	\t\thttps://github.com/Entware/Entware/wiki/Self-installation-of-python-modules\n"
 endef
 
 define Package/homeassistant/postrm
