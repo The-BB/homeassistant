@@ -3,7 +3,7 @@
 @@ -1,8 +1,35 @@
  [metadata]
 +name = homeassistant
- version = 2022.6.6
+ version = 2022.6.7
 +author = The Home Assistant Authors
 +author_email = hello@home-assistant.io
 +license = Apache-2.0
