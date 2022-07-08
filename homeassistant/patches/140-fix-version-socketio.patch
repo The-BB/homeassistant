@@ -1,6 +1,6 @@
 --- a/homeassistant/package_constraints.txt
 +++ b/homeassistant/package_constraints.txt
-@@ -93,7 +93,7 @@ pytest_asyncio==1000000000.0.0
+@@ -97,7 +97,7 @@ pytest_asyncio==1000000000.0.0
  # until upper bounds for sisyphus-control have been updated
  # https://github.com/jkeljo/sisyphus-control/issues/6
  python-engineio>=3.13.1,<4.2

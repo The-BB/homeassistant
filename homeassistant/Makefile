@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
-PKG_VERSION:=2022.6.7
+PKG_VERSION:=2022.7.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=0cc168c65a57b3d4f20d3667d81d68167faab39b0c8575bcb8235ed875ade2bf
+PKG_HASH:=2994c9e460c30ce944f551067d3e34cd74f91f21198b0a2ddfe0cc03b29a4209
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -36,7 +36,6 @@ define Package/homeassistant
 	+python3-bcrypt \
 	+python3-certifi \
 	+python3-ciso8601 \
-	+python3-cryptography \
 	+python3-httpx \
 	+python3-ifaddr \
 	+python3-jinja2 \
@@ -48,6 +47,8 @@ define Package/homeassistant
 	+python3-voluptuous-serialize \
 	+python3-yaml \
 	+python3-yarl
+# core (rust-lang pkgs)
+  EXTRA_DEPENDS:=python3-cryptography, python3-orjson
 # base
   DEPENDS+= \
 	+python3-aiohttp-cors \
@@ -72,6 +73,7 @@ define Package/homeassistant
 	+python3-httplib2 \
 	+python3-libcst \
 	+python3-mutagen \
+	+python3-numpy \
 	+python3-paho-mqtt \
 	+python3-pymetno \
 	+python3-pyotp \
