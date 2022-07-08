@@ -21,8 +21,15 @@ index 2ee79c686..075b8f57a 100644
  
  PKG_MAINTAINER:=Josef Schlehofer <josef.schlehofer@nic.cz>
  PKG_LICENSE:=BSD-3-Clause
+diff --git a/lang/python/host-pip-requirements/Cython.txt b/lang/python/host-pip-requirements/Cython.txt
+index be0f28a12..a3ac1502f 100644
+--- a/lang/python/host-pip-requirements/Cython.txt
++++ b/lang/python/host-pip-requirements/Cython.txt
+@@ -1 +1 @@
+-Cython==0.29.26 --hash=sha256:af377d543a762867da11fcf6e558f7a4a535ff8693f30cce123fab10c00fa312
++Cython==0.29.30 --hash=sha256:2235b62da8fe6fa8b99422c8e583f2fb95e143867d337b5c75e4b9a1a865f9e3
 diff --git a/lang/python/numpy/Makefile b/lang/python/numpy/Makefile
-index b0860617c..5725f4b2d 100644
+index b0860617c..66ae29fd5 100644
 --- a/lang/python/numpy/Makefile
 +++ b/lang/python/numpy/Makefile
 @@ -2,15 +2,16 @@
@@ -35,16 +42,31 @@ index b0860617c..5725f4b2d 100644
  
  PKG_NAME:=numpy
 -PKG_VERSION:=1.21.5
-+PKG_VERSION:=1.21.6
- PKG_RELEASE:=$(AUTORELEASE)
+-PKG_RELEASE:=$(AUTORELEASE)
++PKG_VERSION:=1.23.0
++PKG_RELEASE:=1
  
  PYPI_NAME:=$(PKG_NAME)
 -PKG_HASH:=6a5928bc6241264dce5ed509e66f33676fc97f464e7a919edc672fb5532221ee
-+PKG_HASH:=ecb55251139706669fdec2ff073c98ef8e9a84473e51e716211b41aa0f18e656
++PKG_HASH:=bd3fa4fe2e38533d5336e1272fc4e765cabbbde144309ccee8675509d5cd7b05
  
  PKG_MAINTAINER:=Alexandru Ardelean <ardeleanalex@gmail.com>
  
-@@ -35,34 +36,35 @@ define Package/python3-numpy
+@@ -21,10 +22,11 @@ PKG_CPE_ID:=cpe:/a:numpy:numpy
+ PKG_CONFIG_DEPENDS:= \
+         CONFIG_NUMPY_OPENBLAS_SUPPORT
+ 
+-# yes, zip... sigh
+-PYPI_SOURCE_EXT:=zip
+ HOST_PYTHON3_PACKAGE_BUILD_DEPENDS:=Cython
+ 
++# XXX currently supports only x86_64 AVX-512
++PYTHON3_PKG_SETUP_VARS:=NPY_DISABLE_SVML=1
++
+ include ../pypi.mk
+ include $(INCLUDE_DIR)/package.mk
+ include ../python3-package.mk
+@@ -35,34 +37,35 @@ define Package/python3-numpy
    CATEGORY:=Languages
    TITLE:=The fundamental package for scientific computing with Python
    URL:=https://www.numpy.org/
@@ -98,7 +120,7 @@ index b0860617c..5725f4b2d 100644
  
  define Build/Prepare
  	$(call Build/Prepare/Default)
-@@ -77,6 +79,14 @@ For some modules to be available, the INSTALL_GFORTRAN symbol needs
+@@ -77,6 +80,14 @@ For some modules to be available, the INSTALL_GFORTRAN symbol needs
  to be enabled in the OpenWrt core/toolchain.
  endef
  
@@ -205,7 +227,7 @@ index cb66dd01f..d2c64e544 100644
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
 diff --git a/lang/python/python-awesomeversion/Makefile b/lang/python/python-awesomeversion/Makefile
-index 73fc231eb..18b0c0e5f 100644
+index 73fc231eb..3144418ec 100644
 --- a/lang/python/python-awesomeversion/Makefile
 +++ b/lang/python/python-awesomeversion/Makefile
 @@ -4,15 +4,16 @@
@@ -219,12 +241,12 @@ index 73fc231eb..18b0c0e5f 100644
  PKG_NAME:=python-awesomeversion
 -PKG_VERSION:=21.8.1
 -PKG_RELEASE:=$(AUTORELEASE)
-+PKG_VERSION:=22.5.2
++PKG_VERSION:=22.6.0
 +PKG_RELEASE:=1
  
  PYPI_NAME:=awesomeversion
 -PKG_HASH:=a72f3fff12df257e30f5e25a8550fc4da62e7591d5fdb70714f5c96827c37645
-+PKG_HASH:=051f89efd8ba0b157fb516bda5e1dad4d63f87e8f9c0c148930023d984fce62f
++PKG_HASH:=38f580bfacf1c06b674bcd0f68e0c445ebb03fcd3700c6a2c588fb9313308e0f
  
  PKG_MAINTAINER:=Josef Schlehofer <josef.schlehofer@nic.cz>
  PKG_LICENSE:=MIT
@@ -390,7 +412,7 @@ index e74cc880e..3423e35a3 100644
  PKG_LICENSE:=BSD
  PKG_MAINTAINER:=Micke Prag <micke.prag@telldus.se>
 diff --git a/lang/python/python-requests/Makefile b/lang/python/python-requests/Makefile
-index 5853897be..d27b7e6ea 100644
+index 5853897be..d39b3c75b 100644
 --- a/lang/python/python-requests/Makefile
 +++ b/lang/python/python-requests/Makefile
 @@ -4,11 +4,12 @@
@@ -403,7 +425,7 @@ index 5853897be..d27b7e6ea 100644
  
  PKG_NAME:=python-requests
 -PKG_VERSION:=2.26.0
-+PKG_VERSION:=2.27.1
++PKG_VERSION:=2.28.1
  PKG_RELEASE:=1
  
  PKG_MAINTAINER:=Josef Schlehofer <josef.schlehofer@nic.cz>, Alexandru Ardelean <ardeleanalex@gmail.com>
@@ -412,7 +434,7 @@ index 5853897be..d27b7e6ea 100644
  
  PYPI_NAME:=requests
 -PKG_HASH:=b8aa58f8cf793ffd8782d3d8cb19e66ef36f7aba4353eec859e74678b01b07a7
-+PKG_HASH:=68d7c56fd5a8999887728ef304a6d12edc7be74f1cfa47714fc8b414525c9a61
++PKG_HASH:=7c5599b102feddaa661c826c56ab4fee28bfd17f5abca1ebbe3e7f19d7c97983
  
  include ../pypi.mk
  include $(INCLUDE_DIR)/package.mk
@@ -448,7 +470,7 @@ index a6e04f9f1..8ab5ce88c 100644
  PKG_MAINTAINER:=Daniel Danzberger <daniel@dd-wrt.com>
  PKG_LICENSE:=MIT
 diff --git a/lang/python/python-sqlalchemy/Makefile b/lang/python/python-sqlalchemy/Makefile
-index f15cbb3ff..ccac09185 100644
+index f15cbb3ff..2ebe22da8 100644
 --- a/lang/python/python-sqlalchemy/Makefile
 +++ b/lang/python/python-sqlalchemy/Makefile
 @@ -4,15 +4,16 @@
@@ -461,12 +483,12 @@ index f15cbb3ff..ccac09185 100644
  
  PKG_NAME:=python-sqlalchemy
 -PKG_VERSION:=1.4.22
-+PKG_VERSION:=1.4.37
++PKG_VERSION:=1.4.38
  PKG_RELEASE:=1
  
  PYPI_NAME:=SQLAlchemy
 -PKG_HASH:=ec1be26cdccd60d180359a527d5980d959a26269a2c7b1b327a1eea0cab37ed8
-+PKG_HASH:=3688f92c62db6c5df268e2264891078f17ecb91e3141b400f2e28d0f75796dea
++PKG_HASH:=93ae1d2ef42fbf0f0b3d44b35225bda123310df4b33c9bf662e7b50a68c48a98
  
  PKG_MAINTAINER:=Josef Schlehofer <josef.schlehofer@nic.cz>
  PKG_LICENSE:=MIT
@@ -601,7 +623,7 @@ index 95383c89d..70e721416 100644
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
 diff --git a/lang/python/python-zeroconf/Makefile b/lang/python/python-zeroconf/Makefile
-index 9b3e220c0..779ddb0db 100644
+index 9b3e220c0..c910d5f40 100644
 --- a/lang/python/python-zeroconf/Makefile
 +++ b/lang/python/python-zeroconf/Makefile
 @@ -4,15 +4,16 @@
@@ -614,12 +636,12 @@ index 9b3e220c0..779ddb0db 100644
  
  PKG_NAME:=python-zeroconf
 -PKG_VERSION:=0.38.1
-+PKG_VERSION:=0.38.6
++PKG_VERSION:=0.38.7
  PKG_RELEASE:=1
  
  PYPI_NAME:=zeroconf
 -PKG_HASH:=10c501b25d8881b656e56c34674d98fe6bc752240a572e74f918bc849c93ba9c
-+PKG_HASH:=c98f87a9145c58ad544cf1708b5eb2f444d40cd5defc69c88eeaac0527a28795
++PKG_HASH:=eaee2293e5f4e6d249f6155f9d3cca1668cb22b2545995ea72c6a03b4b7706d4
  
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
@@ -644,6 +666,30 @@ index 02fc5c2b0..849a90e74 100644
  PYPI_NAME:=netifaces
 -PKG_HASH:=2dee9ffdd16292878336a58d04a20f0ffe95555465fee7c9bd23b3490ef2abf3
 +PKG_HASH:=043a79146eb2907edf439899f262b3dfe41717d34124298ed281139a8b93ca32
+ 
+ PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
+ PKG_LICENSE:=MIT
+diff --git a/lang/python/xmltodict/Makefile b/lang/python/xmltodict/Makefile
+index 44cf4cd50..c3e79fb90 100644
+--- a/lang/python/xmltodict/Makefile
++++ b/lang/python/xmltodict/Makefile
+@@ -4,15 +4,16 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=python-xmltodict
+-PKG_VERSION:=0.12.0
+-PKG_RELEASE:=2
++PKG_VERSION:=0.13.0
++PKG_RELEASE:=1
+ 
+ PYPI_NAME:=xmltodict
+-PKG_HASH:=50d8c638ed7ecb88d90561beedbf720c9b4e851a9fa6c47ebd64e99d166d8a21
++PKG_HASH:=341595a488e3e01a85a9d8911d8912fd922ede5fecc4dce437eb4b6c8d037e56
  
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=MIT
