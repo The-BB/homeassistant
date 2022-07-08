@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-aiohomekit
-PKG_VERSION:=0.7.17
+PKG_VERSION:=0.7.20
 PKG_RELEASE:=1
 
 PYPI_NAME:=aiohomekit
-PKG_HASH:=7bb0be4af5a2f791b3fbc347913a067aa4e0da992da0679d845239b91a3b6fbd
+PKG_HASH:=e8c931f7c5a269269b57b0e416805cf02e6785916639e8f1ff8166c1dc894589
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -23,6 +23,7 @@ define Package/python3-aiohomekit
   TITLE:=an asyncio HomeKit client
   URL:=https://github.com/Jc2k/aiohomekit
   DEPENDS:= \
+	+python3-chacha20poly1305-reuseable \
 	+python3-commentjson \
 	+python3-cryptography \
 	+python3-zeroconf
