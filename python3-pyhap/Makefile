@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-pyhap
-PKG_VERSION:=4.4.0
+PKG_VERSION:=4.5.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=HAP-python
-PKG_HASH:=8a6dbe335de434fc96486a9dcad668a85d44cb7c95241f4f9fb68fd32c5ab484
+PKG_HASH:=83d5c43f4bc42f82578d7099dd68052e9f73d33d5ab7f6b9a37ff89a58b17c58
 
 PKG_LICENSE:=Apache-2.0
 
@@ -22,9 +22,11 @@ define Package/python3-pyhap
   TITLE:=HomeKit Accessory Protocol implementation
   URL:=https://github.com/ikalchev/HAP-python
   DEPENDS:= \
+	+python3-chacha20poly1305-reuseable \
 	+python3-cryptography \
 	+python3-h11 \
 	+python3-zeroconf
+  EXTRA_DEPENDS:=python3-orjson
 #[QRCode]
   DEPENDS+= \
 	+python3-base36 \
