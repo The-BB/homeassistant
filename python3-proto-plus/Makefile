@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-proto-plus
 PKG_VERSION:=1.19.8
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=proto-plus
 PKG_HASH:=bdf45f0e0be71510eb2ec9db4da78afde7b5fb8b0a507a36340a9b6ce8e48e58
@@ -23,8 +23,8 @@ define Package/python3-proto-plus
   TITLE:=Beautiful, Pythonic protocol buffers
   URL:=https://github.com/googleapis/proto-plus-python.git
   DEPENDS:= \
-	+protobuf \
-	+python3-google-api-core
+	+python3-logging \
+	+python3-protobuf
 endef
 
 define Package/python3-proto-plus/description
