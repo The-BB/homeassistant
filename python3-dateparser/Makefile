@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-dateparser
 PKG_VERSION:=1.0.0
-PKG_RELEASE:=3
+PKG_RELEASE:=4
 
 PYPI_NAME:=dateparser
 PKG_HASH:=159cc4e01a593706a15cd4e269a0b3345edf3aef8bf9278a57dac8adf5bf1e4a
@@ -23,7 +23,9 @@ define Package/python3-dateparser
   TITLE:=parser for human readable dates
   URL:=https://github.com/scrapinghub/dateparser
   DEPENDS:= \
+	+python3-codecs \
 	+python3-dateutil \
+	+python3-logging \
 	+python3-pytz \
 	+python3-regex \
 	+python3-tzlocal
