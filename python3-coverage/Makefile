@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-coverage
 PKG_VERSION:=6.2
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=coverage
 PKG_HASH:=e2cad8093172b7d1595b4ad66f24270808658e11acf43a8f95b41276162eb5b8
@@ -23,7 +23,9 @@ define Package/python3-coverage
   TITLE:=Code coverage measurement for Python
   URL:=https://github.com/nedbat/coveragepy
   DEPENDS:= \
-	+python3
+	+python3-multiprocessing \
+	+python3-sqlite3 \
+	+python3-xml
 endef
 
 define Package/python3-coverage/description
