@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python-gtts
 PKG_VERSION:=2.2.3
-PKG_RELEASE:=2
+PKG_RELEASE:=3
 
 PYPI_NAME:=gTTS
 PKG_HASH:=88cfaa112471867009a0450a696e5bc69cf1671fa0fa683fe17d0650023c863c
@@ -24,8 +24,10 @@ define Package/python3-gtts
   URL:=https://github.com/pndurette/gTTS
   DEPENDS:= \
 	+python3-click \
+	+python3-logging \
 	+python3-requests \
-	+python3-six
+	+python3-six \
+	+python3-urllib
 endef
 
 define Package/python3-gtts/description
