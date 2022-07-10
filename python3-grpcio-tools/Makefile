@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-grpcio-tools
 PKG_VERSION:=1.46.1
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=grpcio-tools
 PKG_HASH:=d54d80a4cfd7da002893711af613c9c9358dddfdd27feea44eb902c495b09105
@@ -23,12 +23,11 @@ define Package/python3-grpcio-tools
   TITLE:=Protobuf code generator for gRPC
   URL:=https://grpc.io/
   DEPENDS:= \
-	+libatomic \
-	+libpython3 \
 	+libstdcpp \
+	+python3-distutils \
+	+python3-multiprocessing \
 	+python3-protobuf \
-	+python3-setuptools \
-	+python3-six
+	+python3-setuptools
 endef
 
 define Package/python3-grpcio-tools/description
