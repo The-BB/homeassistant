@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-pycares
 PKG_VERSION:=4.1.2
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=pycares
 PKG_HASH:=03490be0e7b51a0c8073f877bec347eff31003f64f57d9518d419d9369452837
@@ -23,7 +23,9 @@ define Package/python3-pycares
   TITLE:=Python interface for c-ares
   URL:=https://github.com/saghul/pycares
   DEPENDS:= \
+	+python3-asyncio \
 	+python3-cffi \
+	+python3-distutils \
 	+python3-idna
 endef
 
