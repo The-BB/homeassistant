@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python-pymetno
 PKG_VERSION:=0.9.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=PyMetno
 PKG_HASH:=9845a900577cea3803cb6002a1108bf1aab6c89fcff8d8fe46682351fb82a3ed
@@ -23,8 +23,10 @@ define Package/python3-pymetno
   TITLE:=A library to communicate with the met.no api
   URL:=https://github.com/Danielhiversen/pyMetno
   DEPENDS:= \
+	+python3-asyncio \
 	+python3-aiohttp \
 	+python3-async-timeout \
+	+python3-logging \
 	+python3-pytz \
 	+python3-xmltodict
 endef
