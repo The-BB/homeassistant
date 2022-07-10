@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python-pyturbojpeg
 PKG_VERSION:=1.6.6
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=PyTurboJPEG
 PKG_HASH:=80dd153484a8830dab4ebe7c0ee1cb43c5723a0e951375fd4ff8fa7f0d04757c
@@ -24,6 +24,7 @@ define Package/python3-pyturbojpeg
   URL:=https://github.com/lilohuang/PyTurboJPEG
   DEPENDS:= \
 	+libturbojpeg \
+	+python3-ctypes \
 	+python3-numpy
 endef
 
