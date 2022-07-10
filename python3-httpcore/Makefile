@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-httpcore
 PKG_VERSION:=0.15.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=httpcore
 PKG_HASH:=18b68ab86a3ccf3e7dc0f43598eaddcf472b602aba29f9aa6ab85fe2ada3980b
@@ -23,8 +23,12 @@ define Package/python3-httpcore
   TITLE:=a minimal low-level HTTP client
   URL:=https://github.com/encode/httpcore
   DEPENDS:= \
+	+python3-anyio \
 	+python3-h11 \
-	+python3-sniffio
+	+python3-openssl \
+	+python3-certifi \
+	+python3-sniffio \
+	+python3-urllib
 endef
 
 define Package/python3-httpcore/description
