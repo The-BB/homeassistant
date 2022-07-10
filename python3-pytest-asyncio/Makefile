@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-pytest-asyncio
 PKG_VERSION:=0.17.2
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=pytest-asyncio
 PKG_HASH:=6d895b02432c028e6957d25fc936494e78c6305736e785d9fee408b1efbc7ff4
@@ -25,6 +25,7 @@ define Package/python3-pytest-asyncio
   TITLE:=Pytest support for asyncio
   URL:=https://github.com/pytest-dev/pytest-asyncio
   DEPENDS:= \
+	+python3-asyncio \
 	+python3-pytest
 endef
 
