@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-aiohomekit
 PKG_VERSION:=0.7.20
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=aiohomekit
 PKG_HASH:=e8c931f7c5a269269b57b0e416805cf02e6785916639e8f1ff8166c1dc894589
@@ -23,10 +23,14 @@ define Package/python3-aiohomekit
   TITLE:=an asyncio HomeKit client
   URL:=https://github.com/Jc2k/aiohomekit
   DEPENDS:= \
+	+python3-asyncio \
 	+python3-chacha20poly1305-reuseable \
 	+python3-commentjson \
-	+python3-cryptography \
+	+python3-decimal \
+	+python3-logging \
 	+python3-zeroconf
+# (rust-lang pkgs)
+  EXTRA_DEPENDS:=python3-cryptography
 endef
 
 define Package/python3-aiohomekit/description
