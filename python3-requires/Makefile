@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-requires
 PKG_VERSION:=0.4.1
-PKG_RELEASE:=2
+PKG_RELEASE:=3
 
 PYPI_NAME:=requires
 PKG_HASH:=7ba02fd34a12bb3e163303031fc68822eb18d71321c4be1a83976b8ec37ec184
@@ -22,7 +22,9 @@ define Package/python3-requires
   SUBMENU:=Python
   TITLE:=require and import dependencies at runtime
   URL:=https://github.com/dynamic-graphics-inc/dgpy-libs
-  DEPENDS:=+python3-light
+  DEPENDS:= \
+	+python3-asyncio \
+	+python3-pydoc
 endef
 
 define Package/python3-requires/description
