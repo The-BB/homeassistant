@@ -22,7 +22,8 @@ define Package/python3-contextvars
   SUBMENU:=Python
   TITLE:=PEP 567 Backport
   URL:=http://github.com/MagicStack/contextvars
-  DEPENDS:=+python3-immutables
+  DEPENDS:= \
+	+python3-immutables
 endef
 
 define Package/python3-contextvars/description
