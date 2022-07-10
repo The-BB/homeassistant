@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-async-upnp-client
 PKG_VERSION:=0.31.2
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=async_upnp_client
 PKG_HASH:=f059e90bde27cf6e8c617daa6bd64d7649ab1dc91963e2cc86b36c776028e6e2
@@ -25,9 +25,13 @@ define Package/python3-async-upnp-client
   DEPENDS:= \
 	+python3-aiohttp \
 	+python3-async-timeout \
+	+python3-asyncio \
 	+python3-defusedxml \
 	+python3-didl-lite \
-	+python3-voluptuous
+	+python3-logging \
+	+python3-urllib \
+	+python3-voluptuous \
+	+python3-xml
 endef
 
 define Package/python3-async-upnp-client/description
