@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-tzlocal
 PKG_VERSION:=3.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=tzlocal
 PKG_HASH:=f4e6e36db50499e0d92f79b67361041f048e2609d166e93456b50746dc4aef12
@@ -23,8 +23,9 @@ define Package/python3-tzlocal
   TITLE:=tzinfo object for the local timezone
   URL:=https://github.com/regebro/tzlocal
   DEPENDS:= \
-	+python3-light \
-	+python3-tzdata
+	+python3-logging \
+	+python3-urllib \
+	+python3-xml
 endef
 
 define Package/python3-tzlocal/description
