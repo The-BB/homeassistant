@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python-snitun
 PKG_VERSION:=0.31.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=snitun
 PKG_HASH:=d3ba49bcc69307ea38e9c5645d77df15f644795e6e2f3c2833087a4e9d0576e9
@@ -24,8 +24,13 @@ define Package/python3-snitun
   URL:=https://www.nabucasa.com
   DEPENDS:= \
 	+python3-async-timeout \
+	+python3-asyncio \
 	+python3-attrs \
-	+python3-cryptography
+	+python3-logging \
+	+python3-multiprocessing \
+	+python3-openssl
+# (rust-lang pkgs)
+  EXTRA_DEPENDS:=python3-cryptography
 endef
 
 define Package/python3-snitun/description
