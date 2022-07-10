@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=pyjwt
 PKG_VERSION:=2.4.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
@@ -22,7 +22,8 @@ define Package/python3-pyjwt
   CATEGORY:=Languages
   TITLE:=JSON Web Token implementation in Python
   URL:=http://github.com/jpadilla/pyjwt
-  DEPENDS:=+python3
+  DEPENDS:= \
+	+python3-urllib
 endef
 
 define Package/python3-pyjwt/description
