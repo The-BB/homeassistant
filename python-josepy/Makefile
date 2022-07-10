@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python-josepy
 PKG_VERSION:=1.9.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=josepy
 PKG_HASH:=51cce8d97ced0556aae0ce3161b26d5f0f54bc42c749d3c606edc6d97d9802dc
@@ -23,9 +23,11 @@ define Package/python3-josepy
   TITLE:=JOSE protocol implementation in Python
   URL:=https://github.com/certbot/josepy
   DEPENDS:= \
-	+python3-cryptography \
+	+python3-logging \
 	+python3-pyopenssl \
 	+python3-setuptools
+# (rust-lang pkgs)
+  EXTRA_DEPENDS:=python3-cryptography
 endef
 
 define Package/python3-josepy/description
