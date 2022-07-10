@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-immutables
 PKG_VERSION:=0.14
-PKG_RELEASE:=2
+PKG_RELEASE:=3
 
 PYPI_NAME:=immutables
 PKG_HASH:=a0a1cc238b678455145bae291d8426f732f5255537ed6a5b7645949704c70a78
@@ -22,7 +22,7 @@ define Package/python3-immutables
   SUBMENU:=Python
   TITLE:=Immutable Collections
   URL:=https://github.com/MagicStack/immutables
-  DEPENDS:=+python3-requires
+  DEPENDS:=+python3-light
 endef
 
 define Package/python3-immutables/description
