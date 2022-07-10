@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-libcst
 PKG_VERSION:=0.3.23
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=libcst
 PKG_HASH:=330f9082a309bad808e283e80845a843200303bb256690185b98ca458a62c4f8
@@ -23,8 +23,11 @@ define Package/python3-libcst
   TITLE:=A Concrete Syntax Tree (CST) parser and serializer library
   URL:=https://github.com/Instagram/LibCST
   DEPENDS:= \
+	+python3-distutils \
+	+python3-multiprocessing \
 	+python3-typing-extensions \
 	+python3-typing-inspect \
+	+python3-unittest \
 	+python3-yaml
 endef
 
