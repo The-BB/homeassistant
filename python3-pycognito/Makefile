@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-pycognito
 PKG_VERSION:=2022.1.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=pycognito
 PKG_HASH:=4deeef59bdee15b946d07ab48c6b7a8201b2a872d9040a27baeacd84674e7d0f
@@ -27,6 +27,8 @@ define Package/python3-pycognito
 	+python3-envs \
 	+python3-jose \
 	+python3-requests
+# (rust-lang pkgs): python-jose[cryptography]
+  EXTRA_DEPENDS:=python3-cryptography
 endef
 
 define Package/python3-pycognito/description
