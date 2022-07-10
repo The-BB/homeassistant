@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-pandas
 PKG_VERSION:=1.3.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=pandas
 PKG_HASH:=c554e6c9cf2d5ea1aba5979cc837b3649539ced0e18ece186f055450c86622e2
@@ -24,10 +24,19 @@ define Package/python3-pandas
   URL:=https://pandas.pydata.org/
   DEPENDS:= \
 	+libstdcpp \
+	+python3-codecs \
+	+python3-ctypes \
 	+python3-dateutil \
+	+python3-decimal \
+	+python3-distutils \
+	+python3-logging \
+	+python3-lzma \
 	+python3-numpy \
+	+python3-pydoc \
 	+python3-pytz \
-	+python3-six
+	+python3-sqlite3 \
+	+python3-urllib \
+	+python3-xml
 endef
 
 define Package/python3-pandas/description
