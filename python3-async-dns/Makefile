@@ -4,12 +4,13 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-async-dns
 PKG_VERSION:=1.1.9
-PKG_RELEASE:=2
+PKG_RELEASE:=3
 
 PYPI_NAME:=async_dns
 PKG_HASH:=153ced1555e0b803a4fc1ca78d33e7e46202044b603c8a3825bfa591eb3c3c84
 
 PKG_LICENSE:=MIT
+PKG_LICENSE_FILES:=LICENSE
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
@@ -21,7 +22,10 @@ define Package/python3-async-dns
   SUBMENU:=Python
   TITLE:=Asynchronous DNS client and server
   URL:=https://github.com/gera2ld/async_dns
-#  DEPENDS:=+python3-zeroconf
+  DEPENDS:= \
+	+python3-asyncio \
+	+python3-logging \
+	+python3-urllib
 endef
 
 define Package/python3-async-dns/description
