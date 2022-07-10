@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-sniffio
 PKG_VERSION:=1.2.0
-PKG_RELEASE:=2
+PKG_RELEASE:=3
 
 PYPI_NAME:=sniffio
 PKG_HASH:=c4666eecec1d3f50960c6bdf61ab7bc350648da6c126e3cf6898d8cd4ddcd3de
@@ -23,8 +23,7 @@ define Package/python3-sniffio
   TITLE:=sniff out which async library your code is running under
   URL:=https://github.com/python-trio/sniffio
   DEPENDS:= \
-	+python3-contextvars \
-	+python3-requires
+	+python3-asyncio
 endef
 
 define Package/python3-sniffio/description
