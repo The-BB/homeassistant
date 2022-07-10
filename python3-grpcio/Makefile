@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-grpcio
 PKG_VERSION:=1.46.1
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=grpcio
 PKG_HASH:=4835b0f5fedbee3a3d6eea48f4e65dffd30b52c078690fa97ddc9fcea1e3b35d
@@ -23,13 +23,16 @@ define Package/python3-grpcio
   TITLE:=HTTP/2-based RPC framework
   URL:=https://grpc.io/
   DEPENDS:= \
-	+libatomic \
-	+libopenssl \
-	+libstdcpp \
-	+python3-coverage \
+	+python3-asyncio \
+	+python3-distutils \
 	+python3-grpcio-tools \
-	+python3-protobuf \
-	+python3-six
+	+python3-logging \
+	+python3-multiprocessing \
+	+python3-readline \
+	+python3-six \
+	+python3-unittest \
+	+python3-urllib \
+	+python3-xml
 endef
 
 define Package/python3-grpcio/description
@@ -39,7 +42,7 @@ define Package/python3-grpcio/description
   of connected systems.
 endef
 
-PYTHON3_PKG_SETUP_VARS+= \
+PYTHON3_PKG_SETUP_VARS += \
 	GRPC_BUILD_WITH_BORING_SSL_ASM="False" \
 	GRPC_PYTHON_BUILD_SYSTEM_OPENSSL="True" \
 	GRPC_PYTHON_BUILD_SYSTEM_ZLIB="False" \
