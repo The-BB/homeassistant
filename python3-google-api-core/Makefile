@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-google-api-core
 PKG_VERSION:=1.31.2
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=google-api-core
 PKG_HASH:=8500aded318fdb235130bf183c726a05a9cb7c4b09c266bd5119b86cdb8a4d10
@@ -23,16 +23,19 @@ define Package/python3-google-api-core
   TITLE:=Google API client core library
   URL:=https://github.com/googleapis/python-api-core
   DEPENDS:= \
-	+python3-protobuf \
+	+python3-asyncio \
 	+python3-googleapis-common-protos \
 	+python3-google-auth \
-	+python3-grpcio \
+	+python3-logging \
 	+python3-packaging \
 	+python3-protobuf \
 	+python3-pytz \
 	+python3-requests \
 	+python3-setuptools \
 	+python3-six
+# extras: google-cloud-pubsub: google-api-core[grpc]
+  DEPENDS+= \
+	+python3-grpcio
 endef
 
 define Package/python3-google-api-core/description
