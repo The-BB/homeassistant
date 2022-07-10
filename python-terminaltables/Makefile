@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python-terminaltables
 PKG_VERSION:=3.1.0
-PKG_RELEASE:=2
+PKG_RELEASE:=3
 
 PYPI_NAME:=terminaltables
 PKG_HASH:=f3eb0eb92e3833972ac36796293ca0906e998dc3be91fbe1f8615b331b853b81
@@ -22,7 +22,9 @@ define Package/python3-terminaltables
   SUBMENU:=Python
   TITLE:=Generate simple tables in terminals
   URL:=https://github.com/Robpol86/terminaltables
-  DEPENDS:=+python3-light
+  DEPENDS:= \
+	+python3-codecs \
+	+python3-ctypes
 endef
 
 define Package/python3-terminaltables/description
