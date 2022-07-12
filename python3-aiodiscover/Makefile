@@ -10,6 +10,7 @@ PYPI_NAME:=aiodiscover
 PKG_HASH:=f203036acb7cf4cf42798b42e7e0a4c3ec6999fe9dfdbff30b22934a8da3d354
 
 PKG_LICENSE:=Apache-2.0
+PKG_LICENSE_FILES:=LICENSE
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
@@ -22,8 +23,10 @@ define Package/python3-aiodiscover
   TITLE:=Async Host discovery
   URL:=https://github.com/bdraco/aiodiscover
   DEPENDS:= \
+	+python3-asyncio \
 	+python3-dns \
 	+python3-ifaddr \
+	+python3-logging \
 	+python3-netifaces \
 	+python3-pyroute2
 endef
@@ -32,6 +35,6 @@ define Package/python3-aiodiscover/description
   Discover hosts by arp and ptr lookup.
 endef
 
-#$(eval $(call Py3Package,python3-aiodiscover))
-#$(eval $(call BuildPackage,python3-aiodiscover))
+$(eval $(call Py3Package,python3-aiodiscover))
+$(eval $(call BuildPackage,python3-aiodiscover))
 #$(eval $(call BuildPackage,python3-aiodiscover-src))
