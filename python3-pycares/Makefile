@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-pycares
-PKG_VERSION:=4.1.2
-PKG_RELEASE:=2
+PKG_VERSION:=4.2.1
+PKG_RELEASE:=1
 
 PYPI_NAME:=pycares
-PKG_HASH:=03490be0e7b51a0c8073f877bec347eff31003f64f57d9518d419d9369452837
+PKG_HASH:=735b4f75fd0f595c4e9184da18cd87737f46bc81a64ea41f4edce2b6b68d46d2
 
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
@@ -25,7 +25,9 @@ define Package/python3-pycares
   DEPENDS:= \
 	+python3-asyncio \
 	+python3-cffi \
-	+python3-distutils \
+	+python3-distutils
+# [idna]
+  DEPENDS+= \
 	+python3-idna
 endef
 
