@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homekit
 PKG_VERSION:=0.0.1
-PKG_RELEASE:=7
+PKG_RELEASE:=8
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -34,12 +34,6 @@ Build/Compile:=:
 
 define Package/homekit/install
 	true
-endef
-
-define Package/homekit/postinst
-#!/bin/sh
-
-echo -e "\n\t *** Please install homeassistant package manually ***\n"
 endef
 
 $(eval $(call BuildPackage,homekit))
