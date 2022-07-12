@@ -1,0 +1,32 @@
+--- a/av/datasets.py
++++ b/av/datasets.py
+@@ -20,10 +20,10 @@ def iter_data_dirs(check_writable=False)
+         return
+ 
+     bases = [
+-        "/usr/local/share",
+-        "/usr/local/lib",
+-        "/usr/share",
+-        "/usr/lib",
++        "/opt/usr/share",
++        "/opt/usr/lib",
++        "/opt/share",
++        "/opt/lib",
+     ]
+ 
+     # Prefer the local virtualenv.
+@@ -52,10 +52,10 @@ def cached_download(url, name):
+     :envvar:`PYAV_TESTDATA_DIR`, or the first that is writeable of:
+ 
+     - the current virtualenv
+-    - ``/usr/local/share``
+-    - ``/usr/local/lib``
+-    - ``/usr/share``
+-    - ``/usr/lib``
++    - ``/opt/usr/share``
++    - ``/opt/usr/lib``
++    - ``/opt/share``
++    - ``/opt/lib``
+     - the user's home
+ 
+     """
