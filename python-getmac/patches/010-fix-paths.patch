@@ -1,0 +1,19 @@
+--- a/getmac/__main__.py
++++ b/getmac/__main__.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/opt/bin/python
+ # -*- coding: utf-8 -*-
+ 
+ from __future__ import print_function
+--- a/getmac/getmac.py
++++ b/getmac/getmac.py
+@@ -74,7 +74,7 @@ if _SYST == "Linux":
+ 
+ PATH = os.environ.get("PATH", os.defpath).split(os.pathsep)
+ if not WINDOWS:
+-    PATH.extend(("/sbin", "/usr/sbin"))
++    PATH.extend(("/opt/sbin", "/opt/usr/sbin", "/sbin", "/usr/sbin"))
+ 
+ # Use a copy of the environment so we don't
+ # modify the process's current environment.
