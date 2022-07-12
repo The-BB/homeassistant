@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
-PKG_VERSION:=2022.7.2
+PKG_VERSION:=2022.7.3
 PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=16e5482469c65f361d0220614432ec01655d37d092cb7f738f1dd1f3cf50cb79
+PKG_HASH:=49953793485a6ad82f51739929dce530953d075099397e91504309660730d514
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -60,6 +60,7 @@ define Package/homeassistant
 	+python3-yarl
 # from package_constraints
   DEPENDS+= \
+	+python3-aiodiscover \
 	+python3-aiohttp-cors \
 	+python3-anyio \
 	+python3-async-upnp-client \
@@ -92,11 +93,39 @@ define Package/homeassistant
 	+python3-urllib3 \
 	+python3-zeroconf \
 	+scapy
-# ext
+# home-assistant-frontend==20220707.0
+
+# from internal
   DEPENDS+= \
 	+python3-colorlog \
+	+python3-croniter \
+	+python3-debugpy \
+	+python3-ephem \
+	+python3-guppy3 \
+	+python3-ha-av \
+	+python3-holidays \
+	+python3-icmplib \
+	+python3-mutagen \
+	+python3-netdisco \
+	+python3-objgraph \
+	+python3-pyhaversion \
 	+python3-pyotp \
-	+python3-pyqrcode
+	+python3-pyprof2calltree \
+	+python3-pyqrcode \
+	+python3-pyturbojpeg \
+	+python3-restrictedpython \
+	+python3-securetar \
+	+python3-sense-energy \
+	+python3-watchdog \
+	+youtube-dl
+# ext
+  DEPENDS+= \
+	+homekit \
+	+python3-getmac \
+	+python3-gtts \
+	+python3-pymetno \
+	+python3-radios
+
 # core (rust-lang pkgs)
   EXTRA_DEPENDS:=python3-cryptography, python3-orjson
 endef
