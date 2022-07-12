@@ -315,6 +315,38 @@ index 02a82cf67..a2592c0cb 100644
  
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=MIT
+diff --git a/lang/python/python-cryptography/Makefile b/lang/python/python-cryptography/Makefile
+index 7284f2a10..f9805d1b3 100644
+--- a/lang/python/python-cryptography/Makefile
++++ b/lang/python/python-cryptography/Makefile
+@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=python-cryptography
+ PKG_VERSION:=3.4.8
+-PKG_RELEASE:=1
++PKG_RELEASE:=2
+ 
+ PYPI_NAME:=cryptography
+ PKG_HASH:=94cc5ed4ceaefcbe5bf38c8fba6a21fc1d365bb8fb826ea1688e3370b2e24a1c
+diff --git a/lang/python/python-cryptography/patches/0004-disable-rust.patch b/lang/python/python-cryptography/patches/0004-disable-rust.patch
+index b005851cb..81c45a44d 100644
+--- a/lang/python/python-cryptography/patches/0004-disable-rust.patch
++++ b/lang/python/python-cryptography/patches/0004-disable-rust.patch
+@@ -9,9 +9,12 @@
+  except ImportError:
+      print(
+          """
+-@@ -45,7 +45,7 @@ setuptools_rust = "setuptools-rust>=0.11
++@@ -43,9 +43,9 @@ with open(os.path.join(src_dir, "cryptog
++ # `pyproject.toml`
++ setuptools_rust = "setuptools-rust>=0.11.4"
+  install_requirements = ["cffi>=1.12"]
+- setup_requirements = install_requirements + [setuptools_rust]
++-setup_requirements = install_requirements + [setuptools_rust]
+++setup_requirements = install_requirements
+  
+ -if os.environ.get("CRYPTOGRAPHY_DONT_BUILD_RUST"):
+ +if True:
 diff --git a/lang/python/python-multidict/Makefile b/lang/python/python-multidict/Makefile
 index b757b2cda..d08f55651 100644
 --- a/lang/python/python-multidict/Makefile
@@ -645,6 +677,18 @@ index 9b3e220c0..c910d5f40 100644
  
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
+diff --git a/lang/python/python3-find-stdlib-depends.sh b/lang/python/python3-find-stdlib-depends.sh
+index d0e983820..46d36ddba 100644
+--- a/lang/python/python3-find-stdlib-depends.sh
++++ b/lang/python/python3-find-stdlib-depends.sh
+@@ -18,7 +18,6 @@ python3-dbm: dbm
+ python3-decimal: decimal
+ python3-distutils: distutils
+ python3-email: email
+-python3-gdbm: dbm.gnu
+ python3-logging: logging
+ python3-lzma: lzma
+ python3-multiprocessing: multiprocessing
 diff --git a/lang/python/python3-netifaces/Makefile b/lang/python/python3-netifaces/Makefile
 index 02fc5c2b0..849a90e74 100644
 --- a/lang/python/python3-netifaces/Makefile
@@ -669,6 +713,58 @@ index 02fc5c2b0..849a90e74 100644
  
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=MIT
+diff --git a/lang/python/python3-pyroute2/Makefile b/lang/python/python3-pyroute2/Makefile
+index 1f8cf55e6..1174dd0c2 100644
+--- a/lang/python/python3-pyroute2/Makefile
++++ b/lang/python/python3-pyroute2/Makefile
+@@ -4,15 +4,16 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=python3-pyroute2
+-PKG_VERSION:=0.5.16
++PKG_VERSION:=0.6.13
+ PKG_RELEASE:=1
+ 
+ PYPI_NAME:=pyroute2
+-PKG_HASH:=fe681a2d008cac815b9f287250d69a333fbfc2b2d89c37d58798104057149989
++PKG_HASH:=b03d49a581945fec2b1ec7d1d5125c6f40ba04ed11affc90c4caddc019e25792
+ 
+ PKG_MAINTAINER:=Martin Matějek <martin.matejek@nic.cz>
+ PKG_LICENSE:=GPL-2.0-or-later Apache-2.0
+@@ -29,12 +30,13 @@ define Package/python3-pyroute2
+   TITLE:=Python netlink library
+   URL:=https://github.com/svinota/pyroute2
+   DEPENDS:= \
+-	  +python3-light \
+-	  +python3-distutils \
+-	  +python3-logging \
+-	  +python3-multiprocessing \
+-	  +python3-sqlite3 \
+-	  +python3-ctypes
++	+python3-pyroute2-core \
++	+python3-pyroute2-ethtool \
++	+python3-pyroute2-ipdb \
++	+python3-pyroute2-ipset \
++	+python3-pyroute2-ndb \
++	+python3-pyroute2-nftables \
++	+python3-pyroute2-nslink
+ endef
+ 
+ define Package/python3-pyroute2/description
+@@ -43,8 +45,6 @@ define Package/python3-pyroute2/description
+   but now it supports many netlink protocols.
+ endef
+ 
+-PYTHON3_PKG_SETUP_ARGS:=
+-
+ $(eval $(call Py3Package,python3-pyroute2))
+ $(eval $(call BuildPackage,python3-pyroute2))
+ $(eval $(call BuildPackage,python3-pyroute2-src))
 diff --git a/lang/python/xmltodict/Makefile b/lang/python/xmltodict/Makefile
 index 44cf4cd50..c3e79fb90 100644
 --- a/lang/python/xmltodict/Makefile
@@ -694,7 +790,7 @@ index 44cf4cd50..c3e79fb90 100644
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=MIT
 diff --git a/libs/libjpeg-turbo/Makefile b/libs/libjpeg-turbo/Makefile
-index 7cc012a..3f2c65d 100644
+index 7cc012aa5..3f2c65d84 100644
 --- a/libs/libjpeg-turbo/Makefile
 +++ b/libs/libjpeg-turbo/Makefile
 @@ -30,6 +30,13 @@ define Package/libjpeg-turbo
@@ -747,7 +843,7 @@ index 7cc012a..3f2c65d 100644
 +$(eval $(call BuildPackage,libturbojpeg))
  $(eval $(call BuildPackage,libjpeg-turbo-utils))
 diff --git a/libs/libre2/Makefile b/libs/libre2/Makefile
-index 972cbf2..d48ac93 100644
+index 972cbf29b..d48ac935a 100644
 --- a/libs/libre2/Makefile
 +++ b/libs/libre2/Makefile
 @@ -39,8 +39,8 @@ TARGET_LDFLAGS += \
@@ -761,3 +857,26 @@ index 972cbf2..d48ac93 100644
  endef
  
  $(eval $(call BuildPackage,re2))
+diff --git a/multimedia/youtube-dl/Makefile b/multimedia/youtube-dl/Makefile
+index e41f3f180..202b451dd 100644
+--- a/multimedia/youtube-dl/Makefile
++++ b/multimedia/youtube-dl/Makefile
+@@ -4,15 +4,16 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=youtube-dl
+-PKG_VERSION:=2021.6.6
++PKG_VERSION:=2021.12.17
+ PKG_RELEASE:=1
+ 
+ PYPI_NAME:=youtube_dl
+-PKG_HASH:=cb2d3ee002158ede783e97a82c95f3817594df54367ea6a77ce5ceea4772f0ab
++PKG_HASH:=bc59e86c5d15d887ac590454511f08ce2c47698d5a82c27bfe27b5d814bbaed2
+ 
+ PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
+ PKG_LICENSE:=Unlicense
