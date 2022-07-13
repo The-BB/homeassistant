@@ -1,0 +1,11 @@
+--- a/src/debugpy/_vendored/pydevd/setup_pydevd_cython.py
++++ b/src/debugpy/_vendored/pydevd/setup_pydevd_cython.py
+@@ -168,7 +168,7 @@ def build_extension(dir_name, extension_
+             # Enabling -flto brings executable from 4MB to 0.56MB and -Os to 0.41MB
+             # Profiling shows an execution around 3-5% slower with -Os vs -O3,
+             # so, kept only -flto.
+-            extra_compile_args = ["-flto", "-O3"]
++            extra_compile_args = ["-flto", "-O3", "-fPIC"]
+             extra_link_args = extra_compile_args[:]
+ 
+             # Note: also experimented with profile-guided optimization. The executable
