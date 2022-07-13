@@ -23,6 +23,7 @@ define Package/python3-grpcio-tools
   TITLE:=Protobuf code generator for gRPC
   URL:=https://grpc.io/
   DEPENDS:= \
+	+libatomic \
 	+libstdcpp \
 	+python3-distutils \
 	+python3-multiprocessing \
