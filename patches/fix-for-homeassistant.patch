@@ -1,5 +1,5 @@
 diff --git a/lang/python/Jinja2/Makefile b/lang/python/Jinja2/Makefile
-index 2ee79c686..075b8f57a 100644
+index ba7d54259..09f47597b 100644
 --- a/lang/python/Jinja2/Makefile
 +++ b/lang/python/Jinja2/Makefile
 @@ -1,15 +1,16 @@
@@ -13,13 +13,13 @@ index 2ee79c686..075b8f57a 100644
  PKG_NAME:=Jinja2
 -PKG_VERSION:=3.0.3
 +PKG_VERSION:=3.1.2
- PKG_RELEASE:=1
+ PKG_RELEASE:=$(AUTORELEASE)
  
  PYPI_NAME:=$(PKG_NAME)
 -PKG_HASH:=611bb273cd68f3b993fabdc4064fc858c5b47a973cb5aa7999ec1ba405c87cd7
 +PKG_HASH:=31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852
  
- PKG_MAINTAINER:=Josef Schlehofer <josef.schlehofer@nic.cz>
+ PKG_MAINTAINER:=Šimon Bořek <simon.borek@nic.cz>
  PKG_LICENSE:=BSD-3-Clause
 diff --git a/lang/python/host-pip-requirements/Cython.txt b/lang/python/host-pip-requirements/Cython.txt
 index be0f28a12..a3ac1502f 100644
@@ -29,7 +29,7 @@ index be0f28a12..a3ac1502f 100644
 -Cython==0.29.26 --hash=sha256:af377d543a762867da11fcf6e558f7a4a535ff8693f30cce123fab10c00fa312
 +Cython==0.29.30 --hash=sha256:2235b62da8fe6fa8b99422c8e583f2fb95e143867d337b5c75e4b9a1a865f9e3
 diff --git a/lang/python/numpy/Makefile b/lang/python/numpy/Makefile
-index b0860617c..66ae29fd5 100644
+index b0860617c..297819b3b 100644
 --- a/lang/python/numpy/Makefile
 +++ b/lang/python/numpy/Makefile
 @@ -2,15 +2,16 @@
@@ -42,9 +42,8 @@ index b0860617c..66ae29fd5 100644
  
  PKG_NAME:=numpy
 -PKG_VERSION:=1.21.5
--PKG_RELEASE:=$(AUTORELEASE)
 +PKG_VERSION:=1.23.0
-+PKG_RELEASE:=1
+ PKG_RELEASE:=$(AUTORELEASE)
  
  PYPI_NAME:=$(PKG_NAME)
 -PKG_HASH:=6a5928bc6241264dce5ed509e66f33676fc97f464e7a919edc672fb5532221ee
@@ -135,29 +134,6 @@ index b0860617c..66ae29fd5 100644
  $(eval $(call Py3Package,python3-numpy))
  $(eval $(call BuildPackage,python3-numpy))
  $(eval $(call BuildPackage,python3-numpy-src))
-diff --git a/lang/python/pillow/Makefile b/lang/python/pillow/Makefile
-index d5c34b992..90d2e762b 100644
---- a/lang/python/pillow/Makefile
-+++ b/lang/python/pillow/Makefile
-@@ -3,15 +3,16 @@
- # Copyright © 1995-2011 by Fredrik Lundh
- # Copyright © 2016 by Alex Clark and contributors
- #
-+# XXX bump
- 
- include $(TOPDIR)/rules.mk
- 
- PKG_NAME:=pillow
--PKG_VERSION:=9.0.1
-+PKG_VERSION:=9.1.1
- PKG_RELEASE:=1
- 
- PYPI_NAME:=Pillow
--PKG_HASH:=6c8bc8238a7dfdaf7a75f5ec5a663f4173f8c367e5a39f87e720495e1eed75fa
-+PKG_HASH:=7502539939b53d7565f3d11d87c78e7ec900d3c72945d4ee0e2f250d598309a0
- 
- PKG_MAINTAINER:=Alexandru Ardelean <ardeleanalex@gmail.com>
- PKG_LICENSE:=HPND
 diff --git a/lang/python/python-aiohttp/Makefile b/lang/python/python-aiohttp/Makefile
 index 007f41b20..e0fcf07af 100644
 --- a/lang/python/python-aiohttp/Makefile
@@ -227,7 +203,7 @@ index cb66dd01f..d2c64e544 100644
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
 diff --git a/lang/python/python-awesomeversion/Makefile b/lang/python/python-awesomeversion/Makefile
-index 73fc231eb..3144418ec 100644
+index 73fc231eb..23244c545 100644
 --- a/lang/python/python-awesomeversion/Makefile
 +++ b/lang/python/python-awesomeversion/Makefile
 @@ -4,15 +4,16 @@
@@ -240,9 +216,8 @@ index 73fc231eb..3144418ec 100644
  
  PKG_NAME:=python-awesomeversion
 -PKG_VERSION:=21.8.1
--PKG_RELEASE:=$(AUTORELEASE)
 +PKG_VERSION:=22.6.0
-+PKG_RELEASE:=1
+ PKG_RELEASE:=$(AUTORELEASE)
  
  PYPI_NAME:=awesomeversion
 -PKG_HASH:=a72f3fff12df257e30f5e25a8550fc4da62e7591d5fdb70714f5c96827c37645
@@ -315,38 +290,6 @@ index 02a82cf67..a2592c0cb 100644
  
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=MIT
-diff --git a/lang/python/python-cryptography/Makefile b/lang/python/python-cryptography/Makefile
-index 7284f2a10..f9805d1b3 100644
---- a/lang/python/python-cryptography/Makefile
-+++ b/lang/python/python-cryptography/Makefile
-@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
- 
- PKG_NAME:=python-cryptography
- PKG_VERSION:=3.4.8
--PKG_RELEASE:=1
-+PKG_RELEASE:=2
- 
- PYPI_NAME:=cryptography
- PKG_HASH:=94cc5ed4ceaefcbe5bf38c8fba6a21fc1d365bb8fb826ea1688e3370b2e24a1c
-diff --git a/lang/python/python-cryptography/patches/0004-disable-rust.patch b/lang/python/python-cryptography/patches/0004-disable-rust.patch
-index b005851cb..81c45a44d 100644
---- a/lang/python/python-cryptography/patches/0004-disable-rust.patch
-+++ b/lang/python/python-cryptography/patches/0004-disable-rust.patch
-@@ -9,9 +9,12 @@
-  except ImportError:
-      print(
-          """
--@@ -45,7 +45,7 @@ setuptools_rust = "setuptools-rust>=0.11
-+@@ -43,9 +43,9 @@ with open(os.path.join(src_dir, "cryptog
-+ # `pyproject.toml`
-+ setuptools_rust = "setuptools-rust>=0.11.4"
-  install_requirements = ["cffi>=1.12"]
-- setup_requirements = install_requirements + [setuptools_rust]
-+-setup_requirements = install_requirements + [setuptools_rust]
-++setup_requirements = install_requirements
-  
- -if os.environ.get("CRYPTOGRAPHY_DONT_BUILD_RUST"):
- +if True:
 diff --git a/lang/python/python-multidict/Makefile b/lang/python/python-multidict/Makefile
 index b757b2cda..d08f55651 100644
 --- a/lang/python/python-multidict/Makefile
@@ -443,43 +386,6 @@ index e74cc880e..3423e35a3 100644
  
  PKG_LICENSE:=BSD
  PKG_MAINTAINER:=Micke Prag <micke.prag@telldus.se>
-diff --git a/lang/python/python-requests/Makefile b/lang/python/python-requests/Makefile
-index 5853897be..d39b3c75b 100644
---- a/lang/python/python-requests/Makefile
-+++ b/lang/python/python-requests/Makefile
-@@ -4,11 +4,12 @@
- # This is free software, licensed under the GNU General Public License v2.
- # See /LICENSE for more information.
- #
-+# XXX bump
- 
- include $(TOPDIR)/rules.mk
- 
- PKG_NAME:=python-requests
--PKG_VERSION:=2.26.0
-+PKG_VERSION:=2.28.1
- PKG_RELEASE:=1
- 
- PKG_MAINTAINER:=Josef Schlehofer <josef.schlehofer@nic.cz>, Alexandru Ardelean <ardeleanalex@gmail.com>
-@@ -17,7 +18,7 @@ PKG_LICENSE_FILES:=LICENSE
- PKG_CPE_ID:=cpe:/a:python-requests:requests
- 
- PYPI_NAME:=requests
--PKG_HASH:=b8aa58f8cf793ffd8782d3d8cb19e66ef36f7aba4353eec859e74678b01b07a7
-+PKG_HASH:=7c5599b102feddaa661c826c56ab4fee28bfd17f5abca1ebbe3e7f19d7c97983
- 
- include ../pypi.mk
- include $(INCLUDE_DIR)/package.mk
-@@ -34,7 +35,8 @@ define Package/python3-requests
- 	  +python3-chardet  \
- 	  +python3-idna  \
- 	  +python3-urllib3  \
--	  +python3-certifi
-+	  +python3-certifi \
-+	  +python3-charset-normalizer
- endef
- 
- define Package/python3-requests/description
 diff --git a/lang/python/python-s3transfer/Makefile b/lang/python/python-s3transfer/Makefile
 index a6e04f9f1..8ab5ce88c 100644
 --- a/lang/python/python-s3transfer/Makefile
@@ -678,7 +584,7 @@ index 9b3e220c0..c910d5f40 100644
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
 diff --git a/lang/python/python3-find-stdlib-depends.sh b/lang/python/python3-find-stdlib-depends.sh
-index d0e983820..46d36ddba 100644
+index d0e983820..7724184bb 100644
 --- a/lang/python/python3-find-stdlib-depends.sh
 +++ b/lang/python/python3-find-stdlib-depends.sh
 @@ -18,7 +18,6 @@ python3-dbm: dbm
@@ -857,26 +763,3 @@ index 972cbf29b..d48ac935a 100644
  endef
  
  $(eval $(call BuildPackage,re2))
-diff --git a/multimedia/youtube-dl/Makefile b/multimedia/youtube-dl/Makefile
-index e41f3f180..202b451dd 100644
---- a/multimedia/youtube-dl/Makefile
-+++ b/multimedia/youtube-dl/Makefile
-@@ -4,15 +4,16 @@
- # This is free software, licensed under the GNU General Public License v2.
- # See /LICENSE for more information.
- #
-+# XXX bump
- 
- include $(TOPDIR)/rules.mk
- 
- PKG_NAME:=youtube-dl
--PKG_VERSION:=2021.6.6
-+PKG_VERSION:=2021.12.17
- PKG_RELEASE:=1
- 
- PYPI_NAME:=youtube_dl
--PKG_HASH:=cb2d3ee002158ede783e97a82c95f3817594df54367ea6a77ce5ceea4772f0ab
-+PKG_HASH:=bc59e86c5d15d887ac590454511f08ce2c47698d5a82c27bfe27b5d814bbaed2
- 
- PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
- PKG_LICENSE:=Unlicense
