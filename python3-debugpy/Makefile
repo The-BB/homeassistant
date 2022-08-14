@@ -3,12 +3,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-debugpy
-PKG_VERSION:=1.6.0
+PKG_VERSION:=1.6.2
 PKG_RELEASE:=1
 
 PYPI_NAME:=debugpy
 PYPI_SOURCE_EXT:=zip
-PKG_HASH:=7b79c40852991f7b6c3ea65845ed0f5f6b731c37f4f9ad9c61e2ab4bd48a9275
+PKG_HASH:=e6047272e97a11aa6898138c1c88c8cf61838deeb2a4f0a74e63bb567f8dafc6
 
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
@@ -27,6 +27,7 @@ define Package/python3-debugpy
 	+python3-ctypes \
 	+python3-distutils \
 	+python3-readline \
+	+python3-sqlalchemy \
 	+python3-sqlite3 \
 	+python3-unittest \
 	+python3-urllib \
