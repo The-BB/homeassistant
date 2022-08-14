@@ -1,8 +1,8 @@
 --- a/turbojpeg.py
 +++ b/turbojpeg.py
-@@ -40,11 +40,7 @@ DEFAULT_LIB_PATHS = {
-         '/usr/local/opt/jpeg-turbo/lib/libturbojpeg.dylib',
-         '/opt/libjpeg-turbo/lib64/libturbojpeg.dylib'
+@@ -41,11 +41,7 @@ DEFAULT_LIB_PATHS = {
+         '/opt/libjpeg-turbo/lib64/libturbojpeg.dylib',
+         '/opt/homebrew/opt/jpeg-turbo/lib/libturbojpeg.dylib'
      ],
 -    'Linux': [
 -        '/usr/lib/x86_64-linux-gnu/libturbojpeg.so.0',
