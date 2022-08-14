@@ -1,0 +1,11 @@
+--- a/setup.py
++++ b/setup.py
+@@ -13,7 +13,7 @@ class prepare_tinydtls(build_ext):
+         commands =  [
+                     ["autoconf"],
+                     ["autoheader"],
+-                    ["./configure", "--without-ecc"],
++                    ["./configure", "--host=${ARCH}", "--without-ecc"],
+                     ]
+         if not os.path.exists(os.path.join(os.path.dirname(__file__), 'DTLSSocket','tinydtls','dtls.c')):
+             run_command(["git", "submodule", "update", "--init"])
