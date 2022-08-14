@@ -19,4 +19,4 @@
 +attrs==21.4.0
  awesomeversion==22.6.0
  bcrypt==3.1.7
- certifi>=2021.5.30
+ bleak==0.15.1

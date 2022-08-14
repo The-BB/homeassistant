@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
-PKG_VERSION:=2022.7.7
+PKG_VERSION:=2022.8.4
 PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=6e60fa28a4c1b59abaf6e827ba9316f20532a6066eb92e60857d317825452159
+PKG_HASH:=fd9664f789ac5400408e8b808143b47f6faa0aa585f280eb492c3aea2aa1651f
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -44,12 +44,18 @@ define Package/homeassistant
 	+python3-attrs \
 	+python3-awesomeversion \
 	+python3-bcrypt \
+	+python3-bleak \
+	+python3-bluetooth-adapters \
 	+python3-certifi \
 	+python3-ciso8601 \
 	+python3-httpx \
+	+python3-home-assistant-bluetooth \
 	+python3-ifaddr \
+	+python3-iso4217 \
 	+python3-jinja2 \
+	+python3-lru-dict \
 	+python3-pip \
+	+python3-pubnub \
 	+python3-pyjwt \
 	+python3-requests \
 	+python3-slugify \
@@ -78,7 +84,6 @@ define Package/homeassistant
 	+python3-httplib2 \
 	+python3-hyperframe \
 	+python3-libcst \
-	+python3-lru-dict \
 	+python3-multidict \
 	+python3-numpy \
 	+python3-paho-mqtt \
