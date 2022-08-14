@@ -1,0 +1,12 @@
+--- a/setup.py
++++ b/setup.py
+@@ -65,7 +65,8 @@ else:
+ 
+ 
+ setup(
++    name="cbor2",
+     use_scm_version={"version_scheme": "guess-next-dev", "local_scheme": "dirty-tag"},
+-    setup_requires=["setuptools >= 61", "setuptools_scm >= 6.4"],
++    setup_requires="setuptools_scm[toml] >= 6.4",
+     **kwargs
+ )
