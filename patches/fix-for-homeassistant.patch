@@ -29,7 +29,7 @@ index be0f28a12..a3ac1502f 100644
 -Cython==0.29.26 --hash=sha256:af377d543a762867da11fcf6e558f7a4a535ff8693f30cce123fab10c00fa312
 +Cython==0.29.30 --hash=sha256:2235b62da8fe6fa8b99422c8e583f2fb95e143867d337b5c75e4b9a1a865f9e3
 diff --git a/lang/python/numpy/Makefile b/lang/python/numpy/Makefile
-index b0860617c..297819b3b 100644
+index b0860617c..1d726a37f 100644
 --- a/lang/python/numpy/Makefile
 +++ b/lang/python/numpy/Makefile
 @@ -2,15 +2,16 @@
@@ -42,12 +42,12 @@ index b0860617c..297819b3b 100644
  
  PKG_NAME:=numpy
 -PKG_VERSION:=1.21.5
-+PKG_VERSION:=1.23.0
++PKG_VERSION:=1.23.1
  PKG_RELEASE:=$(AUTORELEASE)
  
  PYPI_NAME:=$(PKG_NAME)
 -PKG_HASH:=6a5928bc6241264dce5ed509e66f33676fc97f464e7a919edc672fb5532221ee
-+PKG_HASH:=bd3fa4fe2e38533d5336e1272fc4e765cabbbde144309ccee8675509d5cd7b05
++PKG_HASH:=d748ef349bfef2e1194b59da37ed5a29c19ea8d7e6342019921ba2ba4fd8b624
  
  PKG_MAINTAINER:=Alexandru Ardelean <ardeleanalex@gmail.com>
  
@@ -441,7 +441,7 @@ index f15cbb3ff..2ebe22da8 100644
  
  define Package/python3-sqlalchemy/description
 diff --git a/lang/python/python-typing-extensions/Makefile b/lang/python/python-typing-extensions/Makefile
-index b60c9ad10..5d2c0829b 100644
+index b60c9ad10..620f45f0f 100644
 --- a/lang/python/python-typing-extensions/Makefile
 +++ b/lang/python/python-typing-extensions/Makefile
 @@ -4,16 +4,17 @@
@@ -454,13 +454,13 @@ index b60c9ad10..5d2c0829b 100644
  
  PKG_NAME:=python-typing-extensions
 -PKG_VERSION:=3.10.0.0
-+PKG_VERSION:=3.10.0.2
++PKG_VERSION:=4.2.0
  PKG_RELEASE:=1
  
  PYPI_NAME:=typing-extensions
  PYPI_SOURCE_NAME:=typing_extensions
 -PKG_HASH:=50b6f157849174217d0656f99dc82fe932884fb250826c18350e159ec6cdf342
-+PKG_HASH:=49f75d16ff11f1cd258e1b988ccff82a3ca5570217d7ad8c5f48205dd99a677e
++PKG_HASH:=f1c24655a0da0d1b67f07e17a5e6b2a105894e6824b92096378bb3668ef02376
  
  PKG_MAINTAINER:=Jan Pavlinec <jan.pavlinec1@gmail.com>
  PKG_LICENSE:=PSF-2.0
