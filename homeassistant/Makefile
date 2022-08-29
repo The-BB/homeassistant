@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
-PKG_VERSION:=2022.8.4
+PKG_VERSION:=2022.8.7
 PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=fd9664f789ac5400408e8b808143b47f6faa0aa585f280eb492c3aea2aa1651f
+PKG_HASH:=e6b4a9b4dc59bb71283421ed09a66b1d6535a6f9937adae70109d24b04a1681f
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -44,18 +44,14 @@ define Package/homeassistant
 	+python3-attrs \
 	+python3-awesomeversion \
 	+python3-bcrypt \
-	+python3-bleak \
-	+python3-bluetooth-adapters \
 	+python3-certifi \
 	+python3-ciso8601 \
 	+python3-httpx \
 	+python3-home-assistant-bluetooth \
 	+python3-ifaddr \
-	+python3-iso4217 \
 	+python3-jinja2 \
 	+python3-lru-dict \
 	+python3-pip \
-	+python3-pubnub \
 	+python3-pyjwt \
 	+python3-requests \
 	+python3-slugify \
@@ -72,6 +68,8 @@ define Package/homeassistant
 	+python3-async-upnp-client \
 	+python3-authlib \
 	+python3-backoff \
+	+python3-bleak \
+	+python3-bluetooth-adapters \
 	+python3-btlewrap \
 	+python3-cryptodome \
 	+python3-engineio \
@@ -83,11 +81,13 @@ define Package/homeassistant
 	+python3-httpcore \
 	+python3-httplib2 \
 	+python3-hyperframe \
+	+python3-iso4217 \
 	+python3-libcst \
 	+python3-multidict \
 	+python3-numpy \
 	+python3-paho-mqtt \
 	+python3-pillow \
+	+python3-pubnub \
 	+python3-pydantic \
 	+python3-pynacl \
 	+python3-pyserial \
@@ -125,9 +125,12 @@ define Package/homeassistant
 	+youtube-dl
 # ext
   DEPENDS+= \
-	+homekit \
+	+python3-aiohomekit \
+	+python3-base36 \
 	+python3-getmac \
 	+python3-gtts \
+	+python3-ha-ffmpeg \
+	+python3-pyhap \
 	+python3-pymetno \
 	+python3-radios
 
