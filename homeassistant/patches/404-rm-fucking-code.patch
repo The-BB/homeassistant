@@ -1,6 +1,6 @@
 --- a/homeassistant/generated/config_flows.py
 +++ b/homeassistant/generated/config_flows.py
-@@ -385,7 +385,6 @@ FLOWS = {
+@@ -404,7 +404,6 @@ FLOWS = {
          "twentemilieu",
          "twilio",
          "twinkly",
