@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=youtube-dl
 PKG_VERSION:=2021.12.17
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=youtube_dl
 PKG_HASH:=bc59e86c5d15d887ac590454511f08ce2c47698d5a82c27bfe27b5d814bbaed2
@@ -29,12 +29,14 @@ define Package/youtube-dl
   URL:=https://yt-dl.org
   DEPENDS:= \
 	+ca-certificates \
-	+python3 \
-	+python3-email \
-	+python3-xml \
 	+python3-codecs \
 	+python3-ctypes \
+	+python3-email \
+	+python3-openssl \
+	+python3-urllib \
+	+python3-xml \
 	+python3-setuptools
+  CONFLICTS:=yt-dlp
 endef
 
 define Package/youtube-dl/description
