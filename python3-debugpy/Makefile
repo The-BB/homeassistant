@@ -3,12 +3,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-debugpy
-PKG_VERSION:=1.6.2
+PKG_VERSION:=1.6.3
 PKG_RELEASE:=1
 
 PYPI_NAME:=debugpy
 PYPI_SOURCE_EXT:=zip
-PKG_HASH:=e6047272e97a11aa6898138c1c88c8cf61838deeb2a4f0a74e63bb567f8dafc6
+PKG_HASH:=e8922090514a890eec99cfb991bab872dd2e353ebb793164d5f01c362b9a40bf
 
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
@@ -24,6 +24,7 @@ define Package/python3-debugpy
   TITLE:=An implementation of the Debug Adapter Protocol
   URL:=https://aka.ms/debugpy
   DEPENDS:= \
+	+python3-asyncio \
 	+python3-ctypes \
 	+python3-distutils \
 	+python3-readline \
