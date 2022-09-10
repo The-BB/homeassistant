@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-bluetooth-adapters
-PKG_VERSION:=0.1.3
+PKG_VERSION:=0.3.5
 PKG_RELEASE:=1
 
 PYPI_NAME:=bluetooth-adapters
-PKG_HASH:=1c2f2b12c19b737b9d50bdcca7d2c2f33db726e7e0ed390c34fd134669ab9134
+PKG_HASH:=a8bef1eb84215aff0e61a21dbb0bed1fd75cec710f565c32791721769abbd47a
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE
