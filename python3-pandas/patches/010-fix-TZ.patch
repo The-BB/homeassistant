@@ -1,6 +1,6 @@
 --- a/pandas/core/dtypes/dtypes.py
 +++ b/pandas/core/dtypes/dtypes.py
-@@ -662,8 +662,8 @@ class DatetimeTZDtype(PandasExtensionDty
+@@ -656,8 +656,8 @@ class DatetimeTZDtype(PandasExtensionDty
      >>> pd.DatetimeTZDtype(tz='UTC')
      datetime64[ns, UTC]
  

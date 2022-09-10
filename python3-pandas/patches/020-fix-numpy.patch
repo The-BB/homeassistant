@@ -8,7 +8,7 @@
  from pkg_resources import parse_version
  from setuptools import (
      Command,
-@@ -568,7 +567,6 @@ for name, data in ext_data.items():
+@@ -569,7 +568,6 @@ for name, data in ext_data.items():
      sources.extend(data.get("sources", []))
  
      include = data.get("include", [])
@@ -16,7 +16,7 @@
  
      undef_macros = []
  
-@@ -629,7 +627,6 @@ ujson_ext = Extension(
+@@ -630,7 +628,6 @@ ujson_ext = Extension(
          "pandas/_libs/src/ujson/python",
          "pandas/_libs/src/ujson/lib",
          "pandas/_libs/src/datetime",

@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-pandas
-PKG_VERSION:=1.3.0
-PKG_RELEASE:=2
+PKG_VERSION:=1.4.3
+PKG_RELEASE:=1
 
 PYPI_NAME:=pandas
-PKG_HASH:=c554e6c9cf2d5ea1aba5979cc837b3649539ced0e18ece186f055450c86622e2
+PKG_HASH:=2ff7788468e75917574f080cd4681b27e1a7bf36461fe968b49a87b5a54d007c
 
 PKG_LICENSE:=BSD-3-Clause
 PKG_LICENSE_FILES:=LICENSE
@@ -29,11 +29,15 @@ define Package/python3-pandas
 	+python3-dateutil \
 	+python3-decimal \
 	+python3-distutils \
+	+python3-jinja2 \
 	+python3-logging \
+	+python3-lxml \
 	+python3-lzma \
+	+python3-markupsafe \
 	+python3-numpy \
 	+python3-pydoc \
 	+python3-pytz \
+	+python3-sqlalchemy \
 	+python3-sqlite3 \
 	+python3-urllib \
 	+python3-xml
