@@ -1,25 +1,35 @@
---- a/src/core/lib/security/security_connector/load_system_roots_linux.cc
-+++ b/src/core/lib/security/security_connector/load_system_roots_linux.cc
-@@ -52,12 +52,11 @@ namespace grpc_core {
- namespace {
+--- a/include/grpc/impl/codegen/port_platform.h
++++ b/include/grpc/impl/codegen/port_platform.h
+@@ -184,6 +184,7 @@
+ #define GPR_POSIX_TIME 1
+ #define GPR_HAS_PTHREAD_H 1
+ #define GPR_GETPID_IN_UNISTD_H 1
++#define GRPC_ROOT_PEM_PATH "/opt/etc/ssl/cert.pem"
+ #ifdef _LP64
+ #define GPR_ARCH_64 1
+ #else /* _LP64 */
+--- a/src/core/lib/security/security_connector/load_system_roots_supported.cc
++++ b/src/core/lib/security/security_connector/load_system_roots_supported.cc
+@@ -52,12 +52,11 @@ namespace {
  
- const char* kLinuxCertFiles[] = {
+ #if defined(GPR_LINUX) || defined(GPR_ANDROID)
+ const char* kCertFiles[] = {
 -    "/etc/ssl/certs/ca-certificates.crt", "/etc/pki/tls/certs/ca-bundle.crt",
 -    "/etc/ssl/ca-bundle.pem", "/etc/pki/tls/cacert.pem",
 -    "/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem"};
 +    "/opt/etc/ssl/certs/ca-certificates.crt", "/opt/etc/pki/tls/certs/ca-bundle.crt",
 +    "/opt/etc/ssl/ca-bundle.pem", "/opt/etc/pki/tls/cacert.pem",
 +    "/opt/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem"};
- const char* kLinuxCertDirectories[] = {
+ const char* kCertDirectories[] = {
 -    "/etc/ssl/certs", "/system/etc/security/cacerts", "/usr/local/share/certs",
 -    "/etc/pki/tls/certs", "/etc/openssl/certs"};
 +    "/opt/etc/ssl/certs", "/opt/etc/pki/tls/certs"};
- 
- grpc_slice GetSystemRootCerts() {
-   grpc_slice valid_bundle_slice = grpc_empty_slice();
+ #elif defined(GPR_FREEBSD)  // endif GPR_LINUX || GPR_ANDROID
+ const char* kCertFiles[] = {"/etc/ssl/cert.pem",
+                             "/usr/local/share/certs/ca-root-nss.crt"};
 --- a/src/core/lib/security/security_connector/ssl_utils.cc
 +++ b/src/core/lib/security/security_connector/ssl_utils.cc
-@@ -45,9 +45,9 @@
+@@ -55,9 +55,9 @@
  static const char* installed_roots_path = GRPC_ROOT_PEM_PATH;
  #elif defined(INSTALL_PREFIX)
  static const char* installed_roots_path =

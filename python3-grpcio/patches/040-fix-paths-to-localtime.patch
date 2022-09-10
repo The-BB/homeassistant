@@ -38,7 +38,7 @@
  #ifndef TZDEFRULES
 --- a/third_party/abseil-cpp/absl/time/internal/test_util.cc
 +++ b/third_party/abseil-cpp/absl/time/internal/test_util.cc
-@@ -76,7 +76,7 @@ const struct ZoneInfo {
+@@ -73,7 +73,7 @@ const struct ZoneInfo {
      {"localtime",  //
       reinterpret_cast<char*>(America_Los_Angeles), America_Los_Angeles_len},
  #else

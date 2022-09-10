@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-grpcio
-PKG_VERSION:=1.46.1
-PKG_RELEASE:=2
+PKG_VERSION:=1.48.0
+PKG_RELEASE:=1
 
 PYPI_NAME:=grpcio
-PKG_HASH:=4835b0f5fedbee3a3d6eea48f4e65dffd30b52c078690fa97ddc9fcea1e3b35d
+PKG_HASH:=eaf4bb73819863440727195411ab3b5c304f6663625e66f348e91ebe0a039306
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE
@@ -32,7 +32,8 @@ define Package/python3-grpcio
 	+python3-six \
 	+python3-unittest \
 	+python3-urllib \
-	+python3-xml
+	+python3-xml \
+	+python3-yaml
 endef
 
 define Package/python3-grpcio/description
@@ -51,7 +52,7 @@ PYTHON3_PKG_SETUP_VARS += \
 
 define Build/Prepare
 	$(call Build/Prepare/Default)
-	$(SED) "s,STAGING_DIR,$(STAGING_DIR),g" $(PKG_BUILD_DIR)/setup.py
+	$(SED) 's,@STAGING_DIR@,$(STAGING_DIR),g' $(PKG_BUILD_DIR)/setup.py
 endef
 
 $(eval $(call Py3Package,python3-grpcio))
