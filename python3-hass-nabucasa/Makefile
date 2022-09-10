@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-hass-nabucasa
-PKG_VERSION:=0.54.1
+PKG_VERSION:=0.55.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=hass-nabucasa
-PKG_HASH:=113d2783e8ea4494a6b243c42720961048e5ec57998e23fad687e0144d60dfcd
+PKG_HASH:=acc3ebb845826932a0287a113ef8990454d3d8f5ad5e36373f169830d0829d32
 
 PKG_LICENSE:=GPL-3.0-or-later
 PKG_LICENSE_FILES:=LICENSE
@@ -31,7 +31,7 @@ define Package/python3-hass-nabucasa
 	+python3-logging \
 	+python3-openssl \
 	+python3-pycognito \
-	+python3-pytz \
+	+python3-pyjwt \
 	+python3-snitun \
 	+python3-urllib \
 	+python3-xml
