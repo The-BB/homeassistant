@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-bluetooth-adapters
-PKG_VERSION:=0.3.5
+PKG_VERSION:=0.4.1
 PKG_RELEASE:=1
 
 PYPI_NAME:=bluetooth-adapters
-PKG_HASH:=a8bef1eb84215aff0e61a21dbb0bed1fd75cec710f565c32791721769abbd47a
+PKG_HASH:=6bdd46ba5188429b58f89dc952b76eab31edff6db482efb7df16a5c2af306e8f
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE
@@ -23,7 +23,9 @@ define Package/python3-bluetooth-adapters
   TITLE:=Tools to enumerate and find Bluetooth Adapters
   URL:=https://github.com/bluetooth-devices/bluetooth-adapters
   DEPENDS:= \
+	+python3-async-timeout \
 	+python3-asyncio \
+	+python3-dbus-fast \
 	+python3-logging
 endef
 
