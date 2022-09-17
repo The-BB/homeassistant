@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-bleak-retry-connector
-PKG_VERSION:=1.7.2
+PKG_VERSION:=1.15.1
 PKG_RELEASE:=1
 
 PYPI_NAME:=bleak-retry-connector
-PKG_HASH:=7d77669cff91eafa5f905b3db57da186a0ce569a59b94a3f25bdfcdcc323be26
+PKG_HASH:=ff7763517bbc90c682e530d54ec54bb70f5425c57e0f26bf3f3b6a6db968086c
 
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
@@ -26,6 +26,7 @@ define Package/python3-bleak-retry-connector
 	+python3-asyncio \
 	+python3-async-timeout \
 	+python3-bleak \
+	+python3-dbus-fast \
 	+python3-logging
 endef
 
