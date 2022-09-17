@@ -1,0 +1,10 @@
+--- a/setup.py
++++ b/setup.py
+@@ -30,7 +30,6 @@ setup_kwargs = {
+     'package_dir': package_dir,
+     'packages': packages,
+     'package_data': package_data,
+-    'extras_require': extras_require,
+     'python_requires': '>=3.7,<4.0',
+ }
+ 
