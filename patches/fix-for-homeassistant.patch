@@ -203,7 +203,7 @@ index cb66dd01f..d2c64e544 100644
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
 diff --git a/lang/python/python-awesomeversion/Makefile b/lang/python/python-awesomeversion/Makefile
-index 73fc231eb..667b99ba7 100644
+index 73fc231eb..8815f8364 100644
 --- a/lang/python/python-awesomeversion/Makefile
 +++ b/lang/python/python-awesomeversion/Makefile
 @@ -4,15 +4,16 @@
@@ -216,12 +216,12 @@ index 73fc231eb..667b99ba7 100644
  
  PKG_NAME:=python-awesomeversion
 -PKG_VERSION:=21.8.1
-+PKG_VERSION:=22.8.0
++PKG_VERSION:=22.9.0
  PKG_RELEASE:=$(AUTORELEASE)
  
  PYPI_NAME:=awesomeversion
 -PKG_HASH:=a72f3fff12df257e30f5e25a8550fc4da62e7591d5fdb70714f5c96827c37645
-+PKG_HASH:=0469a801faafb3a7a13c529edc977ea04c3bce825af9ebb602f58012bc487db5
++PKG_HASH:=2f4190d333e81e10b2a4e156150ddb3596f5f11da67e9d51ba39057aa7a17f7e
  
  PKG_MAINTAINER:=Josef Schlehofer <josef.schlehofer@nic.cz>
  PKG_LICENSE:=MIT
@@ -338,8 +338,40 @@ index 377afead9..5efe5cc2d 100644
  
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
+diff --git a/lang/python/python-psutil/Makefile b/lang/python/python-psutil/Makefile
+index 59b4f0fd1..e7a22d5c0 100644
+--- a/lang/python/python-psutil/Makefile
++++ b/lang/python/python-psutil/Makefile
+@@ -4,15 +4,16 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=python-psutil
+-PKG_VERSION:=5.9.0
++PKG_VERSION:=5.9.2
+ PKG_RELEASE:=1
+ 
+ PYPI_NAME:=psutil
+-PKG_HASH:=869842dbd66bb80c3217158e629d6fceaecc3a3166d3d1faee515b05dd26ca25
++PKG_HASH:=feb861a10b6c3bb00701063b37e4afc754f8217f0f09c42280586bd6ac712b5c
+ 
+ PKG_MAINTAINER:=Jan Pavlinec <jan.pavlinec1@gmail.com>
+ PKG_LICENSE:=BSD 3-Clause
+@@ -30,7 +31,7 @@ define Package/python3-psutil
+   CATEGORY:=Languages
+   TITLE:=psutil (process and system utilities)
+   URL:=https://github.com/giampaolo/psutil
+-  DEPENDS:=+python3-light
++  DEPENDS:=+python3
+ endef
+ 
+ define Package/python3-psutil/description
 diff --git a/lang/python/python-pyotp/Makefile b/lang/python/python-pyotp/Makefile
-index 9cda8ac67..8b95ccff4 100644
+index 9cda8ac67..b847d4217 100644
 --- a/lang/python/python-pyotp/Makefile
 +++ b/lang/python/python-pyotp/Makefile
 @@ -4,15 +4,16 @@
@@ -353,12 +385,12 @@ index 9cda8ac67..8b95ccff4 100644
  PKG_NAME:=pyotp
 -PKG_VERSION:=2.3.0
 -PKG_RELEASE:=2
-+PKG_VERSION:=2.6.0
++PKG_VERSION:=2.7.0
 +PKG_RELEASE:=1
  
  PYPI_NAME:=$(PKG_NAME)
 -PKG_HASH:=fc537e8acd985c5cbf51e11b7d53c42276fee017a73aec7c07380695671ca1a1
-+PKG_HASH:=d28ddfd40e0c1b6a6b9da961c7d47a10261fb58f378cb00f05ce88b26df9c432
++PKG_HASH:=ce989faba0df77dc032b45e51c6cca42bcf20896c8d3d1e7cd759a53dc7d6cb5
  
  PKG_MAINTAINER:=Josef Schlehofer <josef.schlehofer@nic.cz>
  PKG_LICENSE:=MIT
@@ -408,7 +440,7 @@ index a6e04f9f1..8ab5ce88c 100644
  PKG_MAINTAINER:=Daniel Danzberger <daniel@dd-wrt.com>
  PKG_LICENSE:=MIT
 diff --git a/lang/python/python-sqlalchemy/Makefile b/lang/python/python-sqlalchemy/Makefile
-index f15cbb3ff..cf9a59404 100644
+index f15cbb3ff..f7d38ff32 100644
 --- a/lang/python/python-sqlalchemy/Makefile
 +++ b/lang/python/python-sqlalchemy/Makefile
 @@ -4,15 +4,16 @@
@@ -421,22 +453,33 @@ index f15cbb3ff..cf9a59404 100644
  
  PKG_NAME:=python-sqlalchemy
 -PKG_VERSION:=1.4.22
-+PKG_VERSION:=1.4.40
++PKG_VERSION:=1.4.41
  PKG_RELEASE:=1
  
  PYPI_NAME:=SQLAlchemy
 -PKG_HASH:=ec1be26cdccd60d180359a527d5980d959a26269a2c7b1b327a1eea0cab37ed8
-+PKG_HASH:=44a660506080cc975e1dfa5776fe5f6315ddc626a77b50bf0eee18b0389ea265
++PKG_HASH:=0292f70d1797e3c54e862e6f30ae474014648bc9c723e14a2fda730adb0a9791
  
  PKG_MAINTAINER:=Josef Schlehofer <josef.schlehofer@nic.cz>
  PKG_LICENSE:=MIT
-@@ -33,7 +34,8 @@ define Package/python3-sqlalchemy
- 	+python3-light \
- 	+python3-urllib \
+@@ -30,10 +31,17 @@ define Package/python3-sqlalchemy
+   TITLE:=Database Abstraction Library
+   URL:=https://www.sqlalchemy.org
+   DEPENDS:= \
+-	+python3-light \
+-	+python3-urllib \
++	+python3-asyncio \
++	+python3-codecs \
  	+python3-decimal \
 -	+python3-logging
++	+python3-greenlet \
 +	+python3-logging \
-+	+python3-greenlet
++	+python3-ncurses \
++	+python3-openssl \
++	+python3-sqlite3 \
++	+python3-unittest \
++	+python3-urllib \
++	+python3-xml
  endef
  
  define Package/python3-sqlalchemy/description
@@ -538,7 +581,7 @@ index b669fa77d..f66bb2d24 100644
  PKG_MAINTAINER:=Michal Vasilek <michal.vasilek@nic.cz>
  PKG_LICENSE:=BSD-3-Clause
 diff --git a/lang/python/python-yarl/Makefile b/lang/python/python-yarl/Makefile
-index 95383c89d..70e721416 100644
+index 95383c89d..1a2e0444d 100644
 --- a/lang/python/python-yarl/Makefile
 +++ b/lang/python/python-yarl/Makefile
 @@ -4,15 +4,16 @@
@@ -551,15 +594,24 @@ index 95383c89d..70e721416 100644
  
  PKG_NAME:=yarl
 -PKG_VERSION:=1.6.3
-+PKG_VERSION:=1.7.2
++PKG_VERSION:=1.8.1
  PKG_RELEASE:=1
  
  PYPI_NAME:=$(PKG_NAME)
 -PKG_HASH:=8a9066529240171b68893d60dca86a763eae2139dd42f42106b03cf4b426bf10
-+PKG_HASH:=45399b46d60c253327a460e99856752009fcee5f5d3c80b2f7c0cae1c38d56dd
++PKG_HASH:=af887845b8c2e060eb5605ff72b6f2dd2aab7a761379373fd89d314f4752abbf
  
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
+@@ -29,7 +30,7 @@ define Package/python3-yarl
+   TITLE:=Yet another URL library
+   URL:=https://github.com/aio-libs/yarl
+   DEPENDS:= \
+-  +python3-light \
++  +python3-codecs \
+   +python3-multidict \
+   +python3-urllib \
+   +python3-idna
 diff --git a/lang/python/python-zeroconf/Makefile b/lang/python/python-zeroconf/Makefile
 index 9b3e220c0..0d1d3a93d 100644
 --- a/lang/python/python-zeroconf/Makefile
