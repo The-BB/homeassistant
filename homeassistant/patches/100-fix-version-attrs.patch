@@ -7,7 +7,7 @@
 -attrs==21.2.0
 +attrs==21.4.0
  atomicwrites-homeassistant==1.4.1
- awesomeversion==22.8.0
+ awesomeversion==22.9.0
  bcrypt==3.1.7
 --- a/homeassistant/package_constraints.txt
 +++ b/homeassistant/package_constraints.txt
@@ -17,6 +17,6 @@
  atomicwrites-homeassistant==1.4.1
 -attrs==21.2.0
 +attrs==21.4.0
- awesomeversion==22.8.0
+ awesomeversion==22.9.0
  bcrypt==3.1.7
- bleak-retry-connector==1.17.1
+ bleak-retry-connector==2.1.3
