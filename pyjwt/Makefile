@@ -3,14 +3,14 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=pyjwt
-PKG_VERSION:=2.4.0
-PKG_RELEASE:=2
+PKG_VERSION:=2.5.0
+PKG_RELEASE:=1
 
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
 
 PYPI_NAME:=PyJWT
-PKG_HASH:=d42908208c699b3b973cbeb01a969ba6a96c821eefb1c5bfe4c390c01d67abba
+PKG_HASH:=e77ab89480905d86998442ac5788f35333fa85f65047a534adc38edf3c88fc3b
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
@@ -24,6 +24,8 @@ define Package/python3-pyjwt
   URL:=http://github.com/jpadilla/pyjwt
   DEPENDS:= \
 	+python3-urllib
+# (rust-lang pkgs)
+  EXTRA_DEPENDS:=python3-cryptography
 endef
 
 define Package/python3-pyjwt/description
