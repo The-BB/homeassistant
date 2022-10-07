@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-hass-nabucasa
-PKG_VERSION:=0.55.0
+PKG_VERSION:=0.56.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=hass-nabucasa
-PKG_HASH:=acc3ebb845826932a0287a113ef8990454d3d8f5ad5e36373f169830d0829d32
+PKG_HASH:=0b07cf297f25c5002b2258ff663772c260639eda73bb9eb6fb37caacd51a9bfd
 
 PKG_LICENSE:=GPL-3.0-or-later
 PKG_LICENSE_FILES:=LICENSE
@@ -25,9 +25,9 @@ define Package/python3-hass-nabucasa
   DEPENDS:= \
 	+python3-acme \
 	+python3-aiohttp \
+	+python3-asyncio \
 	+python3-atomicwrites-homeassistant \
 	+python3-attrs \
-	+python3-asyncio \
 	+python3-logging \
 	+python3-openssl \
 	+python3-pycognito \
