@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-pyhap
-PKG_VERSION:=4.5.0
-PKG_RELEASE:=2
+PKG_VERSION:=4.5.2
+PKG_RELEASE:=1
 
-PYPI_NAME:=HAP-python
-PKG_HASH:=83d5c43f4bc42f82578d7099dd68052e9f73d33d5ab7f6b9a37ff89a58b17c58
+PYPI_NAME:=ha-HAP-python
+PKG_HASH:=cd9023c65b21c65b8cb5ffe1cdad96dee97379a0e71f6fc0c7bbfe25c1f9372f
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE
@@ -38,6 +38,8 @@ define Package/python3-pyhap
 endef
 
 define Package/python3-pyhap/description
+  This is a fork of HAP-python which is used for providing hotfixes for or
+  troubleshooting issues with HAP-python in Home Assistant.
   HomeKit Accessory Protocol implementation in python 3. With this project,
   you can integrate your own smart devices and add them to your iOS Home app.
   Since Siri is integrated with the Home app, you can start voice-control your
