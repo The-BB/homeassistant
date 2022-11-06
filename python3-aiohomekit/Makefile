@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-aiohomekit
-PKG_VERSION:=2.0.2
+PKG_VERSION:=2.2.13
 PKG_RELEASE:=1
 
 PYPI_NAME:=aiohomekit
-PKG_HASH:=817c5f45157417f6d0cae7159473eaf410f5751dd81f884f0ea9c0e8fbece8f6
+PKG_HASH:=db9cca0d1368371742c5f29ee996b0a7efceb15d55890a0ad26d4156078b6bfa
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -29,6 +29,7 @@ define Package/python3-aiohomekit
 	+python3-bleak-retry-connector \
 	+python3-bleak \
 	+python3-chacha20poly1305-reuseable \
+	+python3-chacha20poly1305 \
 	+python3-commentjson \
 	+python3-decimal \
 	+python3-logging \
