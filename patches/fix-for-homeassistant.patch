@@ -339,7 +339,7 @@ index 377afead9..5efe5cc2d 100644
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
 diff --git a/lang/python/python-psutil/Makefile b/lang/python/python-psutil/Makefile
-index 59b4f0fd1..e7a22d5c0 100644
+index 59b4f0fd1..ce3b7a18a 100644
 --- a/lang/python/python-psutil/Makefile
 +++ b/lang/python/python-psutil/Makefile
 @@ -4,15 +4,16 @@
@@ -352,12 +352,12 @@ index 59b4f0fd1..e7a22d5c0 100644
  
  PKG_NAME:=python-psutil
 -PKG_VERSION:=5.9.0
-+PKG_VERSION:=5.9.2
++PKG_VERSION:=5.9.3
  PKG_RELEASE:=1
  
  PYPI_NAME:=psutil
 -PKG_HASH:=869842dbd66bb80c3217158e629d6fceaecc3a3166d3d1faee515b05dd26ca25
-+PKG_HASH:=feb861a10b6c3bb00701063b37e4afc754f8217f0f09c42280586bd6ac712b5c
++PKG_HASH:=7ccfcdfea4fc4b0a02ca2c31de7fcd186beb9cff8207800e14ab66f79c773af6
  
  PKG_MAINTAINER:=Jan Pavlinec <jan.pavlinec1@gmail.com>
  PKG_LICENSE:=BSD 3-Clause
@@ -440,7 +440,7 @@ index a6e04f9f1..8ab5ce88c 100644
  PKG_MAINTAINER:=Daniel Danzberger <daniel@dd-wrt.com>
  PKG_LICENSE:=MIT
 diff --git a/lang/python/python-sqlalchemy/Makefile b/lang/python/python-sqlalchemy/Makefile
-index f15cbb3ff..f7d38ff32 100644
+index f15cbb3ff..91c741bd3 100644
 --- a/lang/python/python-sqlalchemy/Makefile
 +++ b/lang/python/python-sqlalchemy/Makefile
 @@ -4,15 +4,16 @@
@@ -453,12 +453,12 @@ index f15cbb3ff..f7d38ff32 100644
  
  PKG_NAME:=python-sqlalchemy
 -PKG_VERSION:=1.4.22
-+PKG_VERSION:=1.4.41
++PKG_VERSION:=1.4.42
  PKG_RELEASE:=1
  
  PYPI_NAME:=SQLAlchemy
 -PKG_HASH:=ec1be26cdccd60d180359a527d5980d959a26269a2c7b1b327a1eea0cab37ed8
-+PKG_HASH:=0292f70d1797e3c54e862e6f30ae474014648bc9c723e14a2fda730adb0a9791
++PKG_HASH:=177e41914c476ed1e1b77fd05966ea88c094053e17a85303c4ce007f88eff363
  
  PKG_MAINTAINER:=Josef Schlehofer <josef.schlehofer@nic.cz>
  PKG_LICENSE:=MIT
@@ -672,7 +672,7 @@ index 95383c89d..1a2e0444d 100644
    +python3-urllib \
    +python3-idna
 diff --git a/lang/python/python-zeroconf/Makefile b/lang/python/python-zeroconf/Makefile
-index 9b3e220c0..0d1d3a93d 100644
+index 9b3e220c0..15f88531d 100644
 --- a/lang/python/python-zeroconf/Makefile
 +++ b/lang/python/python-zeroconf/Makefile
 @@ -4,15 +4,16 @@
@@ -685,12 +685,12 @@ index 9b3e220c0..0d1d3a93d 100644
  
  PKG_NAME:=python-zeroconf
 -PKG_VERSION:=0.38.1
-+PKG_VERSION:=0.39.1
++PKG_VERSION:=0.39.4
  PKG_RELEASE:=1
  
  PYPI_NAME:=zeroconf
 -PKG_HASH:=10c501b25d8881b656e56c34674d98fe6bc752240a572e74f918bc849c93ba9c
-+PKG_HASH:=b83cff68a0c8dcd2705b5e792796239accba2bfddb09bc8d05badc642f64e7f6
++PKG_HASH:=701e4d697f89fe952aa9c13a512ed6bf472dcf4f0a6d275e71085604b3882295
  
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
