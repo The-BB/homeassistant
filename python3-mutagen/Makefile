@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-mutagen
-PKG_VERSION:=1.45.1
-PKG_RELEASE:=3
+PKG_VERSION:=1.46.0
+PKG_RELEASE:=1
 
 PYPI_NAME:=mutagen
-PKG_HASH:=6397602efb3c2d7baebd2166ed85731ae1c1d475abca22090b7141ff5034b3e1
+PKG_HASH:=6e5f8ba84836b99fe60be5fb27f84be4ad919bbb6b49caa6ae81e70584b55e58
 
 PKG_LICENSE:=GPL-2.0-or-later
 PKG_LICENSE_FILES:=LICENSE.md
@@ -23,6 +23,7 @@ define Package/python3-mutagen
   TITLE:=read and write audio tags for many formats
   URL:=https://github.com/quodlibet/mutagen
   DEPENDS:= \
+	+python3-codecs \
 	+python3-ctypes \
 	+python3-decimal \
 	+python3-urllib
