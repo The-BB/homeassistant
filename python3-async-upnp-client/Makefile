@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-async-upnp-client
-PKG_VERSION:=0.32.1
+PKG_VERSION:=0.32.2
 PKG_RELEASE:=1
 
 PYPI_NAME:=async_upnp_client
-PKG_HASH:=ff607bc61b9140cac4e6ddf4c64019f10aa401274b1fecfbe8fef4ff42d34349
+PKG_HASH:=413531eb4a8f7b18724b0c817ffab8629162745f1ac7838ace8c9ffcabcd723e
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
