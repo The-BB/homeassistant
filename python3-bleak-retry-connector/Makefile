@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-bleak-retry-connector
-PKG_VERSION:=2.8.4
+PKG_VERSION:=2.8.5
 PKG_RELEASE:=1
 
 PYPI_NAME:=bleak_retry_connector
-PKG_HASH:=62c6bfc82a6eae9b03c4b4f96aaece92b7e8bbe6c006ed916c0c95cb6ebdb64b
+PKG_HASH:=0bedfa4f985359feca18316f73d41c5b809fe06c0577c6c3b279e752a4007c55
 
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
