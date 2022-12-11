@@ -1,0 +1,36 @@
+From fdb176603d11122a66fc07364c7af781238fcd7e Mon Sep 17 00:00:00 2001
+From: The-BB <tun.chen.bo@gmail.com>
+Date: Sun, 11 Dec 2022 10:13:38 +0300
+Subject: [PATCH] lang/python/python-pyotp: bump to 2.7.0
+
+---
+ lang/python/python-pyotp/Makefile | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+diff --git a/lang/python/python-pyotp/Makefile b/lang/python/python-pyotp/Makefile
+index 9cda8ac67..b847d4217 100644
+--- a/lang/python/python-pyotp/Makefile
++++ b/lang/python/python-pyotp/Makefile
+@@ -4,15 +4,16 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=pyotp
+-PKG_VERSION:=2.3.0
+-PKG_RELEASE:=2
++PKG_VERSION:=2.7.0
++PKG_RELEASE:=1
+ 
+ PYPI_NAME:=$(PKG_NAME)
+-PKG_HASH:=fc537e8acd985c5cbf51e11b7d53c42276fee017a73aec7c07380695671ca1a1
++PKG_HASH:=ce989faba0df77dc032b45e51c6cca42bcf20896c8d3d1e7cd759a53dc7d6cb5
+ 
+ PKG_MAINTAINER:=Josef Schlehofer <josef.schlehofer@nic.cz>
+ PKG_LICENSE:=MIT
+-- 
+2.30.2
+

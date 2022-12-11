@@ -1,0 +1,35 @@
+From 810e8edaa57f4084869e4803cced8b3a8d96b5d9 Mon Sep 17 00:00:00 2001
+From: The-BB <tun.chen.bo@gmail.com>
+Date: Sun, 11 Dec 2022 10:11:09 +0300
+Subject: [PATCH] lang/python/Jinja2: bump to 3.1.2
+
+---
+ lang/python/Jinja2/Makefile | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/lang/python/Jinja2/Makefile b/lang/python/Jinja2/Makefile
+index ba7d54259..09f47597b 100644
+--- a/lang/python/Jinja2/Makefile
++++ b/lang/python/Jinja2/Makefile
+@@ -1,15 +1,16 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=Jinja2
+-PKG_VERSION:=3.0.3
++PKG_VERSION:=3.1.2
+ PKG_RELEASE:=$(AUTORELEASE)
+ 
+ PYPI_NAME:=$(PKG_NAME)
+-PKG_HASH:=611bb273cd68f3b993fabdc4064fc858c5b47a973cb5aa7999ec1ba405c87cd7
++PKG_HASH:=31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852
+ 
+ PKG_MAINTAINER:=Šimon Bořek <simon.borek@nic.cz>
+ PKG_LICENSE:=BSD-3-Clause
+-- 
+2.30.2
+

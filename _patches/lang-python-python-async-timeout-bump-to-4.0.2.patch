@@ -1,0 +1,37 @@
+From af8647d1625aab0a1f567642f501a9070d02ebee Mon Sep 17 00:00:00 2001
+From: The-BB <tun.chen.bo@gmail.com>
+Date: Sun, 11 Dec 2022 10:13:38 +0300
+Subject: [PATCH] lang/python/python-async-timeout: bump to 4.0.2
+
+---
+ lang/python/python-async-timeout/Makefile | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+diff --git a/lang/python/python-async-timeout/Makefile b/lang/python/python-async-timeout/Makefile
+index cb66dd01f..d2c64e544 100644
+--- a/lang/python/python-async-timeout/Makefile
++++ b/lang/python/python-async-timeout/Makefile
+@@ -4,16 +4,17 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=async-timeout
+-PKG_VERSION:=3.0.1
+-PKG_RELEASE:=2
++PKG_VERSION:=4.0.2
++PKG_RELEASE:=1
+ 
+ PYPI_NAME:=async_timeout
+ PYPI_SOURCE_NAME:=async-timeout
+-PKG_HASH:=0c3c816a028d47f659d6ff5c745cb2acf1f966da1fe5c19c77a70282b25f4c5f
++PKG_HASH:=2163e1640ddb52b7a8c80d0a67a08587e5d245cc9c553a74a847056bc2976b15
+ 
+ PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
+ PKG_LICENSE:=Apache-2.0
+-- 
+2.30.2
+

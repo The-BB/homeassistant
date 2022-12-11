@@ -1,0 +1,151 @@
+From dca18cda32740503ef081ca27e81a13dc7a17365 Mon Sep 17 00:00:00 2001
+From: The-BB <tun.chen.bo@gmail.com>
+Date: Sun, 11 Dec 2022 10:13:18 +0300
+Subject: [PATCH] lang/python/numpy: fix
+
+---
+ lang/python/numpy/Makefile              | 48 +++++++++++++++----------
+ lang/python/numpy/patches/999-fix.patch | 48 +++++++++++++++++++++++++
+ 2 files changed, 78 insertions(+), 18 deletions(-)
+ create mode 100644 lang/python/numpy/patches/999-fix.patch
+
+diff --git a/lang/python/numpy/Makefile b/lang/python/numpy/Makefile
+index 3124ca8f1..ef6811799 100644
+--- a/lang/python/numpy/Makefile
++++ b/lang/python/numpy/Makefile
+@@ -23,6 +23,9 @@ PKG_CONFIG_DEPENDS:= \
+ 
+ HOST_PYTHON3_PACKAGE_BUILD_DEPENDS:=Cython
+ 
++# XXX currently supports only x86_64 AVX-512
++PYTHON3_PKG_SETUP_VARS:=NPY_DISABLE_SVML=1
++
+ include ../pypi.mk
+ include $(INCLUDE_DIR)/package.mk
+ include ../python3-package.mk
+@@ -33,34 +36,35 @@ define Package/python3-numpy
+   CATEGORY:=Languages
+   TITLE:=The fundamental package for scientific computing with Python
+   URL:=https://www.numpy.org/
+-  DEPENDS:=@!SOFT_FLOAT +INSTALL_GFORTRAN:libgfortran +python3 \
+-	   +NUMPY_OPENBLAS_SUPPORT:openblas
++#  DEPENDS:=@!SOFT_FLOAT +INSTALL_GFORTRAN:libgfortran +python3 \
++#	   +NUMPY_OPENBLAS_SUPPORT:openblas
++  DEPENDS:=+python3
+ endef
+ 
+ # We need to duplicate the omitted arhitectures same as openblas
+-define Package/python3-numpy/config
+-menu "Configuration"
+-depends on !powerpc
+-depends on !arc
++#define Package/python3-numpy/config
++#menu "Configuration"
++#depends on !powerpc
++#depends on !arc
+ 
+-config NUMPY_OPENBLAS_SUPPORT
+-        bool "Enable OpenBLAS support"
+-        default n
++#config NUMPY_OPENBLAS_SUPPORT
++#        bool "Enable OpenBLAS support"
++#        default n
+ 
+-endmenu
+-endef
++#endmenu
++#endef
+ 
+-ifdef CONFIG_NUMPY_OPENBLAS_SUPPORT
++#ifdef CONFIG_NUMPY_OPENBLAS_SUPPORT
+ define Build/Prepare/numpy-sitecfg
+ 	echo "[DEFAULT]"                                 >  $(PKG_BUILD_DIR)/site.cfg
+-	echo "library_dirs = $(STAGING_DIR)/usr/lib"     >> $(PKG_BUILD_DIR)/site.cfg
+-	echo "include_dirs = $(STAGING_DIR)/usr/include" >> $(PKG_BUILD_DIR)/site.cfg
++	echo "library_dirs = $(STAGING_DIR)/opt/lib"     >> $(PKG_BUILD_DIR)/site.cfg
++	echo "include_dirs = $(STAGING_DIR)/opt/include" >> $(PKG_BUILD_DIR)/site.cfg
+ 	echo                                             >> $(PKG_BUILD_DIR)/site.cfg
+-	echo "[openblas]"                                >> $(PKG_BUILD_DIR)/site.cfg
+-	echo "libraries = openblas"                      >> $(PKG_BUILD_DIR)/site.cfg
+-	echo "runtime_library_dirs = /usr/lib"           >> $(PKG_BUILD_DIR)/site.cfg
++#	echo "[openblas]"                                >> $(PKG_BUILD_DIR)/site.cfg
++#	echo "libraries = openblas"                      >> $(PKG_BUILD_DIR)/site.cfg
++#	echo "runtime_library_dirs = /opt/lib"           >> $(PKG_BUILD_DIR)/site.cfg
+ endef
+-endif
++#endif
+ 
+ define Build/Prepare
+ 	$(call Build/Prepare/Default)
+@@ -75,6 +79,14 @@ For some modules to be available, the INSTALL_GFORTRAN symbol needs
+ to be enabled in the OpenWrt core/toolchain.
+ endef
+ 
++define Build/InstallDev
++	$(INSTALL_DIR) $(1)/opt/include/numpy
++	$(CP) $(PKG_BUILD_DIR)/numpy/core/include/numpy/* $(1)/opt/include/numpy
++	$(CP) \
++		$(PKG_BUILD_DIR)/build/src.linux-$(ARCH)-$(PYTHON3_VERSION)/numpy/core/include/numpy/*.h \
++			$(1)/opt/include/numpy
++endef
++
+ $(eval $(call Py3Package,python3-numpy))
+ $(eval $(call BuildPackage,python3-numpy))
+ $(eval $(call BuildPackage,python3-numpy-src))
+diff --git a/lang/python/numpy/patches/999-fix.patch b/lang/python/numpy/patches/999-fix.patch
+new file mode 100644
+index 000000000..46dbf5d43
+--- /dev/null
++++ b/lang/python/numpy/patches/999-fix.patch
+@@ -0,0 +1,48 @@
++--- a/numpy/distutils/ccompiler_opt.py
+++++ b/numpy/distutils/ccompiler_opt.py
++@@ -201,7 +201,7 @@ class _Config:
++         gcc = dict(
++             # native should always fail on arm and ppc64,
++             # native usually works only with x86
++-            native = '-march=native',
+++            native = None,
++             opt = '-O3',
++             werror = '-Werror',
++         ),
++@@ -238,6 +238,8 @@ class _Config:
++         ppc64le = "VSX VSX2",
++         s390x = '',
++         armhf = '', # play it safe
+++        mips = '', # mips
+++        mipsel = '', # mipsel
++         aarch64 = "NEON NEON_FP16 NEON_VFPV4 ASIMD"
++     )
++     conf_features = dict(
++@@ -965,6 +967,9 @@ class _CCompiler:
++             ("cc_on_armhf",    ".*arm.*", "defined(__ARM_ARCH_7__) || "
++                                           "defined(__ARM_ARCH_7A__)"),
++             ("cc_on_s390x",    ".*s390x.*", ""),
+++            # mips(el) platform
+++            ("cc_on_mips",	".*mips.*", ""),
+++            ("cc_on_mipsel",	".*mips(el|le).*", ""),
++             # undefined platform
++             ("cc_on_noarch",   "", ""),
++         )
++@@ -980,7 +985,7 @@ class _CCompiler:
++         )
++         detect_args = (
++            ("cc_has_debug",  ".*(O0|Od|ggdb|coverage|debug:full).*", ""),
++-           ("cc_has_native", ".*(-march=native|-xHost|/QxHost).*", ""),
+++           ("cc_has_native", ".*(-xHost|/QxHost).*", ""),
++            # in case if the class run with -DNPY_DISABLE_OPTIMIZATION
++            ("cc_noopt", ".*DISABLE_OPT.*", ""),
++         )
++@@ -1035,7 +1040,7 @@ class _CCompiler:
++ 
++         self.cc_march = "unknown"
++         for arch in ("x86", "x64", "ppc64", "ppc64le",
++-                     "armhf", "aarch64", "s390x"):
+++                     "armhf", "aarch64", "s390x", "mips", "mipsel"):
++             if getattr(self, "cc_on_" + arch):
++                 self.cc_march = arch
++                 break
+-- 
+2.30.2
+

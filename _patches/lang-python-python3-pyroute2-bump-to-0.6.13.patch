@@ -1,0 +1,64 @@
+From d0ff8a56225446e378b0f323646e65a185fc2155 Mon Sep 17 00:00:00 2001
+From: The-BB <tun.chen.bo@gmail.com>
+Date: Sun, 11 Dec 2022 10:15:53 +0300
+Subject: [PATCH] lang/python/python3-pyroute2: bump to 0.6.13
+
+---
+ lang/python/python3-pyroute2/Makefile | 20 ++++++++++----------
+ 1 file changed, 10 insertions(+), 10 deletions(-)
+
+diff --git a/lang/python/python3-pyroute2/Makefile b/lang/python/python3-pyroute2/Makefile
+index 1f8cf55e6..1174dd0c2 100644
+--- a/lang/python/python3-pyroute2/Makefile
++++ b/lang/python/python3-pyroute2/Makefile
+@@ -4,15 +4,16 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=python3-pyroute2
+-PKG_VERSION:=0.5.16
++PKG_VERSION:=0.6.13
+ PKG_RELEASE:=1
+ 
+ PYPI_NAME:=pyroute2
+-PKG_HASH:=fe681a2d008cac815b9f287250d69a333fbfc2b2d89c37d58798104057149989
++PKG_HASH:=b03d49a581945fec2b1ec7d1d5125c6f40ba04ed11affc90c4caddc019e25792
+ 
+ PKG_MAINTAINER:=Martin Matějek <martin.matejek@nic.cz>
+ PKG_LICENSE:=GPL-2.0-or-later Apache-2.0
+@@ -29,12 +30,13 @@ define Package/python3-pyroute2
+   TITLE:=Python netlink library
+   URL:=https://github.com/svinota/pyroute2
+   DEPENDS:= \
+-	  +python3-light \
+-	  +python3-distutils \
+-	  +python3-logging \
+-	  +python3-multiprocessing \
+-	  +python3-sqlite3 \
+-	  +python3-ctypes
++	+python3-pyroute2-core \
++	+python3-pyroute2-ethtool \
++	+python3-pyroute2-ipdb \
++	+python3-pyroute2-ipset \
++	+python3-pyroute2-ndb \
++	+python3-pyroute2-nftables \
++	+python3-pyroute2-nslink
+ endef
+ 
+ define Package/python3-pyroute2/description
+@@ -43,8 +45,6 @@ define Package/python3-pyroute2/description
+   but now it supports many netlink protocols.
+ endef
+ 
+-PYTHON3_PKG_SETUP_ARGS:=
+-
+ $(eval $(call Py3Package,python3-pyroute2))
+ $(eval $(call BuildPackage,python3-pyroute2))
+ $(eval $(call BuildPackage,python3-pyroute2-src))
+-- 
+2.30.2
+

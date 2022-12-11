@@ -1,0 +1,39 @@
+From e48c53040862d79a920fab0a015c7fbb04d9b16f Mon Sep 17 00:00:00 2001
+From: The-BB <tun.chen.bo@gmail.com>
+Date: Sun, 11 Dec 2022 10:13:39 +0300
+Subject: [PATCH] lang/python/python-urllib3: bump to 1.26.5
+
+---
+ lang/python/python-urllib3/Makefile | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/lang/python/python-urllib3/Makefile b/lang/python/python-urllib3/Makefile
+index 8812c0e43..054856a4d 100644
+--- a/lang/python/python-urllib3/Makefile
++++ b/lang/python/python-urllib3/Makefile
+@@ -4,11 +4,12 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=python-urllib3
+-PKG_VERSION:=1.25.11
++PKG_VERSION:=1.26.5
+ PKG_RELEASE:=1
+ 
+ PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
+@@ -17,7 +18,7 @@ PKG_LICENSE_FILES:=LICENSE.txt
+ PKG_CPE_ID:=cpe:/a:urllib3_project:urllib3
+ 
+ PYPI_NAME:=urllib3
+-PKG_HASH:=8d7eaa5a82a1cac232164990f04874c594c9453ec55eef02eab885aa02fc17a2
++PKG_HASH:=a7acd0977125325f516bda9735fa7142b909a8d01e8b2e4c8108d0984e6e0098
+ 
+ include ../pypi.mk
+ include $(INCLUDE_DIR)/package.mk
+-- 
+2.30.2
+

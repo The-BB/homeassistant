@@ -1,0 +1,71 @@
+From 53bf12f01c08f4fafdb2313c4c947c3dacdcda28 Mon Sep 17 00:00:00 2001
+From: The-BB <tun.chen.bo@gmail.com>
+Date: Sun, 11 Dec 2022 10:17:50 +0300
+Subject: [PATCH] libs/libjpeg-turbo: add libturbojpeg
+
+---
+ libs/libjpeg-turbo/Makefile | 18 +++++++++++++++++-
+ 1 file changed, 17 insertions(+), 1 deletion(-)
+
+diff --git a/libs/libjpeg-turbo/Makefile b/libs/libjpeg-turbo/Makefile
+index bb33dcfe7..f2cd67455 100644
+--- a/libs/libjpeg-turbo/Makefile
++++ b/libs/libjpeg-turbo/Makefile
+@@ -30,6 +30,13 @@ define Package/libjpeg-turbo
+   PROVIDES:=libjpeg
+ endef
+ 
++define Package/libturbojpeg
++  $(call Package/libjpeg-turbo/Default)
++  SECTION:=libs
++  CATEGORY:=Libraries
++  TITLE+= runtime library
++endef
++
+ define Package/libjpeg-turbo-utils
+   $(call Package/libjpeg-turbo/Default)
+   SECTION:=utils
+@@ -60,7 +67,7 @@ CMAKE_OPTIONS += \
+ 	-DWITH_JPEG8=OFF \
+ 	-DWITH_MEM_SRCDST=ON \
+ 	-DWITH_SIMD=O$(if $(findstring mips,$(CONFIG_ARCH)),FF,N) \
+-	-DWITH_TURBOJPEG=OFF
++	-DWITH_TURBOJPEG=TRUE
+ 
+ ifneq ($(findstring arm,$(CONFIG_ARCH)),)
+ ifeq ($(findstring neon,$(CONFIG_CPU_TYPE)),)
+@@ -73,10 +80,13 @@ define Build/InstallDev
+ 	$(CP) $(PKG_INSTALL_DIR)/opt/include/*.h $(1)/opt/include/
+ 	$(INSTALL_DIR) $(1)/opt/lib
+ 	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libjpeg.so* $(1)/opt/lib/
++	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libturbojpeg.so* $(1)/opt/lib/
+ 	$(INSTALL_DIR) $(1)/opt/lib/pkgconfig
+ 	$(CP) $(PKG_INSTALL_DIR)/opt/lib/pkgconfig/*.pc $(1)/opt/lib/pkgconfig/
+ 	$(SED) 's,/opt/include,$$$${prefix}/include,g' $(1)/opt/lib/pkgconfig/libjpeg.pc
+ 	$(SED) 's,/opt/lib,$$$${exec_prefix}/lib,g' $(1)/opt/lib/pkgconfig/libjpeg.pc
++	$(SED) 's,/opt/include,$$$${prefix}/include,g' $(1)/opt/lib/pkgconfig/libturbojpeg.pc
++	$(SED) 's,/opt/lib,$$$${exec_prefix}/lib,g' $(1)/opt/lib/pkgconfig/libturbojpeg.pc
+ endef
+ 
+ define Package/libjpeg-turbo/install
+@@ -84,6 +94,11 @@ define Package/libjpeg-turbo/install
+ 	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libjpeg.so* $(1)/opt/lib
+ endef
+ 
++define Package/libturbojpeg/install
++	$(INSTALL_DIR) $(1)/opt/lib
++	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libturbojpeg.so* $(1)/opt/lib
++endef
++
+ define Package/libjpeg-turbo-utils/install
+ 	$(INSTALL_DIR) $(1)/opt/bin
+ 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/rdjpgcom $(1)/opt/bin
+@@ -94,4 +109,5 @@ define Package/libjpeg-turbo-utils/install
+ endef
+ 
+ $(eval $(call BuildPackage,libjpeg-turbo))
++$(eval $(call BuildPackage,libturbojpeg))
+ $(eval $(call BuildPackage,libjpeg-turbo-utils))
+-- 
+2.30.2
+

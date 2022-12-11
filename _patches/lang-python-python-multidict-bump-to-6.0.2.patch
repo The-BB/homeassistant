@@ -1,0 +1,36 @@
+From c09206234b112b9da3913261629fad642407bcf5 Mon Sep 17 00:00:00 2001
+From: The-BB <tun.chen.bo@gmail.com>
+Date: Sun, 11 Dec 2022 10:13:38 +0300
+Subject: [PATCH] lang/python/python-multidict: bump to 6.0.2
+
+---
+ lang/python/python-multidict/Makefile | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+diff --git a/lang/python/python-multidict/Makefile b/lang/python/python-multidict/Makefile
+index b757b2cda..d08f55651 100644
+--- a/lang/python/python-multidict/Makefile
++++ b/lang/python/python-multidict/Makefile
+@@ -4,15 +4,16 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=multidict
+-PKG_VERSION:=4.5.2
+-PKG_RELEASE:=2
++PKG_VERSION:=6.0.2
++PKG_RELEASE:=1
+ 
+ PYPI_NAME:=$(PKG_NAME)
+-PKG_HASH:=024b8129695a952ebd93373e45b5d341dbb87c17ce49637b34000093f243dd4f
++PKG_HASH:=5ff3bd75f38e4c43f1f470f2df7a4d430b821c4ce22be384e1459cb57d6bb013
+ 
+ PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
+ PKG_LICENSE:=Apache-2.0
+-- 
+2.30.2
+

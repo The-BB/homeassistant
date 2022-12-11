@@ -1,0 +1,33 @@
+From ec99f9362004ab4f67e57e9219a3ee50978e7857 Mon Sep 17 00:00:00 2001
+From: The-BB <tun.chen.bo@gmail.com>
+Date: Sun, 11 Dec 2022 10:13:38 +0300
+Subject: [PATCH] lang/python/python-botocore: bump to 1.19.52
+
+---
+ lang/python/python-botocore/Makefile | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+diff --git a/lang/python/python-botocore/Makefile b/lang/python/python-botocore/Makefile
+index 739be1126..941669026 100644
+--- a/lang/python/python-botocore/Makefile
++++ b/lang/python/python-botocore/Makefile
+@@ -1,11 +1,13 @@
++# XXX bump
++
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=botocore
+-PKG_VERSION:=1.12.66
+-PKG_RELEASE:=2
++PKG_VERSION:=1.19.52
++PKG_RELEASE:=1
+ 
+ PYPI_NAME:=$(PKG_NAME)
+-PKG_HASH:=25c39ecc71356287cf79d66981ec77deca374e28043b19b2f818d48aa34272a1
++PKG_HASH:=dc5ec23deadbe9327d3c81d03fddf80805c549059baabd80dea605941fe6a221
+ 
+ PKG_MAINTAINER:=Daniel Danzberger <daniel@dd-wrt.com>
+ PKG_LICENSE:=MIT
+-- 
+2.30.2
+

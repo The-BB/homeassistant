@@ -1,0 +1,36 @@
+From 969ad52868525bc9ec0da3bf5f828d61069a6270 Mon Sep 17 00:00:00 2001
+From: The-BB <tun.chen.bo@gmail.com>
+Date: Sun, 11 Dec 2022 10:13:38 +0300
+Subject: [PATCH] lang/python/python-pyserial: bump to 3.5
+
+---
+ lang/python/python-pyserial/Makefile | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+diff --git a/lang/python/python-pyserial/Makefile b/lang/python/python-pyserial/Makefile
+index e74cc880e..3423e35a3 100644
+--- a/lang/python/python-pyserial/Makefile
++++ b/lang/python/python-pyserial/Makefile
+@@ -4,15 +4,16 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=python-pyserial
+-PKG_VERSION:=3.4
+-PKG_RELEASE:=2
++PKG_VERSION:=3.5
++PKG_RELEASE:=1
+ 
+ PYPI_NAME:=pyserial
+-PKG_HASH:=6e2d401fdee0eab996cf734e67773a0143b932772ca8b42451440cfed942c627
++PKG_HASH:=3c77e014170dfffbd816e6ffc205e9842efb10be9f58ec16d3e8675b4925cddb
+ 
+ PKG_LICENSE:=BSD
+ PKG_MAINTAINER:=Micke Prag <micke.prag@telldus.se>
+-- 
+2.30.2
+

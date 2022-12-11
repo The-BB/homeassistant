@@ -1,0 +1,33 @@
+From a80aeceaa10245b07374b77cb38e5bd4794f4887 Mon Sep 17 00:00:00 2001
+From: The-BB <tun.chen.bo@gmail.com>
+Date: Sun, 11 Dec 2022 10:13:38 +0300
+Subject: [PATCH] lang/python/python-boto3: bump to 1.16.52
+
+---
+ lang/python/python-boto3/Makefile | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+diff --git a/lang/python/python-boto3/Makefile b/lang/python/python-boto3/Makefile
+index 27f69b3c9..ae4c3ece6 100644
+--- a/lang/python/python-boto3/Makefile
++++ b/lang/python/python-boto3/Makefile
+@@ -1,11 +1,13 @@
++# XXX bump
++
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=boto3
+-PKG_VERSION:=1.9.135
+-PKG_RELEASE:=2
++PKG_VERSION:=1.16.52
++PKG_RELEASE:=1
+ 
+ PYPI_NAME:=$(PKG_NAME)
+-PKG_HASH:=5e5805992e873e5687b5ef3b4c56c386ccb4df1c3364f8b8601d289e2f275be1
++PKG_HASH:=360a9f805b11f2e468d48815193c55278765fb30b64350893ab63236a5034726
+ 
+ PKG_MAINTAINER:=Daniel Danzberger <daniel@dd-wrt.com>
+ PKG_LICENSE:=Apache-2.0
+-- 
+2.30.2
+

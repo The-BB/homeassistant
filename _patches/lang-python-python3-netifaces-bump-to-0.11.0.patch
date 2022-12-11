@@ -1,0 +1,36 @@
+From 1fa12f449261b9b72f28eb2bcfe1273c0fd6722b Mon Sep 17 00:00:00 2001
+From: The-BB <tun.chen.bo@gmail.com>
+Date: Sun, 11 Dec 2022 10:15:53 +0300
+Subject: [PATCH] lang/python/python3-netifaces: bump to 0.11.0
+
+---
+ lang/python/python3-netifaces/Makefile | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+diff --git a/lang/python/python3-netifaces/Makefile b/lang/python/python3-netifaces/Makefile
+index 02fc5c2b0..849a90e74 100644
+--- a/lang/python/python3-netifaces/Makefile
++++ b/lang/python/python3-netifaces/Makefile
+@@ -4,15 +4,16 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=python3-netifaces
+-PKG_VERSION:=0.10.9
+-PKG_RELEASE:=2
++PKG_VERSION:=0.11.0
++PKG_RELEASE:=1
+ 
+ PYPI_NAME:=netifaces
+-PKG_HASH:=2dee9ffdd16292878336a58d04a20f0ffe95555465fee7c9bd23b3490ef2abf3
++PKG_HASH:=043a79146eb2907edf439899f262b3dfe41717d34124298ed281139a8b93ca32
+ 
+ PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
+ PKG_LICENSE:=MIT
+-- 
+2.30.2
+

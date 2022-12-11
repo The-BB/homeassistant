@@ -1,0 +1,58 @@
+From 222e85831ec9577ccdc7fbb0ab4e6505079a12ab Mon Sep 17 00:00:00 2001
+From: The-BB <tun.chen.bo@gmail.com>
+Date: Sun, 11 Dec 2022 10:13:38 +0300
+Subject: [PATCH] lang/python/python-psutil: bump to 5.9.3
+
+---
+ lang/python/python-psutil/Makefile                         | 7 ++++---
+ .../patches/100_add_cross_platform_build_ability.patch     | 2 +-
+ 2 files changed, 5 insertions(+), 4 deletions(-)
+
+diff --git a/lang/python/python-psutil/Makefile b/lang/python/python-psutil/Makefile
+index 59b4f0fd1..ce3b7a18a 100644
+--- a/lang/python/python-psutil/Makefile
++++ b/lang/python/python-psutil/Makefile
+@@ -4,15 +4,16 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=python-psutil
+-PKG_VERSION:=5.9.0
++PKG_VERSION:=5.9.3
+ PKG_RELEASE:=1
+ 
+ PYPI_NAME:=psutil
+-PKG_HASH:=869842dbd66bb80c3217158e629d6fceaecc3a3166d3d1faee515b05dd26ca25
++PKG_HASH:=7ccfcdfea4fc4b0a02ca2c31de7fcd186beb9cff8207800e14ab66f79c773af6
+ 
+ PKG_MAINTAINER:=Jan Pavlinec <jan.pavlinec1@gmail.com>
+ PKG_LICENSE:=BSD 3-Clause
+@@ -30,7 +31,7 @@ define Package/python3-psutil
+   CATEGORY:=Languages
+   TITLE:=psutil (process and system utilities)
+   URL:=https://github.com/giampaolo/psutil
+-  DEPENDS:=+python3-light
++  DEPENDS:=+python3
+ endef
+ 
+ define Package/python3-psutil/description
+diff --git a/lang/python/python-psutil/patches/100_add_cross_platform_build_ability.patch b/lang/python/python-psutil/patches/100_add_cross_platform_build_ability.patch
+index e7e84f49a..5bae62f57 100644
+--- a/lang/python/python-psutil/patches/100_add_cross_platform_build_ability.patch
++++ b/lang/python/python-psutil/patches/100_add_cross_platform_build_ability.patch
+@@ -25,7 +25,7 @@ Signed-off-by: Sergey V. Lobanov <sergey@lobanov.in>
+ 
+ --- a/psutil/_common.py
+ +++ b/psutil/_common.py
+-@@ -81,17 +81,22 @@ __all__ = [
++@@ -83,17 +83,22 @@ __all__ = [
+  # ===================================================================
+  
+  
+-- 
+2.30.2
+
