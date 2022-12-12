@@ -8,8 +8,8 @@ PACKAGES_FEED="./feeds/packages"
 PATCH_DIR="./feeds/homeassistant/_patches"
 PATCH_PACKAGES="\
 $PATCH_DIR/lang-python-Jinja2-bump-to-3.1.2.patch
-$PATCH_DIR/lang-python-numpy-fix.patch
-$PATCH_DIR/lang-python-python-aiohttp-bump-to-3.8.1.patch
+$PATCH_DIR/lang-python-numpy-downgrade.patch
+$PATCH_DIR/lang-python-python-aiohttp-bump-to-3.8.3.patch
 $PATCH_DIR/lang-python-python-async-timeout-bump-to-4.0.2.patch
 $PATCH_DIR/lang-python-python-awesomeversion-bump-to-22.9.0.patch
 $PATCH_DIR/lang-python-python-boto3-bump-to-1.16.52.patch
@@ -17,7 +17,7 @@ $PATCH_DIR/lang-python-python-botocore-bump-to-1.19.52.patch
 $PATCH_DIR/lang-python-python-ciso8601-bump-to-2.2.0.patch
 $PATCH_DIR/lang-python-python-multidict-bump-to-6.0.2.patch
 $PATCH_DIR/lang-python-python-netdisco-bump-to-3.0.0.patch
-$PATCH_DIR/lang-python-python-psutil-bump-to-5.9.3.patch
+$PATCH_DIR/lang-python-python-psutil-bump-to-5.9.4.patch
 $PATCH_DIR/lang-python-python-pyotp-bump-to-2.7.0.patch
 $PATCH_DIR/lang-python-python-pyserial-bump-to-3.5.patch
 $PATCH_DIR/lang-python-python-s3transfer-bump-to-0.3.3.patch

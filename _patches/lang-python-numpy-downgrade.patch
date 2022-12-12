@@ -1,18 +1,33 @@
-From dca18cda32740503ef081ca27e81a13dc7a17365 Mon Sep 17 00:00:00 2001
+From b197e815edca01f3a1f067146b63a95d9c331468 Mon Sep 17 00:00:00 2001
 From: The-BB <tun.chen.bo@gmail.com>
-Date: Sun, 11 Dec 2022 10:13:18 +0300
-Subject: [PATCH] lang/python/numpy: fix
+Date: Sun, 11 Dec 2022 16:21:09 +0300
+Subject: [PATCH] lang/python/numpy: downgrade
 
 ---
- lang/python/numpy/Makefile              | 48 +++++++++++++++----------
- lang/python/numpy/patches/999-fix.patch | 48 +++++++++++++++++++++++++
- 2 files changed, 78 insertions(+), 18 deletions(-)
+ lang/python/numpy/Makefile              | 54 +++++++++++++++----------
+ lang/python/numpy/patches/999-fix.patch | 48 ++++++++++++++++++++++
+ 2 files changed, 81 insertions(+), 21 deletions(-)
  create mode 100644 lang/python/numpy/patches/999-fix.patch
 
 diff --git a/lang/python/numpy/Makefile b/lang/python/numpy/Makefile
-index 3124ca8f1..ef6811799 100644
+index 3124ca8f1..9a681efc9 100644
 --- a/lang/python/numpy/Makefile
 +++ b/lang/python/numpy/Makefile
+@@ -6,11 +6,11 @@
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=numpy
+-PKG_VERSION:=1.23.3
+-PKG_RELEASE:=$(AUTORELEASE)
++PKG_VERSION:=1.23.2
++PKG_RELEASE:=2
+ 
+ PYPI_NAME:=$(PKG_NAME)
+-PKG_HASH:=51bf49c0cd1d52be0a240aa66f3458afc4b95d8993d2d04f0d91fa60c10af6cd
++PKG_HASH:=b78d00e48261fbbd04aa0d7427cf78d18401ee0abd89c7559bbf422e5b1c7d01
+ 
+ PKG_MAINTAINER:=Alexandru Ardelean <ardeleanalex@gmail.com>
+ 
 @@ -23,6 +23,9 @@ PKG_CONFIG_DEPENDS:= \
  
  HOST_PYTHON3_PACKAGE_BUILD_DEPENDS:=Cython
