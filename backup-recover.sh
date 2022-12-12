@@ -9,7 +9,7 @@ PATCH_DIR="./feeds/homeassistant/_patches"
 PATCH_PACKAGES="\
 $PATCH_DIR/lang-python-Jinja2-bump-to-3.1.2.patch
 $PATCH_DIR/lang-python-numpy-downgrade.patch
-$PATCH_DIR/lang-python-python-aiohttp-bump-to-3.8.3.patch
+$PATCH_DIR/lang-python-python-aiohttp-bump-to-3.8.1.patch
 $PATCH_DIR/lang-python-python-async-timeout-bump-to-4.0.2.patch
 $PATCH_DIR/lang-python-python-awesomeversion-bump-to-22.9.0.patch
 $PATCH_DIR/lang-python-python-boto3-bump-to-1.16.52.patch
