@@ -22,7 +22,7 @@
  ROOMBA_SESSION = "roomba_session"
 --- a/homeassistant/config.py
 +++ b/homeassistant/config.py
-@@ -556,7 +556,7 @@ async def async_process_ha_core_config(h
+@@ -614,7 +614,7 @@ async def async_process_ha_core_config(h
  
      if CONF_MEDIA_DIRS not in config:
          if is_docker_env():

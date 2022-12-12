@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
-PKG_VERSION:=2022.11.5
+PKG_VERSION:=2022.12.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=852c75a13f7f256d7ebe64409b0801186c94779b64d7535f28c64d0d90b7a6f2
+PKG_HASH:=e7510edf0fe398ebed578a346b1ded581590a0ca0094751f9b393abf26edd1d0
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -46,8 +46,8 @@ define Package/homeassistant
 	+python3-bcrypt \
 	+python3-certifi \
 	+python3-ciso8601 \
-	+python3-httpx \
 	+python3-home-assistant-bluetooth \
+	+python3-httpx \
 	+python3-ifaddr \
 	+python3-jinja2 \
 	+python3-lru-dict \
@@ -72,6 +72,7 @@ define Package/homeassistant
 	+python3-bleak-retry-connector \
 	+python3-bluetooth-adapters \
 	+python3-bluetooth-auto-recovery \
+	+python3-bluetooth-data-tools \
 	+python3-btlewrap \
 	+python3-cryptodome \
 	+python3-dbus-fast \
@@ -85,6 +86,7 @@ define Package/homeassistant
 	+python3-httplib2 \
 	+python3-hyperframe \
 	+python3-iso4217 \
+	+python3-janus \
 	+python3-libcst \
 	+python3-multidict \
 	+python3-numpy \
@@ -103,7 +105,7 @@ define Package/homeassistant
 	+python3-urllib3 \
 	+python3-zeroconf \
 	+scapy
-# home-assistant-frontend==20220707.0
+# home-assistant-frontend==xxxxxxxx.x
 
 # from internal
   DEPENDS+= \
