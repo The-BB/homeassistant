@@ -1,0 +1,26 @@
+--- /dev/null
++++ b/mac-vendors.txt
+@@ -0,0 +1 @@
++
+--- a/mac_vendor_lookup.py
++++ b/mac_vendor_lookup.py
+@@ -45,7 +45,7 @@ class BaseMacLookup(object):
+     def find_vendors_list(self):
+         possible_locations = [
+             BaseMacLookup.cache_path,
+-            sys.prefix + "/cache/mac-vendors.txt",
++            sys.prefix + "/var/cache/mac-vendors.txt",
+             os.path.dirname(__file__) + "/../../cache/mac-vendors.txt",
+             os.path.dirname(__file__) + "/../../../cache/mac-vendors.txt",
+         ]
+--- a/setup.py
++++ b/setup.py
+@@ -171,7 +171,7 @@ setup(
+     #
+     # In this case, 'data_file' will be installed into '<sys.prefix>/my_data'
+     data_files=[
+-        ("cache", ["mac-vendors.txt"]),
++        ("var/cache", ["mac-vendors.txt"]),
+     ],  # Optional
+ 
+     # To provide executable scripts, use entry points in preference to the
