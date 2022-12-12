@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-bluetooth-auto-recovery
-PKG_VERSION:=0.3.6
+PKG_VERSION:=0.5.4
 PKG_RELEASE:=1
 
 PYPI_NAME:=bluetooth_auto_recovery
-PKG_HASH:=4934b17973fc477ce55f7473bd8909f06a9fb51a093789fc38e6623cdffc2e53
+PKG_HASH:=c3366a17876950267cda6cb6faeb8d5fabe3a35eb24b5a09b2531e2804acd040
 
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
@@ -27,7 +27,8 @@ define Package/python3-bluetooth-auto-recovery
 	+python3-asyncio \
 	+python3-btsocket \
 	+python3-logging \
-	+python3-pyric
+	+python3-pyric \
+	+python3-usb-devices
 endef
 
 define Package/python3-bluetooth-auto-recovery/description
