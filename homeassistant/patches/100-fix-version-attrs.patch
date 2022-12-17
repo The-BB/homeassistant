@@ -8,7 +8,7 @@
 +attrs==21.4.0
  awesomeversion==22.9.0
  bcrypt==3.1.7
- bleak-retry-connector==2.10.1
+ bleak-retry-connector==2.10.2
 --- a/homeassistant.egg-info/requires.txt
 +++ b/homeassistant.egg-info/requires.txt
 @@ -1,7 +1,7 @@
