@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-home-assistant-bluetooth
-PKG_VERSION:=1.8.1
+PKG_VERSION:=1.9.2
 PKG_RELEASE:=1
 
 PYPI_NAME:=home_assistant_bluetooth
-PKG_HASH:=7c7ed94ab9488ee0a354b4eae8fe037d70a1d269dabe7c16e42e97a8ead23b61
+PKG_HASH:=29ad60340adfc95e54bab07bc68894a23cee07da9ce3684b79cb7d814098a9ce
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE
