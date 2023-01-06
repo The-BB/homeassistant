@@ -1,0 +1,35 @@
+From b366d984526d9454fdb18bf92e286b7cb57bcbd8 Mon Sep 17 00:00:00 2001
+From: The-BB <tun.chen.bo@gmail.com>
+Date: Fri, 6 Jan 2023 11:58:30 +0300
+Subject: [PATCH] lang/python/python-attrs: bump to 22.1.0
+
+---
+ lang/python/python-attrs/Makefile | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/lang/python/python-attrs/Makefile b/lang/python/python-attrs/Makefile
+index f21a4ec37..f3fc8cbc9 100644
+--- a/lang/python/python-attrs/Makefile
++++ b/lang/python/python-attrs/Makefile
+@@ -4,15 +4,16 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=python-attrs
+-PKG_VERSION:=21.4.0
++PKG_VERSION:=22.1.0
+ PKG_RELEASE:=1
+ 
+ PYPI_NAME:=attrs
+-PKG_HASH:=626ba8234211db98e869df76230a137c4c40a12d72445c45d5f5b716f076e2fd
++PKG_HASH:=29adc2665447e5191d0e7c568fde78b21f9672d344281d0c6e1ab085429b22b6
+ 
+ PKG_LICENSE:=MIT
+ PKG_LICENSE_FILES:=LICENSE
+-- 
+2.30.2
+
