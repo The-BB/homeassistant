@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant-cli
-PKG_VERSION:=0.9.4
-PKG_RELEASE:=3
+PKG_VERSION:=0.9.6
+PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=4e74591d6400c7b1ba93e8967d39ce00c2789523508406c6cbc8fd712ff6710e
+PKG_HASH:=9b9b705eaf6ee40dc6a732f3458c78ba37b62b7330bc17b132e6fee385ec8606
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -21,7 +21,7 @@ define Package/homeassistant-cli
   CATEGORY:=Utilities
   TITLE:=Home Assistant Command-line Interface (hass-cli)
   URL:=https://github.com/home-assistant-ecosystem/home-assistant-cli
-  DEPENDS:=@BROKEN \
+  DEPENDS:= \
 	+python3-aiohttp \
 	+python3-click-log \
 	+python3-click \
@@ -44,7 +44,6 @@ define Package/homeassistant-cli
 	+python3-certifi \
 	+python3-ciso8601 \
 	+python3-cryptodome \
-	+python3-cryptography \
 	+python3-h11 \
 	+python3-httpcore \
 	+python3-httpx \
@@ -57,6 +56,9 @@ define Package/homeassistant-cli
 	+python3-yaml \
 	+python3-yarl \
 	+python3-zeroconf
+
+# rust-lang pkg
+  EXTRA_DEPENDS:=python3-cryptography
 endef
 
 define Package/homeassistant-cli/description
