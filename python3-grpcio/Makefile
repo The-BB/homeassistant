@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-grpcio
-PKG_VERSION:=1.48.0
+PKG_VERSION:=1.51.1
 PKG_RELEASE:=1
 
 PYPI_NAME:=grpcio
-PKG_HASH:=eaf4bb73819863440727195411ab3b5c304f6663625e66f348e91ebe0a039306
+PKG_HASH:=e6dfc2b6567b1c261739b43d9c59d201c1b89e017afd9e684d85aa7a186c9f7a
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE
@@ -29,7 +29,6 @@ define Package/python3-grpcio
 	+python3-logging \
 	+python3-multiprocessing \
 	+python3-readline \
-	+python3-six \
 	+python3-unittest \
 	+python3-urllib \
 	+python3-xml \
