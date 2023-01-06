@@ -3,12 +3,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-debugpy
-PKG_VERSION:=1.6.3
+PKG_VERSION:=1.6.4
 PKG_RELEASE:=1
 
 PYPI_NAME:=debugpy
 PYPI_SOURCE_EXT:=zip
-PKG_HASH:=e8922090514a890eec99cfb991bab872dd2e353ebb793164d5f01c362b9a40bf
+PKG_HASH:=d5ab9bd3f4e7faf3765fd52c7c43c074104ab1e109621dc73219099ed1a5399d
 
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
@@ -38,6 +38,8 @@ endef
 define Package/python3-debugpy/description
   debugpy - a debugger for Python.
 endef
+
+PYTHON3_PKG_SETUP_GLOBAL_ARGS += build_ext --inplace
 
 $(eval $(call Py3Package,python3-debugpy))
 $(eval $(call BuildPackage,python3-debugpy))
