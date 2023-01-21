@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
-PKG_VERSION:=2023.1.5
+PKG_VERSION:=2023.1.6
 PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=e5fe31033372f8dbf3dc514d0a7091984fce13e7000800f0ddc8d531799bc911
+PKG_HASH:=b18f26f92e935cceacb8ec2914cb1886abce5f4bd7c4f41f1ffc0e136f707904
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -153,7 +153,7 @@ endef
 # FIXME remove a fucking code
 define Build/Prepare
 	$(call Build/Prepare/Default)
-	$(RM) -r $(PKG_BUILD_DIR)/$(PKG_NAME)/components/ukraine_alarm
+	rm -fr $(PKG_BUILD_DIR)/$(PKG_NAME)/components/ukraine_alarm
 endef
 
 define Py3Package/homeassistant/install
