@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-btlewrap
 PKG_VERSION:=0.1.0
-PKG_RELEASE:=2
+PKG_RELEASE:=3
 
 PYPI_NAME:=btlewrap
 PKG_HASH:=1b3fc4d6ed23d887c3c251f50ad20b46c9994531b1a9fb7c34320916431b773f
@@ -30,6 +30,11 @@ define Package/python3-btlewrap/description
   Bluetooth LowEnergy wrapper for different python backends. This gives
   you a nice API so that you can use different Bluetooth implementations
   on different platforms.
+endef
+
+define Py3Package/python3-btlewrap/filespec
++|$(PYTHON3_PKG_DIR)
+-|$(PYTHON3_PKG_DIR)/test
 endef
 
 $(eval $(call Py3Package,python3-btlewrap))
