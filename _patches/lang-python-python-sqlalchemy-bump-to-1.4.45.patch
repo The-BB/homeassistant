@@ -1,0 +1,35 @@
+From 1a5a895d83d1259a629f2319775bf4c0a5ffda1c Mon Sep 17 00:00:00 2001
+From: The-BB <tun.chen.bo@gmail.com>
+Date: Sat, 4 Feb 2023 13:22:36 +0300
+Subject: [PATCH] lang/python/python-sqlalchemy: bump to 1.4.45
+
+---
+ lang/python/python-sqlalchemy/Makefile | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/lang/python/python-sqlalchemy/Makefile b/lang/python/python-sqlalchemy/Makefile
+index f15cbb3ff..94c83fca3 100644
+--- a/lang/python/python-sqlalchemy/Makefile
++++ b/lang/python/python-sqlalchemy/Makefile
+@@ -4,15 +4,16 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=python-sqlalchemy
+-PKG_VERSION:=1.4.22
++PKG_VERSION:=1.4.45
+ PKG_RELEASE:=1
+ 
+ PYPI_NAME:=SQLAlchemy
+-PKG_HASH:=ec1be26cdccd60d180359a527d5980d959a26269a2c7b1b327a1eea0cab37ed8
++PKG_HASH:=fd69850860093a3f69fefe0ab56d041edfdfe18510b53d9a2eaecba2f15fa795
+ 
+ PKG_MAINTAINER:=Josef Schlehofer <josef.schlehofer@nic.cz>
+ PKG_LICENSE:=MIT
+-- 
+2.30.2
+

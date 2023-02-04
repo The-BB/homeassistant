@@ -1,0 +1,48 @@
+From f3aca5b6737c3ec46e19565c94fbfcf8d04db925 Mon Sep 17 00:00:00 2001
+From: The-BB <tun.chen.bo@gmail.com>
+Date: Sat, 4 Feb 2023 18:04:30 +0300
+Subject: [PATCH] net/scapy: bump to 2.5.0
+
+---
+ net/scapy/Makefile | 12 +++++++++---
+ 1 file changed, 9 insertions(+), 3 deletions(-)
+
+diff --git a/net/scapy/Makefile b/net/scapy/Makefile
+index 6cf711bd8..c4791bc5e 100644
+--- a/net/scapy/Makefile
++++ b/net/scapy/Makefile
+@@ -4,15 +4,16 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=scapy
+-PKG_VERSION:=2.4.5
+-PKG_RELEASE:=$(AUTORELEASE)
++PKG_VERSION:=2.5.0
++PKG_RELEASE:=1
+ 
+ PYPI_NAME:=$(PKG_NAME)
+-PKG_HASH:=bc707e3604784496b6665a9e5b2a69c36cc9fb032af4864b29051531b24c8593
++PKG_HASH:=5b260c2b754fd8d409ba83ee7aee294ecdbb2c235f9f78fe90bc11cb6e5debc2
+ 
+ PKG_MAINTAINER:=W. Michael Petullo <mike@flyn.org>
+ PKG_LICENSE:=GPL-2.0-only
+@@ -37,6 +38,11 @@ define Package/scapy/description
+   requests and replies, and much more.
+ endef
+ 
++define Py3Package/scapy/filespec
+++|$(PYTHON3_PKG_DIR)
++-|$(PYTHON3_PKG_DIR)/test
++endef
++
+ $(eval $(call Py3Package,scapy))
+ $(eval $(call BuildPackage,scapy))
+ $(eval $(call BuildPackage,scapy-src))
+-- 
+2.30.2
+
