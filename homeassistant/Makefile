@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
-PKG_VERSION:=2023.1.7
+PKG_VERSION:=2023.2.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=c4af1e77aeb78a1bb83c0f34ad5359f178c5a4e4cd45856c77e19a2f084552b5
+PKG_HASH:=60aa354eaab6b17466da359b6fd84f6fcf14efa3a6745f055a3d51cbb69abc2e
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -43,7 +43,6 @@ define Package/homeassistant
 	+python3-atomicwrites-homeassistant \
 	+python3-attrs \
 	+python3-awesomeversion \
-	+python3-bcrypt \
 	+python3-certifi \
 	+python3-ciso8601 \
 	+python3-home-assistant-bluetooth \
@@ -53,6 +52,7 @@ define Package/homeassistant
 	+python3-lru-dict \
 	+python3-pip \
 	+python3-pyjwt \
+	+python3-pyopenssl \
 	+python3-requests \
 	+python3-slugify \
 	+python3-typing-extensions \
@@ -79,9 +79,12 @@ define Package/homeassistant
 	+python3-engineio \
 	+python3-fnvhash \
 	+python3-grpcio \
+	+python3-grpcio-reflection \
 	+python3-grpcio-status \
 	+python3-h11 \
 	+python3-hass-nabucasa \
+	+python3-hassil \
+	+python3-home-assistant-intents \
 	+python3-httpcore \
 	+python3-httplib2 \
 	+python3-hyperframe \
@@ -135,6 +138,7 @@ define Package/homeassistant
 	+python3-aiohomekit \
 	+python3-base36 \
 	+python3-getmac \
+	+python3-greenlet \
 	+python3-gtts \
 	+python3-ha-ffmpeg \
 	+python3-pyhap \
@@ -142,7 +146,7 @@ define Package/homeassistant
 	+python3-radios
 
 # core (rust-lang pkgs)
-  EXTRA_DEPENDS:=python3-cryptography, python3-orjson
+  EXTRA_DEPENDS:=python3-bcrypt python3-cryptography python3-orjson
 endef
 
 define Package/homeassistant/description
