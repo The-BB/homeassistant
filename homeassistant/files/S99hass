@@ -1,8 +1,6 @@
 #!/bin/sh
 
-if [ ! -d /opt/var/lib/homeassistant ]; then
-  mkdir -m 0755 -p /opt/var/lib/homeassistant
-fi
+[ -d /opt/var/lib/homeassistant ] || mkdir -m 0755 -p /opt/var/lib/homeassistant
 
 ENABLED=yes
 PROCS=hass
