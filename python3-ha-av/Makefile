@@ -12,6 +12,8 @@ PKG_HASH:=24c8c7ebe1bf57838a1316fec5039010b74ae0b3db41133448756f4b6579f48f
 PKG_LICENSE:=BSD-3-Clause
 PKG_LICENSE_FILES:=LICENSE.txt
 
+HOST_PYTHON3_PACKAGE_BUILD_DEPENDS:=Cython
+
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
 include $(TOPDIR)/feeds/packages/lang/python/python3-package.mk
