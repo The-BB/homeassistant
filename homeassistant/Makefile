@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
-PKG_VERSION:=2023.2.5
+PKG_VERSION:=2023.3.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=9dcb1465d34f952e707de3ed576728e406c6d349b29e986f89a21c674af21247
+PKG_HASH:=2714ef0142998f9f632f57334c1ccf0fbfbac752bbc46186c1900ef1ff1d9338
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -166,6 +166,8 @@ define Py3Package/homeassistant/install
 
 	$(INSTALL_DIR) $(1)/opt/etc/init.d
 	$(INSTALL_BIN) ./files/S99hass $(1)/opt/etc/init.d
+
+	$(INSTALL_DIR) $(1)/opt/var/lib/homeassistant
 endef
 
 define Package/homeassistant/postinst
