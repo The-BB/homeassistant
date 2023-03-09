@@ -1,16 +1,6 @@
 --- a/pyproject.toml
 +++ b/pyproject.toml
-@@ -1,11 +1,15 @@
- [build-system]
--requires = ["hatchling", "hatch-fancy-pypi-readme"]
--build-backend = "hatchling.build"
-+requires = [
-+  "setuptools>=63",
-+  "wheel",
-+  "setuptools_scm>=6.4",
-+]
-+build-backend = "setuptools.build_meta"
- 
+@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
  [project]
  name = "httpx"
  description = "The next generation HTTP client."
@@ -19,7 +9,7 @@
  requires-python = ">=3.7"
  authors = [
      { name = "Tom Christie", email = "tom@tomchristie.com" },
-@@ -33,7 +37,7 @@ dependencies = [
+@@ -33,7 +33,7 @@ dependencies = [
      "rfc3986[idna2008]>=1.3,<2",
      "sniffio",
  ]
@@ -28,8 +18,3 @@
  
  [project.optional-dependencies]
  brotli = [
---- /dev/null
-+++ b/setup.py
-@@ -0,0 +1,2 @@
-+from setuptools import setup
-+setup(use_scm_version=True)

@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-httpx
 PKG_VERSION:=0.23.3
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=httpx
 PKG_HASH:=9818458eb565bb54898ccb9b8b251a28785dd4a55afbc23d0eb410754fe7d0f9
