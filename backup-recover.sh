@@ -23,7 +23,7 @@ $PATCH_DIR/lang-python-python-pyopenssl-bump-to-23.0.0.patch
 $PATCH_DIR/lang-python-python-pyotp-bump-to-2.8.0.patch
 $PATCH_DIR/lang-python-python-pyserial-bump-to-3.5.patch
 $PATCH_DIR/lang-python-python-s3transfer-bump-to-0.3.3.patch
-$PATCH_DIR/lang-python-python-sqlalchemy-bump-to-2.0.5.post1.patch
+$PATCH_DIR/lang-python-python-sqlalchemy-bump-to-2.0.6.patch
 $PATCH_DIR/lang-python-python-typing-extensions-bump-to-4.5.0.patch
 $PATCH_DIR/lang-python-python-urllib3-bump-to-1.26.5.patch
 $PATCH_DIR/lang-python-python-voluptuous-bump-to-0.13.1.patch
