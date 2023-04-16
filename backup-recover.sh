@@ -28,8 +28,9 @@ $PATCH_DIR/lang-python-python-typing-extensions-bump-to-4.5.0.patch
 $PATCH_DIR/lang-python-python-urllib3-bump-to-1.26.5.patch
 $PATCH_DIR/lang-python-python-voluptuous-bump-to-0.13.1.patch
 $PATCH_DIR/lang-python-python-voluptuous-serialize-bump-to-2.6.0.patch
+$PATCH_DIR/lang-python-python-websockets-bump-to-11.0.1.patch
 $PATCH_DIR/lang-python-python-yarl-bump-to-1.8.1.patch
-$PATCH_DIR/lang-python-python-zeroconf-bump-to-0.54.0.patch
+$PATCH_DIR/lang-python-python-zeroconf-bump-to-0.56.0.patch
 $PATCH_DIR/lang-python-python3-netifaces-bump-to-0.11.0.patch
 $PATCH_DIR/lang-python-python3-pyroute2-bump-to-0.7.5.patch
 $PATCH_DIR/lang-python-xmltodict-bump-to-0.13.0.patch

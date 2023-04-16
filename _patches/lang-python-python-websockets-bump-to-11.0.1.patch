@@ -1,0 +1,36 @@
+From d6c27a9e660b9f0cbb9c03c8109155eafafad901 Mon Sep 17 00:00:00 2001
+From: The-BB <tun.chen.bo@gmail.com>
+Date: Sun, 16 Apr 2023 20:23:54 +0300
+Subject: [PATCH] lang/python/python-websockets: bump to 11.0.1
+
+---
+ lang/python/python-websockets/Makefile | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+diff --git a/lang/python/python-websockets/Makefile b/lang/python/python-websockets/Makefile
+index dcf594a29..a308de319 100644
+--- a/lang/python/python-websockets/Makefile
++++ b/lang/python/python-websockets/Makefile
+@@ -4,15 +4,16 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=python-websockets
+-PKG_VERSION:=10.3
+-PKG_RELEASE:=$(AUTORELEASE)
++PKG_VERSION:=11.0.1
++PKG_RELEASE:=1
+ 
+ PYPI_NAME:=websockets
+-PKG_HASH:=fc06cc8073c8e87072138ba1e431300e2d408f054b27047d047b549455066ff4
++PKG_HASH:=369410925b240b30ef1c1deadbd6331e9cd865ad0b8966bf31e276cc8e0da159
+ 
+ PKG_MAINTAINER:=Michal Vasilek <michal.vasilek@nic.cz>
+ PKG_LICENSE:=BSD-3-Clause
+-- 
+2.30.2
+
