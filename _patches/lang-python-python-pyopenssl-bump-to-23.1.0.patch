@@ -1,14 +1,14 @@
-From ceb12bb6932d24d6810ac5a3a784677a821a9339 Mon Sep 17 00:00:00 2001
+From a47520c1a6d47f6c94c1bae49db70ac7d269b695 Mon Sep 17 00:00:00 2001
 From: The-BB <tun.chen.bo@gmail.com>
-Date: Sat, 4 Feb 2023 13:31:16 +0300
-Subject: [PATCH] lang/python/python-pyopenssl: bump to 23.0.0
+Date: Sun, 16 Apr 2023 16:34:00 +0300
+Subject: [PATCH] lang/python/python-pyopenssl: bump to 23.1.0
 
 ---
  lang/python/python-pyopenssl/Makefile | 10 +++++-----
  1 file changed, 5 insertions(+), 5 deletions(-)
 
 diff --git a/lang/python/python-pyopenssl/Makefile b/lang/python/python-pyopenssl/Makefile
-index dc2a3de70..f731d1a18 100644
+index dc2a3de70..2fe7eae5c 100644
 --- a/lang/python/python-pyopenssl/Makefile
 +++ b/lang/python/python-pyopenssl/Makefile
 @@ -4,15 +4,16 @@
@@ -22,12 +22,12 @@ index dc2a3de70..f731d1a18 100644
  PKG_NAME:=python-pyopenssl
 -PKG_VERSION:=21.0.0
 -PKG_RELEASE:=1a
-+PKG_VERSION:=23.0.0
++PKG_VERSION:=23.1.0
 +PKG_RELEASE:=1
  
  PYPI_NAME:=pyOpenSSL
 -PKG_HASH:=5e2d8c5e46d0d865ae933bef5230090bdaf5506281e9eec60fa250ee80600cb3
-+PKG_HASH:=c1cc5f86bcacefc84dada7d31175cae1b1518d5f60d3d0bb595a67822a868a6f
++PKG_HASH:=8cb78010a1eb2c8e24b851693b7b04dfe9b1dc0a5ab3843927b10a85b1dfbb2e
  
  PKG_LICENSE:=Apache-2.0
  PKG_LICENSE_FILES:=LICENSE
