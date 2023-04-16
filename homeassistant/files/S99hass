@@ -4,7 +4,7 @@ ENABLED=yes
 PROCS=hass
 ARGS="-c /opt/var/lib/homeassistant"
 PREARGS=""
-DESC=$PROCS
+DESC="Home Assistant (HASS)"
 PATH=/opt/sbin:/opt/bin:/opt/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 [ -d /opt/var/lib/homeassistant ] || mkdir -p /opt/var/lib/homeassistant

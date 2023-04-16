@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
-PKG_VERSION:=2023.3.6
+PKG_VERSION:=2023.4.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=e0f4baa33caa25d745e89a7d70a4688d4b474d335ddf1a36a130dba28c100029
+PKG_HASH:=e74cc349715df5598f96de43aca2f6e3402e845f3bad75fb89e3096e62288ffe
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -56,6 +56,7 @@ define Package/homeassistant
 	+python3-requests \
 	+python3-slugify \
 	+python3-typing-extensions \
+	+python3-ulid-transform \
 	+python3-voluptuous \
 	+python3-voluptuous-serialize \
 	+python3-yaml \
@@ -82,6 +83,7 @@ define Package/homeassistant
 	+python3-grpcio-reflection \
 	+python3-grpcio-status \
 	+python3-h11 \
+	+python3-ha-av \
 	+python3-hass-nabucasa \
 	+python3-hassil \
 	+python3-home-assistant-intents \
@@ -101,6 +103,7 @@ define Package/homeassistant
 	+python3-pydantic \
 	+python3-pynacl \
 	+python3-pyserial \
+	+python3-pyturbojpeg \
 	+python3-pyudev \
 	+python3-regex \
 	+python3-socketio \
@@ -117,7 +120,6 @@ define Package/homeassistant
 	+python3-debugpy \
 	+python3-ephem \
 	+python3-guppy3 \
-	+python3-ha-av \
 	+python3-holidays \
 	+python3-icmplib \
 	+python3-mutagen \
@@ -127,7 +129,6 @@ define Package/homeassistant
 	+python3-pyotp \
 	+python3-pyprof2calltree \
 	+python3-pyqrcode \
-	+python3-pyturbojpeg \
 	+python3-restrictedpython \
 	+python3-securetar \
 	+python3-sense-energy \
