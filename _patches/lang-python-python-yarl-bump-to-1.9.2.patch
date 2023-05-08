@@ -1,14 +1,14 @@
-From a8e42c17cbc2eac89ca6123249f7d1b55c3ca158 Mon Sep 17 00:00:00 2001
+From c0f18cd846af5d7ee42d533fed49df39e8e747e9 Mon Sep 17 00:00:00 2001
 From: The-BB <tun.chen.bo@gmail.com>
-Date: Sun, 11 Dec 2022 10:13:39 +0300
-Subject: [PATCH] lang/python/python-yarl: bump to 1.8.1
+Date: Sun, 7 May 2023 18:02:11 +0300
+Subject: [PATCH] lang/python/python-yarl: bump to 1.9.2
 
 ---
  lang/python/python-yarl/Makefile | 7 ++++---
  1 file changed, 4 insertions(+), 3 deletions(-)
 
 diff --git a/lang/python/python-yarl/Makefile b/lang/python/python-yarl/Makefile
-index 95383c89d..1a2e0444d 100644
+index 95383c89d..45b478595 100644
 --- a/lang/python/python-yarl/Makefile
 +++ b/lang/python/python-yarl/Makefile
 @@ -4,15 +4,16 @@
@@ -21,12 +21,12 @@ index 95383c89d..1a2e0444d 100644
  
  PKG_NAME:=yarl
 -PKG_VERSION:=1.6.3
-+PKG_VERSION:=1.8.1
++PKG_VERSION:=1.9.2
  PKG_RELEASE:=1
  
  PYPI_NAME:=$(PKG_NAME)
 -PKG_HASH:=8a9066529240171b68893d60dca86a763eae2139dd42f42106b03cf4b426bf10
-+PKG_HASH:=af887845b8c2e060eb5605ff72b6f2dd2aab7a761379373fd89d314f4752abbf
++PKG_HASH:=04ab9d4b9f587c06d801c2abfe9317b77cdf996c65a90d5e84ecc45010823571
  
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
