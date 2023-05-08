@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-dbus-fast
-PKG_VERSION:=1.84.2
+PKG_VERSION:=1.85.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=dbus_fast
-PKG_HASH:=62b00b85c5835bff1d7ab5b12d494e588d92612bedbd7ca86176861729b8e4bc
+PKG_HASH:=af346e87e34fa52c7ae82d117303cbfe089cd5391b5a1cc0e51f67066ef426f5
 
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
@@ -24,6 +24,7 @@ define Package/python3-dbus-fast
   URL:=https://github.com/bluetooth-devices/dbus-fast
   DEPENDS:= \
 	+python3-asyncio \
+	+python3-distutils \
 	+python3-logging \
 	+python3-urllib \
 	+python3-xml
