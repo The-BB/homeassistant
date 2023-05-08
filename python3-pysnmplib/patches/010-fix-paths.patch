@@ -1,0 +1,11 @@
+--- a/pysnmp/smi/compiler.py
++++ b/pysnmp/smi/compiler.py
+@@ -7,7 +7,7 @@
+ import os
+ import sys
+ 
+-defaultSources = ['file:///usr/share/snmp/mibs', 'file:///usr/share/mibs']
++defaultSources = ['file:///opt/share/snmp/mibs', 'file:///opt/share/mibs']
+ 
+ if sys.platform[:3] == 'win':
+     defaultDest = os.path.join(os.path.expanduser("~"),
