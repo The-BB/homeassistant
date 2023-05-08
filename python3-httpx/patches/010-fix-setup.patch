@@ -10,7 +10,7 @@
  authors = [
      { name = "Tom Christie", email = "tom@tomchristie.com" },
 @@ -33,7 +33,7 @@ dependencies = [
-     "rfc3986[idna2008]>=1.3,<2",
+     "idna",
      "sniffio",
  ]
 -dynamic = ["readme", "version"]
