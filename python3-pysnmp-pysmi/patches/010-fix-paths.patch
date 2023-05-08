@@ -1,0 +1,11 @@
+--- a/pysmi/scripts/mibcopy.py
++++ b/pysmi/scripts/mibcopy.py
+@@ -116,7 +116,7 @@ def start():
+             ignoreErrorsFlag = True
+ 
+     if not mibSources:
+-        mibSources = ['file:///usr/share/snmp/mibs',
++        mibSources = ['file:///opt/share/snmp/mibs',
+                     'https://pysnmp.github.io:443/mibs/asn1/@mib@']
+ 
+     if len(inputMibs) < 2:
