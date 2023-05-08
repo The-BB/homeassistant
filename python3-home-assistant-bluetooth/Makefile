@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-home-assistant-bluetooth
-PKG_VERSION:=1.9.3
+PKG_VERSION:=1.10.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=home_assistant_bluetooth
-PKG_HASH:=673115b2109e802f73ce0ac70dbc13a6011372c1e0ad5aa27cce7d13fd4a00d0
+PKG_HASH:=e810a2db9d3d542779c46a4202fb3f1de54692e2631257a00b8aa2634c7ebde0
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE
@@ -23,7 +23,8 @@ define Package/python3-home-assistant-bluetooth
   TITLE:=Home Assistant Bluetooth Models and Helpers
   URL:=https://github.com/home-assistant-libs/home-assistant-bluetooth
   DEPENDS:= \
-	+python3-bleak
+	+python3-bleak \
+	+python3-distutils
 endef
 
 define Package/python3-home-assistant-bluetooth/description
