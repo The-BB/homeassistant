@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-bluetooth-auto-recovery
-PKG_VERSION:=1.0.3
+PKG_VERSION:=1.1.1
 PKG_RELEASE:=1
 
 PYPI_NAME:=bluetooth_auto_recovery
-PKG_HASH:=d1c4a548733af6bbe5f3178ea907379e10fe2a12fa19f4f0bfe6f66c8bebcb6a
+PKG_HASH:=5fd4654f390dcb4eb75b0efe4c3e26f6a6bc43373ba1c67066c08582f5965760
 
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
