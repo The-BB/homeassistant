@@ -1,0 +1,12 @@
+--- a/cbits/webrtc/typedefs.h
++++ b/cbits/webrtc/typedefs.h
+@@ -41,6 +41,9 @@
+ //#define WEBRTC_ARCH_ARMEL
+ #define WEBRTC_ARCH_32_BITS
+ #define WEBRTC_ARCH_LITTLE_ENDIAN
++#elif defined(__mips__)
++#define WEBRTC_ARCH_32_BITS
++#define WEBRTC_ARCH_BIG_ENDIAN
+ #elif defined(__MIPSEL__)
+ #define WEBRTC_ARCH_32_BITS
+ #define WEBRTC_ARCH_LITTLE_ENDIAN
