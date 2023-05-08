@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-httpcore
-PKG_VERSION:=0.16.3
+PKG_VERSION:=0.17.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=httpcore
-PKG_HASH:=c5d6f04e2fc530f39e0c077e6a30caa53f1451096120f1f38b954afd0b17c0cb
+PKG_HASH:=cc045a3241afbf60ce056202301b4d8b6af08845e3294055eb26b09913ef903c
 
 PKG_LICENSE:=BSD-3-Clause
 PKG_LICENSE_FILES:=LICENSE.md
@@ -25,6 +25,7 @@ define Package/python3-httpcore
   DEPENDS:= \
 	+python3-anyio \
 	+python3-h11 \
+	+python3-logging \
 	+python3-openssl \
 	+python3-certifi \
 	+python3-sniffio \
