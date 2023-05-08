@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
-PKG_VERSION:=2023.4.6
+PKG_VERSION:=2023.5.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=d39e0c3a12d4eec2260f94a5e6f52e8a4ea6b7b182ba931e048da976da56ba5b
+PKG_HASH:=cd338e42203d9d2249479f5f8e447593e24d3afa978755c1db58b89f342ae194
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -78,7 +78,7 @@ define Package/homeassistant
 	+python3-cryptodome \
 	+python3-dbus-fast \
 	+python3-engineio \
-	+python3-fnvhash \
+	+python3-fnv-hash-fast \
 	+python3-grpcio \
 	+python3-grpcio-reflection \
 	+python3-grpcio-status \
@@ -94,21 +94,26 @@ define Package/homeassistant
 	+python3-janus \
 	+python3-libcst \
 	+python3-multidict \
+	+python3-mutagen \
 	+python3-numpy \
 	+python3-paho-mqtt \
 	+python3-pandas \
 	+python3-pillow \
+	+python3-protobuf \
 	+python3-psutil-home-assistant \
 	+python3-pubnub \
+	+python3-pyasn1 \
 	+python3-pydantic \
 	+python3-pynacl \
 	+python3-pyserial \
+	+python3-pysnmplib \
 	+python3-pyturbojpeg \
 	+python3-pyudev \
 	+python3-regex \
 	+python3-socketio \
 	+python3-sqlalchemy \
 	+python3-urllib3 \
+	+python3-webrtcvad \
 	+python3-zeroconf \
 	+scapy
 # home-assistant-frontend==xxxxxxxx.x
@@ -122,7 +127,6 @@ define Package/homeassistant
 	+python3-guppy3 \
 	+python3-holidays \
 	+python3-icmplib \
-	+python3-mutagen \
 	+python3-netdisco \
 	+python3-objgraph \
 	+python3-pyhaversion \
