@@ -2,15 +2,17 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-hijri-converter
+PKG_NAME:=hijri-converter
 PKG_VERSION:=2.2.4
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=hijri-converter
 PKG_HASH:=9e1d9fa4c220f6867da2abb1a96240675ae974abba951c686a781f4ef6ac218f
 
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
+
+PKG_BUILD_DEPENDS:=python-wheel/host
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
@@ -22,8 +24,7 @@ define Package/python3-hijri-converter
   SUBMENU:=Python
   TITLE:=Hijri-Gregorian dates converter
   URL:=https://github.com/mhalshehri/hijri-converter
-  DEPENDS:= \
-	+python3-light
+  DEPENDS:=+python3-light
 endef
 
 define Package/python3-hijri-converter/description
