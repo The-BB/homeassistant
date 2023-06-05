@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python-atomicwrites-homeassistant
+PKG_NAME:=atomicwrites-homeassistant
 PKG_VERSION:=1.4.1
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=atomicwrites-homeassistant
 PKG_HASH:=256a672106f16745445228d966240b77b55f46a096d20305901a57aa5d1f4c2f
@@ -22,8 +22,7 @@ define Package/python3-atomicwrites-homeassistant
   SUBMENU:=Python
   TITLE:=Atomic file writes
   URL:=https://github.com/untitaker/python-atomicwrites
-  DEPENDS:= \
-	+python3-ctypes
+  DEPENDS:=+python3-ctypes
   PROVIDES:=python3-atomicwrites
 endef
 
