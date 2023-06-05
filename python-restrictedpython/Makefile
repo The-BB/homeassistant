@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python-restrictedpython
+PKG_NAME:=restrictedpython
 PKG_VERSION:=5.2
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=RestrictedPython
 PKG_HASH:=634da1f6c5c122a262f433b083ee3d17a9a039f8f1b3778597efb47461cd361b
@@ -22,8 +22,7 @@ define Package/python3-restrictedpython
   SUBMENU:=Python
   TITLE:=A restricted execution environment
   URL:=https://github.com/zopefoundation/RestrictedPython
-  DEPENDS:= \
-	+python3-light
+  DEPENDS:=+python3-light
 endef
 
 define Package/python3-restrictedpython/description
