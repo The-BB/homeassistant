@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-grpcio
+PKG_NAME:=grpcio
 PKG_VERSION:=1.51.1
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=grpcio
 PKG_HASH:=e6dfc2b6567b1c261739b43d9c59d201c1b89e017afd9e684d85aa7a186c9f7a
