@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-debugpy
+PKG_NAME:=debugpy
 PKG_VERSION:=1.6.7
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=debugpy
 PYPI_SOURCE_EXT:=zip
@@ -12,6 +12,8 @@ PKG_HASH:=c4c2f0810fa25323abfdfa36cbbbb24e5c3b1a42cb762782de64439c575d67f2
 
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
+
+PKG_BUILD_DEPENDS:=python-wheel/host
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
