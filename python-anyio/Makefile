@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-anyio
+PKG_NAME:=anyio
 PKG_VERSION:=3.6.2
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=anyio
 PKG_HASH:=25ea0d673ae30af41a0c442f81cf3b38c7e79fdc7b60335a4c14e05eb0947421
@@ -12,7 +12,7 @@ PKG_HASH:=25ea0d673ae30af41a0c442f81cf3b38c7e79fdc7b60335a4c14e05eb0947421
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
 
-HOST_PYTHON3_PACKAGE_BUILD_DEPENDS:=./setuptools-scm.txt
+PKG_BUILD_DEPENDS:=python-setuptools-scm/host python-wheel/host
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
