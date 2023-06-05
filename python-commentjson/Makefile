@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python-commentjson
+PKG_NAME:=commentjson
 PKG_VERSION:=0.9.0
-PKG_RELEASE:=2
+PKG_RELEASE:=3
 
 PYPI_NAME:=commentjson
 PKG_HASH:=42f9f231d97d93aff3286a4dc0de39bfd91ae823d1d9eba9fa901fe0c7113dd4
@@ -22,8 +22,7 @@ define Package/python3-commentjson
   SUBMENU:=Python
   TITLE:=Add Python and JavaScript style comments in your JSON files
   URL:=https://github.com/vaidik/commentjson
-  DEPENDS:= \
-	+python3-lark-parser
+  DEPENDS:=+python3-lark-parser
 endef
 
 define Package/python3-commentjson/description
