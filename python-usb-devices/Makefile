@@ -2,15 +2,17 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-usb-devices
+PKG_NAME:=usb-devices
 PKG_VERSION:=0.4.1
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=usb_devices
 PKG_HASH:=2ad810ba1fd29817d014fe244179fbd06866b92a3285e2bb3a8442f99a8e47b6
 
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
+
+PKG_BUILD_DEPENDS:=python-poetry-core/host
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
