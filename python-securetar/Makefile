@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-securetar
+PKG_NAME:=securetar
 PKG_VERSION:=2023.3.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=securetar
 PKG_HASH:=f362e338fcf572ac65d062b5e5c31067605362ed412d4f553ac2ed9efe7ed498
@@ -22,8 +22,7 @@ define Package/python3-securetar
   SUBMENU:=Python
   TITLE:=module to handle tarfile backups
   URL:=https://github.com/pvizeli/securetar
-  DEPENDS:= \
-	+python3-logging
+  DEPENDS:=+python3-logging
 # (rust-lang pkgs)
   EXTRA_DEPENDS:=python3-cryptography
 endef
