@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python-future
+PKG_NAME:=future
 PKG_VERSION:=0.18.2
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=future
 PKG_HASH:=b1bead90b70cf6ec3f0710ae53a525360fa360d306a86583adc6bf83a4db537d
