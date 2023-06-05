@@ -2,15 +2,17 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-bluetooth-data-tools
+PKG_NAME:=bluetooth-data-tools
 PKG_VERSION:=0.4.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=bluetooth_data_tools
 PKG_HASH:=ecea1c195429c4349115a6fe42bc748925dab2b0c40cd1f327e00e72139f604e
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE
+
+PKG_BUILD_DEPENDS:=python-cython/host python-poetry-core/host python-wheel/host
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
@@ -22,10 +24,7 @@ define Package/python3-bluetooth-data-tools
   SUBMENU:=Python
   TITLE:=Tools for converting bluetooth data and packets
   URL:=https://github.com/Bluetooth-Devices/bluetooth-data-tools
-  DEPENDS:= \
-	+libstdcpp \
-	+python3-distutils \
-	+python3-logging
+  DEPENDS:=+libstdcpp +python3-distutils +python3-logging
 endef
 
 define Package/python3-bluetooth-data-tools/description
