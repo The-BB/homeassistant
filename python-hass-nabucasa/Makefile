@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-hass-nabucasa
+PKG_NAME:=hass-nabucasa
 PKG_VERSION:=0.66.2
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=hass-nabucasa
 PKG_HASH:=0180a26e4e656468c68d610f85fe7aea377a2d52f5f34e6ac6fad9cabd92f505
