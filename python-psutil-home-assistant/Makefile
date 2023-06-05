@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-psutil-home-assistant
+PKG_NAME:=psutil-home-assistant
 PKG_VERSION:=0.0.1
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=psutil-home-assistant
 PKG_HASH:=ebe4f3a98d76d93a3140da2823e9ef59ca50a59761fdc453b30b4407c4c1bdb8
@@ -22,8 +22,7 @@ define Package/python3-psutil-home-assistant
   SUBMENU:=Python
   TITLE:=Wrapper for psutil
   URL:=https://psutil-home-assistant.pydata.org/
-  DEPENDS:= \
-	+python3-psutil
+  DEPENDS:=+python3-psutil
 endef
 
 define Package/python3-psutil-home-assistant/description
