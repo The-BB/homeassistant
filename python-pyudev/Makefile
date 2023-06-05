@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python-pyudev
+PKG_NAME:=pyudev
 PKG_VERSION:=0.23.2
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=pyudev
 PKG_HASH:=32ae3585b320a51bc283e0a04000fd8a25599edb44541e2f5034f6afee5d15cc
@@ -22,10 +22,7 @@ define Package/python3-pyudev
   SUBMENU:=Python
   TITLE:=A libudev binding
   URL:=http://pyudev.readthedocs.org/
-  DEPENDS:= \
-	+libudev \
-	+python3-ctypes \
-	+python3-six
+  DEPENDS:=+libudev +python3-ctypes +python3-six
 endef
 
 define Package/python3-pyudev/description
