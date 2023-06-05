@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-grpcio-status
+PKG_NAME:=grpcio-status
 PKG_VERSION:=1.51.1
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=grpcio-status
 PKG_HASH:=ac2617a3095935ebd785e2228958f24b10a0d527a0c9eb5a0863c784f648a816
@@ -22,10 +22,7 @@ define Package/python3-grpcio-status
   SUBMENU:=Python
   TITLE:=Status proto mapping for gRPC
   URL:=https://grpc.io
-  DEPENDS:= \
-	+python3-googleapis-common-protos \
-	+python3-grpcio \
-	+python3-protobuf
+  DEPENDS:=+python3-googleapis-common-protos +python3-grpcio +python3-protobuf
 endef
 
 define Package/python3-grpcio-status/description
