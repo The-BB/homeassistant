@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python-pyric
+PKG_NAME:=pyric
 PKG_VERSION:=0.1.6.3
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=PyRIC
 PKG_HASH:=b539b01cafebd2406c00097f94525ea0f8ecd1dd92f7731f43eac0ef16c2ccc9
@@ -22,8 +22,7 @@ define Package/python3-pyric
   SUBMENU:=Python
   TITLE:=Python Radio Interface Controller
   URL:=http://wraith-wireless.github.io/PyRIC/
-  DEPENDS:= \
-	+python3-urllib
+  DEPENDS:=+python3-urllib
 endef
 
 define Package/python3-pyric/description
