@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-grpcio-tools
+PKG_NAME:=grpcio-tools
 PKG_VERSION:=1.51.1
 PKG_RELEASE:=1
 
