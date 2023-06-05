@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python-objgraph
+PKG_NAME:=objgraph
 PKG_VERSION:=3.5.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=objgraph
 PKG_HASH:=4752ca5bcc0e0512e41b8cc4d2780ac2fd3b3eabd03b7e950a5594c06203dfc4
@@ -22,10 +22,7 @@ define Package/python3-objgraph
   SUBMENU:=Python
   TITLE:=Visually explore Python object graphs
   URL:=https://mg.pov.lt/objgraph/
-  DEPENDS:= \
-	+python3-graphviz \
-	+python3-pydoc \
-	+python3-unittest
+  DEPENDS:=+python3-graphviz +python3-pydoc +python3-unittest
 endef
 
 define Package/python3-objgraph/description
