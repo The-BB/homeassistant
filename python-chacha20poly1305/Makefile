@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-chacha20poly1305
+PKG_NAME:=chacha20poly1305
 PKG_VERSION:=0.0.3
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=chacha20poly1305
 PKG_HASH:=f2f005c7cf4638ffa4ff06c02c78748068b642916795c6d16c7cc5e355e70edf
