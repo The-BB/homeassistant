@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-hassil
+PKG_NAME:=hassil
 PKG_VERSION:=1.0.6
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=hassil
 PKG_HASH:=ac24952852247cf836698170b9854b33130ef12d75755f1fe1e724a456cd0779
@@ -22,10 +22,7 @@ define Package/python3-hassil
   SUBMENU:=Python
   TITLE:=The Home Assistant Intent Language parser
   URL:=https://github.com/home-assistant/hassil
-  DEPENDS:= \
-	+python3-codecs \
-	+python3-logging \
-	+python3-yaml
+  DEPENDS:=+python3-codecs +python3-logging +python3-yaml
 endef
 
 define Package/python3-hassil/description
