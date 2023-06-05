@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python-croniter
+PKG_NAME:=croniter
 PKG_VERSION:=1.0.6
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=croniter
 PKG_HASH:=e79bcc9681d2345e71360241aebe19ed6c5475fec40cc59a7998fe1a2ca568d0
@@ -22,10 +22,7 @@ define Package/python3-croniter
   SUBMENU:=Python
   TITLE:=provides iteration with cron like format
   URL:=https://github.com/kiorky/croniter
-  DEPENDS:= \
-	+python3-dateutil \
-	+python3-future \
-	+python3-natsort
+  DEPENDS:=+python3-dateutil +python3-future +python3-natsort
 endef
 
 define Package/python3-croniter/description
