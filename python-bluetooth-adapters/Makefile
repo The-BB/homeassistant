@@ -2,14 +2,17 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-bluetooth-adapters
+PKG_NAME:=bluetooth-adapters
 PKG_VERSION:=0.15.3
+PKG_RELEASE:=2
 
 PYPI_NAME:=bluetooth_adapters
 PKG_HASH:=955c8cf4b597a84668fe41993d8f21d1359f24d88c5bbe05b895981feeb19a8b
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE
+
+PKG_BUILD_DEPENDS:=python-poetry-core/host
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
