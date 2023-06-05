@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-colorlog
+PKG_NAME:=colorlog
 PKG_VERSION:=6.6.0
-PKG_RELEASE:=2
+PKG_RELEASE:=3
 
 PYPI_NAME:=colorlog
 PKG_HASH:=344f73204009e4c83c5b6beb00b3c45dc70fcdae3c80db919e0a4171d006fde8
@@ -22,8 +22,7 @@ define Package/python3-colorlog
   SUBMENU:=Python
   TITLE:=Log formatting with colors
   URL:=https://github.com/borntyping/python-colorlog
-  DEPENDS:= \
-	+python3-logging
+  DEPENDS:=+python3-logging
 endef
 
 define Package/python3-colorlog/description
