@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python-envs
+PKG_NAME:=envs
 PKG_VERSION:=1.3
-PKG_RELEASE:=5
+PKG_RELEASE:=6
 
 PYPI_NAME:=envs
 PKG_HASH:=ccf5cd85ddb8ed335e39ed8a22e0d23658f5a6d7da430f225e6f750c6f50ae42
@@ -22,14 +22,9 @@ define Package/python3-envs
   SUBMENU:=Python
   TITLE:=Easy access of environment variables
   URL:=https://github.com/bjinwright/envs
-  DEPENDS:= \
-	+python3-decimal \
-	+python3-unittest
+  DEPENDS:=+python3-decimal +python3-unittest
 # [cli]
-  DEPENDS+= \
-	+python3-jinja2 \
-	+python3-click \
-	+python3-terminaltables
+  DEPENDS+=+python3-jinja2 +python3-click +python3-terminaltables
 endef
 
 define Package/python3-envs/description
