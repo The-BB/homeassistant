@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python-korean-lunar-calendar
+PKG_NAME:=korean-lunar-calendar
 PKG_VERSION:=0.2.1
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=korean_lunar_calendar
 PKG_HASH:=12ce54b1392ed45a82dc6cea85ee5f7e33630556e82488f57e37a22482c8275d
@@ -22,8 +22,7 @@ define Package/python3-korean-lunar-calendar
   SUBMENU:=Python
   TITLE:=Korean Lunar Calendar
   URL:=https://github.com/usingsky/korean_lunar_calendar_py
-  DEPENDS:= \
-	+python3-light
+  DEPENDS:=+python3-light
 endef
 
 define Package/python3-korean-lunar-calendar/description
