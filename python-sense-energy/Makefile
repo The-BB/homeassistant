@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python-sense-energy
+PKG_NAME:=sense-energy
 PKG_VERSION:=0.11.1
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=sense_energy
 PKG_HASH:=7357db170ecf10479d22f447cb7a34c4bc2eb6b41047a6a8171d33ccf685a138
