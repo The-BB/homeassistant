@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python-lru-dict
+PKG_NAME:=lru-dict
 PKG_VERSION:=1.1.8
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=lru-dict
 PKG_HASH:=878bc8ef4073e5cfb953dfc1cf4585db41e8b814c0106abde34d00ee0d0b3115
@@ -22,8 +22,7 @@ define Package/python3-lru-dict
   SUBMENU:=Python
   TITLE:=An Dict like LRU container
   URL:=https://github.com/amitdev/lru-dict
-  DEPENDS:= \
-	+python3-light
+  DEPENDS:=+python3-light
 endef
 
 define Package/python3-lru-dict/description
