@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python-pymeeus
+PKG_NAME:=pymeeus
 PKG_VERSION:=0.5.11
-PKG_RELEASE:=2
+PKG_RELEASE:=3
 
 PYPI_NAME:=PyMeeus
 PKG_HASH:=bb9d670818d8b0594317b48a7dadea02a0594e5344263bf2054e1a011c8fed55
@@ -22,8 +22,7 @@ define Package/python3-pymeeus
   SUBMENU:=Python
   TITLE:=Library of astronomical algorithms
   URL:=https://github.com/architest/pymeeus
-  DEPENDS:= \
-	+python3-light
+  DEPENDS:=+python3-light
 endef
 
 define Package/python3-pymeeus/description
