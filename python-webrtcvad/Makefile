@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python-webrtcvad
+PKG_NAME:=webrtcvad
 PKG_VERSION:=2.0.10
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=webrtcvad
 PKG_HASH:=f1bed2fb25b63fb7b1a55d64090c993c9c9167b28485ae0bcdd81cf6ede96aea
@@ -22,8 +22,7 @@ define Package/python3-webrtcvad
   SUBMENU:=Python
   TITLE:=Python interface to the WebRTC Voice Activity Detector
   URL:=https://github.com/wiseman/py-webrtcvad
-  DEPENDS:= \
-	+python3-light
+  DEPENDS:=+python3-light
 endef
 
 define Package/python3-webrtcvad/description
