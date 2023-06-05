@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-aiodiscover
+PKG_NAME:=aiodiscover
 PKG_VERSION:=1.4.16
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=aiodiscover
 PKG_HASH:=245b9b6292217a38613220e4075a47397874a70052acd2da0801c51642648869
