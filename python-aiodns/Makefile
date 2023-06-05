@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-aiodns
+PKG_NAME:=aiodns
 PKG_VERSION:=3.0.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=aiodns
 PKG_HASH:=946bdfabe743fceeeb093c8a010f5d1645f708a241be849e17edfb0e49e08cd6
@@ -22,10 +22,7 @@ define Package/python3-aiodns
   SUBMENU:=Python
   TITLE:=Simple DNS resolver for asyncio
   URL:=https://github.com/saghul/aiodns
-  DEPENDS:= \
-	+python3-asyncio \
-	+python3-pycares \
-	+python3-unittest
+  DEPENDS:=+python3-asyncio +python3-pycares +python3-unittest
 endef
 
 define Package/python3-aiodns/description
