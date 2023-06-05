@@ -1,6 +1,6 @@
-From dbcf2055cd80302979418adef51d08d916a46e32 Mon Sep 17 00:00:00 2001
+From d9cfe63533e06385e16c5661585ba2ae35bedfbf Mon Sep 17 00:00:00 2001
 From: The-BB <tun.chen.bo@gmail.com>
-Date: Sun, 7 May 2023 18:01:20 +0300
+Date: Mon, 29 May 2023 15:33:36 +0300
 Subject: [PATCH] lang/python/python-sqlalchemy: bump to 2.0.12
 
 ---
@@ -8,14 +8,14 @@ Subject: [PATCH] lang/python/python-sqlalchemy: bump to 2.0.12
  1 file changed, 9 insertions(+), 5 deletions(-)
 
 diff --git a/lang/python/python-sqlalchemy/Makefile b/lang/python/python-sqlalchemy/Makefile
-index f15cbb3ff..df30ee3d9 100644
+index f15cbb3ff..0f0331405 100644
 --- a/lang/python/python-sqlalchemy/Makefile
 +++ b/lang/python/python-sqlalchemy/Makefile
 @@ -4,15 +4,16 @@
  # This is free software, licensed under the GNU General Public License v2.
  # See /LICENSE for more information.
  #
-+# XXX bump
++# XXX bump (hass)
  
  include $(TOPDIR)/rules.mk
  

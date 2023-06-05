@@ -1,6 +1,6 @@
-From af8647d1625aab0a1f567642f501a9070d02ebee Mon Sep 17 00:00:00 2001
+From 86bebc23456fb64d6041857ee716a2189660e1ad Mon Sep 17 00:00:00 2001
 From: The-BB <tun.chen.bo@gmail.com>
-Date: Sun, 11 Dec 2022 10:13:38 +0300
+Date: Mon, 29 May 2023 15:29:11 +0300
 Subject: [PATCH] lang/python/python-async-timeout: bump to 4.0.2
 
 ---
@@ -8,14 +8,14 @@ Subject: [PATCH] lang/python/python-async-timeout: bump to 4.0.2
  1 file changed, 4 insertions(+), 3 deletions(-)
 
 diff --git a/lang/python/python-async-timeout/Makefile b/lang/python/python-async-timeout/Makefile
-index cb66dd01f..d2c64e544 100644
+index cb66dd01f..89bf9e4ba 100644
 --- a/lang/python/python-async-timeout/Makefile
 +++ b/lang/python/python-async-timeout/Makefile
 @@ -4,16 +4,17 @@
  # This is free software, licensed under the GNU General Public License v2.
  # See /LICENSE for more information.
  #
-+# XXX bump
++# XXX bump (hass)
  
  include $(TOPDIR)/rules.mk
  

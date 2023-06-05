@@ -1,44 +1,53 @@
-From b197e815edca01f3a1f067146b63a95d9c331468 Mon Sep 17 00:00:00 2001
+From f184a7511d1099690075384ec096afed8a9936cc Mon Sep 17 00:00:00 2001
 From: The-BB <tun.chen.bo@gmail.com>
-Date: Sun, 11 Dec 2022 16:21:09 +0300
-Subject: [PATCH] lang/python/numpy: downgrade
+Date: Mon, 5 Jun 2023 14:39:51 +0300
+Subject: [PATCH] lang/python/numpy: bump to 1.24.3
 
 ---
- lang/python/numpy/Makefile              | 54 +++++++++++++++----------
- lang/python/numpy/patches/999-fix.patch | 48 ++++++++++++++++++++++
- 2 files changed, 81 insertions(+), 21 deletions(-)
- create mode 100644 lang/python/numpy/patches/999-fix.patch
+ lang/python/numpy/Makefile                    | 27 ++++++++---
+ .../numpy/patches/001-fix-001-unpin.patch     | 10 ++++
+ .../numpy/patches/500-fix-001-unpin.patch     | 10 ++++
+ lang/python/numpy/patches/501-fix.patch       | 48 +++++++++++++++++++
+ 4 files changed, 88 insertions(+), 7 deletions(-)
+ create mode 100644 lang/python/numpy/patches/001-fix-001-unpin.patch
+ create mode 100644 lang/python/numpy/patches/500-fix-001-unpin.patch
+ create mode 100644 lang/python/numpy/patches/501-fix.patch
 
 diff --git a/lang/python/numpy/Makefile b/lang/python/numpy/Makefile
-index 3124ca8f1..9a681efc9 100644
+index d7e485d79..b8cae411f 100644
 --- a/lang/python/numpy/Makefile
 +++ b/lang/python/numpy/Makefile
-@@ -6,11 +6,11 @@
+@@ -2,15 +2,16 @@
+ # Copyright (C) 2019 Jakub Piotr Cłapa <jpc@loee.pl>
+ # Copyright (C) 2020 Alexandru Ardelean <ardeleanalex@gmail.com>
+ #
++# XXX bump (hass)
+ 
  include $(TOPDIR)/rules.mk
  
  PKG_NAME:=numpy
 -PKG_VERSION:=1.23.3
--PKG_RELEASE:=$(AUTORELEASE)
-+PKG_VERSION:=1.23.2
-+PKG_RELEASE:=2
+-PKG_RELEASE:=5
++PKG_VERSION:=1.24.3
++PKG_RELEASE:=1
  
  PYPI_NAME:=$(PKG_NAME)
 -PKG_HASH:=51bf49c0cd1d52be0a240aa66f3458afc4b95d8993d2d04f0d91fa60c10af6cd
-+PKG_HASH:=b78d00e48261fbbd04aa0d7427cf78d18401ee0abd89c7559bbf422e5b1c7d01
++PKG_HASH:=ab344f1bf21f140adab8e47fdbc7c35a477dc01408791f8ba00d018dd0bc5155
  
  PKG_MAINTAINER:=Alexandru Ardelean <ardeleanalex@gmail.com>
  
-@@ -23,6 +23,9 @@ PKG_CONFIG_DEPENDS:= \
- 
- HOST_PYTHON3_PACKAGE_BUILD_DEPENDS:=Cython
+@@ -27,6 +28,9 @@ PKG_BUILD_DEPENDS:=python-cython/host
+ PYTHON3_PKG_BUILD_VARS:= \
+         $(if $(CONFIG_NUMPY_OPENBLAS_SUPPORT),,NPY_BLAS_ORDER= NPY_LAPACK_ORDER= )
  
 +# XXX currently supports only x86_64 AVX-512
-+PYTHON3_PKG_SETUP_VARS:=NPY_DISABLE_SVML=1
++PYTHON3_PKG_BUILD_VARS += NPY_DISABLE_SVML=1
 +
  include ../pypi.mk
  include $(INCLUDE_DIR)/package.mk
  include ../python3-package.mk
-@@ -33,34 +36,35 @@ define Package/python3-numpy
+@@ -37,8 +41,9 @@ define Package/python3-numpy
    CATEGORY:=Languages
    TITLE:=The fundamental package for scientific computing with Python
    URL:=https://www.numpy.org/
@@ -50,49 +59,18 @@ index 3124ca8f1..9a681efc9 100644
  endef
  
  # We need to duplicate the omitted arhitectures same as openblas
--define Package/python3-numpy/config
--menu "Configuration"
--depends on !powerpc
--depends on !arc
-+#define Package/python3-numpy/config
-+#menu "Configuration"
-+#depends on !powerpc
-+#depends on !arc
+@@ -56,8 +61,8 @@ endef
  
--config NUMPY_OPENBLAS_SUPPORT
--        bool "Enable OpenBLAS support"
--        default n
-+#config NUMPY_OPENBLAS_SUPPORT
-+#        bool "Enable OpenBLAS support"
-+#        default n
- 
--endmenu
--endef
-+#endmenu
-+#endef
- 
--ifdef CONFIG_NUMPY_OPENBLAS_SUPPORT
-+#ifdef CONFIG_NUMPY_OPENBLAS_SUPPORT
  define Build/Prepare/numpy-sitecfg
  	echo "[DEFAULT]"                                 >  $(PKG_BUILD_DIR)/site.cfg
 -	echo "library_dirs = $(STAGING_DIR)/usr/lib"     >> $(PKG_BUILD_DIR)/site.cfg
 -	echo "include_dirs = $(STAGING_DIR)/usr/include" >> $(PKG_BUILD_DIR)/site.cfg
 +	echo "library_dirs = $(STAGING_DIR)/opt/lib"     >> $(PKG_BUILD_DIR)/site.cfg
 +	echo "include_dirs = $(STAGING_DIR)/opt/include" >> $(PKG_BUILD_DIR)/site.cfg
- 	echo                                             >> $(PKG_BUILD_DIR)/site.cfg
--	echo "[openblas]"                                >> $(PKG_BUILD_DIR)/site.cfg
--	echo "libraries = openblas"                      >> $(PKG_BUILD_DIR)/site.cfg
--	echo "runtime_library_dirs = /usr/lib"           >> $(PKG_BUILD_DIR)/site.cfg
-+#	echo "[openblas]"                                >> $(PKG_BUILD_DIR)/site.cfg
-+#	echo "libraries = openblas"                      >> $(PKG_BUILD_DIR)/site.cfg
-+#	echo "runtime_library_dirs = /opt/lib"           >> $(PKG_BUILD_DIR)/site.cfg
- endef
--endif
-+#endif
  
- define Build/Prepare
- 	$(call Build/Prepare/Default)
-@@ -75,6 +79,14 @@ For some modules to be available, the INSTALL_GFORTRAN symbol needs
+   ifdef CONFIG_NUMPY_OPENBLAS_SUPPORT
+ 	echo                                             >> $(PKG_BUILD_DIR)/site.cfg
+@@ -80,6 +85,14 @@ For some modules to be available, the INSTALL_GFORTRAN symbol needs
  to be enabled in the OpenWrt core/toolchain.
  endef
  
@@ -107,11 +85,43 @@ index 3124ca8f1..9a681efc9 100644
  $(eval $(call Py3Package,python3-numpy))
  $(eval $(call BuildPackage,python3-numpy))
  $(eval $(call BuildPackage,python3-numpy-src))
-diff --git a/lang/python/numpy/patches/999-fix.patch b/lang/python/numpy/patches/999-fix.patch
+diff --git a/lang/python/numpy/patches/001-fix-001-unpin.patch b/lang/python/numpy/patches/001-fix-001-unpin.patch
+new file mode 100644
+index 000000000..693f95a2d
+--- /dev/null
++++ b/lang/python/numpy/patches/001-fix-001-unpin.patch
+@@ -0,0 +1,10 @@
++--- a/pyproject.toml
+++++ b/pyproject.toml
++@@ -1,6 +1,7 @@
++ [build-system]
++ # Minimum requirements for the build system to execute.
++ requires = [
+++    "packaging==20.5; platform_machine=='arm64'",  # macos M1
++     "setuptools==59.2.0",
++     "wheel==0.37.0",
++     "Cython>=0.29.30,<3.0",
+diff --git a/lang/python/numpy/patches/500-fix-001-unpin.patch b/lang/python/numpy/patches/500-fix-001-unpin.patch
+new file mode 100644
+index 000000000..fe3c507a2
+--- /dev/null
++++ b/lang/python/numpy/patches/500-fix-001-unpin.patch
+@@ -0,0 +1,10 @@
++--- a/pyproject.toml
+++++ b/pyproject.toml
++@@ -1,7 +1,6 @@
++ [build-system]
++ # Minimum requirements for the build system to execute.
++ requires = [
++-    "packaging==20.5; platform_machine=='arm64'",  # macos M1
++     "setuptools>=59.2.0",
++     "wheel>=0.37.0",
++     "Cython>=0.29.30,<3.0",
+diff --git a/lang/python/numpy/patches/501-fix.patch b/lang/python/numpy/patches/501-fix.patch
 new file mode 100644
 index 000000000..46dbf5d43
 --- /dev/null
-+++ b/lang/python/numpy/patches/999-fix.patch
++++ b/lang/python/numpy/patches/501-fix.patch
 @@ -0,0 +1,48 @@
 +--- a/numpy/distutils/ccompiler_opt.py
 ++++ b/numpy/distutils/ccompiler_opt.py

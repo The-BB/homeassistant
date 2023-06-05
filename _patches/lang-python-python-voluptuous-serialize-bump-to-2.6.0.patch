@@ -1,6 +1,6 @@
-From 1a4e77814437c5e1f7738a8042d6628538f2d9f7 Mon Sep 17 00:00:00 2001
+From 0bbe4ff9a450baa672963e3b4319cbb14b8dd9d4 Mon Sep 17 00:00:00 2001
 From: The-BB <tun.chen.bo@gmail.com>
-Date: Thu, 9 Mar 2023 12:55:47 +0300
+Date: Mon, 29 May 2023 15:34:31 +0300
 Subject: [PATCH] lang/python/python-voluptuous-serialize: bump to 2.6.0
 
 ---
@@ -8,14 +8,14 @@ Subject: [PATCH] lang/python/python-voluptuous-serialize: bump to 2.6.0
  1 file changed, 3 insertions(+), 2 deletions(-)
 
 diff --git a/lang/python/python-voluptuous-serialize/Makefile b/lang/python/python-voluptuous-serialize/Makefile
-index 3865dfe3c..03265453b 100644
+index 3865dfe3c..471e43a5f 100644
 --- a/lang/python/python-voluptuous-serialize/Makefile
 +++ b/lang/python/python-voluptuous-serialize/Makefile
 @@ -4,15 +4,16 @@
  # This is free software, licensed under the GNU General Public License v2.
  # See /LICENSE for more information.
  #
-+# XXX bump
++# XXX bump (hass)
  
  include $(TOPDIR)/rules.mk
  

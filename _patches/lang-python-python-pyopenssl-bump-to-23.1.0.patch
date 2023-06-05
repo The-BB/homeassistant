@@ -1,6 +1,6 @@
-From a47520c1a6d47f6c94c1bae49db70ac7d269b695 Mon Sep 17 00:00:00 2001
+From 54290356b5d44e45e1d6e5a54aee6eaf66a1e1d9 Mon Sep 17 00:00:00 2001
 From: The-BB <tun.chen.bo@gmail.com>
-Date: Sun, 16 Apr 2023 16:34:00 +0300
+Date: Mon, 29 May 2023 15:32:24 +0300
 Subject: [PATCH] lang/python/python-pyopenssl: bump to 23.1.0
 
 ---
@@ -8,14 +8,14 @@ Subject: [PATCH] lang/python/python-pyopenssl: bump to 23.1.0
  1 file changed, 5 insertions(+), 5 deletions(-)
 
 diff --git a/lang/python/python-pyopenssl/Makefile b/lang/python/python-pyopenssl/Makefile
-index dc2a3de70..2fe7eae5c 100644
+index dc2a3de70..0885ab45e 100644
 --- a/lang/python/python-pyopenssl/Makefile
 +++ b/lang/python/python-pyopenssl/Makefile
 @@ -4,15 +4,16 @@
  # This is free software, licensed under the GNU General Public License v2.
  # See /LICENSE for more information.
  #
-+# XXX bump
++# XXX bump (hass)
  
  include $(TOPDIR)/rules.mk
  

@@ -1,6 +1,6 @@
-From cf62e16e212374954ffdd6a219c06f7d6b4adc94 Mon Sep 17 00:00:00 2001
+From 97b9a2323f51f20fe3233e071a4949382ffe31c1 Mon Sep 17 00:00:00 2001
 From: The-BB <tun.chen.bo@gmail.com>
-Date: Fri, 6 Jan 2023 11:59:22 +0300
+Date: Mon, 29 May 2023 15:30:41 +0300
 Subject: [PATCH] lang/python/python-ciso8601: bump to 2.3.0
 
 ---
@@ -8,14 +8,14 @@ Subject: [PATCH] lang/python/python-ciso8601: bump to 2.3.0
  1 file changed, 3 insertions(+), 2 deletions(-)
 
 diff --git a/lang/python/python-ciso8601/Makefile b/lang/python/python-ciso8601/Makefile
-index 02a82cf67..14b952cb1 100644
+index 02a82cf67..b3b99742d 100644
 --- a/lang/python/python-ciso8601/Makefile
 +++ b/lang/python/python-ciso8601/Makefile
 @@ -4,15 +4,16 @@
  # This is free software, licensed under the GNU General Public License v2.
  # See /LICENSE for more information.
  #
-+# XXX bump
++# XXX bump (hass)
  
  include $(TOPDIR)/rules.mk
  

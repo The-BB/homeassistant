@@ -1,6 +1,6 @@
-From 57a4371bd7af6601bd700b1c730a673aa5302a8d Mon Sep 17 00:00:00 2001
+From 04b1e2415933384ac02ffc3f336eeed7a622c95e Mon Sep 17 00:00:00 2001
 From: The-BB <tun.chen.bo@gmail.com>
-Date: Sun, 11 Dec 2022 10:13:38 +0300
+Date: Mon, 29 May 2023 15:33:23 +0300
 Subject: [PATCH] lang/python/python-s3transfer: bump to 0.3.3
 
 ---
@@ -8,11 +8,11 @@ Subject: [PATCH] lang/python/python-s3transfer: bump to 0.3.3
  1 file changed, 5 insertions(+), 3 deletions(-)
 
 diff --git a/lang/python/python-s3transfer/Makefile b/lang/python/python-s3transfer/Makefile
-index a6e04f9f1..8ab5ce88c 100644
+index a6e04f9f1..85dff398b 100644
 --- a/lang/python/python-s3transfer/Makefile
 +++ b/lang/python/python-s3transfer/Makefile
 @@ -1,11 +1,13 @@
-+# XXX bump
++# XXX bump (hass)
 +
  include $(TOPDIR)/rules.mk
  

@@ -1,6 +1,6 @@
-From a80aeceaa10245b07374b77cb38e5bd4794f4887 Mon Sep 17 00:00:00 2001
+From 42c62b740a6f40354b0def0ab24f19e590a134bf Mon Sep 17 00:00:00 2001
 From: The-BB <tun.chen.bo@gmail.com>
-Date: Sun, 11 Dec 2022 10:13:38 +0300
+Date: Mon, 29 May 2023 15:30:08 +0300
 Subject: [PATCH] lang/python/python-boto3: bump to 1.16.52
 
 ---
@@ -8,11 +8,11 @@ Subject: [PATCH] lang/python/python-boto3: bump to 1.16.52
  1 file changed, 5 insertions(+), 3 deletions(-)
 
 diff --git a/lang/python/python-boto3/Makefile b/lang/python/python-boto3/Makefile
-index 27f69b3c9..ae4c3ece6 100644
+index 27f69b3c9..8419f32bd 100644
 --- a/lang/python/python-boto3/Makefile
 +++ b/lang/python/python-boto3/Makefile
 @@ -1,11 +1,13 @@
-+# XXX bump
++# XXX bump (hass)
 +
  include $(TOPDIR)/rules.mk
  

@@ -1,0 +1,65 @@
+From eeae8cdd6fd50cb852c0124f6b22be784efd6a1c Mon Sep 17 00:00:00 2001
+From: The-BB <tun.chen.bo@gmail.com>
+Date: Mon, 29 May 2023 15:30:57 +0300
+Subject: [PATCH] lang/python/python-dbus-fast: bump to 1.85.0
+
+---
+ lang/python/python-dbus-fast/Makefile         |  8 +++++---
+ .../patches/500-fix-paths.patch               | 20 +++++++++++++++++++
+ 2 files changed, 25 insertions(+), 3 deletions(-)
+ create mode 100644 lang/python/python-dbus-fast/patches/500-fix-paths.patch
+
+diff --git a/lang/python/python-dbus-fast/Makefile b/lang/python/python-dbus-fast/Makefile
+index 8579e13a4..8a29ddbc6 100644
+--- a/lang/python/python-dbus-fast/Makefile
++++ b/lang/python/python-dbus-fast/Makefile
+@@ -4,15 +4,17 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump (hass)
++
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=python-dbus-fast
+-PKG_VERSION:=1.84.2
+-PKG_RELEASE:=2
++PKG_VERSION:=1.85.0
++PKG_RELEASE:=1
+ 
+ PYPI_NAME:=dbus-fast
+ PYPI_SOURCE_NAME:=dbus_fast
+-PKG_HASH:=62b00b85c5835bff1d7ab5b12d494e588d92612bedbd7ca86176861729b8e4bc
++PKG_HASH:=af346e87e34fa52c7ae82d117303cbfe089cd5391b5a1cc0e51f67066ef426f5
+ 
+ PKG_MAINTAINER:=Quintin Hill <stuff@quintin.me.uk>
+ PKG_LICENSE:=MIT
+diff --git a/lang/python/python-dbus-fast/patches/500-fix-paths.patch b/lang/python/python-dbus-fast/patches/500-fix-paths.patch
+new file mode 100644
+index 000000000..cf75c900f
+--- /dev/null
++++ b/lang/python/python-dbus-fast/patches/500-fix-paths.patch
+@@ -0,0 +1,20 @@
++--- a/src/dbus_fast/_private/address.py
+++++ b/src/dbus_fast/_private/address.py
++@@ -42,7 +42,7 @@ def get_system_bus_address():
++     if "DBUS_SYSTEM_BUS_ADDRESS" in os.environ:
++         return os.environ["DBUS_SYSTEM_BUS_ADDRESS"]
++     else:
++-        return "unix:path=/var/run/dbus/system_bus_socket"
+++        return "unix:path=/opt/var/run/dbus/system_bus_socket"
++ 
++ 
++ display_re = re.compile(r".*:([0-9]+)\.?.*")
++@@ -71,7 +71,7 @@ def get_session_bus_address():
++     # should be fairly reliable. fix this by passing in an async func to read
++     # the file for each io backend.
++     machine_id = None
++-    with open("/var/lib/dbus/machine-id") as f:
+++    with open("/opt/var/lib/dbus/machine-id") as f:
++         machine_id = f.read().rstrip()
++ 
++     dbus_info_file_name = f"{home}/.dbus/session-bus/{machine_id}-{display}"
+-- 
+2.30.2
+

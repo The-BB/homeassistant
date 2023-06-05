@@ -1,6 +1,6 @@
-From 207d7ceee2c0ffb5d2d29182dd0c0e30c6068a6e Mon Sep 17 00:00:00 2001
+From 11a01e255a8ff3cd5ad210c9178479892ce7f313 Mon Sep 17 00:00:00 2001
 From: The-BB <tun.chen.bo@gmail.com>
-Date: Thu, 16 Mar 2023 10:33:56 +0300
+Date: Mon, 29 May 2023 15:26:57 +0300
 Subject: [PATCH] lang/python/Jinja2: bump to 3.1.2
 
 ---
@@ -8,14 +8,14 @@ Subject: [PATCH] lang/python/Jinja2: bump to 3.1.2
  1 file changed, 4 insertions(+), 3 deletions(-)
 
 diff --git a/lang/python/Jinja2/Makefile b/lang/python/Jinja2/Makefile
-index 37e006557..f57d968e2 100644
+index 37e006557..108ffff5e 100644
 --- a/lang/python/Jinja2/Makefile
 +++ b/lang/python/Jinja2/Makefile
 @@ -1,15 +1,16 @@
  # This is free software, licensed under the GNU General Public License v2.
  # See /LICENSE for more information.
  #
-+# XXX bump
++# XXX bump (hass)
  
  include $(TOPDIR)/rules.mk
  
@@ -23,7 +23,7 @@ index 37e006557..f57d968e2 100644
 -PKG_VERSION:=3.0.3
 -PKG_RELEASE:=2
 +PKG_VERSION:=3.1.2
-+PKG_RELEASE:=3
++PKG_RELEASE:=1
  
  PYPI_NAME:=$(PKG_NAME)
 -PKG_HASH:=611bb273cd68f3b993fabdc4064fc858c5b47a973cb5aa7999ec1ba405c87cd7

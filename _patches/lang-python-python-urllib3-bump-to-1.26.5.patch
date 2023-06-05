@@ -1,6 +1,6 @@
-From e48c53040862d79a920fab0a015c7fbb04d9b16f Mon Sep 17 00:00:00 2001
+From bfd8c55e1ad83f6391a58a2872d1c6742d805b8d Mon Sep 17 00:00:00 2001
 From: The-BB <tun.chen.bo@gmail.com>
-Date: Sun, 11 Dec 2022 10:13:39 +0300
+Date: Mon, 29 May 2023 15:33:55 +0300
 Subject: [PATCH] lang/python/python-urllib3: bump to 1.26.5
 
 ---
@@ -8,14 +8,14 @@ Subject: [PATCH] lang/python/python-urllib3: bump to 1.26.5
  1 file changed, 3 insertions(+), 2 deletions(-)
 
 diff --git a/lang/python/python-urllib3/Makefile b/lang/python/python-urllib3/Makefile
-index 8812c0e43..054856a4d 100644
+index 8812c0e43..b7207e72e 100644
 --- a/lang/python/python-urllib3/Makefile
 +++ b/lang/python/python-urllib3/Makefile
 @@ -4,11 +4,12 @@
  # This is free software, licensed under the GNU General Public License v2.
  # See /LICENSE for more information.
  #
-+# XXX bump
++# XXX bump (hass)
  
  include $(TOPDIR)/rules.mk
  

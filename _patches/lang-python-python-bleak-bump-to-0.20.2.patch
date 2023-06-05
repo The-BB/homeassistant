@@ -1,0 +1,35 @@
+From 3937bb89e45312ac73f214f42f9c1b048dc2af04 Mon Sep 17 00:00:00 2001
+From: The-BB <tun.chen.bo@gmail.com>
+Date: Mon, 29 May 2023 15:29:49 +0300
+Subject: [PATCH] lang/python/python-bleak: bump to 0.20.2
+
+---
+ lang/python/python-bleak/Makefile | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/lang/python/python-bleak/Makefile b/lang/python/python-bleak/Makefile
+index 2878bb2ea..d5a0cfdd1 100644
+--- a/lang/python/python-bleak/Makefile
++++ b/lang/python/python-bleak/Makefile
+@@ -4,14 +4,16 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump (hass)
++
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=python-bleak
+-PKG_VERSION:=0.20.1
++PKG_VERSION:=0.20.2
+ PKG_RELEASE:=1
+ 
+ PYPI_NAME:=bleak
+-PKG_HASH:=db599f5f100e252e9cdd4020c8657daca0371a3c697e87432abc702f3774cb4c
++PKG_HASH:=6c92a47abe34e6dea8ffc5cea9457cbff6e1be966854839dbc25cddb36b79ee4
+ 
+ PKG_MAINTAINER:=Quintin Hill <stuff@quintin.me.uk>
+ PKG_LICENSE:=MIT
+-- 
+2.30.2
+

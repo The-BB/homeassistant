@@ -1,6 +1,6 @@
-From 969ad52868525bc9ec0da3bf5f828d61069a6270 Mon Sep 17 00:00:00 2001
+From d1a65134f05b40bed715662072fe9dafa5a7e798 Mon Sep 17 00:00:00 2001
 From: The-BB <tun.chen.bo@gmail.com>
-Date: Sun, 11 Dec 2022 10:13:38 +0300
+Date: Mon, 29 May 2023 15:33:09 +0300
 Subject: [PATCH] lang/python/python-pyserial: bump to 3.5
 
 ---
@@ -8,14 +8,14 @@ Subject: [PATCH] lang/python/python-pyserial: bump to 3.5
  1 file changed, 4 insertions(+), 3 deletions(-)
 
 diff --git a/lang/python/python-pyserial/Makefile b/lang/python/python-pyserial/Makefile
-index e74cc880e..3423e35a3 100644
+index e74cc880e..9bfbb0b30 100644
 --- a/lang/python/python-pyserial/Makefile
 +++ b/lang/python/python-pyserial/Makefile
 @@ -4,15 +4,16 @@
  # This is free software, licensed under the GNU General Public License v2.
  # See /LICENSE for more information.
  #
-+# XXX bump
++# XXX bump (hass)
  
  include $(TOPDIR)/rules.mk
  
