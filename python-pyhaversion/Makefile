@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-pyhaversion
+PKG_NAME:=pyhaversion
 PKG_VERSION:=22.8.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=pyhaversion
 PKG_HASH:=7ff95ef1165ecd950dacb32b5627709fc4af7c7db780a2a479c9db6c9f6779fd
