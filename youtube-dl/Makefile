@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=youtube-dl
 PKG_VERSION:=2021.12.17
-PKG_RELEASE:=2
+PKG_RELEASE:=3
 
 PYPI_NAME:=youtube_dl
 PKG_HASH:=bc59e86c5d15d887ac590454511f08ce2c47698d5a82c27bfe27b5d814bbaed2
