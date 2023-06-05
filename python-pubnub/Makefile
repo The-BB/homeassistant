@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-pubnub
+PKG_NAME:=pubnub
 PKG_VERSION:=6.5.1
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=pubnub
 PKG_HASH:=429b5cdfb316e6fe48f5573c8837a336b06ec0b883b55405aa977da15f862b46
