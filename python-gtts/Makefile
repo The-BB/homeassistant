@@ -2,21 +2,23 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python-gtts
+PKG_NAME:=gtts
 PKG_VERSION:=2.2.4
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
-#PYPI_NAME:=gTTS
+PYPI_NAME:=gTTS
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://codeload.github.com/pndurette/gTTS/tar.gz/refs/tags/v$(PKG_VERSION)?
 PKG_HASH:=e0b688ff777928afe280c3cf4d36bc7b794e93e86851b680d54ba2fb68e88456
 
-PKG_BUILD_DIR:=$(BUILD_DIR)/pypi/gTTS-$(PKG_VERSION)
+PKG_BUILD_DIR:=$(BUILD_DIR)/pypi/$(PYPI_NAME)-$(PKG_VERSION)
 
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
 
-#include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
+PKG_BUILD_DEPENDS:=python-wheel/host
+
+include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
 include $(TOPDIR)/feeds/packages/lang/python/python3-package.mk
 
