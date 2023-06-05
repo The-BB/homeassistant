@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python-pyprof2calltree
+PKG_NAME:=pyprof2calltree
 PKG_VERSION:=1.4.5
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=pyprof2calltree
 PKG_HASH:=a635672ff31677486350b2be9a823ef92f740e6354a6aeda8fa4a8a3768e8f2f
@@ -22,8 +22,7 @@ define Package/python3-pyprof2calltree
   SUBMENU:=Python
   TITLE:=Profile python programs and view them with kcachegrind
   URL:=https://github.com/pwaller/pyprof2calltree/
-  DEPENDS:= \
-	+python3-light
+  DEPENDS:=+python3-light
 endef
 
 define Package/python3-pyprof2calltree/description
