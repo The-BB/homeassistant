@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-httpcore
+PKG_NAME:=httpcore
 PKG_VERSION:=0.17.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=httpcore
 PKG_HASH:=cc045a3241afbf60ce056202301b4d8b6af08845e3294055eb26b09913ef903c
