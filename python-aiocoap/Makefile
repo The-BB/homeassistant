@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-aiocoap
+PKG_NAME:=aiocoap
 PKG_VERSION:=0.4.5
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=aiocoap
 PKG_HASH:=906c927822185c8acf04fdcc1dd98fd845f31dabf5d5e395c39137dcbd6ba1e3
