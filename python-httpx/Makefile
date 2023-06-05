@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-httpx
+PKG_NAME:=httpx
 PKG_VERSION:=0.24.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=httpx
 PKG_HASH:=507d676fc3e26110d41df7d35ebd8b3b8585052450f4097401c9be59d928c63e
@@ -15,6 +15,8 @@ PKG_LICENSE_FILES:=LICENSE.md
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
 include $(TOPDIR)/feeds/packages/lang/python/python3-package.mk
+
+PKG_BUILD_DEPENDS:=python-hatchling/host python-hatch-fancy-pypi-readme/host
 
 define Package/python3-httpx
   SECTION:=lang
