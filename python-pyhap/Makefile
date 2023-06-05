@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-pyhap
+PKG_NAME:=pyhap
 PKG_VERSION:=4.6.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=HAP-python
 PKG_HASH:=af69c36fda69a87a7335e5428a4a6f1c31e569d44dcb2d0469c1cca3e00fa980
@@ -30,9 +30,7 @@ define Package/python3-pyhap
 	+python3-urllib \
 	+python3-zeroconf
 #[QRCode]
-  DEPENDS+= \
-	+python3-base36 \
-	+python3-pyqrcode
+  DEPENDS+=+python3-base36 +python3-pyqrcode
 # (rust-lang pkgs)
   EXTRA_DEPENDS:=python3-cryptography, python3-orjson
 endef
