@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-ha-ffmpeg
+PKG_NAME:=ha-ffmpeg
 PKG_VERSION:=3.1.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=ha-ffmpeg
 PKG_HASH:=b2178d62d9a9d696a7b61825a44a894dd68280605350946cc22925e61bbd93bb
@@ -22,11 +22,7 @@ define Package/python3-ha-ffmpeg
   SUBMENU:=Python
   TITLE:=a library that handling with ffmpeg for HA
   URL:=https://github.com/pvizeli/ha-ffmpeg
-  DEPENDS:= \
-	+ffmpeg \
-	+python3-async-timeout \
-	+python3-asyncio \
-	+python3-logging
+  DEPENDS:=+ffmpeg +python3-async-timeout +python3-asyncio +python3-logging
 endef
 
 define Package/python3-ha-ffmpeg/description
