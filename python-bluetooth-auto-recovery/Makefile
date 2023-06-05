@@ -2,15 +2,17 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-bluetooth-auto-recovery
+PKG_NAME:=bluetooth-auto-recovery
 PKG_VERSION:=1.2.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=bluetooth_auto_recovery
 PKG_HASH:=271cd48b9a37a9b3e985d293533f70a8a2cda1850e3d215e86d0f02f9a717b3b
 
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
+
+PKG_BUILD_DEPENDS:=python-poetry-core/host
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
