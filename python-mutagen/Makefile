@@ -2,15 +2,17 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-mutagen
+PKG_NAME:=mutagen
 PKG_VERSION:=1.46.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=mutagen
 PKG_HASH:=6e5f8ba84836b99fe60be5fb27f84be4ad919bbb6b49caa6ae81e70584b55e58
 
 PKG_LICENSE:=GPL-2.0-or-later
 PKG_LICENSE_FILES:=LICENSE.md
+
+PKG_BUILD_DEPENDS:=python-wheel/host
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
@@ -22,11 +24,7 @@ define Package/python3-mutagen
   SUBMENU:=Python
   TITLE:=read and write audio tags for many formats
   URL:=https://github.com/quodlibet/mutagen
-  DEPENDS:= \
-	+python3-codecs \
-	+python3-ctypes \
-	+python3-decimal \
-	+python3-urllib
+  DEPENDS:=+python3-codecs +python3-ctypes +python3-decimal +python3-urllib
 endef
 
 define Package/python3-mutagen/description
