@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-home-assistant-intents
+PKG_NAME:=home-assistant-intents
 PKG_VERSION:=2023.4.26
 PKG_RELEASE:=1
 
@@ -11,6 +11,8 @@ PKG_HASH:=03ae28c10f6d3beac6dbda5413b8109311c04744b17938cfeaab208dd794932e
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
+
+PKG_BUILD_DEPENDS:=python-wheel/host
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
@@ -22,8 +24,7 @@ define Package/python3-home-assistant-intents
   SUBMENU:=Python
   TITLE:=Intents for Home Assistant
   URL:=https://github.com/home-assistant/intents
-  DEPENDS:= \
-	+python3-light
+  DEPENDS:=+python3-light
 endef
 
 define Package/python3-home-assistant-intents/description
