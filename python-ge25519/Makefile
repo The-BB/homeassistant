@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-ge25519
+PKG_NAME:=ge25519
 PKG_VERSION:=1.3.0
-PKG_RELEASE:=2
+PKG_RELEASE:=3
 
 PYPI_NAME:=ge25519
 PKG_HASH:=cbd36fe7da4b5a4d64463646dc499a953df8323c7b44b6785a4bc9951acae4b2
@@ -22,9 +22,7 @@ define Package/python3-ge25519
   SUBMENU:=Python
   TITLE:=pure data structure for working with Ed25519
   URL:=https://github.com/nthparty/ge25519
-  DEPENDS:= \
-	+python3-fe25519 \
-	+python3-pydoc
+  DEPENDS:=+python3-fe25519 +python3-pydoc
 endef
 
 define Package/python3-ge25519/description
