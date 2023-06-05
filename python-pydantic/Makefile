@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-pydantic
+PKG_NAME:=pydantic
 PKG_VERSION:=1.9.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=pydantic
 PKG_HASH:=742645059757a56ecd886faf4ed2441b9c0cd406079c2b4bee51bcc3fbcd510a
@@ -22,9 +22,7 @@ define Package/python3-pydantic
   SUBMENU:=Python
   TITLE:=Data parsing and validation using Python type hints
   URL:=https://github.com/samuelcolvin/pydantic
-  DEPENDS:= \
-	+python3-decimal \
-	+python3-typing-extensions
+  DEPENDS:=+python3-decimal +python3-typing-extensions
 endef
 
 define Package/python3-pydantic/description
