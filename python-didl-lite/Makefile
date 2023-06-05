@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python-didl-lite
 PKG_VERSION:=1.3.2
-PKG_RELEASE:=2
+PKG_RELEASE:=3
 
 PYPI_NAME:=python-didl-lite
 PKG_HASH:=88c0641d3140f7b05f1efd93f7c481fc62aa50d1e05e17f0e0a15bee025c4af1
@@ -22,9 +22,7 @@ define Package/python3-didl-lite
   SUBMENU:=Python
   TITLE:=DIDL-Lite (Digital Item Declaration Language) tools
   URL:=https://github.com/StevenLooman/python-didl-lite
-  DEPENDS:= \
-	+python3-defusedxml \
-	+python3-xml
+  DEPENDS:=+python3-defusedxml +python3-xml
 endef
 
 define Package/python3-didl-lite/description
