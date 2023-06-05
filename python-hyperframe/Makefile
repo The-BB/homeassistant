@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-hyperframe
+PKG_NAME:=hyperframe
 PKG_VERSION:=6.0.1
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=hyperframe
 PKG_HASH:=ae510046231dc8e9ecb1a6586f63d2347bf4c8905914aa84ba585ae85f28a914
