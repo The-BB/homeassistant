@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-holidays
+PKG_NAME:=holidays
 PKG_VERSION:=0.14.2
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=holidays
 PKG_HASH:=0e70fd174804aea1c870b151319faebcd5cdb0d955b78230434e1afd1778498e
