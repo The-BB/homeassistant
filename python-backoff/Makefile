@@ -2,15 +2,17 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-backoff
+PKG_NAME:=backoff
 PKG_VERSION:=2.2.1
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=backoff
 PKG_HASH:=03f829f5bb1923180821643f8753b0502c3b682293992485b0eef2807afa5cba
 
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
+
+PKG_BUILD_DEPENDS:=python-poetry-core/host
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
@@ -22,9 +24,7 @@ define Package/python3-backoff
   SUBMENU:=Python
   TITLE:=Function decoration for backoff and retry
   URL:=https://github.com/litl/backoff
-  DEPENDS:= \
-	+python3-asyncio \
-	+python3-logging
+  DEPENDS:=+python3-asyncio +python3-logging
 endef
 
 define Package/python3-backoff/description
