@@ -2,15 +2,17 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-frozenlist
-PKG_VERSION:=1.2.0
+PKG_NAME:=frozenlist
+PKG_VERSION:=1.3.3
 PKG_RELEASE:=1
 
 PYPI_NAME:=frozenlist
-PKG_HASH:=68201be60ac56aff972dc18085800b6ee07973c49103a8aba669dee3d71079de
+PKG_HASH:=58bcc55721e8a90b88332d6cd441261ebb22342e238296bb330968952fbb3a6a
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE
+
+PKG_BUILD_DEPENDS:=python-cython/host python-wheel/host
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
@@ -22,8 +24,7 @@ define Package/python3-frozenlist
   SUBMENU:=Python
   TITLE:=a list-like structure which implements collections.abc.MutableSequence
   URL:=https://github.com/aio-libs/frozenlist
-  DEPENDS:= \
-	+python3-light
+  DEPENDS:=+python3-light
 endef
 
 define Package/python3-frozenlist/description
