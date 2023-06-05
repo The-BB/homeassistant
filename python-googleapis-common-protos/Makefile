@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-googleapis-common-protos
+PKG_NAME:=googleapis-common-protos
 PKG_VERSION:=1.54.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=googleapis-common-protos
 PKG_HASH:=a4031d6ec6c2b1b6dc3e0be7e10a1bd72fb0b18b07ef9be7b51f2c1004ce2437
@@ -22,9 +22,7 @@ define Package/python3-googleapis-common-protos
   SUBMENU:=Python
   TITLE:=Common protobufs used in Google APIs
   URL:=https://github.com/googleapis/python-api-common-protos
-  DEPENDS:= \
-	+python3-grpcio \
-	+python3-protobuf
+  DEPENDS:=+python3-grpcio +python3-protobuf
 endef
 
 define Package/python3-googleapis-common-protos/description
