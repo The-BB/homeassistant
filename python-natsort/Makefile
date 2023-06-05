@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-natsort
+PKG_NAME:=natsort
 PKG_VERSION:=8.1.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=natsort
 PKG_HASH:=c7c1f3f27c375719a4dfcab353909fe39f26c2032a062a8c80cc844eaaca0445
@@ -22,9 +22,7 @@ define Package/python3-natsort
   SUBMENU:=Python
   TITLE:=Simple yet flexible natural sorting
   URL:=https://github.com/SethMMorton/natsort
-  DEPENDS:= \
-	+python3-codecs \
-	+python3-ctypes
+  DEPENDS:=+python3-codecs +python3-ctypes
 endef
 
 define Package/python3-natsort/description
