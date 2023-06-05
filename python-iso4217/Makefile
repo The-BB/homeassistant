@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python-iso4217
+PKG_NAME:=iso4217
 PKG_VERSION:=1.11.20220401
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=iso4217
 PKG_HASH:=03b5c1493f47c3fb4fb066135d66115340ddab55633b85d0ed39acacab3a090e
@@ -22,8 +22,7 @@ define Package/python3-iso4217
   SUBMENU:=Python
   TITLE:=ISO 4217 currency data package
   URL:=https://github.com/dahlia/iso4217
-  DEPENDS:= \
-	+python3-xml
+  DEPENDS:=+python3-xml
 endef
 
 define Package/python3-iso4217/description
