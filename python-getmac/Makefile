@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python-getmac
+PKG_NAME:=getmac
 PKG_VERSION:=0.8.2
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=getmac
 PKG_HASH:=d501d20b71856248cfa07a8758192e86a01077910afb8b659a89946c4d52d368
@@ -22,9 +22,7 @@ define Package/python3-getmac
   SUBMENU:=Python
   TITLE:=Get MAC address
   URL:=https://github.com/GhostofGoes/getmac
-  DEPENDS:= \
-	+python3-ctypes \
-	+python3-logging
+  DEPENDS:=+python3-ctypes +python3-logging
 endef
 
 define Package/python3-getmac/description
