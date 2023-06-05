@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python-rfc3986
+PKG_NAME:=rfc3986
 PKG_VERSION:=1.4.0
-PKG_RELEASE:=3
+PKG_RELEASE:=4
 
 PYPI_NAME:=rfc3986
 PKG_HASH:=112398da31a3344dc25dbf477d8df6cb34f9278a94fee2625d89e4514be8bb9d
@@ -22,11 +22,9 @@ define Package/python3-rfc3986
   SUBMENU:=Python
   TITLE:=Validating URI References per RFC 3986
   URL:=http://rfc3986.readthedocs.io
-  DEPENDS:= \
-	+python3-urllib
+  DEPENDS:=+python3-urllib
 # [idna2008]
-  DEPENDS+= \
-	+python3-idna
+  DEPENDS+=+python3-idna
 endef
 
 define Package/python3-rfc3986/description
