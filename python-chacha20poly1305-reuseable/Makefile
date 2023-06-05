@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-chacha20poly1305-reuseable
+PKG_NAME:=chacha20poly1305-reuseable
 PKG_VERSION:=0.0.4
-PKG_RELEASE:=2
+PKG_RELEASE:=3
 
 PYPI_NAME:=chacha20poly1305-reuseable
 PKG_HASH:=bfb307f1db956c4fe80387a229641de37594b0381d6f4af49a5ea5fbf8ea3492
@@ -12,7 +12,7 @@ PKG_HASH:=bfb307f1db956c4fe80387a229641de37594b0381d6f4af49a5ea5fbf8ea3492
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE
 
-PKG_BUILD_DEPENDS:=python3
+PKG_BUILD_DEPENDS:=python-poetry-core/host
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
