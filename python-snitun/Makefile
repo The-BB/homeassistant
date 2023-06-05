@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python-snitun
+PKG_NAME:=snitun
 PKG_VERSION:=0.31.0
-PKG_RELEASE:=2
+PKG_RELEASE:=3
 
 PYPI_NAME:=snitun
 PKG_HASH:=d3ba49bcc69307ea38e9c5645d77df15f644795e6e2f3c2833087a4e9d0576e9
