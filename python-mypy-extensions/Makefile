@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python-mypy-extensions
+PKG_NAME:=mypy-extensions
 PKG_VERSION:=0.4.3
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=mypy_extensions
 PKG_HASH:=2d82818f5bb3e369420cb3c4060a7970edba416647068eb4c5343488a6c604a8
@@ -22,8 +22,7 @@ define Package/python3-mypy-extensions
   SUBMENU:=Python
   TITLE:=Experimental type system extensions
   URL:=https://github.com/python/mypy_extensions
-  DEPENDS:= \
-	+python3-light
+  DEPENDS:=+python3-light
 endef
 
 define Package/python3-mypy-extensions/description
