@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-authlib
+PKG_NAME:=authlib
 PKG_VERSION:=0.15.5
-PKG_RELEASE:=2
+PKG_RELEASE:=3
 
 PYPI_NAME:=Authlib
 PKG_HASH:=b83cf6360c8e92b0e9df0d1f32d675790bcc4e3c03977499b1eed24dcdef4252
@@ -22,13 +22,9 @@ define Package/python3-authlib
   SUBMENU:=Python
   TITLE:=a library in building OAuth, OpenID Connect clients and servers
   URL:=https://authlib.org
-  DEPENDS:= \
-	+python3-asyncio \
-	+python3-logging \
-	+python3-urllib
+  DEPENDS:=+python3-asyncio +python3-logging +python3-urllib
 # [client]
-  DEPENDS+= \
-	+python3-requests
+  DEPENDS+=+python3-requests
 # (rust-lang pkgs)
   EXTRA_DEPENDS:=python3-cryptography
 endef
