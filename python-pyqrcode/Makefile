@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python-pyqrcode
+PKG_NAME:=pyqrcode
 PKG_VERSION:=1.2.1
-PKG_RELEASE:=3
+PKG_RELEASE:=4
 
 PYPI_NAME:=PyQRCode
 PYPI_SOURCE_EXT:=zip
@@ -23,12 +23,9 @@ define Package/python3-pyqrcode
   SUBMENU:=Python
   TITLE:=A QR code generator
   URL:=https://github.com/mnooner256/pyqrcode
-  DEPENDS:= \
-	+python3-urllib \
-	+python3-xml
+  DEPENDS:=+python3-urllib +python3-xml
 # [PNG]
-  DEPENDS+= \
-	+python3-pypng
+  DEPENDS+=+python3-pypng
 endef
 
 define Package/python3-pyqrcode/description
