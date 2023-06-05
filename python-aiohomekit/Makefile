@@ -2,15 +2,17 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-aiohomekit
+PKG_NAME:=aiohomekit
 PKG_VERSION:=2.6.3
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=aiohomekit
 PKG_HASH:=bc4ee71400df03b033320b33e03495d55deb744be180ca6fc7fda7907220e693
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
+
+PKG_BUILD_DEPENDS:=python-poetry-core/host
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
