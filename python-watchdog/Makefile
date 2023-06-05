@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-watchdog
+PKG_NAME:=watchdog
 PKG_VERSION:=2.1.9
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=watchdog
 PKG_HASH:=43ce20ebb36a51f21fa376f76d1d4692452b2527ccd601950d69ed36b9e21609
