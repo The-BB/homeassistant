@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python-ecdsa
+PKG_NAME:=ecdsa
 PKG_VERSION:=0.16.0
-PKG_RELEASE:=3
+PKG_RELEASE:=4
 
 PYPI_NAME:=ecdsa
 PKG_HASH:=494c6a853e9ed2e9be33d160b41d47afc50a6629b993d2b9c5ad7bb226add892
@@ -22,9 +22,7 @@ define Package/python3-ecdsa
   SUBMENU:=Python
   TITLE:=ECDSA cryptographic signature library
   URL:=http://github.com/warner/python-ecdsa
-  DEPENDS:= \
-	+python3-distutils \
-	+python3-six
+  DEPENDS:=+python3-distutils +python3-six
 endef
 
 define Package/python3-ecdsa/description
