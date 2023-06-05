@@ -2,15 +2,17 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-radios
+PKG_NAME:=radios
 PKG_VERSION:=0.1.1
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=radios
 PKG_HASH:=9ac0aaffc1476d47d6766b2adb35aea5039713aec6d20669ff008bffaa4d599e
 
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE.md
+
+PKG_BUILD_DEPENDS:=python-poetry-core/host
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
