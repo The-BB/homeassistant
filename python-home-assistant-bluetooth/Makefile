@@ -2,15 +2,17 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-home-assistant-bluetooth
+PKG_NAME:=home-assistant-bluetooth
 PKG_VERSION:=1.10.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=home_assistant_bluetooth
 PKG_HASH:=e810a2db9d3d542779c46a4202fb3f1de54692e2631257a00b8aa2634c7ebde0
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE
+
+PKG_BUILD_DEPENDS:=python-cython/host python-poetry-core/host python-wheel/host
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
@@ -22,9 +24,7 @@ define Package/python3-home-assistant-bluetooth
   SUBMENU:=Python
   TITLE:=Home Assistant Bluetooth Models and Helpers
   URL:=https://github.com/home-assistant-libs/home-assistant-bluetooth
-  DEPENDS:= \
-	+python3-bleak \
-	+python3-distutils
+  DEPENDS:=+python3-bleak +python3-distutils
 endef
 
 define Package/python3-home-assistant-bluetooth/description
