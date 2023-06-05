@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-jose
+PKG_NAME:=python-jose
 PKG_VERSION:=3.3.0
-PKG_RELEASE:=2
+PKG_RELEASE:=3
 
 PYPI_NAME:=python-jose
 PKG_HASH:=55779b5e6ad599c6336191246e95eb2293a9ddebd555f796a65f838f07e5d78a
@@ -22,10 +22,7 @@ define Package/python3-jose
   SUBMENU:=Python
   TITLE:=JOSE implementation in Python
   URL:=http://github.com/mpdavis/python-jose
-  DEPENDS:= \
-	+python3-ecdsa \
-	+python3-pyasn1 \
-	+python3-rsa
+  DEPENDS:=+python3-ecdsa +python3-pyasn1 +python3-rsa
 # (rust-lang pkgs)
   EXTRA_DEPENDS:=python3-cryptography
 endef
