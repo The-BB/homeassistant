@@ -2,15 +2,17 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-pysnmplib
+PKG_NAME:=pysnmplib
 PKG_VERSION:=5.0.21
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=pysnmplib
 PKG_HASH:=4fd3cfd47ab33c7b633996e28cd1486c04effcf9fc11621fb186eacc48a6134d
 
 PKG_LICENSE:=BSD-2-Clause
 PKG_LICENSE_FILES:=LICENSE.rst
+
+PKG_BUILD_DEPENDS:=python-poetry-core/host
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
