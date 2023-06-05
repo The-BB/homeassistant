@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-async-upnp-client
+PKG_NAME:=async-upnp-client
 PKG_VERSION:=0.33.1
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=async_upnp_client
 PKG_HASH:=d349b57f83ca415cae671f021129647f33d5c11ef2c5d319275880413d93128f
