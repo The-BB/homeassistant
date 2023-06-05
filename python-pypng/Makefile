@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python-pypng
+PKG_NAME:=pypng
 PKG_VERSION:=0.0.20
-PKG_RELEASE:=2
+PKG_RELEASE:=3
 
 PYPI_NAME:=pypng
 PKG_HASH:=1032833440c91bafee38a42c38c02d00431b24c42927feb3e63b104d8550170b
@@ -15,9 +15,6 @@ PKG_LICENSE_FILES:=LICENSE
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
 include $(TOPDIR)/feeds/packages/lang/python/python3-package.mk
-
-# XXX error: option --single-version-externally-managed not recognized
-PYTHON3_PKG_SETUP_ARGS:=
 
 define Package/python3-pypng
   SECTION:=lang
