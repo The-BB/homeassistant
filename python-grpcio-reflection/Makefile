@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-grpcio-reflection
+PKG_NAME:=grpcio-reflection
 PKG_VERSION:=1.51.1
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=grpcio-reflection
 PKG_HASH:=c07a93c0c36ef88fe475744289863b4787005eff4de0cc04213ecad718b01aae
@@ -22,10 +22,7 @@ define Package/python3-grpcio-reflection
   SUBMENU:=Python
   TITLE:=Standard Protobuf Reflection Service for gRPC
   URL:=https://grpc.io
-  DEPENDS:= \
-	+python3-grpcio \
-	+python3-logging \
-	+python3-protobuf
+  DEPENDS:=+python3-grpcio +python3-logging +python3-protobuf
 endef
 
 define Package/python3-grpcio-reflection/description
