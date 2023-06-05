@@ -5,7 +5,7 @@ Home Assistant (python3; core)
 
 1. Добавляем фид в конфиг:
 ```
-echo 'src-git-full homeassistant https://github.com/The-BB/homeassistant.git' >> feeds.conf
+echo 'src-git homeassistant https://github.com/The-BB/homeassistant.git' >> feeds.conf
 ```
 2. Обновляем фид:
 ```
