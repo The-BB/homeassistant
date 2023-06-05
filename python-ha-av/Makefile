@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-ha-av
+PKG_NAME:=ha-av
 PKG_VERSION:=10.0.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=ha-av
 PKG_HASH:=24c8c7ebe1bf57838a1316fec5039010b74ae0b3db41133448756f4b6579f48f
@@ -12,7 +12,7 @@ PKG_HASH:=24c8c7ebe1bf57838a1316fec5039010b74ae0b3db41133448756f4b6579f48f
 PKG_LICENSE:=BSD-3-Clause
 PKG_LICENSE_FILES:=LICENSE.txt
 
-HOST_PYTHON3_PACKAGE_BUILD_DEPENDS:=Cython
+PKG_BUILD_DEPENDS:=python-cython/host python-wheel/host
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
@@ -24,11 +24,7 @@ define Package/python3-ha-av
   SUBMENU:=Python
   TITLE:=Pythonic bindings for FFmpeg's libraries
   URL:=https://github.com/PyAV-Org/PyAV
-  DEPENDS:= \
-	+libffmpeg \
-	+python3-logging \
-	+python3-urllib \
-	+python3-xml
+  DEPENDS:=+libffmpeg +python3-logging +python3-urllib +python3-xml
 endef
 
 define Package/python3-ha-av/description
