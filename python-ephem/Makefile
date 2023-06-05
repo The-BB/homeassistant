@@ -2,18 +2,15 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python-ephem
+PKG_NAME:=ephem
 PKG_VERSION:=4.1.2
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=ephem
 PKG_HASH:=d65bf7c85d96ca830de82729d9ce54ba854a9625916d8765c1954c1f29680b76
 
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
-
-# XXX error: option --single-version-externally-managed not recognized
-PYTHON3_PKG_SETUP_ARGS:=
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
@@ -25,8 +22,7 @@ define Package/python3-ephem
   SUBMENU:=Python
   TITLE:=Compute positions of the planets and stars
   URL:=http://rhodesmill.org/pyephem/
-  DEPENDS:= \
-	+python3-urllib
+  DEPENDS:=+python3-urllib
 endef
 
 define Package/python3-ephem/description
