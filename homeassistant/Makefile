@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
 PKG_VERSION:=2023.5.3
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=$(PKG_NAME)
 PKG_HASH:=8afb17654e3c4710c95a781e7c0920e8c58e0f99891e02b1b81e87e04b95b61b
@@ -12,6 +12,8 @@ PKG_HASH:=8afb17654e3c4710c95a781e7c0920e8c58e0f99891e02b1b81e87e04b95b61b
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
 PKG_CPE_ID:=cpe:/a:home-assistant:home-assistant
+
+PKG_BUILD_DEPENDS:=python-wheel/host
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
@@ -124,7 +126,6 @@ define Package/homeassistant
 	+python3-croniter \
 	+python3-debugpy \
 	+python3-ephem \
-	+python3-guppy3 \
 	+python3-holidays \
 	+python3-icmplib \
 	+python3-netdisco \
@@ -150,8 +151,9 @@ define Package/homeassistant
 	+python3-pymetno \
 	+python3-radios
 
+  EXTRA_DEPENDS:=libopenssl-legacy
 # core (rust-lang pkgs)
-  EXTRA_DEPENDS:=python3-bcrypt python3-cryptography python3-orjson
+  EXTRA_DEPENDS+=python3-bcrypt python3-cryptography python3-orjson
 endef
 
 define Package/homeassistant/description
@@ -159,7 +161,7 @@ define Package/homeassistant/description
  Powered by a worldwide community of tinkerers and DIY enthusiasts.
 endef
 
-# FIXME remove a fucking code
+# FIXME delete country "404"
 define Build/Prepare
 	$(call Build/Prepare/Default)
 	rm -fr $(PKG_BUILD_DIR)/$(PKG_NAME)/components/ukraine_alarm
@@ -168,10 +170,8 @@ endef
 define Py3Package/homeassistant/install
 	$(INSTALL_DIR) $(1)/opt/bin
 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/hass $(1)/opt/bin
-
 	$(INSTALL_DIR) $(1)/opt/etc/init.d
 	$(INSTALL_BIN) ./files/S99hass $(1)/opt/etc/init.d
-
 	$(INSTALL_DIR) $(1)/opt/var/lib/homeassistant
 endef
 
@@ -186,7 +186,7 @@ endef
 define Package/homeassistant/postrm
 #!/bin/sh
 
-rm -rf $(1)$(PYTHON3_PKG_DIR)/$(PKG_NAME)-$(PKG_VERSION)-py$(PYTHON3_VERSION).egg-info
+rm -fr $(1)$(PYTHON3_PKG_DIR)/$(PKG_NAME)-$(PKG_VERSION).dist-info
 endef
 
 $(eval $(call Py3Package,homeassistant))
