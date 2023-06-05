@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-pycognito
+PKG_NAME:=pycognito
 PKG_VERSION:=2022.8.0
 PKG_RELEASE:=1
 
@@ -22,11 +22,7 @@ define Package/python3-pycognito
   SUBMENU:=Python
   TITLE:=class to integrate Boto3's Cognito client
   URL:=https://github.com/pvizeli/pycognito
-  DEPENDS:= \
-	+python3-boto3 \
-	+python3-envs \
-	+python3-jose \
-	+python3-requests
+  DEPENDS:=+python3-boto3 +python3-envs +python3-jose +python3-requests
 # (rust-lang pkgs): python-jose[cryptography]
   EXTRA_DEPENDS:=python3-cryptography
 endef
