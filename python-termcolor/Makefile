@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-termcolor
+PKG_NAME:=termcolor
 PKG_VERSION:=1.1.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=termcolor
 PKG_HASH:=1d6d69ce66211143803fbc56652b41d73b4a400a2891d7bf7a1cdf4c02de613b
@@ -22,16 +22,12 @@ define Package/python3-termcolor
   SUBMENU:=Python
   TITLE:=ANSII Color formatting for output in terminal
   URL:=http://pypi.python.org/pypi/termcolor
-  DEPENDS:= \
-	+python3-light
+  DEPENDS:=+python3-light
 endef
 
 define Package/python3-termcolor/description
   ANSII Color formatting for output in terminal.
 endef
-
-# XXX error: option --single-version-externally-managed not recognized
-PYTHON3_PKG_SETUP_ARGS:=
 
 $(eval $(call Py3Package,python3-termcolor))
 $(eval $(call BuildPackage,python3-termcolor))
