@@ -2,15 +2,17 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-bleak-retry-connector
+PKG_NAME:=bleak-retry-connector
 PKG_VERSION:=3.0.2
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=bleak_retry_connector
 PKG_HASH:=91bffd9798c5c95100bec68708cbc95d05f5d0930433c27428dec1ee8f107412
 
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
+
+PKG_BUILD_DEPENDS:=python-poetry-core/host
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
