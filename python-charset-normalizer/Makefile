@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-charset-normalizer
+PKG_NAME:=charset-normalizer
 PKG_VERSION:=2.0.4
-PKG_RELEASE:=3
+PKG_RELEASE:=4
 
 PYPI_NAME:=charset-normalizer
 PKG_HASH:=f23667ebe1084be45f6ae0538e4a5a865206544097e4e8bbcacf42cd02a348f3
@@ -22,9 +22,7 @@ define Package/python3-charset-normalizer
   SUBMENU:=Python
   TITLE:=The Real First Universal Charset Detector
   URL:=https://github.com/ousret/charset_normalizer
-  DEPENDS:= \
-	+python3-codecs \
-	+python3-logging
+  DEPENDS:=+python3-codecs +python3-logging
 endef
 
 define Package/python3-charset-normalizer/description
