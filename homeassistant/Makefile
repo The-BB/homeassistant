@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
-PKG_VERSION:=2023.5.4
+PKG_VERSION:=2023.6.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=99189128c69f4648003ac847ff98baca3dfbf451336605e191d90ae79eec31a4
+PKG_HASH:=744b3303de4423018c47666da5eecff307a1e056ea189064b28ee70af4e43c37
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -126,6 +126,7 @@ define Package/homeassistant
 	+python3-croniter \
 	+python3-debugpy \
 	+python3-ephem \
+	+python3-guppy3 \
 	+python3-holidays \
 	+python3-icmplib \
 	+python3-netdisco \
@@ -151,9 +152,9 @@ define Package/homeassistant
 	+python3-pymetno \
 	+python3-radios
 
-  EXTRA_DEPENDS:=libopenssl-legacy
+  EXTRA_DEPENDS:=libopenssl-legacy,
 # core (rust-lang pkgs)
-  EXTRA_DEPENDS+=python3-bcrypt python3-cryptography python3-orjson
+  EXTRA_DEPENDS+=python3-bcrypt, python3-cryptography, python3-orjson
 endef
 
 define Package/homeassistant/description
