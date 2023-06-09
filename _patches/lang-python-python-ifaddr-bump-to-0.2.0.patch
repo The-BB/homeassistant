@@ -1,0 +1,35 @@
+From 7f3eab0c010ef786bd98a190dc22d46d3aff81e2 Mon Sep 17 00:00:00 2001
+From: The-BB <tun.chen.bo@gmail.com>
+Date: Fri, 9 Jun 2023 12:52:52 +0300
+Subject: [PATCH] lang/python/python-ifaddr: bump to 0.2.0
+
+---
+ lang/python/python-ifaddr/Makefile | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/lang/python/python-ifaddr/Makefile b/lang/python/python-ifaddr/Makefile
+index 0cdc10717..36f30fc55 100644
+--- a/lang/python/python-ifaddr/Makefile
++++ b/lang/python/python-ifaddr/Makefile
+@@ -4,15 +4,16 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump (hass)
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=python-ifaddr
+-PKG_VERSION:=0.1.7
++PKG_VERSION:=0.2.0
+ PKG_RELEASE:=1
+ 
+ PYPI_NAME:=ifaddr
+-PKG_HASH:=1f9e8a6ca6f16db5a37d3356f07b6e52344f6f9f7e806d618537731669eb1a94
++PKG_HASH:=cc0cbfcaabf765d44595825fb96a99bb12c79716b73b44330ea38ee2b0c4aed4
+ 
+ PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
+ PKG_LICENSE:=MIT
+-- 
+2.30.2
+
