@@ -3,14 +3,16 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=pydantic
-PKG_VERSION:=1.9.0
-PKG_RELEASE:=2
+PKG_VERSION:=1.10.8
+PKG_RELEASE:=1
 
 PYPI_NAME:=pydantic
-PKG_HASH:=742645059757a56ecd886faf4ed2441b9c0cd406079c2b4bee51bcc3fbcd510a
+PKG_HASH:=1410275520dfa70effadf4c21811d755e7ef9bb1f1d077a21958153a92c8d9ca
 
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
+
+PKG_BUILD_DEPENDS:=python-cython/host
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
