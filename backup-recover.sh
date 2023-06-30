@@ -28,6 +28,7 @@ $PATCH_DIR/lang-python-python-pyserial-bump-to-3.5.patch
 $PATCH_DIR/lang-python-python-requests-bump-to-2.31.0.patch
 $PATCH_DIR/lang-python-python-s3transfer-bump-to-0.3.3.patch
 $PATCH_DIR/lang-python-python-sqlalchemy-bump-to-2.0.15.patch
+$PATCH_DIR/lang-python-python-typing-extensions-bump-to-4.6.3.patch
 $PATCH_DIR/lang-python-python-urllib3-bump-to-1.26.5.patch
 $PATCH_DIR/lang-python-python-voluptuous-bump-to-0.13.1.patch
 $PATCH_DIR/lang-python-python-voluptuous-serialize-bump-to-2.6.0.patch
@@ -56,7 +57,6 @@ recovery() {
 if [ -f $STAMP_PACKAGES ]; then
   for PATCH in $PATCH_PACKAGES; do patch -p1 -R -d $PACKAGES_FEED < "$PATCH"; done
   find $PACKAGES_FEED/lang/python $PACKAGES_FEED/libs $PACKAGES_FEED/net -type f -name "*.orig" -delete
-  rm -fr $PACKAGES_FEED/lang/python/python-typing-extensions/patches
   rm $STAMP_PACKAGES
 fi
 }
