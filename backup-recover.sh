@@ -22,7 +22,7 @@ $PATCH_DIR/lang-python-python-ifaddr-bump-to-0.2.0.patch
 $PATCH_DIR/lang-python-python-multidict-bump-to-6.0.2.patch
 $PATCH_DIR/lang-python-python-netdisco-bump-to-3.0.0.patch
 $PATCH_DIR/lang-python-python-psutil-bump-to-5.9.4.patch
-$PATCH_DIR/lang-python-python-pyopenssl-bump-to-23.1.0.patch
+$PATCH_DIR/lang-python-python-pyopenssl-bump-to-23.2.0.patch
 $PATCH_DIR/lang-python-python-pyotp-bump-to-2.8.0.patch
 $PATCH_DIR/lang-python-python-pyserial-bump-to-3.5.patch
 $PATCH_DIR/lang-python-python-requests-bump-to-2.31.0.patch
@@ -34,7 +34,7 @@ $PATCH_DIR/lang-python-python-voluptuous-bump-to-0.13.1.patch
 $PATCH_DIR/lang-python-python-voluptuous-serialize-bump-to-2.6.0.patch
 $PATCH_DIR/lang-python-python-websockets-bump-to-11.0.1.patch
 $PATCH_DIR/lang-python-python-yarl-bump-to-1.9.2.patch
-$PATCH_DIR/lang-python-python-zeroconf-bump-to-0.64.0.patch
+$PATCH_DIR/lang-python-python-zeroconf-bump-to-0.70.0.patch
 $PATCH_DIR/lang-python-python3-netifaces-bump-to-0.11.0.patch
 $PATCH_DIR/lang-python-python3-pyroute2-bump-to-0.7.5.patch
 $PATCH_DIR/lang-python-xmltodict-bump-to-0.13.0.patch
