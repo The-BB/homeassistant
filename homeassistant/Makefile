@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
-PKG_VERSION:=2023.6.3
+PKG_VERSION:=2023.7.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=8655362cd1bff54cbb5df493fd9c1539009aaf4205bc5520a4c4a8482be24eb7
+PKG_HASH:=d9ba3f4c93dcd82047fb2eb3ec797823b4de69c0c7eb52fe8cc2115b3380833d
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -25,6 +25,7 @@ define Package/homeassistant
   TITLE:=home automation platform
   URL:=https://www.home-assistant.io
   DEPENDS:= \
+	+libpcap \
 	+python3-asyncio \
 	+python3-ctypes \
 	+python3-decimal \
@@ -36,6 +37,7 @@ define Package/homeassistant
 	+python3-sqlite3 \
 	+python3-unittest \
 	+python3-urllib \
+	+python3-uuid \
 	+python3-xml
 # core
   DEPENDS+= \
@@ -139,7 +141,7 @@ define Package/homeassistant
 	+python3-securetar \
 	+python3-sense-energy \
 	+python3-watchdog \
-	+youtube-dl
+	+yt-dlp
 # ext
   DEPENDS+= \
 	+python3-aiohomekit \
