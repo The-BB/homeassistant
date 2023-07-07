@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=hass-nabucasa
-PKG_VERSION:=0.67.1
+PKG_VERSION:=0.69.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=hass-nabucasa
-PKG_HASH:=05d9698a02cad3ac80a7edd0245a619d4c50995217c493473e3f0941b9b44fb5
+PKG_HASH:=100fd773613311ecaef69fcbff4db0b0a337819fce6164198c143791b7dbf54d
 
 PKG_LICENSE:=GPL-3.0-or-later
 PKG_LICENSE_FILES:=LICENSE
@@ -34,6 +34,7 @@ define Package/python3-hass-nabucasa
 	+python3-pyjwt \
 	+python3-snitun \
 	+python3-urllib \
+	+python3-uuid \
 	+python3-xml
 # (rust-lang pkgs)
   EXTRA_DEPENDS:=python3-cryptography
