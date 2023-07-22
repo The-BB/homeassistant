@@ -12,7 +12,7 @@
 --- a/pyproject.toml
 +++ b/pyproject.toml
 @@ -27,7 +27,7 @@ dependencies    = [
-     "aiohttp==3.8.4",
+     "aiohttp==3.8.5",
      "astral==2.2",
      "async-timeout==4.0.2",
 -    "attrs==22.2.0",
