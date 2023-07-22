@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=aiohomekit
-PKG_VERSION:=2.6.5
+PKG_VERSION:=2.6.7
 PKG_RELEASE:=1
 
 PYPI_NAME:=aiohomekit
-PKG_HASH:=1e34efb13e98a645a8eace0cbea4334db9ef7d76b6202d970f5f42f6805d1d04
+PKG_HASH:=c4356499f69dfebe7eeb80f632f541207a81b7068a82ed0ee7e9ac80b7e26e7d
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -35,6 +35,7 @@ define Package/python3-aiohomekit
 	+python3-commentjson \
 	+python3-decimal \
 	+python3-logging \
+	+python3-uuid \
 	+python3-zeroconf
 # (rust-lang pkgs)
   EXTRA_DEPENDS:=python3-cryptography, python3-orjson
