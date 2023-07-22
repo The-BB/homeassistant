@@ -1,14 +1,14 @@
-From 2b99c0caf98514c090b8739f9ad58d5badef826b Mon Sep 17 00:00:00 2001
+From 289739286213f39ef49d52d9c526a813c724744a Mon Sep 17 00:00:00 2001
 From: The-BB <tun.chen.bo@gmail.com>
-Date: Mon, 29 May 2023 15:28:51 +0300
-Subject: [PATCH] lang/python/python-aiohttp: bump to 3.8.4
+Date: Sat, 22 Jul 2023 13:56:57 +0300
+Subject: [PATCH] lang/python/python-aiohttp: bump to 3.8.5
 
 ---
  lang/python/python-aiohttp/Makefile | 12 +++++++-----
  1 file changed, 7 insertions(+), 5 deletions(-)
 
 diff --git a/lang/python/python-aiohttp/Makefile b/lang/python/python-aiohttp/Makefile
-index 007f41b20..07c5edf34 100644
+index 007f41b20..4378fb251 100644
 --- a/lang/python/python-aiohttp/Makefile
 +++ b/lang/python/python-aiohttp/Makefile
 @@ -4,15 +4,16 @@
@@ -21,12 +21,12 @@ index 007f41b20..07c5edf34 100644
  
  PKG_NAME:=aiohttp
 -PKG_VERSION:=3.7.4.post0
-+PKG_VERSION:=3.8.4
++PKG_VERSION:=3.8.5
  PKG_RELEASE:=1
  
  PYPI_NAME:=$(PKG_NAME)
 -PKG_HASH:=493d3299ebe5f5a7c66b9819eacdcfbbaaf1a8e84911ddffcdc48888497afecf
-+PKG_HASH:=bf2e1a9162c1e441bf805a1fd166e249d574ca04e03b34f97e2928769e91ab5c
++PKG_HASH:=b9552ec52cc147dbf1944ac7ac98af7602e51ea2dcd076ed194ca3c0d1c7d0bc
  
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0

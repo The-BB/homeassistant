@@ -1,0 +1,36 @@
+From e2bcec0075065d44ef0baf6fe41ea317c417cdfd Mon Sep 17 00:00:00 2001
+From: The-BB <tun.chen.bo@gmail.com>
+Date: Sat, 22 Jul 2023 13:58:26 +0300
+Subject: [PATCH] lang/python/python-yaml: bump to 6.0.1
+
+---
+ lang/python/python-yaml/Makefile | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+diff --git a/lang/python/python-yaml/Makefile b/lang/python/python-yaml/Makefile
+index 57b8d99e7..e9be1bceb 100644
+--- a/lang/python/python-yaml/Makefile
++++ b/lang/python/python-yaml/Makefile
+@@ -5,15 +5,16 @@
+ # See /LICENSE for more information.
+ #
+ # XXX Entware specific: added host build
++# XXX bump (hass)
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=python-yaml
+-PKG_VERSION:=6.0
+-PKG_RELEASE:=4
++PKG_VERSION:=6.0.1
++PKG_RELEASE:=1
+ 
+ PYPI_NAME:=PyYAML
+-PKG_HASH:=68fb519c14306fec9720a2a5b45bc9f0c8d1b9c72adf45c37baedfcd949c35a2
++PKG_HASH:=bfdf460b1736c775f2ba9f6a92bca30bc2095067b8a9d77876d1fad6cc3b4a43
+ 
+ PKG_MAINTAINER:=Josef Schlehofer <josef.schlehofer@nic.cz>
+ PKG_LICENSE:=MIT
+-- 
+2.30.2
+

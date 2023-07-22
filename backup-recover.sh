@@ -9,7 +9,7 @@ PATCH_DIR="./feeds/homeassistant/_patches"
 PATCH_PACKAGES="\
 $PATCH_DIR/lang-python-Jinja2-bump-to-3.1.2.patch
 $PATCH_DIR/lang-python-numpy-bump-to-1.24.3.patch
-$PATCH_DIR/lang-python-python-aiohttp-bump-to-3.8.4.patch
+$PATCH_DIR/lang-python-python-aiohttp-bump-to-3.8.5.patch
 $PATCH_DIR/lang-python-python-async-timeout-bump-to-4.0.2.patch
 $PATCH_DIR/lang-python-python-awesomeversion-bump-to-22.9.0.patch
 $PATCH_DIR/lang-python-python-bleak-bump-to-0.20.2.patch
@@ -33,6 +33,7 @@ $PATCH_DIR/lang-python-python-urllib3-bump-to-1.26.5.patch
 $PATCH_DIR/lang-python-python-voluptuous-bump-to-0.13.1.patch
 $PATCH_DIR/lang-python-python-voluptuous-serialize-bump-to-2.6.0.patch
 $PATCH_DIR/lang-python-python-websockets-bump-to-11.0.1.patch
+$PATCH_DIR/lang-python-python-yaml-bump-to-6.0.1.patch
 $PATCH_DIR/lang-python-python-yarl-bump-to-1.9.2.patch
 $PATCH_DIR/lang-python-python-zeroconf-bump-to-0.70.0.patch
 $PATCH_DIR/lang-python-python3-netifaces-bump-to-0.11.0.patch
