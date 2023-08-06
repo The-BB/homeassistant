@@ -9,4 +9,6 @@ PATH=/opt/sbin:/opt/bin:/opt/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/u
 
 [ -d /opt/var/lib/homeassistant ] || mkdir -p /opt/var/lib/homeassistant
 
+export LANG="C"
+
 . /opt/etc/init.d/rc.func
