@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=home-assistant-intents
-PKG_VERSION:=2023.7.25
+PKG_VERSION:=2023.8.2
 PKG_RELEASE:=1
 
 PYPI_NAME:=home-assistant-intents
-PKG_HASH:=3e7f424a830d7c0aabfcac2fad5b2d1a7c18a96df07cb1bc653d8ced70cef8ac
+PKG_HASH:=4f5ea848e5281f453456072257e4b31de84eeb86629cbd5cf8edea367fcb8c9a
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
