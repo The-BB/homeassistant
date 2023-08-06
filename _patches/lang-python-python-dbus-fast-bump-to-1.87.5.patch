@@ -1,7 +1,7 @@
-From 714bb1320c6202d3e787e9c9fbe5d6dc1f506ec5 Mon Sep 17 00:00:00 2001
+From 410d0c6f745b69f812ec4fbf8fa848e22810de3a Mon Sep 17 00:00:00 2001
 From: The-BB <tun.chen.bo@gmail.com>
-Date: Fri, 9 Jun 2023 12:48:43 +0300
-Subject: [PATCH] lang/python/python-dbus-fast: bump to 1.86.0
+Date: Thu, 3 Aug 2023 10:27:37 +0300
+Subject: [PATCH] lang/python/python-dbus-fast: bump to 1.87.5
 
 ---
  lang/python/python-dbus-fast/Makefile         |  8 +++++---
@@ -10,7 +10,7 @@ Subject: [PATCH] lang/python/python-dbus-fast: bump to 1.86.0
  create mode 100644 lang/python/python-dbus-fast/patches/500-fix-paths.patch
 
 diff --git a/lang/python/python-dbus-fast/Makefile b/lang/python/python-dbus-fast/Makefile
-index 8579e13a4..a2ad0eab2 100644
+index 8579e13a4..33ec496cd 100644
 --- a/lang/python/python-dbus-fast/Makefile
 +++ b/lang/python/python-dbus-fast/Makefile
 @@ -4,15 +4,17 @@
@@ -24,13 +24,13 @@ index 8579e13a4..a2ad0eab2 100644
  PKG_NAME:=python-dbus-fast
 -PKG_VERSION:=1.84.2
 -PKG_RELEASE:=2
-+PKG_VERSION:=1.86.0
++PKG_VERSION:=1.87.5
 +PKG_RELEASE:=1
  
  PYPI_NAME:=dbus-fast
  PYPI_SOURCE_NAME:=dbus_fast
 -PKG_HASH:=62b00b85c5835bff1d7ab5b12d494e588d92612bedbd7ca86176861729b8e4bc
-+PKG_HASH:=ca376a360f1bc2c3d59e9edfb5e4de5be389cca37e8c92f4539176ddf755341e
++PKG_HASH:=a7e7e99f3bf81222eb729f4358b3295db8c7c998adbaf9ebadfe8f5482638aac
  
  PKG_MAINTAINER:=Quintin Hill <stuff@quintin.me.uk>
  PKG_LICENSE:=MIT

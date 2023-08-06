@@ -1,0 +1,57 @@
+From 9a6cb8ad19588bc2e8f91684c9be6be299b383f9 Mon Sep 17 00:00:00 2001
+From: The-BB <tun.chen.bo@gmail.com>
+Date: Sun, 6 Aug 2023 13:15:59 +0300
+Subject: [PATCH] lang/python/pillow: bump to 10.0.0
+
+---
+ lang/python/pillow/Makefile                           |  9 ++++++---
+ .../patches/001-remove-setuptools-version-limit.patch | 11 +++++++++++
+ 2 files changed, 17 insertions(+), 3 deletions(-)
+ create mode 100644 lang/python/pillow/patches/001-remove-setuptools-version-limit.patch
+
+diff --git a/lang/python/pillow/Makefile b/lang/python/pillow/Makefile
+index 941f28f4e..c7beca3c9 100644
+--- a/lang/python/pillow/Makefile
++++ b/lang/python/pillow/Makefile
+@@ -3,15 +3,18 @@
+ # Copyright © 1995-2011 by Fredrik Lundh
+ # Copyright © 2016 by Alex Clark and contributors
+ #
++# XXX bump (hass)
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=pillow
+-PKG_VERSION:=9.5.0
+-PKG_RELEASE:=2
++PKG_VERSION:=10.0.0
++PKG_RELEASE:=1
+ 
+ PYPI_NAME:=Pillow
+-PKG_HASH:=bf548479d336726d7a0eceb6e767e179fbde37833ae42794602631a070d630f1
++PKG_HASH:=9c82b5b3e043c7af0d95792d0d20ccf68f61a1fec6b3530e718b688422727396
++
++PKG_BUILD_DEPENDS:=python-setuptools-scm/host
+ 
+ PKG_MAINTAINER:=Alexandru Ardelean <ardeleanalex@gmail.com>
+ PKG_LICENSE:=HPND
+diff --git a/lang/python/pillow/patches/001-remove-setuptools-version-limit.patch b/lang/python/pillow/patches/001-remove-setuptools-version-limit.patch
+new file mode 100644
+index 000000000..3dc07d992
+--- /dev/null
++++ b/lang/python/pillow/patches/001-remove-setuptools-version-limit.patch
+@@ -0,0 +1,11 @@
++--- a/pyproject.toml
+++++ b/pyproject.toml
++@@ -1,7 +1,7 @@
++ [build-system]
++ build-backend = "backend"
++ requires = [
++-  "setuptools>=67.8",
+++  "setuptools",
++   "wheel",
++ ]
++ backend-path = [
+-- 
+2.30.2
+
