@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
-PKG_VERSION:=2023.7.3
+PKG_VERSION:=2023.8.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=c184bb1b7003d46ed4cd77eb271ac71a941304b2456bb4259f5554d2975c36ba
+PKG_HASH:=36f879da8568bdc9a272a62e5c9710bde4d38d377f6478eb293321dabb5029d5
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -71,7 +71,6 @@ define Package/homeassistant
 	+python3-aiohttp-cors \
 	+python3-anyio \
 	+python3-async-upnp-client \
-	+python3-authlib \
 	+python3-backoff \
 	+python3-bleak \
 	+python3-bleak-retry-connector \
@@ -101,7 +100,6 @@ define Package/homeassistant
 	+python3-mutagen \
 	+python3-numpy \
 	+python3-paho-mqtt \
-	+python3-pandas \
 	+python3-pillow \
 	+python3-protobuf \
 	+python3-psutil-home-assistant \
