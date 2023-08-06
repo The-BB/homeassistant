@@ -3,14 +3,14 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=pyjwt
-PKG_VERSION:=2.7.0
+PKG_VERSION:=2.8.0
 PKG_RELEASE:=1
 
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
 
 PYPI_NAME:=PyJWT
-PKG_HASH:=bd6ca4a3c4285c1a2d4349e5a035fdf8fb94e04ccd0fcbe6ba289dae9cc3e074
+PKG_HASH:=57e28d156e3d5c10088e0c68abb90bfac3df82b40a71bd0daa20c65ccd5c23de
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
@@ -22,7 +22,7 @@ define Package/python3-pyjwt
   CATEGORY:=Languages
   TITLE:=JSON Web Token implementation in Python
   URL:=http://github.com/jpadilla/pyjwt
-  DEPENDS:=+python3-urllib
+  DEPENDS:=+python3-openssl +python3-urllib
 # (rust-lang pkgs)
   EXTRA_DEPENDS:=python3-cryptography
 endef
