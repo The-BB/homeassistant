@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=async-upnp-client
-PKG_VERSION:=0.33.2
+PKG_VERSION:=0.34.1
 PKG_RELEASE:=1
 
 PYPI_NAME:=async_upnp_client
-PKG_HASH:=33ca50ec49e12175b01f43dd75fb80507613937fcd18a999fbd87b03a45a26d3
+PKG_HASH:=075d893530baace61da3c1820062b5329ac031101c80add5aed58a6c6b0b943d
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -30,6 +30,7 @@ define Package/python3-async-upnp-client
 	+python3-didl-lite \
 	+python3-logging \
 	+python3-urllib \
+	+python3-uuid \
 	+python3-voluptuous \
 	+python3-xml
 endef
