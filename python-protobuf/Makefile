@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=protobuf
-PKG_VERSION:=4.23.1
+PKG_VERSION:=4.23.3
 PKG_RELEASE:=1
 
 PYPI_NAME:=protobuf
-PKG_HASH:=95789b569418a3e32a53f43d7763be3d490a831e9c08042539462b6d972c2d7e
+PKG_HASH:=7a92beb30600332a52cdadbedb40d33fd7c8a0d7f549c440347bc606fb3fe34b
 
 PKG_LICENSE:=BSD-3-Clause
 PKG_LICENSE_FILES:=LICENSE
@@ -22,7 +22,7 @@ define Package/python3-protobuf
   SUBMENU:=Python
   TITLE:=Protocol Buffers
   URL:=https://developers.google.com/protocol-buffers/
-  DEPENDS:=+python3-ctypes +python3-unittest
+  DEPENDS:=+python3-ctypes +python3-unittest +python3-uuid
 endef
 
 define Package/python3-protobuf/description
