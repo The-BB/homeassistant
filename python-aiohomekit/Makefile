@@ -26,6 +26,7 @@ define Package/python3-aiohomekit
   URL:=https://github.com/Jc2k/aiohomekit
   DEPENDS:= \
 	+python3-aiocoap \
+	+python3-async-interrupt \
 	+python3-async-timeout \
 	+python3-asyncio \
 	+python3-bleak-retry-connector \
