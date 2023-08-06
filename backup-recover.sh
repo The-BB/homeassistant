@@ -17,7 +17,7 @@ $PATCH_DIR/lang-python-python-bleak-bump-to-0.20.2.patch
 $PATCH_DIR/lang-python-python-boto3-bump-to-1.16.52.patch
 $PATCH_DIR/lang-python-python-botocore-bump-to-1.19.52.patch
 $PATCH_DIR/lang-python-python-ciso8601-bump-to-2.3.0.patch
-$PATCH_DIR/lang-python-python-dbus-fast-bump-to-1.87.5.patch
+$PATCH_DIR/lang-python-python-dbus-fast-bump-to-1.90.1.patch
 $PATCH_DIR/lang-python-python-greenlet-bump-to-2.0.2.patch
 $PATCH_DIR/lang-python-python-ifaddr-bump-to-0.2.0.patch
 $PATCH_DIR/lang-python-python-multidict-bump-to-6.0.2.patch
@@ -36,7 +36,7 @@ $PATCH_DIR/lang-python-python-voluptuous-serialize-bump-to-2.6.0.patch
 $PATCH_DIR/lang-python-python-websockets-bump-to-11.0.1.patch
 $PATCH_DIR/lang-python-python-yaml-bump-to-6.0.1.patch
 $PATCH_DIR/lang-python-python-yarl-bump-to-1.9.2.patch
-$PATCH_DIR/lang-python-python-zeroconf-bump-to-0.72.0.patch
+$PATCH_DIR/lang-python-python-zeroconf-bump-to-0.74.0.patch
 $PATCH_DIR/lang-python-python3-netifaces-bump-to-0.11.0.patch
 $PATCH_DIR/lang-python-python3-pyroute2-bump-to-0.7.5.patch
 $PATCH_DIR/lang-python-xmltodict-bump-to-0.13.0.patch
