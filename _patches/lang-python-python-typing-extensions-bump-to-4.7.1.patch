@@ -1,14 +1,14 @@
-From e818f045336092b7af1fc2eddb2d3506155cea46 Mon Sep 17 00:00:00 2001
+From 07b4d33a88dc583652cdec05f0eddcf32318814f Mon Sep 17 00:00:00 2001
 From: The-BB <tun.chen.bo@gmail.com>
-Date: Thu, 3 Aug 2023 09:57:29 +0300
-Subject: [PATCH] lang/python/python-typing-extensions: bump to 4.7.0
+Date: Mon, 7 Aug 2023 14:31:15 +0300
+Subject: [PATCH] lang/python/python-typing-extensions: bump to 4.7.1
 
 ---
  lang/python/python-typing-extensions/Makefile | 7 ++++---
  1 file changed, 4 insertions(+), 3 deletions(-)
 
 diff --git a/lang/python/python-typing-extensions/Makefile b/lang/python/python-typing-extensions/Makefile
-index 5bf3273ae..d255e399f 100644
+index 5bf3273ae..0fb3bf51b 100644
 --- a/lang/python/python-typing-extensions/Makefile
 +++ b/lang/python/python-typing-extensions/Makefile
 @@ -4,16 +4,17 @@
@@ -21,14 +21,14 @@ index 5bf3273ae..d255e399f 100644
  
  PKG_NAME:=python-typing-extensions
 -PKG_VERSION:=4.5.0
-+PKG_VERSION:=4.7.0
++PKG_VERSION:=4.7.1
  PKG_RELEASE:=1
  
 -PYPI_NAME:=typing-extensions
 +PYPI_NAME:=typing_extensions
  PYPI_SOURCE_NAME:=typing_extensions
 -PKG_HASH:=5cb5f4a79139d699607b3ef622a1dedafa84e115ab0024e0d9c044a9479ca7cb
-+PKG_HASH:=935ccf31549830cda708b42289d44b6f74084d616a00be651601a4f968e77c82
++PKG_HASH:=b75ddc264f0ba5615db7ba217daeb99701ad295353c45f9e95963337ceeeffb2
  
  PKG_MAINTAINER:=Jan Pavlinec <jan.pavlinec1@gmail.com>, Jeffery To <jeffery.to@gmail.com>
  PKG_LICENSE:=PSF-2.0
