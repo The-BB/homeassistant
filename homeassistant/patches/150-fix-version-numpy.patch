@@ -5,7 +5,7 @@
    "documentation": "https://www.home-assistant.io/integrations/compensation",
    "iot_class": "calculated",
 -  "requirements": ["numpy==1.23.2"]
-+  "requirements": ["numpy==1.24.3"]
++  "requirements": ["numpy==1.25.1"]
  }
 --- a/homeassistant/components/iqvia/manifest.json
 +++ b/homeassistant/components/iqvia/manifest.json
@@ -14,7 +14,7 @@
    "iot_class": "cloud_polling",
    "loggers": ["pyiqvia"],
 -  "requirements": ["numpy==1.23.2", "pyiqvia==2022.04.0"]
-+  "requirements": ["numpy==1.24.3", "pyiqvia==2022.04.0"]
++  "requirements": ["numpy==1.25.1", "pyiqvia==2022.04.0"]
  }
 --- a/homeassistant/components/opencv/manifest.json
 +++ b/homeassistant/components/opencv/manifest.json
@@ -23,7 +23,7 @@
    "documentation": "https://www.home-assistant.io/integrations/opencv",
    "iot_class": "local_push",
 -  "requirements": ["numpy==1.23.2", "opencv-python-headless==4.6.0.66"]
-+  "requirements": ["numpy==1.24.3", "opencv-python-headless==4.6.0.66"]
++  "requirements": ["numpy==1.25.1", "opencv-python-headless==4.6.0.66"]
  }
 --- a/homeassistant/components/stream/manifest.json
 +++ b/homeassistant/components/stream/manifest.json
@@ -32,7 +32,7 @@
    "iot_class": "local_push",
    "quality_scale": "internal",
 -  "requirements": ["PyTurboJPEG==1.7.1", "ha-av==10.1.1", "numpy==1.23.2"]
-+  "requirements": ["PyTurboJPEG==1.7.1", "ha-av==10.1.1", "numpy==1.24.3"]
++  "requirements": ["PyTurboJPEG==1.7.1", "ha-av==10.1.1", "numpy==1.25.1"]
  }
 --- a/homeassistant/components/tensorflow/manifest.json
 +++ b/homeassistant/components/tensorflow/manifest.json
@@ -41,7 +41,7 @@
      "tf-models-official==2.5.0",
      "pycocotools==2.0.6",
 -    "numpy==1.23.2",
-+    "numpy==1.24.3",
++    "numpy==1.25.1",
      "Pillow==10.0.0"
    ]
  }
@@ -52,7 +52,7 @@
    "iot_class": "local_push",
    "quality_scale": "internal",
 -  "requirements": ["numpy==1.23.2"]
-+  "requirements": ["numpy==1.24.3"]
++  "requirements": ["numpy==1.25.1"]
  }
 --- a/homeassistant/package_constraints.txt
 +++ b/homeassistant/package_constraints.txt
@@ -61,7 +61,7 @@
  
  # Ensure we run compatible with musllinux build env
 -numpy==1.23.2
-+numpy==1.24.3
++numpy==1.25.1
  
  # Prevent dependency conflicts between sisyphus-control and aioambient
  # until upper bounds for sisyphus-control have been updated
