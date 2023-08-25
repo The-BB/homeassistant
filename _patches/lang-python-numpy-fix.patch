@@ -1,43 +1,19 @@
-From f184a7511d1099690075384ec096afed8a9936cc Mon Sep 17 00:00:00 2001
+From 28f6f6fc1bc981b923ec932318f2f36c139ad151 Mon Sep 17 00:00:00 2001
 From: The-BB <tun.chen.bo@gmail.com>
-Date: Mon, 5 Jun 2023 14:39:51 +0300
-Subject: [PATCH] lang/python/numpy: bump to 1.24.3
+Date: Mon, 21 Aug 2023 11:03:09 +0300
+Subject: [PATCH] lang/python/numpy: fix
 
 ---
- lang/python/numpy/Makefile                    | 27 ++++++++---
- .../numpy/patches/001-fix-001-unpin.patch     | 10 ++++
- .../numpy/patches/500-fix-001-unpin.patch     | 10 ++++
- lang/python/numpy/patches/501-fix.patch       | 48 +++++++++++++++++++
- 4 files changed, 88 insertions(+), 7 deletions(-)
- create mode 100644 lang/python/numpy/patches/001-fix-001-unpin.patch
- create mode 100644 lang/python/numpy/patches/500-fix-001-unpin.patch
+ lang/python/numpy/Makefile              | 20 ++++++++---
+ lang/python/numpy/patches/501-fix.patch | 48 +++++++++++++++++++++++++
+ 2 files changed, 64 insertions(+), 4 deletions(-)
  create mode 100644 lang/python/numpy/patches/501-fix.patch
 
 diff --git a/lang/python/numpy/Makefile b/lang/python/numpy/Makefile
-index d7e485d79..b8cae411f 100644
+index 54bbc4255..70d32b561 100644
 --- a/lang/python/numpy/Makefile
 +++ b/lang/python/numpy/Makefile
-@@ -2,15 +2,16 @@
- # Copyright (C) 2019 Jakub Piotr Cłapa <jpc@loee.pl>
- # Copyright (C) 2020 Alexandru Ardelean <ardeleanalex@gmail.com>
- #
-+# XXX bump (hass)
- 
- include $(TOPDIR)/rules.mk
- 
- PKG_NAME:=numpy
--PKG_VERSION:=1.23.3
--PKG_RELEASE:=5
-+PKG_VERSION:=1.24.3
-+PKG_RELEASE:=1
- 
- PYPI_NAME:=$(PKG_NAME)
--PKG_HASH:=51bf49c0cd1d52be0a240aa66f3458afc4b95d8993d2d04f0d91fa60c10af6cd
-+PKG_HASH:=ab344f1bf21f140adab8e47fdbc7c35a477dc01408791f8ba00d018dd0bc5155
- 
- PKG_MAINTAINER:=Alexandru Ardelean <ardeleanalex@gmail.com>
- 
-@@ -27,6 +28,9 @@ PKG_BUILD_DEPENDS:=python-cython/host
+@@ -27,6 +27,9 @@ PKG_BUILD_DEPENDS:=python-cython/host
  PYTHON3_PKG_BUILD_VARS:= \
          $(if $(CONFIG_NUMPY_OPENBLAS_SUPPORT),,NPY_BLAS_ORDER= NPY_LAPACK_ORDER= )
  
@@ -47,19 +23,19 @@ index d7e485d79..b8cae411f 100644
  include ../pypi.mk
  include $(INCLUDE_DIR)/package.mk
  include ../python3-package.mk
-@@ -37,8 +41,9 @@ define Package/python3-numpy
+@@ -37,8 +40,9 @@ define Package/python3-numpy
    CATEGORY:=Languages
    TITLE:=The fundamental package for scientific computing with Python
    URL:=https://www.numpy.org/
--  DEPENDS:=@!SOFT_FLOAT +INSTALL_GFORTRAN:libgfortran +python3 \
+-  DEPENDS:=@!SOFT_FLOAT +INSTALL_GFORTRAN:libgfortran +python3 +libstdcpp \
 -	   +NUMPY_OPENBLAS_SUPPORT:openblas
-+#  DEPENDS:=@!SOFT_FLOAT +INSTALL_GFORTRAN:libgfortran +python3 \
++#  DEPENDS:=@!SOFT_FLOAT +INSTALL_GFORTRAN:libgfortran +python3 +libstdcpp \
 +#	   +NUMPY_OPENBLAS_SUPPORT:openblas
-+  DEPENDS:=+python3
++  DEPENDS:=+python3 +libstdcpp
  endef
  
  # We need to duplicate the omitted arhitectures same as openblas
-@@ -56,8 +61,8 @@ endef
+@@ -62,8 +66,8 @@ endif
  
  define Build/Prepare/numpy-sitecfg
  	echo "[DEFAULT]"                                 >  $(PKG_BUILD_DIR)/site.cfg
@@ -70,7 +46,7 @@ index d7e485d79..b8cae411f 100644
  
    ifdef CONFIG_NUMPY_OPENBLAS_SUPPORT
  	echo                                             >> $(PKG_BUILD_DIR)/site.cfg
-@@ -80,6 +85,14 @@ For some modules to be available, the INSTALL_GFORTRAN symbol needs
+@@ -86,6 +90,14 @@ For some modules to be available, the INSTALL_GFORTRAN symbol needs
  to be enabled in the OpenWrt core/toolchain.
  endef
  
@@ -85,47 +61,15 @@ index d7e485d79..b8cae411f 100644
  $(eval $(call Py3Package,python3-numpy))
  $(eval $(call BuildPackage,python3-numpy))
  $(eval $(call BuildPackage,python3-numpy-src))
-diff --git a/lang/python/numpy/patches/001-fix-001-unpin.patch b/lang/python/numpy/patches/001-fix-001-unpin.patch
-new file mode 100644
-index 000000000..693f95a2d
---- /dev/null
-+++ b/lang/python/numpy/patches/001-fix-001-unpin.patch
-@@ -0,0 +1,10 @@
-+--- a/pyproject.toml
-++++ b/pyproject.toml
-+@@ -1,6 +1,7 @@
-+ [build-system]
-+ # Minimum requirements for the build system to execute.
-+ requires = [
-++    "packaging==20.5; platform_machine=='arm64'",  # macos M1
-+     "setuptools==59.2.0",
-+     "wheel==0.37.0",
-+     "Cython>=0.29.30,<3.0",
-diff --git a/lang/python/numpy/patches/500-fix-001-unpin.patch b/lang/python/numpy/patches/500-fix-001-unpin.patch
-new file mode 100644
-index 000000000..fe3c507a2
---- /dev/null
-+++ b/lang/python/numpy/patches/500-fix-001-unpin.patch
-@@ -0,0 +1,10 @@
-+--- a/pyproject.toml
-++++ b/pyproject.toml
-+@@ -1,7 +1,6 @@
-+ [build-system]
-+ # Minimum requirements for the build system to execute.
-+ requires = [
-+-    "packaging==20.5; platform_machine=='arm64'",  # macos M1
-+     "setuptools>=59.2.0",
-+     "wheel>=0.37.0",
-+     "Cython>=0.29.30,<3.0",
 diff --git a/lang/python/numpy/patches/501-fix.patch b/lang/python/numpy/patches/501-fix.patch
 new file mode 100644
-index 000000000..46dbf5d43
+index 000000000..e1dd9654f
 --- /dev/null
 +++ b/lang/python/numpy/patches/501-fix.patch
 @@ -0,0 +1,48 @@
 +--- a/numpy/distutils/ccompiler_opt.py
 ++++ b/numpy/distutils/ccompiler_opt.py
-+@@ -201,7 +201,7 @@ class _Config:
++@@ -192,7 +192,7 @@ class _Config:
 +         gcc = dict(
 +             # native should always fail on arm and ppc64,
 +             # native usually works only with x86
@@ -134,7 +78,7 @@ index 000000000..46dbf5d43
 +             opt = '-O3',
 +             werror = '-Werror',
 +         ),
-+@@ -238,6 +238,8 @@ class _Config:
++@@ -234,6 +234,8 @@ class _Config:
 +         ppc64le = "VSX VSX2",
 +         s390x = '',
 +         armhf = '', # play it safe
@@ -143,7 +87,7 @@ index 000000000..46dbf5d43
 +         aarch64 = "NEON NEON_FP16 NEON_VFPV4 ASIMD"
 +     )
 +     conf_features = dict(
-+@@ -965,6 +967,9 @@ class _CCompiler:
++@@ -975,6 +977,9 @@ class _CCompiler:
 +             ("cc_on_armhf",    ".*arm.*", "defined(__ARM_ARCH_7__) || "
 +                                           "defined(__ARM_ARCH_7A__)"),
 +             ("cc_on_s390x",    ".*s390x.*", ""),
@@ -153,16 +97,17 @@ index 000000000..46dbf5d43
 +             # undefined platform
 +             ("cc_on_noarch",   "", ""),
 +         )
-+@@ -980,7 +985,7 @@ class _CCompiler:
++@@ -991,8 +996,7 @@ class _CCompiler:
 +         )
 +         detect_args = (
 +            ("cc_has_debug",  ".*(O0|Od|ggdb|coverage|debug:full).*", ""),
-+-           ("cc_has_native", ".*(-march=native|-xHost|/QxHost).*", ""),
++-           ("cc_has_native",
++-                ".*(-march=native|-xHost|/QxHost|-mcpu=a64fx).*", ""),
 ++           ("cc_has_native", ".*(-xHost|/QxHost).*", ""),
 +            # in case if the class run with -DNPY_DISABLE_OPTIMIZATION
 +            ("cc_noopt", ".*DISABLE_OPT.*", ""),
 +         )
-+@@ -1035,7 +1040,7 @@ class _CCompiler:
++@@ -1047,7 +1051,7 @@ class _CCompiler:
 + 
 +         self.cc_march = "unknown"
 +         for arch in ("x86", "x64", "ppc64", "ppc64le",
