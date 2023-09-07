@@ -1,0 +1,33 @@
+From 7c621cd1d725bdba40eda864a0e3d7b6e2dee2d2 Mon Sep 17 00:00:00 2001
+From: The-BB <tun.chen.bo@gmail.com>
+Date: Thu, 7 Sep 2023 15:02:03 +0300
+Subject: [PATCH] multimedia/yt-dlp: bump to 2023.7.6
+
+---
+ multimedia/yt-dlp/Makefile | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+diff --git a/multimedia/yt-dlp/Makefile b/multimedia/yt-dlp/Makefile
+index 7ec127416..000365b64 100644
+--- a/multimedia/yt-dlp/Makefile
++++ b/multimedia/yt-dlp/Makefile
+@@ -1,11 +1,13 @@
++# XXX bump (hass)
++
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=yt-dlp
+-PKG_VERSION:=2023.3.4
+-PKG_RELEASE:=2
++PKG_VERSION:=2023.7.6
++PKG_RELEASE:=1
+ 
+ PYPI_NAME:=yt-dlp
+-PKG_HASH:=265d5da97a76c15d7d9a4088a67b78acd5dcf6f8cfd8257c52f581ff996ff515
++PKG_HASH:=cb58373869c8ccb5034746f91cfccd6d25ea697090dfd6f93e9034d51eb4aed2
+ 
+ PKG_MAINTAINER:=Michal Vasilek <michal.vasilek@nic.cz>
+ PKG_LICENSE:=Unlicense
+-- 
+2.30.2
+

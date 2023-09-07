@@ -8,6 +8,9 @@ PACKAGES_FEED="./feeds/packages"
 PATCH_DIR="./feeds/homeassistant/_patches"
 PATCH_PACKAGES="\
 $PATCH_DIR/lang-python-numpy-fix.patch
+$PATCH_DIR/lang-python-python-async-timeout-bump-to-4.0.3.patch
+$PATCH_DIR/lang-python-python-bleak-bump-to-0.21.0.patch
+$PATCH_DIR/lang-python-python-dbus-fast-bump-to-1.94.1.patch
 $PATCH_DIR/lang-python-python-pyopenssl-bump-to-23.2.0.patch
 $PATCH_DIR/lang-python-python-pyotp-bump-to-2.8.0.patch
 $PATCH_DIR/lang-python-python-pyserial-bump-to-3.5.patch
@@ -17,9 +20,10 @@ $PATCH_DIR/lang-python-python-voluptuous-bump-to-0.13.1.patch
 $PATCH_DIR/lang-python-python-voluptuous-serialize-bump-to-2.6.0.patch
 $PATCH_DIR/lang-python-python-websockets-bump-to-11.0.1.patch
 $PATCH_DIR/lang-python-python-yaml-bump-to-6.0.1.patch
-$PATCH_DIR/lang-python-python-zeroconf-bump-to-0.74.0.patch
+$PATCH_DIR/lang-python-python-zeroconf-bump-to-0.91.1.patch
 $PATCH_DIR/lang-python-xmltodict-bump-to-0.13.0.patch
 $PATCH_DIR/libs-libjpeg-turbo-add-libturbojpeg.patch
+$PATCH_DIR/multimedia-yt-dlp-bump-to-2023.7.6.patch
 "
 STAMP_PACKAGES="$PATCH_DIR/.packages-patched"
 
@@ -37,7 +41,7 @@ for PATCH in $PATCH_PACKAGES; do patch -p1 --dry-run -d $PACKAGES_FEED < "$PATCH
 recovery() {
 if [ -f $STAMP_PACKAGES ]; then
   for PATCH in $PATCH_PACKAGES; do patch -p1 -R -d $PACKAGES_FEED < "$PATCH"; done
-  find $PACKAGES_FEED/lang/python $PACKAGES_FEED/libs $PACKAGES_FEED/net -type f -name "*.orig" -delete
+  find $PACKAGES_FEED/lang/python $PACKAGES_FEED/libs $PACKAGES_FEED/multimedia -type f -name "*.orig" -delete
   rm $STAMP_PACKAGES
 fi
 }
