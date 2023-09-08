@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
-PKG_VERSION:=2023.8.4
+PKG_VERSION:=2023.9.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=32edc3c82b45fdb4eb4ef44a3cb54419265f599ac5ed0432fd9bc18b92081f7b
+PKG_HASH:=5dd65856feb464290ad1f2a6b769264e147186ffa17c932d1f0801bb789a5bdc
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -54,6 +54,7 @@ define Package/homeassistant
 	+python3-ifaddr \
 	+python3-jinja2 \
 	+python3-lru-dict \
+	+python3-packaging \
 	+python3-pip \
 	+python3-pyjwt \
 	+python3-pyopenssl \
@@ -174,20 +175,31 @@ define Py3Package/homeassistant/install
 	$(INSTALL_DIR) $(1)/opt/etc/init.d
 	$(INSTALL_BIN) ./files/S99hass $(1)/opt/etc/init.d
 	$(INSTALL_DIR) $(1)/opt/var/lib/homeassistant
+	touch $(1)/opt/var/lib/homeassistant/.keep
 endef
 
 define Package/homeassistant/postinst
 #!/bin/sh
 
-echo -e "\n\t*** Prepare your device to use the Home Assistant ***\n\n
-	\tPlease read the wiki:\n
-	\t\thttps://github.com/Entware/Entware/wiki/Self-installation-of-python-modules\n"
+ansi_blue="\033[1;34m"
+ansi_white="\033[1;37m"
+ansi_std="\033[0;0m"
+
+URL="https://github.com/Entware/Entware/wiki/Self-installation-of-python-modules"
+
+### remove empty directories (httpx, orjson)
+find $(PYTHON3_PKG_DIR) -type d -name "license*" -empty -delete
+### remove empty directories
+find $(PYTHON3_PKG_DIR) -maxdepth 1 -type d -empty -delete
+
+printf "\n\t\t\t$$ansi_white %s $$ansi_std\n\n" "*** Prepare your device to use the Home Assistant ***"
+printf "$$ansi_white %s $$ansi_blue %s $$ansi_std\n\n" "Please read the wiki:" "$$URL"
 endef
 
 define Package/homeassistant/postrm
 #!/bin/sh
 
-rm -fr $(1)$(PYTHON3_PKG_DIR)/$(PKG_NAME)-$(PKG_VERSION).dist-info
+rm -fr $(PYTHON3_PKG_DIR)/$(PKG_NAME)-$(PKG_VERSION).dist-info
 endef
 
 $(eval $(call Py3Package,homeassistant))

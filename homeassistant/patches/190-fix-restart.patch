@@ -9,17 +9,7 @@
  import sys
  import threading
  
-@@ -81,8 +83,7 @@ def get_arguments() -> argparse.Namespac
-     from . import config as config_util
- 
-     parser = argparse.ArgumentParser(
--        description="Home Assistant: Observe, Control, Automate.",
--        epilog=f"If restart is requested, exits with code {RESTART_EXIT_CODE}",
-+        description="Home Assistant: Observe, Control, Automate."
-     )
-     parser.add_argument("--version", action="version", version=__version__)
-     parser.add_argument(
-@@ -120,6 +121,12 @@ def get_arguments() -> argparse.Namespac
+@@ -120,6 +122,12 @@ def get_arguments() -> argparse.Namespac
          "-v", "--verbose", action="store_true", help="Enable verbose logging to file."
      )
      parser.add_argument(
@@ -32,20 +22,21 @@
          "--log-rotate-days",
          type=int,
          default=None,
-@@ -135,31 +142,121 @@ def get_arguments() -> argparse.Namespac
+@@ -135,6 +143,11 @@ def get_arguments() -> argparse.Namespac
          "--log-no-color", action="store_true", help="Disable color logs"
      )
      parser.add_argument(
--        "--script", nargs=argparse.REMAINDER, help="Run one of the embedded scripts"
 +        "--runner",
 +        action="store_true",
 +        help=f"On restart exit with code {RESTART_EXIT_CODE}",
++    )
++    parser.add_argument(
+         "--script", nargs=argparse.REMAINDER, help="Run one of the embedded scripts"
      )
      parser.add_argument(
--        "--ignore-os-check",
--        action="store_true",
--        help="Skips validation of operating system",
-+        "--script", nargs=argparse.REMAINDER, help="Run one of the embedded scripts"
+@@ -142,14 +155,114 @@ def get_arguments() -> argparse.Namespac
+         action="store_true",
+         help="Skips validation of operating system",
      )
 +    if os.name == "posix":
 +        parser.add_argument(
@@ -59,6 +50,8 @@
      return arguments
  
  
+-def check_threads() -> None:
+-    """Check if there are any lingering threads."""
 +def daemonize() -> None:
 +    """Move current process to daemon process."""
 +    # Create first fork
@@ -136,33 +129,29 @@
 +            pass
 +
 +
- def cmdline() -> list[str]:
-     """Collect path and arguments to re-execute the current hass instance."""
-     if os.path.basename(sys.argv[0]) == "__main__.py":
-         modulepath = os.path.dirname(sys.argv[0])
-         os.environ["PYTHONPATH"] = os.path.dirname(modulepath)
--        return [sys.executable, "-m", "homeassistant"] + list(sys.argv[1:])
++def cmdline() -> list[str]:
++    """Collect path and arguments to re-execute the current hass instance."""
++    if os.path.basename(sys.argv[0]) == "__main__.py":
++        modulepath = os.path.dirname(sys.argv[0])
++        os.environ["PYTHONPATH"] = os.path.dirname(modulepath)
 +        return [sys.executable] + [arg for arg in sys.argv if arg != "--daemon"]
 +
 +    return [arg for arg in sys.argv if arg != "--daemon"]
- 
--    return sys.argv
- 
++
++
 +def try_to_restart() -> None:
 +    """Attempt to clean up state and start a new Home Assistant instance."""
 +    # Things should be mostly shut down already at this point, now just try
 +    # to clean up things that may have been left behind.
 +    sys.stderr.write("Home Assistant attempting to restart.\n")
- 
--def check_threads() -> None:
--    """Check if there are any lingering threads."""
++
 +    # Count remaining threads, ideally there should only be one non-daemonized
 +    # thread left (which is us). Nothing we really do with it, but it might be
 +    # useful when debugging shutdown/restart issues.
      try:
          nthreads = sum(
              thread.is_alive() and not thread.daemon for thread in threading.enumerate()
-@@ -173,15 +270,44 @@ def check_threads() -> None:
+@@ -163,11 +276,43 @@ def check_threads() -> None:
      except AssertionError:
          sys.stderr.write("Failed to count non-daemonic threads.\n")
  
@@ -190,7 +179,6 @@
      """Start Home Assistant."""
      validate_python()
  
--    args = get_arguments()
 +    # Run a simple daemon runner process on Windows to handle restarts
 +    if os.name == "nt" and "--runner" not in sys.argv:
 +        nt_args = cmdline() + ["--runner"]
@@ -203,14 +191,11 @@
 +            except subprocess.CalledProcessError as exc:
 +                if exc.returncode != RESTART_EXIT_CODE:
 +                    sys.exit(exc.returncode)
++
+     args = get_arguments()
  
--    if not args.ignore_os_check:
--        validate_os()
-+    args = get_arguments()
- 
-     if args.script is not None:
-         # pylint: disable-next=import-outside-toplevel
-@@ -192,6 +318,14 @@ def main() -> int:
+     if not args.ignore_os_check:
+@@ -182,6 +327,14 @@ def main() -> int:
      config_dir = os.path.abspath(os.path.join(os.getcwd(), args.config))
      ensure_config_path(config_dir)
  
@@ -225,7 +210,7 @@
      # pylint: disable-next=import-outside-toplevel
      from . import runner
  
-@@ -217,7 +351,8 @@ def main() -> int:
+@@ -207,7 +360,8 @@ def main() -> int:
      if os.path.getsize(fault_file_name) == 0:
          os.remove(fault_file_name)
  
