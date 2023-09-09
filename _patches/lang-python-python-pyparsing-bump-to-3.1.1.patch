@@ -1,0 +1,37 @@
+From b25e6eb1d42aa498263c62dc669b6003e6b772ef Mon Sep 17 00:00:00 2001
+From: The-BB <tun.chen.bo@gmail.com>
+Date: Sat, 9 Sep 2023 19:30:56 +0300
+Subject: [PATCH] lang/python/python-pyparsing: bump to 3.1.1
+
+---
+ lang/python/python-pyparsing/Makefile | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/lang/python/python-pyparsing/Makefile b/lang/python/python-pyparsing/Makefile
+index 6862e087d..1dab76028 100644
+--- a/lang/python/python-pyparsing/Makefile
++++ b/lang/python/python-pyparsing/Makefile
+@@ -4,16 +4,16 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
+-#
++# XXX bump (hass)
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=python-pyparsing
+-PKG_VERSION:=2.4.7
+-PKG_RELEASE:=2
++PKG_VERSION:=3.1.1
++PKG_RELEASE:=1
+ 
+ PYPI_NAME:=pyparsing
+-PKG_HASH:=c203ec8783bf771a155b207279b9bccb8dea02d8f0c9e5f8ead507bc3246ecc1
++PKG_HASH:=ede28a1a32462f5a9705e07aea48001a08f7cf81a021585011deba701581a0db
+ 
+ PKG_MAINTAINER:=Jan Pavlinec <jan.pavlinec1@gmail.com>
+ PKG_LICENSE:=MIT
+-- 
+2.30.2
+
