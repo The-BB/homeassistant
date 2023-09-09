@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
-PKG_VERSION:=2023.9.0
+PKG_VERSION:=2023.9.1
 PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=5dd65856feb464290ad1f2a6b769264e147186ffa17c932d1f0801bb789a5bdc
+PKG_HASH:=b8e142698a70fd45567642778b1bbc70cc7db1b0f2d969c73f1bcfbd63759a41
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -105,7 +105,6 @@ define Package/homeassistant
 	+python3-protobuf \
 	+python3-psutil-home-assistant \
 	+python3-pubnub \
-	+python3-pyasn1 \
 	+python3-pydantic \
 	+python3-pynacl \
 	+python3-pyserial \
@@ -139,6 +138,7 @@ define Package/homeassistant
 	+python3-restrictedpython \
 	+python3-securetar \
 	+python3-sense-energy \
+	+python3-voip-utils \
 	+python3-watchdog \
 	+yt-dlp
 # ext
