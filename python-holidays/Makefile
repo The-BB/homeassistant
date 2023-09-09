@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=holidays
-PKG_VERSION:=0.14.2
-PKG_RELEASE:=2
+PKG_VERSION:=0.28
+PKG_RELEASE:=1
 
 PYPI_NAME:=holidays
-PKG_HASH:=0e70fd174804aea1c870b151319faebcd5cdb0d955b78230434e1afd1778498e
+PKG_HASH:=96e1cc82153c56c1503480b99f898e5c1b8075f75ecfe5b0257b6bdd571e4363
 
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
@@ -22,11 +22,7 @@ define Package/python3-holidays
   SUBMENU:=Python
   TITLE:=Generate and work with holidays in Python
   URL:=https://github.com/dr-prodigy/python-holidays
-  DEPENDS:= \
-	+python3-convertdate \
-	+python3-dateutil \
-	+python3-hijri-converter \
-	+python3-korean-lunar-calendar
+  DEPENDS:=+python3-dateutil
 endef
 
 define Package/python3-holidays/description
