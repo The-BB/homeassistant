@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=sense-energy
-PKG_VERSION:=0.11.1
-PKG_RELEASE:=2
+PKG_VERSION:=0.12.1
+PKG_RELEASE:=1
 
 PYPI_NAME:=sense_energy
-PKG_HASH:=7357db170ecf10479d22f447cb7a34c4bc2eb6b41047a6a8171d33ccf685a138
+PKG_HASH:=7a0c96d27d548937a904827187ada5e66c492221f425887df91b8403426f941d
 
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE.txt
@@ -24,12 +24,16 @@ define Package/python3-sense-energy
   URL:=https://github.com/scottbonline/sense
   DEPENDS:= \
 	+python3-aiohttp \
+	+python3-async-timeout \
 	+python3-asyncio \
+	+python3-kasa-crypt \
 	+python3-logging \
 	+python3-openssl \
 	+python3-requests \
 	+python3-websocket-client \
 	+python3-websockets
+# (rust-lang pkgs)
+  EXTRA_DEPENDS:=python3-orjson
 endef
 
 define Package/python3-sense-energy/description
