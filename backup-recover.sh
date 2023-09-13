@@ -9,7 +9,7 @@ PATCH_DIR="./feeds/homeassistant/_patches"
 PATCH_PACKAGES="\
 $PATCH_DIR/lang-python-numpy-fix.patch
 $PATCH_DIR/lang-python-python-async-timeout-bump-to-4.0.3.patch
-$PATCH_DIR/lang-python-python-bleak-bump-to-0.21.0.patch
+$PATCH_DIR/lang-python-python-bleak-bump-to-0.21.1.patch
 $PATCH_DIR/lang-python-python-dbus-fast-bump-to-1.95.2.patch
 $PATCH_DIR/lang-python-python-pyopenssl-bump-to-23.2.0.patch
 $PATCH_DIR/lang-python-python-pyotp-bump-to-2.8.0.patch
