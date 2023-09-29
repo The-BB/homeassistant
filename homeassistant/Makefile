@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
 PKG_VERSION:=2023.9.3
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=$(PKG_NAME)
 PKG_HASH:=b5c206609fabdbed239dfdf15319c57709cb88e2bd3f463ab30d0ca5dfd8213d
@@ -68,6 +68,7 @@ define Package/homeassistant
 	+python3-yarl
 # from package_constraints
   DEPENDS+= \
+	+home-assistant-frontend \
 	+python3-aiodiscover \
 	+python3-aiohttp-cors \
 	+python3-anyio \
@@ -118,7 +119,6 @@ define Package/homeassistant
 	+python3-webrtcvad \
 	+python3-zeroconf \
 	+scapy
-# home-assistant-frontend==xxxxxxxx.x
 
 # from internal
   DEPENDS+= \
