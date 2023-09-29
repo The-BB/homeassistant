@@ -57,8 +57,8 @@ define Package/home-assistant-frontend/preinst
 
 DIR="/opt/var/lib/homeassistant/deps/lib/python$(PYTHON3_VERSION)/site-packages"
 
-[ -d "$$DIR/hass_frontend" ] && rm -rf $$DIR/hass_frontend
-[ -d "$$DIR/$(PYPI_NAME)"* ] && rm -rf $$DIR/$(PYPI_NAME)-*
+[ ! -d "$$DIR/hass_frontend" ] || rm -rf $$DIR/hass_frontend
+[ ! -d "$$DIR/$(PYPI_NAME)"* ] || rm -rf $$DIR/$(PYPI_NAME)-*
 endef
 
 define Package/home-assistant-frontend/postrm
