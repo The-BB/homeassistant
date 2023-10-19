@@ -3,14 +3,16 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=grpcio
-PKG_VERSION:=1.51.1
-PKG_RELEASE:=2
+PKG_VERSION:=1.58.0
+PKG_RELEASE:=1
 
 PYPI_NAME:=grpcio
-PKG_HASH:=e6dfc2b6567b1c261739b43d9c59d201c1b89e017afd9e684d85aa7a186c9f7a
+PKG_HASH:=532410c51ccd851b706d1fbc00a87be0f5312bd6f8e5dbf89d4e99c7f79d7499
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE
+
+PKG_BUILD_DEPENDS:=python-cython/host python-wheel/host
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
@@ -23,11 +25,15 @@ define Package/python3-grpcio
   TITLE:=HTTP/2-based RPC framework
   URL:=https://grpc.io/
   DEPENDS:= \
+	+libatomic \
+	+libopenssl \
+	+libstdcpp \
 	+python3-asyncio \
 	+python3-distutils \
 	+python3-grpcio-tools \
 	+python3-logging \
 	+python3-multiprocessing \
+	+python3-protobuf \
 	+python3-readline \
 	+python3-unittest \
 	+python3-urllib \
@@ -45,13 +51,16 @@ endef
 PYTHON3_PKG_SETUP_VARS += \
 	GRPC_BUILD_WITH_BORING_SSL_ASM="False" \
 	GRPC_PYTHON_BUILD_SYSTEM_OPENSSL="True" \
-	GRPC_PYTHON_BUILD_SYSTEM_ZLIB="False" \
+	GRPC_PYTHON_BUILD_SYSTEM_ZLIB="True" \
 	GRPC_PYTHON_BUILD_SYSTEM_CARES="False" \
-	GRPC_PYTHON_BUILD_SYSTEM_RE2="False"
+	GRPC_PYTHON_BUILD_SYSTEM_RE2="False" \
+	GRPC_PYTHON_BUILD_SYSTEM_ABSL="False"
+
+TARGET_CPPFLAGS += -I$(PKG_BUILD_DIR)/third_party/abseil-cpp
 
 define Build/Prepare
 	$(call Build/Prepare/Default)
-	$(SED) 's,@STAGING_DIR@,$(STAGING_DIR),g' $(PKG_BUILD_DIR)/setup.py
+	$(SED) 's,@STAGING_DIR@,$(STAGING_DIR)/opt,g' $(PKG_BUILD_DIR)/setup.py
 endef
 
 $(eval $(call Py3Package,python3-grpcio))

@@ -1,6 +1,6 @@
---- a/include/grpc/impl/codegen/port_platform.h
-+++ b/include/grpc/impl/codegen/port_platform.h
-@@ -176,6 +176,7 @@
+--- a/include/grpc/support/port_platform.h
++++ b/include/grpc/support/port_platform.h
+@@ -174,6 +174,7 @@
  #define GPR_POSIX_TIME 1
  #define GPR_HAS_PTHREAD_H 1
  #define GPR_GETPID_IN_UNISTD_H 1
@@ -10,7 +10,7 @@
  #else /* _LP64 */
 --- a/src/core/lib/security/security_connector/load_system_roots_supported.cc
 +++ b/src/core/lib/security/security_connector/load_system_roots_supported.cc
-@@ -51,12 +51,11 @@ namespace {
+@@ -47,12 +47,11 @@ namespace {
  
  #if defined(GPR_LINUX) || defined(GPR_ANDROID)
  const char* kCertFiles[] = {
@@ -43,7 +43,7 @@
  #ifndef TSI_OPENSSL_ALPN_SUPPORT
 --- a/third_party/boringssl-with-bazel/src/crypto/x509/x509_def.c
 +++ b/third_party/boringssl-with-bazel/src/crypto/x509/x509_def.c
-@@ -62,7 +62,7 @@
+@@ -61,7 +61,7 @@
  #if defined(OPENSSL_FUCHSIA)
  #define OPENSSLDIR "/config/ssl"
  #else
@@ -51,4 +51,4 @@
 +#define OPENSSLDIR "/opt/etc/ssl"
  #endif
  
- #define X509_CERT_AREA          OPENSSLDIR
+ #define X509_CERT_AREA OPENSSLDIR

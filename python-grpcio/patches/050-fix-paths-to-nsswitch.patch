@@ -1,6 +1,6 @@
 --- a/third_party/cares/cares/src/lib/ares_init.c
 +++ b/third_party/cares/cares/src/lib/ares_init.c
-@@ -1756,7 +1756,7 @@ static int init_by_resolv_conf(ares_chan
+@@ -1428,7 +1428,7 @@ static int init_by_resolv_conf(ares_chan
  
      if ((status == ARES_EOF) && (!channel->lookups)) {
        /* Many systems (Solaris, Linux, BSD's) use nsswitch.conf */
@@ -9,7 +9,7 @@
        if (fp) {
          while ((status = ares__read_line(fp, &line, &linesize)) ==
                 ARES_SUCCESS)
-@@ -1776,7 +1776,7 @@ static int init_by_resolv_conf(ares_chan
+@@ -1448,7 +1448,7 @@ static int init_by_resolv_conf(ares_chan
            DEBUGF(fprintf(stderr, "fopen() failed with error: %d %s\n",
                           error, strerror(error)));
            DEBUGF(fprintf(stderr, "Error opening file: %s\n",
@@ -20,7 +20,7 @@
          /* ignore error, maybe we will get luck in next if clause */
 --- a/third_party/cares/cares/test/ares-test-init.cc
 +++ b/third_party/cares/cares/test/ares-test-init.cc
-@@ -330,7 +330,7 @@ NameContentList filelist = {
+@@ -337,7 +337,7 @@ NameContentList filelist = {
                         "sortlist 1.2.3.4/16 2.3.4.5\n"
                         "search first.com second.com\n"},
    {"/etc/hosts", "3.4.5.6 ahostname.com\n"},
@@ -29,7 +29,7 @@
  CONTAINED_TEST_F(LibraryTest, ContainerChannelInit,
                   "myhostname", "mydomainname.org", filelist) {
    ares_channel channel = nullptr;
-@@ -511,7 +511,7 @@ CONTAINED_TEST_F(LibraryTest, ContainerN
+@@ -544,7 +544,7 @@ CONTAINED_TEST_F(LibraryTest, ContainerN
                   "myhostname", "mydomainname.org", filelist) {
    ares_channel channel = nullptr;
    // Unavailable /etc/nsswitch.conf falls back to defaults.
@@ -38,7 +38,7 @@
    EXPECT_EQ(ARES_SUCCESS, ares_init(&channel));
  
    struct ares_options opts;
-@@ -584,7 +584,7 @@ NameContentList blacklistedIpv6 = {
+@@ -617,7 +617,7 @@ NameContentList blacklistedIpv6 = {
                         " nameserver fec0::dead\n"  // Blacklisted
                         " nameserver ffc0::c001\n"  // Not blacklisted
                         " domain first.com\n"},
@@ -47,7 +47,7 @@
  CONTAINED_TEST_F(LibraryTest, ContainerBlacklistedIpv6,
                   "myhostname", "mydomainname.org", blacklistedIpv6) {
    ares_channel channel = nullptr;
-@@ -610,7 +610,7 @@ CONTAINED_TEST_F(LibraryTest, ContainerB
+@@ -643,7 +643,7 @@ CONTAINED_TEST_F(LibraryTest, ContainerB
  NameContentList multiresolv = {
    {"/etc/resolv.conf", " nameserver 1::2 ;  ;;\n"
                         " domain first.com\n"},
@@ -56,7 +56,7 @@
  CONTAINED_TEST_F(LibraryTest, ContainerMultiResolvInit,
                   "myhostname", "mydomainname.org", multiresolv) {
    ares_channel channel = nullptr;
-@@ -633,7 +633,7 @@ CONTAINED_TEST_F(LibraryTest, ContainerM
+@@ -666,7 +666,7 @@ CONTAINED_TEST_F(LibraryTest, ContainerM
  NameContentList systemdresolv = {
    {"/etc/resolv.conf", "nameserver 1.2.3.4\n"
                         "domain first.com\n"},

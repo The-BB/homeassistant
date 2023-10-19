@@ -1,0 +1,11 @@
+--- a/src/core/lib/iomgr/port.h
++++ b/src/core/lib/iomgr/port.h
+@@ -62,7 +62,7 @@
+ #endif  // LINUX_VERSION_CODE >= KERNEL_VERSION(4, 0, 0)
+ #endif  // LINUX_VERSION_CODE
+ #if defined(LINUX_VERSION_CODE) && defined(__GLIBC_PREREQ)
+-#if LINUX_VERSION_CODE >= KERNEL_VERSION(3, 9, 0) && __GLIBC_PREREQ(2, 18)
++#if LINUX_VERSION_CODE >= KERNEL_VERSION(3, 11, 0) && __GLIBC_PREREQ(2, 18)
+ #define GRPC_HAVE_VSOCK 1
+ #endif
+ #endif

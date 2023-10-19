@@ -1,6 +1,6 @@
 --- a/third_party/abseil-cpp/absl/time/internal/cctz/src/time_zone_info.cc
 +++ b/third_party/abseil-cpp/absl/time/internal/cctz/src/time_zone_info.cc
-@@ -632,7 +632,7 @@ std::unique_ptr<ZoneInfoSource> FileZone
+@@ -434,7 +434,7 @@ std::unique_ptr<ZoneInfoSource> FileZone
    // Map the time-zone name to a path name.
    std::string path;
    if (pos == name.size() || name[pos] != '/') {
@@ -11,7 +11,7 @@
      _dupenv_s(&tzdir_env, nullptr, "TZDIR");
 --- a/third_party/abseil-cpp/absl/time/internal/cctz/src/time_zone_lookup.cc
 +++ b/third_party/abseil-cpp/absl/time/internal/cctz/src/time_zone_lookup.cc
-@@ -210,7 +210,7 @@ time_zone local_time_zone() {
+@@ -337,7 +337,7 @@ time_zone local_time_zone() {
      // System-specific default is just "localtime".
      _dupenv_s(&localtime_env, nullptr, "LOCALTIME");
  #else
@@ -36,14 +36,3 @@
  #endif /* !defined TZDEFAULT */
  
  #ifndef TZDEFRULES
---- a/third_party/abseil-cpp/absl/time/internal/test_util.cc
-+++ b/third_party/abseil-cpp/absl/time/internal/test_util.cc
-@@ -73,7 +73,7 @@ const struct ZoneInfo {
-     {"localtime",  //
-      reinterpret_cast<char*>(America_Los_Angeles), America_Los_Angeles_len},
- #else
--    {"/etc/localtime",  //
-+    {"/opt/etc/localtime",  //
-      reinterpret_cast<char*>(America_Los_Angeles), America_Los_Angeles_len},
- #endif
- };
