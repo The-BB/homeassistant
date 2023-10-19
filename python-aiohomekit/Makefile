@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=aiohomekit
-PKG_VERSION:=3.0.2
+PKG_VERSION:=3.0.5
 PKG_RELEASE:=1
 
 PYPI_NAME:=aiohomekit
-PKG_HASH:=310a1e2d1783ef3b9a93939e7f2d574b1d2f444f5d1a3f9deb74c241794c247c
+PKG_HASH:=3e598c111182b34fb213b4c1a27f3572d85624dbd3a9deb1a4e0b8290ca50baa
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -27,7 +27,6 @@ define Package/python3-aiohomekit
   DEPENDS:= \
 	+python3-aiocoap \
 	+python3-async-interrupt \
-	+python3-async-timeout \
 	+python3-asyncio \
 	+python3-bleak-retry-connector \
 	+python3-bleak \
