@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=grpcio-tools
-PKG_VERSION:=1.51.1
+PKG_VERSION:=1.58.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=grpcio-tools
-PKG_HASH:=8e62d23d3fed9d4f81738f98dd193dbd2e21aed4a8f0dd715e75b5439e649727
+PKG_HASH:=6f4d80ceb591e31ca4dceec747dbe56132e1392a0a9bb1c8fe001d1b5cac898a
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE
@@ -29,6 +29,7 @@ define Package/python3-grpcio-tools
 	+python3-multiprocessing \
 	+python3-protobuf \
 	+python3-setuptools
+  EXTRA_DEPENDS:=python3-grpcio (>=$(PKG_VERSION)-$(PKG_RELEASE))
 endef
 
 define Package/python3-grpcio-tools/description
