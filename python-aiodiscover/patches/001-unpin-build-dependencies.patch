@@ -1,6 +1,6 @@
---- a/setup.py	2023-04-06 09:11:32.000000000 +0300
-+++ b/setup.py	2023-05-29 20:03:55.494913505 +0300
-@@ -8,9 +8,7 @@
+--- a/setup.py
++++ b/setup.py
+@@ -8,9 +8,7 @@ from setuptools import find_packages, se
  with open("README.md") as readme_file:
      readme = readme_file.read()
  
