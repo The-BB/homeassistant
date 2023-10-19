@@ -3,16 +3,14 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=mutagen
-PKG_VERSION:=1.46.0
-PKG_RELEASE:=2
+PKG_VERSION:=1.47.0
+PKG_RELEASE:=1
 
 PYPI_NAME:=mutagen
-PKG_HASH:=6e5f8ba84836b99fe60be5fb27f84be4ad919bbb6b49caa6ae81e70584b55e58
+PKG_HASH:=719fadef0a978c31b4cf3c956261b3c58b6948b32023078a2117b1de09f0fc99
 
 PKG_LICENSE:=GPL-2.0-or-later
 PKG_LICENSE_FILES:=LICENSE.md
-
-PKG_BUILD_DEPENDS:=python-wheel/host
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
