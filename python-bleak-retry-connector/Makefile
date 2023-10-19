@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=bleak-retry-connector
-PKG_VERSION:=3.1.3
+PKG_VERSION:=3.2.1
 PKG_RELEASE:=1
 
 PYPI_NAME:=bleak_retry_connector
-PKG_HASH:=652be4e9e8a9e7a4ad432aecb200d1b391728d32a94950e35ac66426dfa62609
+PKG_HASH:=7592c93c75fba1920739b3c6a1094ab3d4aa76a8be46339889ec8dac1f663fa4
 
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
@@ -26,8 +26,8 @@ define Package/python3-bleak-retry-connector
   URL:=https://github.com/bluetooth-devices/bleak-retry-connector
   DEPENDS:= \
 	+python3-asyncio \
-	+python3-async-timeout \
 	+python3-bleak \
+	+python3-bluetooth-adapters \
 	+python3-dbus-fast \
 	+python3-logging
 endef
