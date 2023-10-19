@@ -1,0 +1,35 @@
+From 3cc0b3bba451fd873143981d4cd5a41655de1962 Mon Sep 17 00:00:00 2001
+From: The-BB <tun.chen.bo@gmail.com>
+Date: Thu, 5 Oct 2023 15:59:20 +0300
+Subject: [PATCH] lang/python/pillow: bump to 10.0.1
+
+---
+ lang/python/pillow/Makefile | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/lang/python/pillow/Makefile b/lang/python/pillow/Makefile
+index c974723a9..4ab8013f1 100644
+--- a/lang/python/pillow/Makefile
++++ b/lang/python/pillow/Makefile
+@@ -3,15 +3,16 @@
+ # Copyright © 1995-2011 by Fredrik Lundh
+ # Copyright © 2016 by Alex Clark and contributors
+ #
++# XXX bump (hass)
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=pillow
+-PKG_VERSION:=10.0.0
++PKG_VERSION:=10.0.1
+ PKG_RELEASE:=1
+ 
+ PYPI_NAME:=Pillow
+-PKG_HASH:=9c82b5b3e043c7af0d95792d0d20ccf68f61a1fec6b3530e718b688422727396
++PKG_HASH:=d72967b06be9300fed5cfbc8b5bafceec48bf7cdc7dab66b1d2549035287191d
+ 
+ PKG_BUILD_DEPENDS:=python-setuptools-scm/host
+ 
+-- 
+2.30.2
+
