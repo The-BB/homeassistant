@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=grpcio-reflection
-PKG_VERSION:=1.51.1
-PKG_RELEASE:=2
+PKG_VERSION:=1.58.0
+PKG_RELEASE:=1
 
 PYPI_NAME:=grpcio-reflection
-PKG_HASH:=c07a93c0c36ef88fe475744289863b4787005eff4de0cc04213ecad718b01aae
+PKG_HASH:=e6048a758d17b6ca1705258e7ee5d926d2960a95ae08ba0929dd233e505acd3d
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE
@@ -22,7 +22,8 @@ define Package/python3-grpcio-reflection
   SUBMENU:=Python
   TITLE:=Standard Protobuf Reflection Service for gRPC
   URL:=https://grpc.io
-  DEPENDS:=+python3-grpcio +python3-logging +python3-protobuf
+  DEPENDS:=+python3-logging +python3-protobuf
+  EXTRA_DEPENDS:=python3-grpcio (>=$(PKG_VERSION)-$(PKG_RELEASE))
 endef
 
 define Package/python3-grpcio-reflection/description
