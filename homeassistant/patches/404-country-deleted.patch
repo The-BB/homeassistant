@@ -1,10 +1,25 @@
 --- a/homeassistant/generated/config_flows.py
 +++ b/homeassistant/generated/config_flows.py
-@@ -490,7 +490,6 @@ FLOWS = {
-         "twentemilieu",
+@@ -501,7 +501,6 @@ FLOWS = {
          "twilio",
          "twinkly",
+         "twitch",
 -        "ukraine_alarm",
          "unifi",
          "unifiprotect",
          "upb",
+--- a/homeassistant/generated/integrations.json
++++ b/homeassistant/generated/integrations.json
+@@ -6083,12 +6083,6 @@
+       "config_flow": false,
+       "iot_class": "cloud_polling"
+     },
+-    "ukraine_alarm": {
+-      "name": "Ukraine Alarm",
+-      "integration_type": "hub",
+-      "config_flow": true,
+-      "iot_class": "cloud_polling"
+-    },
+     "universal": {
+       "name": "Universal Media Player",
+       "integration_type": "hub",

@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
-PKG_VERSION:=2023.9.3
-PKG_RELEASE:=2
+PKG_VERSION:=2023.10.0
+PKG_RELEASE:=1
 
-PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=b5c206609fabdbed239dfdf15319c57709cb88e2bd3f463ab30d0ca5dfd8213d
+PYPI_NAME:=homeassistant
+PKG_HASH:=5268084094504433338d43bd9495692ac22fac51c1ce85dce4a8a0ebd647b6d5
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -43,7 +43,6 @@ define Package/homeassistant
   DEPENDS+= \
 	+python3-aiohttp \
 	+python3-astral \
-	+python3-async-timeout \
 	+python3-atomicwrites-homeassistant \
 	+python3-attrs \
 	+python3-awesomeversion \
@@ -116,7 +115,7 @@ define Package/homeassistant
 	+python3-socketio \
 	+python3-sqlalchemy \
 	+python3-urllib3 \
-	+python3-webrtcvad \
+	+python3-webrtc-noise-gain \
 	+python3-zeroconf \
 	+scapy
 
@@ -183,7 +182,7 @@ define Package/homeassistant/postinst
 
 ansi_blue="\033[1;34m"
 ansi_white="\033[1;37m"
-ansi_std="\033[0;0m"
+ansi_std="\033[0m"
 
 URL="https://github.com/Entware/Entware/wiki/Self-installation-of-python-modules"
 
