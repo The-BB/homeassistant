@@ -3,14 +3,14 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=home-assistant-frontend
-PKG_VERSION:=20231002.0
+PKG_VERSION:=20231005.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=home_assistant_frontend
 
 PKG_SOURCE:=$(PYPI_NAME)-$(PKG_VERSION)-py3-none-any.whl
 PKG_SOURCE_URL:=https://github.com/home-assistant/frontend/releases/download/$(PKG_VERSION)
-PKG_HASH:=d7d1c532e47b20d1ccf34e47c16c964b6a965cf398b858e7a5fd143fdded39b8
+PKG_HASH:=a7dddba39f9543291cb8ae5fd2bf38f2d32800d49ec6f1c35419bb7f721838c3
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/pypi/$(PYPI_NAME)-$(PKG_VERSION)
 
@@ -57,8 +57,8 @@ define Package/home-assistant-frontend/preinst
 
 DIR="/opt/var/lib/homeassistant/deps/lib/python$(PYTHON3_VERSION)/site-packages"
 
-[ ! -d "$$DIR/hass_frontend" ] || rm -rf $$DIR/hass_frontend || true
-[ ! -d "$$DIR/$(PYPI_NAME)"* ] || rm -rf $$DIR/$(PYPI_NAME)-* || true
+[ ! -d "$$DIR/hass_frontend" ] || rm -rf $$DIR/hass_frontend
+[ ! -d "$$DIR/$(PYPI_NAME)"* ] || rm -rf $$DIR/$(PYPI_NAME)-*
 endef
 
 define Package/home-assistant-frontend/postrm
