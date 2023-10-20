@@ -1,0 +1,35 @@
+From e21a45c95d12277932ca65fd74f7bba07fc2c45a Mon Sep 17 00:00:00 2001
+From: The-BB <tun.chen.bo@gmail.com>
+Date: Fri, 20 Oct 2023 18:39:33 +0300
+Subject: [PATCH] lang/python/python-aiohttp: bump to 3.8.6
+
+---
+ lang/python/python-aiohttp/Makefile | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/lang/python/python-aiohttp/Makefile b/lang/python/python-aiohttp/Makefile
+index e5246d2b4..914012edc 100644
+--- a/lang/python/python-aiohttp/Makefile
++++ b/lang/python/python-aiohttp/Makefile
+@@ -4,15 +4,16 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump (hass)
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=python-aiohttp
+-PKG_VERSION:=3.8.5
++PKG_VERSION:=3.8.6
+ PKG_RELEASE:=1
+ 
+ PYPI_NAME:=aiohttp
+-PKG_HASH:=b9552ec52cc147dbf1944ac7ac98af7602e51ea2dcd076ed194ca3c0d1c7d0bc
++PKG_HASH:=b0cf2a4501bff9330a8a5248b4ce951851e415bdcce9dc158e76cfd55e15085c
+ 
+ PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
+ PKG_LICENSE:=Apache-2.0
+-- 
+2.30.2
+
