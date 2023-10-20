@@ -12,7 +12,7 @@ $PATCH_DIR/lang-python-pillow-bump-to-10.0.1.patch
 $PATCH_DIR/lang-python-python-async-timeout-bump-to-4.0.3.patch
 $PATCH_DIR/lang-python-python-awesomeversion-bump-to-23.8.0.patch
 $PATCH_DIR/lang-python-python-bleak-bump-to-0.21.1.patch
-$PATCH_DIR/lang-python-python-dbus-fast-bump-to-2.11.0.patch
+$PATCH_DIR/lang-python-python-dbus-fast-bump-to-2.11.1.patch
 $PATCH_DIR/lang-python-python-pyopenssl-bump-to-23.2.0.patch
 $PATCH_DIR/lang-python-python-pyotp-bump-to-2.8.0.patch
 $PATCH_DIR/lang-python-python-pyparsing-bump-to-3.1.1.patch
@@ -24,7 +24,7 @@ $PATCH_DIR/lang-python-python-voluptuous-bump-to-0.13.1.patch
 $PATCH_DIR/lang-python-python-voluptuous-serialize-bump-to-2.6.0.patch
 $PATCH_DIR/lang-python-python-websockets-bump-to-11.0.1.patch
 $PATCH_DIR/lang-python-python-yaml-bump-to-6.0.1.patch
-$PATCH_DIR/lang-python-python-zeroconf-bump-to-0.115.1.patch
+$PATCH_DIR/lang-python-python-zeroconf-bump-to-0.115.2.patch
 $PATCH_DIR/lang-python-xmltodict-bump-to-0.13.0.patch
 $PATCH_DIR/libs-libjpeg-turbo-add-libturbojpeg.patch
 $PATCH_DIR/multimedia-yt-dlp-bump-to-2023.7.6.patch
