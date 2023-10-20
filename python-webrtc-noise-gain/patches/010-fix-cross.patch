@@ -1,0 +1,50 @@
+--- a/setup.py
++++ b/setup.py
+@@ -1,5 +1,6 @@
+ import os
+ import platform
++import sysconfig
+ from pathlib import Path
+ 
+ # Available at setup time due to pyproject.toml
+@@ -351,6 +352,7 @@ absl_sources = []
+ libraries = []
+ system = platform.system().lower()
+ machine = platform.machine().lower()
++get_platform = sysconfig.get_platform().lower()
+ system_cflags = []
+ 
+ # Architecture detection was removed from rtc_base/system/arch.h
+@@ -383,7 +385,31 @@ elif system == "windows":
+ else:
+     raise ValueError(f"Unsupported system: {system}")
+ 
+-if machine in ("aarch64", "armv8", "arm64"):
++if get_platform in ("linux-aarch64"):
++    # 64-bit ARM
++    machine_cflags += [
++        "-DWEBRTC_ARCH_ARM64",
++        "-DWEBRTC_ARCH_ARM_FAMILY",
++        "-DWEBRTC_ARCH_64_BITS",
++    ]
++elif get_platform in ("linux-mips"):
++    # 32-bit MIPS (Big Endian)
++    machine_cflags += [
++        "-DWEBRTC_ARCH_MIPS_FAMILY",
++        "-DWEBRTC_ARCH_32_BITS",
++        "-DPFFFT_SIMD_DISABLE",
++#        "-DWEBRTC_ARCH_BIG_ENDIAN",
++    ]
++elif get_platform in ("linux-mipsel"):
++    # 32-bit MIPS (Little Endian)
++    machine_cflags += [
++        "-DWEBRTC_ARCH_MIPS_FAMILY",
++        "-DWEBRTC_ARCH_32_BITS",
++        "-DPFFFT_SIMD_DISABLE",
++#        "-DMIPS32_LE",
++#        "-DMIPS32_R2_LE",
++    ]
++elif machine in ("aarch64", "armv8", "arm64"):
+     # 64-bit ARM
+     machine_cflags += [
+         "-DWEBRTC_ARCH_ARM64",
