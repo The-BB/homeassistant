@@ -2,7 +2,7 @@
 +++ b/homeassistant/package_constraints.txt
 @@ -1,7 +1,7 @@
  aiodiscover==1.5.1
- aiohttp==3.8.6
+ aiohttp==3.8.5
  aiohttp_cors==0.7.0
 -astral==2.2
 +astral>=2.2,<3.3
@@ -14,7 +14,7 @@
 @@ -24,7 +24,7 @@ classifiers = [
  requires-python = ">=3.11.0"
  dependencies    = [
-     "aiohttp==3.8.6",
+     "aiohttp==3.8.5",
 -    "astral==2.2",
 +    "astral>=2.2,<3.3",
      "attrs==23.1.0",
