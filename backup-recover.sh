@@ -12,7 +12,7 @@ $PATCH_DIR/lang-python-pillow-bump-to-10.0.1.patch
 $PATCH_DIR/lang-python-python-async-timeout-bump-to-4.0.3.patch
 $PATCH_DIR/lang-python-python-awesomeversion-bump-to-23.8.0.patch
 $PATCH_DIR/lang-python-python-bleak-bump-to-0.21.1.patch
-$PATCH_DIR/lang-python-python-dbus-fast-bump-to-2.11.1.patch
+$PATCH_DIR/lang-python-python-dbus-fast-bump-to-2.12.0.patch
 $PATCH_DIR/lang-python-python-pyopenssl-bump-to-23.2.0.patch
 $PATCH_DIR/lang-python-python-pyotp-bump-to-2.8.0.patch
 $PATCH_DIR/lang-python-python-pyparsing-bump-to-3.1.1.patch
