@@ -52,15 +52,6 @@ define Package/home-assistant-frontend/install
 	$(SED) '/\.map,sha/d' $(1)$(FRONTEND_DIR)/$(PYPI_NAME)-$(PKG_VERSION)*/RECORD
 endef
 
-define Package/home-assistant-frontend/preinst
-#!/bin/sh
-
-DIR="/opt/var/lib/homeassistant/deps/lib/python$(PYTHON3_VERSION)/site-packages"
-
-[ ! -d "$$DIR/hass_frontend" ] || rm -rf $$DIR/hass_frontend
-[ ! -d "$$DIR/$(PYPI_NAME)"* ] || rm -rf $$DIR/$(PYPI_NAME)-*
-endef
-
 define Package/home-assistant-frontend/postrm
 #!/bin/sh
 
