@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=httpx
 PKG_VERSION:=0.24.1
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=httpx
 PKG_HASH:=5853a43053df830c20f8110c5e69fe44d035d850b2dfe795e196f00fdb774bdd
@@ -26,6 +26,7 @@ define Package/python3-httpx
   URL:=https://github.com/encode/httpx
   DEPENDS:= \
 	+python3-asyncio \
+	+python3-brotli \
 	+python3-certifi \
 	+python3-cgi \
 	+python3-email \
