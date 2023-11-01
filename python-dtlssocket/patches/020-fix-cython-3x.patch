@@ -1,0 +1,84 @@
+--- a/DTLSSocket/dtls.pyx
++++ b/DTLSSocket/dtls.pyx
+@@ -1,3 +1,5 @@
++# cython: language_level=2
++
+ cimport tdtls
+ from tdtls cimport dtls_context_t, dtls_handler_t, session_t, dtls_alert_level_t, dtls_credentials_type_t
+ from libc.stdint cimport uint8_t
+@@ -18,7 +20,7 @@ DTLS_LOG_INFO   = tdtls.DTLS_LOG_INFO
+ DTLS_LOG_DEBUG  = tdtls.DTLS_LOG_DEBUG
+ 
+ 
+-cdef int _write(dtls_context_t *ctx, session_t *session, uint8 *buf, size_t len):
++cdef int _write(dtls_context_t *ctx, session_t *session, uint8 *buf, size_t len) except -1:
+   """Send data to socket"""
+   self = <object>(ctx.app)
+   data = buf[:len]
+@@ -28,7 +30,7 @@ cdef int _write(dtls_context_t *ctx, ses
+   cdef int ret = self.pycb['write']((ip, port), data)
+   return ret
+   
+-cdef int _read(dtls_context_t *ctx, session_t *session, uint8 *buf, size_t len):
++cdef int _read(dtls_context_t *ctx, session_t *session, uint8 *buf, size_t len) except -1:
+   """Send data to application"""
+   self = <object>(ctx.app)
+   data = buf[:len]
+@@ -38,7 +40,7 @@ cdef int _read(dtls_context_t *ctx, sess
+   cdef int ret = self.pycb['read']((ip, port), data)
+   return ret
+   
+-cdef int _event(dtls_context_t *ctx, session_t *session, dtls_alert_level_t level, unsigned short code):
++cdef int _event(dtls_context_t *ctx, session_t *session, dtls_alert_level_t level, unsigned short code) except -1:
+   """The event handler is called when a message from the alert protocol is received or the state of the DTLS session changes."""
+   self = <object>(ctx.app)
+   if self.pycb['event'] != None:
+@@ -53,7 +55,7 @@ cdef int _get_psk_info(dtls_context_t *c
+ 		      const unsigned char *desc_data,
+ 		      size_t desc_len,
+ 		      unsigned char *result_data,
+-		      size_t result_length):
++		      size_t result_length) except -1:
+   """Called during handshake to get information related to the psk key exchange. 
+    
+    The type of information requested is indicated by @p type 
+--- a/DTLSSocket/tdtls.pxd
++++ b/DTLSSocket/tdtls.pxd
+@@ -83,10 +83,14 @@ cdef extern from "tinydtls/dtls.h":
+     unsigned char readbuf[1400] #DTLS_MAX_BUF
+   
+   ctypedef struct dtls_handler_t:
+-    int (*write)(dtls_context_t *ctx, session_t *session, uint8 *buf, size_t len)
+-    int (*read)(dtls_context_t *ctx, session_t *session, uint8 *buf, size_t len)
+-    int (*event)(dtls_context_t *ctx, session_t *session, dtls_alert_level_t level, unsigned short code)
+-    int (*get_psk_info)(dtls_context_t *ctx, const session_t *session, dtls_credentials_type_t type, const unsigned char *desc, size_t desc_len, unsigned char *result, size_t result_length)
++    int (*write)(dtls_context_t *ctx, session_t *session, uint8 *buf, size_t len) except -1
++    # Actually, the return value is ignored by tinydtls; -1 is used for errors
++    # for consistency with write and get_psk_info
++    int (*read)(dtls_context_t *ctx, session_t *session, uint8 *buf, size_t len) except -1
++    # Actually, the return value is ignored by tinydtls; -1 is used for errors
++    # for consistency with write and get_psk_info
++    int (*event)(dtls_context_t *ctx, session_t *session, dtls_alert_level_t level, unsigned short code) except -1
++    int (*get_psk_info)(dtls_context_t *ctx, const session_t *session, dtls_credentials_type_t type, const unsigned char *desc, size_t desc_len, unsigned char *result, size_t result_length) except -1
+   
+   void dtls_init()
+   void dtls_set_handler(dtls_context_t *ctx, dtls_handler_t *h) #inline...
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -1,2 +1,2 @@
+ [build-system]
+-requires = ["Cython<3", "setuptools", "wheel"]
++requires = ["Cython", "setuptools", "wheel"]
+--- a/setup.py
++++ b/setup.py
+@@ -42,8 +42,8 @@ setup(
+     url         = "https://git.fslab.de/jkonra2m/tinydtls-cython",
+     py_modules  = [ "DTLSSocket.DTLSSocket"],
+     cmdclass    = {"build_ext": prepare_tinydtls},
+-    setup_requires = ['setuptools>=18.0','Cython<3'],
+-    install_requires = ['Cython<3'],
++    setup_requires = ['setuptools>=18.0','Cython'],
++    install_requires = ['Cython'],
+     ext_modules = [Extension("DTLSSocket.dtls",
+                 [
+                  "DTLSSocket/dtls.pyx",
