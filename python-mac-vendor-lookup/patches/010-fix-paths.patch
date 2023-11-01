@@ -1,9 +1,14 @@
---- /dev/null
-+++ b/mac-vendors.txt
-@@ -0,0 +1 @@
-+
 --- a/mac_vendor_lookup.py
 +++ b/mac_vendor_lookup.py
+@@ -24,7 +24,7 @@ class VendorNotFoundError(KeyError):
+ 
+ 
+ class BaseMacLookup(object):
+-    cache_path = os.path.expanduser('~/.cache/mac-vendors.txt')
++    cache_path = os.path.abspath('/opt/var/cache/mac-vendors.txt')
+ 
+     @staticmethod
+     def sanitise(_mac):
 @@ -45,7 +45,7 @@ class BaseMacLookup(object):
      def find_vendors_list(self):
          possible_locations = [
