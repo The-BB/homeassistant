@@ -1,0 +1,35 @@
+From c5e427aba7065a4eb046d22c67944446c1c94df5 Mon Sep 17 00:00:00 2001
+From: The-BB <tun.chen.bo@gmail.com>
+Date: Fri, 27 Oct 2023 12:44:54 +0300
+Subject: [PATCH] lang/python/python-cython: bump to 3.0.2
+
+---
+ lang/python/python-cython/Makefile | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/lang/python/python-cython/Makefile b/lang/python/python-cython/Makefile
+index efaaa2d38..8f1fdf35c 100644
+--- a/lang/python/python-cython/Makefile
++++ b/lang/python/python-cython/Makefile
+@@ -4,15 +4,16 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump (hass)
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=python-cython
+-PKG_VERSION:=0.29.36
++PKG_VERSION:=3.0.2
+ PKG_RELEASE:=1
+ 
+ PYPI_NAME:=Cython
+-PKG_HASH:=41c0cfd2d754e383c9eeb95effc9aa4ab847d0c9747077ddd7c0dcb68c3bc01f
++PKG_HASH:=9594818dca8bb22ae6580c5222da2bc5cc32334350bd2d294a00d8669bcc61b5
+ 
+ PKG_LICENSE:=Apache-2.0
+ PKG_LICENSE_FILES:=LICENSE.txt
+-- 
+2.30.2
+

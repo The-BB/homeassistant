@@ -1,18 +1,29 @@
-From 28f6f6fc1bc981b923ec932318f2f36c139ad151 Mon Sep 17 00:00:00 2001
+From 9ecda1239fffa4f50ea8b49fbbb2079a7d663317 Mon Sep 17 00:00:00 2001
 From: The-BB <tun.chen.bo@gmail.com>
-Date: Mon, 21 Aug 2023 11:03:09 +0300
+Date: Sat, 28 Oct 2023 11:28:17 +0300
 Subject: [PATCH] lang/python/numpy: fix
 
 ---
- lang/python/numpy/Makefile              | 20 ++++++++---
- lang/python/numpy/patches/501-fix.patch | 48 +++++++++++++++++++++++++
- 2 files changed, 64 insertions(+), 4 deletions(-)
- create mode 100644 lang/python/numpy/patches/501-fix.patch
+ lang/python/numpy/Makefile                    | 22 +++++++--
+ lang/python/numpy/patches/500-cython-3x.patch | 11 +++++
+ lang/python/numpy/patches/501-fix-mips.patch  | 49 +++++++++++++++++++
+ 3 files changed, 77 insertions(+), 5 deletions(-)
+ create mode 100644 lang/python/numpy/patches/500-cython-3x.patch
+ create mode 100644 lang/python/numpy/patches/501-fix-mips.patch
 
 diff --git a/lang/python/numpy/Makefile b/lang/python/numpy/Makefile
-index 54bbc4255..70d32b561 100644
+index 54bbc4255..40fa3041c 100644
 --- a/lang/python/numpy/Makefile
 +++ b/lang/python/numpy/Makefile
+@@ -7,7 +7,7 @@ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=numpy
+ PKG_VERSION:=1.25.1
+-PKG_RELEASE:=1
++PKG_RELEASE:=1a
+ 
+ PYPI_NAME:=$(PKG_NAME)
+ PKG_HASH:=9a3a9f3a61480cc086117b426a8bd86869c213fc4072e606f01c4e4b66eb92bf
 @@ -27,6 +27,9 @@ PKG_BUILD_DEPENDS:=python-cython/host
  PYTHON3_PKG_BUILD_VARS:= \
          $(if $(CONFIG_NUMPY_OPENBLAS_SUPPORT),,NPY_BLAS_ORDER= NPY_LAPACK_ORDER= )
@@ -61,12 +72,29 @@ index 54bbc4255..70d32b561 100644
  $(eval $(call Py3Package,python3-numpy))
  $(eval $(call BuildPackage,python3-numpy))
  $(eval $(call BuildPackage,python3-numpy-src))
-diff --git a/lang/python/numpy/patches/501-fix.patch b/lang/python/numpy/patches/501-fix.patch
+diff --git a/lang/python/numpy/patches/500-cython-3x.patch b/lang/python/numpy/patches/500-cython-3x.patch
 new file mode 100644
-index 000000000..e1dd9654f
+index 000000000..5e2e17471
 --- /dev/null
-+++ b/lang/python/numpy/patches/501-fix.patch
-@@ -0,0 +1,48 @@
++++ b/lang/python/numpy/patches/500-cython-3x.patch
+@@ -0,0 +1,11 @@
++--- a/pyproject.toml
+++++ b/pyproject.toml
++@@ -9,7 +9,7 @@ requires = [
++     # doesn't list it as a runtime requirement (at least in 0.11.0) - it's
++     # likely to be removed as a dependency in meson-python 0.12.0.
++     "wheel>=0.38.1",
++-    "Cython>=0.29.34,<3.0",
+++    "Cython>=0.29.34",
++ #    "meson-python>=0.10.0",
++ ]
++ 
+diff --git a/lang/python/numpy/patches/501-fix-mips.patch b/lang/python/numpy/patches/501-fix-mips.patch
+new file mode 100644
+index 000000000..decbb2339
+--- /dev/null
++++ b/lang/python/numpy/patches/501-fix-mips.patch
+@@ -0,0 +1,49 @@
 +--- a/numpy/distutils/ccompiler_opt.py
 ++++ b/numpy/distutils/ccompiler_opt.py
 +@@ -192,7 +192,7 @@ class _Config:

@@ -1,0 +1,22 @@
+From f79291cf6460e3121410c22d7aa5f5de652dc376 Mon Sep 17 00:00:00 2001
+From: The-BB <tun.chen.bo@gmail.com>
+Date: Tue, 31 Oct 2023 16:39:48 +0300
+Subject: [PATCH] libs/libgpiod: disable python3-gpiod
+
+---
+ libs/libgpiod/Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/libs/libgpiod/Makefile b/libs/libgpiod/Makefile
+index ef15288b1..dd58fffee 100644
+--- a/libs/libgpiod/Makefile
++++ b/libs/libgpiod/Makefile
+@@ -107,4 +107,4 @@ endef
+ 
+ $(eval $(call BuildPackage,libgpiod))
+ $(eval $(call BuildPackage,gpiod-tools))
+-$(eval $(call BuildPackage,python3-gpiod))
++#$(eval $(call BuildPackage,python3-gpiod))
+-- 
+2.30.2
+
