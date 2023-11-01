@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=pypng
-PKG_VERSION:=0.0.20
-PKG_RELEASE:=3
+PKG_VERSION:=0.20220715.0
+PKG_RELEASE:=1
 
 PYPI_NAME:=pypng
-PKG_HASH:=1032833440c91bafee38a42c38c02d00431b24c42927feb3e63b104d8550170b
+PKG_HASH:=739c433ba96f078315de54c0db975aee537cbc3e1d0ae4ed9aab0ca1e427e2c1
 
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
@@ -21,7 +21,7 @@ define Package/python3-pypng
   CATEGORY:=Languages
   SUBMENU:=Python
   TITLE:=Pure Python PNG image encoder/decoder
-  URL:=https://github.com/drj11/pypng
+  URL:=https://gitlab.com/drj11/pypng
   DEPENDS:=+python3-light
 endef
 
