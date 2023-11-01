@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=kasa-crypt
 PKG_VERSION:=0.3.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=kasa_crypt
 PKG_HASH:=80c866a1f5d4ad419fcd454b2343a6ecfff8814195ab2caf108941971150ccd8
@@ -24,7 +24,7 @@ define Package/python3-kasa-crypt
   SUBMENU:=Python
   TITLE:=Fast kasa crypt
   URL:=https://github.com/bdraco/kasa-crypt
-  DEPENDS:=+python3-distutils
+  DEPENDS:=+python3-light
 endef
 
 define Package/python3-kasa-crypt/description
