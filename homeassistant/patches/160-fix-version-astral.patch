@@ -6,7 +6,7 @@
  aiohttp_cors==0.7.0
 -astral==2.2
 +astral>=2.2,<3.3
- async-upnp-client==0.36.1
+ async-upnp-client==0.36.2
  atomicwrites-homeassistant==1.4.1
  attrs==23.1.0
 --- a/pyproject.toml

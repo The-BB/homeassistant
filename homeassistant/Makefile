@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
-PKG_VERSION:=2023.10.4
+PKG_VERSION:=2023.10.5
 PKG_RELEASE:=1
 
 PYPI_NAME:=homeassistant
-PKG_HASH:=1c6f14ca4e76063f42a50f9d9fe75bb1754129a9170e5464b46e0a4a45555661
+PKG_HASH:=8d5c3432e75bfcbe0bc3702877070e4eb34965cb527c421c5d4cf1a33a3bb1a0
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -39,7 +39,7 @@ define Package/homeassistant
 	+python3-urllib \
 	+python3-uuid \
 	+python3-xml
-# core
+# core (pyproject.toml)
   DEPENDS+= \
 	+python3-aiohttp \
 	+python3-astral \
@@ -65,7 +65,8 @@ define Package/homeassistant
 	+python3-voluptuous-serialize \
 	+python3-yaml \
 	+python3-yarl
-# from package_constraints
+
+# package_constraints.txt
   DEPENDS+= \
 	+home-assistant-frontend \
 	+python3-aiodiscover \
@@ -119,38 +120,14 @@ define Package/homeassistant
 	+python3-zeroconf \
 	+scapy
 
-# from internal
+# auth/mfa_modules/totp.py
   DEPENDS+= \
-	+python3-colorlog \
-	+python3-croniter \
-	+python3-debugpy \
-	+python3-ephem \
-	+python3-guppy3 \
-	+python3-holidays \
-	+python3-icmplib \
-	+python3-netdisco \
-	+python3-objgraph \
-	+python3-pyhaversion \
 	+python3-pyotp \
-	+python3-pyprof2calltree \
-	+python3-pyqrcode \
-	+python3-restrictedpython \
-	+python3-securetar \
-	+python3-sense-energy \
-	+python3-voip-utils \
-	+python3-watchdog \
-	+yt-dlp
-# ext
+	+python3-pyqrcode
+
+# scripts/check_config.py
   DEPENDS+= \
-	+python3-aiohomekit \
-	+python3-base36 \
-	+python3-getmac \
-	+python3-greenlet \
-	+python3-gtts \
-	+python3-ha-ffmpeg \
-	+python3-pyhap \
-	+python3-pymetno \
-	+python3-radios
+	+python3-colorlog
 
   EXTRA_DEPENDS:=libopenssl-legacy,
 # core (rust-lang pkgs)
@@ -177,6 +154,13 @@ define Py3Package/homeassistant/install
 	touch $(1)/opt/var/lib/homeassistant/.keep
 endef
 
+define Package/homeassistant/prerm
+#!/bin/sh
+
+echo '/opt/bin/hass' > /opt/lib/opkg/info/$(PKG_NAME).list
+echo '/opt/etc/init.d/S99hass' >> /opt/lib/opkg/info/$(PKG_NAME).list
+endef
+
 define Package/homeassistant/postinst
 #!/bin/sh
 
@@ -198,6 +182,7 @@ endef
 define Package/homeassistant/postrm
 #!/bin/sh
 
+rm -fr $(PYTHON3_PKG_DIR)/$(PKG_NAME)
 rm -fr $(PYTHON3_PKG_DIR)/$(PKG_NAME)-$(PKG_VERSION).dist-info
 endef
 

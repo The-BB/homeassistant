@@ -1,0 +1,42 @@
+--- a/homeassistant/__main__.py
++++ b/homeassistant/__main__.py
+@@ -246,7 +246,7 @@ def closefds_osx(min_fd: int, max_fd: in
+ 
+ def cmdline() -> list[str]:
+     """Collect path and arguments to re-execute the current hass instance."""
+-    if os.path.basename(sys.argv[0]) == "__main__.py":
++    if os.path.basename(sys.argv[0]) == "__main__.pyc":
+         modulepath = os.path.dirname(sys.argv[0])
+         os.environ["PYTHONPATH"] = os.path.dirname(modulepath)
+         return [sys.executable] + [arg for arg in sys.argv if arg != "--daemon"]
+--- a/homeassistant/components/python_script/__init__.py
++++ b/homeassistant/components/python_script/__init__.py
+@@ -124,7 +124,7 @@ def discover_scripts(hass):
+     else:
+         services_dict = {}
+ 
+-    for fil in glob.iglob(os.path.join(path, "*.py")):
++    for fil in glob.iglob(os.path.join(path, "*.pyc")):
+         name = os.path.splitext(os.path.basename(fil))[0]
+         hass.services.register(DOMAIN, name, python_script_service_handler)
+ 
+@@ -139,7 +139,7 @@ def discover_scripts(hass):
+ @bind_hass
+ def execute_script(hass, name, data=None):
+     """Execute a script."""
+-    filename = f"{name}.py"
++    filename = f"{name}.pyc"
+     raise_if_invalid_filename(filename)
+     with open(hass.config.path(FOLDER, filename), encoding="utf8") as fil:
+         source = fil.read()
+--- a/homeassistant/helpers/integration_platform.py
++++ b/homeassistant/helpers/integration_platform.py
+@@ -51,7 +51,7 @@ async def _async_process_single_integrat
+     except ImportError as err:
+         if f"{component_name}.{platform_name}" not in str(err):
+             _LOGGER.exception(
+-                "Unexpected error importing %s/%s.py",
++                "Unexpected error importing %s/%s.pyc",
+                 component_name,
+                 platform_name,
+             )
