@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=ulid-transform
-PKG_VERSION:=0.8.1
+PKG_VERSION:=0.9.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=ulid_transform
-PKG_HASH:=a7644888bd174791f85f6edd1a85cb8ef6faa3cb8e508445464c49d8d208511f
+PKG_HASH:=e50c78ddb89629d1d7b5e7436b51bb49ac3ddca7a278a78640299d4cd49105bc
 
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
@@ -24,7 +24,7 @@ define Package/python3-ulid-transform
   SUBMENU:=Python
   TITLE:=Create and transform ULIDs
   URL:=https://github.com/bdraco/ulid-transform
-  DEPENDS:=+libstdcpp +python3-distutils
+  DEPENDS:=+libstdcpp +python3-light
 endef
 
 define Package/python3-ulid-transform/description
