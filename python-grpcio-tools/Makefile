@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=grpcio-tools
-PKG_VERSION:=1.58.0
+PKG_VERSION:=1.59.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=grpcio-tools
-PKG_HASH:=6f4d80ceb591e31ca4dceec747dbe56132e1392a0a9bb1c8fe001d1b5cac898a
+PKG_HASH:=aa4018f2d8662ac4d9830445d3d253a11b3e096e8afe20865547137aa1160e93
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE
@@ -25,7 +25,6 @@ define Package/python3-grpcio-tools
   DEPENDS:= \
 	+libatomic \
 	+libstdcpp \
-	+python3-distutils \
 	+python3-multiprocessing \
 	+python3-protobuf \
 	+python3-setuptools
