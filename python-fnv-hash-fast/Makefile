@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=fnv-hash-fast
-PKG_VERSION:=0.4.1
+PKG_VERSION:=0.5.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=fnv_hash_fast
-PKG_HASH:=fb513e4b43d5b48cf358422688e950dec22b681cffb6c7a80c062199667f0fa6
+PKG_HASH:=a84d658952776a186418f4158fc8e55ff3c576ac32cc9ef7f8077efdf2d0b89f
 
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
@@ -24,7 +24,7 @@ define Package/python3-fnv-hash-fast
   SUBMENU:=Python
   TITLE:=A fast version of fnv1a
   URL:=https://github.com/bdraco/fnv-hash-fast
-  DEPENDS:=+libstdcpp +python3-distutils +python3-fnvhash
+  DEPENDS:=+libstdcpp +python3-fnvhash
 endef
 
 define Package/python3-fnvhash/description
