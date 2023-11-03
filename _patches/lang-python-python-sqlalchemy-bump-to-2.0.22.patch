@@ -1,14 +1,14 @@
-From 48ac4aab5b7f54221902d56b18f79a981c898583 Mon Sep 17 00:00:00 2001
+From 89bbea428447910d38ec5b2f3d2103848c7cf6da Mon Sep 17 00:00:00 2001
 From: The-BB <tun.chen.bo@gmail.com>
-Date: Thu, 5 Oct 2023 16:05:25 +0300
-Subject: [PATCH] lang/python/python-sqlalchemy: bump to 2.0.21
+Date: Thu, 2 Nov 2023 19:51:19 +0300
+Subject: [PATCH] lang/python/python-sqlalchemy: bump to 2.0.22
 
 ---
  lang/python/python-sqlalchemy/Makefile | 5 +++--
  1 file changed, 3 insertions(+), 2 deletions(-)
 
 diff --git a/lang/python/python-sqlalchemy/Makefile b/lang/python/python-sqlalchemy/Makefile
-index f15cbb3ff..af37c10a5 100644
+index f15cbb3ff..30d0550c1 100644
 --- a/lang/python/python-sqlalchemy/Makefile
 +++ b/lang/python/python-sqlalchemy/Makefile
 @@ -4,15 +4,16 @@
@@ -21,12 +21,12 @@ index f15cbb3ff..af37c10a5 100644
  
  PKG_NAME:=python-sqlalchemy
 -PKG_VERSION:=1.4.22
-+PKG_VERSION:=2.0.21
++PKG_VERSION:=2.0.22
  PKG_RELEASE:=1
  
  PYPI_NAME:=SQLAlchemy
 -PKG_HASH:=ec1be26cdccd60d180359a527d5980d959a26269a2c7b1b327a1eea0cab37ed8
-+PKG_HASH:=05b971ab1ac2994a14c56b35eaaa91f86ba080e9ad481b20d99d77f381bb6258
++PKG_HASH:=5434cc601aa17570d79e5377f5fd45ff92f9379e2abed0be5e8c2fba8d353d2b
  
  PKG_MAINTAINER:=Josef Schlehofer <josef.schlehofer@nic.cz>
  PKG_LICENSE:=MIT
