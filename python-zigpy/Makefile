@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=zigpy
-PKG_VERSION:=0.57.2
+PKG_VERSION:=0.59.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=zigpy
-PKG_HASH:=dfa2b3048a96e32749b66d9e8520ccd19f0ac3d67d4a90d59673cf0209be0af6
+PKG_HASH:=eec7e886d078c32a04319daed3798d8e41026a7e5b6d592477862dd0c70439f2
 
 PKG_LICENSE:=GPL-3.0-or-later
 PKG_LICENSE_FILES:=LICENSE
@@ -37,7 +37,6 @@ define Package/python3-zigpy
 	+python3-voluptuous \
 	+python3-pyserial-asyncio \
 	+python3-typing-extensions
-
 # (rust-lang pkgs)
   EXTRA_DEPENDS:=python3-cryptography
 endef
