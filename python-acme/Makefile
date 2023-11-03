@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=acme
-PKG_VERSION:=1.31.0
-PKG_RELEASE:=2
+PKG_VERSION:=2.7.1
+PKG_RELEASE:=1
 
 PYPI_NAME:=acme
-PKG_HASH:=f5e13262fa1101c38dd865378ac8b4639f819120eb66c5538fc6c09b7576fc53
+PKG_HASH:=47aea91999434cb01a3530c7c76866f387fdb818097808704d6cfa98dbe4e966
 
 PKG_LICENSE:=Apache-2.0 MIT
 PKG_LICENSE_FILES:=LICENSE.txt
@@ -29,7 +29,6 @@ define Package/python3-acme
 	+python3-pyopenssl \
 	+python3-pyrfc3339 \
 	+python3-pytz \
-	+python3-requests-toolbelt \
 	+python3-requests \
 	+python3-setuptools
 # (rust-lang pkgs)
