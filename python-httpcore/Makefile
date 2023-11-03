@@ -3,14 +3,16 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=httpcore
-PKG_VERSION:=0.17.3
+PKG_VERSION:=0.18.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=httpcore
-PKG_HASH:=a6f30213335e34c1ade7be6ec7c47f19f50c56db36abef1a9dfa3815b1cb3888
+PKG_HASH:=13b5e5cd1dca1a6636a6aaea212b19f4f85cd88c366a2b82304181b769aab3c9
 
 PKG_LICENSE:=BSD-3-Clause
 PKG_LICENSE_FILES:=LICENSE.md
+
+PKG_BUILD_DEPENDS:=python-hatchling/host python-hatch-fancy-pypi-readme/host
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
@@ -24,10 +26,10 @@ define Package/python3-httpcore
   URL:=https://github.com/encode/httpcore
   DEPENDS:= \
 	+python3-anyio \
+	+python3-certifi \
 	+python3-h11 \
 	+python3-logging \
 	+python3-openssl \
-	+python3-certifi \
 	+python3-sniffio \
 	+python3-urllib
 endef
