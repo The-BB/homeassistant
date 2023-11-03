@@ -1,8 +1,8 @@
 --- a/homeassistant/package_constraints.txt
 +++ b/homeassistant/package_constraints.txt
-@@ -1,7 +1,7 @@
- aiodiscover==1.5.1
- aiohttp==3.8.5
+@@ -2,7 +2,7 @@ aiodiscover==1.5.1
+ aiohttp==3.8.5;python_version<'3.12'
+ aiohttp==3.9.0b0;python_version>='3.12'
  aiohttp_cors==0.7.0
 -astral==2.2
 +astral>=2.2,<3.3
@@ -11,10 +11,10 @@
  attrs==23.1.0
 --- a/pyproject.toml
 +++ b/pyproject.toml
-@@ -24,7 +24,7 @@ classifiers = [
- requires-python = ">=3.11.0"
+@@ -25,7 +25,7 @@ requires-python = ">=3.11.0"
  dependencies    = [
-     "aiohttp==3.8.5",
+     "aiohttp==3.9.0b0;python_version>='3.12'",
+     "aiohttp==3.8.5;python_version<'3.12'",
 -    "astral==2.2",
 +    "astral>=2.2,<3.3",
      "attrs==23.1.0",

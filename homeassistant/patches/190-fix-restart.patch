@@ -9,7 +9,7 @@
  import sys
  import threading
  
-@@ -120,6 +122,12 @@ def get_arguments() -> argparse.Namespac
+@@ -122,6 +124,12 @@ def get_arguments() -> argparse.Namespac
          "-v", "--verbose", action="store_true", help="Enable verbose logging to file."
      )
      parser.add_argument(
@@ -22,7 +22,7 @@
          "--log-rotate-days",
          type=int,
          default=None,
-@@ -135,6 +143,11 @@ def get_arguments() -> argparse.Namespac
+@@ -137,6 +145,11 @@ def get_arguments() -> argparse.Namespac
          "--log-no-color", action="store_true", help="Disable color logs"
      )
      parser.add_argument(
@@ -34,7 +34,7 @@
          "--script", nargs=argparse.REMAINDER, help="Run one of the embedded scripts"
      )
      parser.add_argument(
-@@ -142,14 +155,114 @@ def get_arguments() -> argparse.Namespac
+@@ -144,14 +157,114 @@ def get_arguments() -> argparse.Namespac
          action="store_true",
          help="Skips validation of operating system",
      )
@@ -151,7 +151,7 @@
      try:
          nthreads = sum(
              thread.is_alive() and not thread.daemon for thread in threading.enumerate()
-@@ -163,11 +276,43 @@ def check_threads() -> None:
+@@ -165,11 +278,43 @@ def check_threads() -> None:
      except AssertionError:
          sys.stderr.write("Failed to count non-daemonic threads.\n")
  
@@ -195,7 +195,7 @@
      args = get_arguments()
  
      if not args.ignore_os_check:
-@@ -182,6 +327,14 @@ def main() -> int:
+@@ -184,6 +329,14 @@ def main() -> int:
      config_dir = os.path.abspath(os.path.join(os.getcwd(), args.config))
      ensure_config_path(config_dir)
  
@@ -208,9 +208,9 @@
 +        write_pid(args.pid_file)
 +
      # pylint: disable-next=import-outside-toplevel
-     from . import runner
+     from . import config, runner
  
-@@ -207,7 +360,8 @@ def main() -> int:
+@@ -212,7 +365,8 @@ def main() -> int:
      if os.path.getsize(fault_file_name) == 0:
          os.remove(fault_file_name)
  

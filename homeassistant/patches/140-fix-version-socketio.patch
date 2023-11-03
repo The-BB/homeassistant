@@ -1,6 +1,6 @@
 --- a/homeassistant/package_constraints.txt
 +++ b/homeassistant/package_constraints.txt
-@@ -117,7 +117,7 @@ numpy==1.26.0
+@@ -118,7 +118,7 @@ numpy==1.26.0
  # until upper bounds for sisyphus-control have been updated
  # https://github.com/jkeljo/sisyphus-control/issues/6
  python-engineio>=3.13.1,<4.2

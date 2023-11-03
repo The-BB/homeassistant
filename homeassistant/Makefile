@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
-PKG_VERSION:=2023.10.5
+PKG_VERSION:=2023.11.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=homeassistant
-PKG_HASH:=8d5c3432e75bfcbe0bc3702877070e4eb34965cb527c421c5d4cf1a33a3bb1a0
+PKG_HASH:=a8bb34f7c93f314be63a5ebfb41e120d4e7957b293674f93dd15282c7e004364
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -25,11 +25,9 @@ define Package/homeassistant
   TITLE:=home automation platform
   URL:=https://www.home-assistant.io
   DEPENDS:= \
-	+libpcap \
 	+python3-asyncio \
 	+python3-ctypes \
 	+python3-decimal \
-	+python3-dev \
 	+python3-email \
 	+python3-logging \
 	+python3-multiprocessing \
@@ -129,7 +127,7 @@ define Package/homeassistant
   DEPENDS+= \
 	+python3-colorlog
 
-  EXTRA_DEPENDS:=libopenssl-legacy,
+  EXTRA_DEPENDS:=libpcap, libopenssl-legacy, python3-dev,
 # core (rust-lang pkgs)
   EXTRA_DEPENDS+=python3-bcrypt, python3-cryptography, python3-orjson
 endef

@@ -1,6 +1,6 @@
 --- a/homeassistant/__main__.py
 +++ b/homeassistant/__main__.py
-@@ -246,7 +246,7 @@ def closefds_osx(min_fd: int, max_fd: in
+@@ -248,7 +248,7 @@ def closefds_osx(min_fd: int, max_fd: in
  
  def cmdline() -> list[str]:
      """Collect path and arguments to re-execute the current hass instance."""

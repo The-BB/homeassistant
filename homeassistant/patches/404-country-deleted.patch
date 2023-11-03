@@ -1,6 +1,6 @@
 --- a/homeassistant/generated/config_flows.py
 +++ b/homeassistant/generated/config_flows.py
-@@ -500,7 +500,6 @@ FLOWS = {
+@@ -505,7 +505,6 @@ FLOWS = {
          "twilio",
          "twinkly",
          "twitch",
@@ -10,7 +10,7 @@
          "upb",
 --- a/homeassistant/generated/integrations.json
 +++ b/homeassistant/generated/integrations.json
-@@ -6077,12 +6077,6 @@
+@@ -6091,12 +6091,6 @@
        "config_flow": false,
        "iot_class": "cloud_polling"
      },
