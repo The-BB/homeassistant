@@ -1,6 +1,6 @@
 --- a/setup.py
 +++ b/setup.py
-@@ -169,7 +169,7 @@ BUILD_WITH_SYSTEM_RE2 = _env_bool_value(
+@@ -168,7 +168,7 @@ BUILD_WITH_SYSTEM_RE2 = _env_bool_value(
  # Export this variable to use the system installation of abseil. You need to
  # have the header files installed (in /usr/include/absl) and during
  # runtime, the shared library must be installed
@@ -9,7 +9,7 @@
  
  # Export this variable to force building the python extension with a statically linked libstdc++.
  # At least on linux, this is normally not needed as we can build manylinux-compatible wheels on linux just fine
-@@ -321,25 +321,25 @@ if BUILD_WITH_SYSTEM_OPENSSL:
+@@ -314,25 +314,25 @@ if BUILD_WITH_SYSTEM_OPENSSL:
          lambda x: "third_party/boringssl" not in x, CORE_C_FILES
      )
      CORE_C_FILES = filter(lambda x: "src/boringssl" not in x, CORE_C_FILES)
@@ -40,7 +40,7 @@
  
  EXTENSION_INCLUDE_DIRECTORIES = (
      (PYTHON_STEM,)
-@@ -382,7 +382,7 @@ if BUILD_WITH_SYSTEM_RE2:
+@@ -375,7 +375,7 @@ if BUILD_WITH_SYSTEM_RE2:
      EXTENSION_LIBRARIES += ("re2",)
  if BUILD_WITH_SYSTEM_ABSL:
      EXTENSION_LIBRARIES += tuple(

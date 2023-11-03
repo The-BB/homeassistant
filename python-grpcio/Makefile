@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=grpcio
-PKG_VERSION:=1.58.0
+PKG_VERSION:=1.59.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=grpcio
-PKG_HASH:=532410c51ccd851b706d1fbc00a87be0f5312bd6f8e5dbf89d4e99c7f79d7499
+PKG_HASH:=acf70a63cf09dd494000007b798aff88a436e1c03b394995ce450be437b8e54f
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE
@@ -29,7 +29,6 @@ define Package/python3-grpcio
 	+libopenssl \
 	+libstdcpp \
 	+python3-asyncio \
-	+python3-distutils \
 	+python3-grpcio-tools \
 	+python3-logging \
 	+python3-multiprocessing \
