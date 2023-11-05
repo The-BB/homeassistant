@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
-PKG_VERSION:=2023.11.0
+PKG_VERSION:=2023.11.1
 PKG_RELEASE:=1
 
 PYPI_NAME:=homeassistant
-PKG_HASH:=a8bb34f7c93f314be63a5ebfb41e120d4e7957b293674f93dd15282c7e004364
+PKG_HASH:=e0e22f63a6e5ba7fbeec90d8f81d028ebaf8c8d8278d377c1b9e525a4852dc2b
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -63,7 +63,6 @@ define Package/homeassistant
 	+python3-voluptuous-serialize \
 	+python3-yaml \
 	+python3-yarl
-
 # package_constraints.txt
   DEPENDS+= \
 	+home-assistant-frontend \
@@ -117,12 +116,10 @@ define Package/homeassistant
 	+python3-webrtc-noise-gain \
 	+python3-zeroconf \
 	+scapy
-
 # auth/mfa_modules/totp.py
   DEPENDS+= \
 	+python3-pyotp \
 	+python3-pyqrcode
-
 # scripts/check_config.py
   DEPENDS+= \
 	+python3-colorlog
