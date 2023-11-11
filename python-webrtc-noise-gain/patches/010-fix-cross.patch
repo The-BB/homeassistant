@@ -15,7 +15,7 @@
  system_cflags = []
  
  # Architecture detection was removed from rtc_base/system/arch.h
-@@ -383,7 +385,31 @@ elif system == "windows":
+@@ -383,7 +385,39 @@ elif system == "windows":
  else:
      raise ValueError(f"Unsupported system: {system}")
  
@@ -43,6 +43,14 @@
 +        "-DPFFFT_SIMD_DISABLE",
 +#        "-DMIPS32_LE",
 +#        "-DMIPS32_R2_LE",
++    ]
++elif get_platform in ("linux-arm"):
++    # 32-bit ARM (5/7)
++    machine_cflags += [
++        "-DWEBRTC_ARCH_ARM",
++        "-DWEBRTC_ARCH_ARM_FAMILY",
++        "-DWEBRTC_ARCH_32_BITS",
++        "-DPFFFT_SIMD_DISABLE",
 +    ]
 +elif machine in ("aarch64", "armv8", "arm64"):
      # 64-bit ARM
