@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=bluetooth-data-tools
-PKG_VERSION:=1.13.0
+PKG_VERSION:=1.14.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=bluetooth_data_tools
-PKG_HASH:=f76f8d2b100b44c90fc86479797bcc194c3594affdd75d7f51eb50a18ca6eb7e
+PKG_HASH:=9911451842a32ae380ba21ae85e78b0ecb2c1d6d52b901bcd9eaee8052c1b25c
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE
