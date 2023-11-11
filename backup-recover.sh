@@ -31,7 +31,7 @@ $PATCH_DIR/lang-python-python-zeroconf-bump-to-0.119.0.patch
 $PATCH_DIR/lang-python-xmltodict-bump-to-0.13.0.patch
 $PATCH_DIR/libs-libjpeg-turbo-add-libturbojpeg.patch
 $PATCH_DIR/libs-libgpiod-disable-python3-gpiod.patch
-$PATCH_DIR/multimedia-yt-dlp-bump-to-2023.7.6.patch
+$PATCH_DIR/multimedia-yt-dlp-bump-to-2023.10.13.patch
 "
 STAMP_PACKAGES="$PATCH_DIR/.packages-patched"
 
