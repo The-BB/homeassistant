@@ -20,7 +20,6 @@ define Package/ha-component-esphome
   URL:=https://www.home-assistant.io/integrations/esphome
   PKG_DEFAULT_DEPENDS:= \
 	+python3-base36 \
-	+python3-async-interrupt \
 	+python3-aioesphomeapi \
 	+python3-bluetooth-data-tools \
 	+python3-esphome-dashboard-api
