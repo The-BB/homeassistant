@@ -3,13 +3,13 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=home-assistant-frontend
-PKG_VERSION:=20231030.2
+PKG_VERSION:=20231206.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=home_assistant_frontend
 PKG_SOURCE:=$(PYPI_NAME)-$(PKG_VERSION)-py3-none-any.whl
 PKG_SOURCE_URL:=https://github.com/home-assistant/frontend/releases/download/$(PKG_VERSION)
-PKG_HASH:=ab3a1dcea5a9017663c01264882c818b9cf37e912aaad6ae267d8f299e54b49d
+PKG_HASH:=459459edf79a5b8ec344220ab1eb1d914446db865a703db2dcede9a5ab1b7ed9
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/pypi/$(PYPI_NAME)-$(PKG_VERSION)
 
@@ -54,9 +54,10 @@ define Package/home-assistant-frontend/install
 		$(1)$(PYTHON3_PKG_DIR)/$(PYPI_NAME)-$(PKG_VERSION)*/RECORD
 endef
 
-define Package/home-assistant-frontend/prerm
+define Package/home-assistant-frontend/postinst
 #!/bin/sh
 
+### speedup upgrade
 echo "$(PYTHON3_PKG_DIR)/hass_frontend/py.typed" > /opt/lib/opkg/info/$(PKG_NAME).list
 endef
 
