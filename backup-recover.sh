@@ -28,7 +28,7 @@ $PATCH_DIR/lang-python-python-voluptuous-bump-to-0.13.1.patch
 $PATCH_DIR/lang-python-python-voluptuous-serialize-bump-to-2.6.0.patch
 $PATCH_DIR/lang-python-python-websockets-bump-to-11.0.1.patch
 $PATCH_DIR/lang-python-python-yaml-bump-to-6.0.1.patch
-$PATCH_DIR/lang-python-python-zeroconf-bump-to-0.128.4.patch
+$PATCH_DIR/lang-python-python-zeroconf-bump-to-0.128.5.patch
 $PATCH_DIR/lang-python-xmltodict-bump-to-0.13.0.patch
 $PATCH_DIR/libs-libjpeg-turbo-add-libturbojpeg.patch
 $PATCH_DIR/libs-libgpiod-disable-python3-gpiod.patch

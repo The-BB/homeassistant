@@ -1,14 +1,14 @@
-From 5cde13768e4ac5a73ef1227f34a079592448da98 Mon Sep 17 00:00:00 2001
+From 66cbdf524367c265d140fa35cc322393632734ac Mon Sep 17 00:00:00 2001
 From: The-BB <tun.chen.bo@gmail.com>
-Date: Fri, 22 Dec 2023 17:58:20 +0300
-Subject: [PATCH] lang/python/python-zeroconf: bump to 0.128.4
+Date: Fri, 22 Dec 2023 19:08:43 +0300
+Subject: [PATCH] lang/python/python-zeroconf: bump to 0.128.5
 
 ---
  lang/python/python-zeroconf/Makefile | 5 +++--
  1 file changed, 3 insertions(+), 2 deletions(-)
 
 diff --git a/lang/python/python-zeroconf/Makefile b/lang/python/python-zeroconf/Makefile
-index 9b3e220c0..b8196daa0 100644
+index 9b3e220c0..b96195dbc 100644
 --- a/lang/python/python-zeroconf/Makefile
 +++ b/lang/python/python-zeroconf/Makefile
 @@ -4,15 +4,16 @@
@@ -21,12 +21,12 @@ index 9b3e220c0..b8196daa0 100644
  
  PKG_NAME:=python-zeroconf
 -PKG_VERSION:=0.38.1
-+PKG_VERSION:=0.128.4
++PKG_VERSION:=0.128.5
  PKG_RELEASE:=1
  
  PYPI_NAME:=zeroconf
 -PKG_HASH:=10c501b25d8881b656e56c34674d98fe6bc752240a572e74f918bc849c93ba9c
-+PKG_HASH:=57590a48e36897a04ea4b1a41ba6bbf833637b99ac6fa9530a2f70783d916c39
++PKG_HASH:=3a6655b5a2ad39bf8c2a0a0bcc24f2e0da627598f4b45620caa59b28a05aa369
  
  PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
  PKG_LICENSE:=Apache-2.0
