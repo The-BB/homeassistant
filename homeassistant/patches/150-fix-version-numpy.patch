@@ -56,7 +56,7 @@
  }
 --- a/homeassistant/package_constraints.txt
 +++ b/homeassistant/package_constraints.txt
-@@ -112,7 +112,7 @@ httpcore==0.18.0
+@@ -116,7 +116,7 @@ httpcore==0.18.0
  hyperframe>=5.2.0
  
  # Ensure we run compatible with musllinux build env

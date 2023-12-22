@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
-PKG_VERSION:=2023.11.3
+PKG_VERSION:=2023.12.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=homeassistant
-PKG_HASH:=96518723a2d5a53a3d9b644cb5c0d2916db05ab6a37b63a4545c793fb973677d
+PKG_HASH:=4eca63a97f7c69d8ba7187bfada575141e57cb9f45e23589ba4c35a64b8ff92c
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -40,6 +40,9 @@ define Package/homeassistant
 # core (pyproject.toml)
   DEPENDS+= \
 	+python3-aiohttp \
+	+python3-aiohttp-cors \
+	+python3-aiohttp-fast-url-dispatcher \
+	+python3-aiohttp-zlib-ng \
 	+python3-astral \
 	+python3-atomicwrites-homeassistant \
 	+python3-attrs \
@@ -86,6 +89,7 @@ define Package/homeassistant
 	+python3-grpcio-status \
 	+python3-h11 \
 	+python3-ha-av \
+	+python3-ha-ffmpeg \
 	+python3-hass-nabucasa \
 	+python3-hassil \
 	+python3-home-assistant-intents \
@@ -149,13 +153,6 @@ define Py3Package/homeassistant/install
 	touch $(1)/opt/var/lib/homeassistant/.keep
 endef
 
-define Package/homeassistant/prerm
-#!/bin/sh
-
-echo '/opt/bin/hass' > /opt/lib/opkg/info/$(PKG_NAME).list
-echo '/opt/etc/init.d/S99hass' >> /opt/lib/opkg/info/$(PKG_NAME).list
-endef
-
 define Package/homeassistant/postinst
 #!/bin/sh
 
@@ -169,6 +166,9 @@ URL="https://github.com/Entware/Entware/wiki/Self-installation-of-python-modules
 find $(PYTHON3_PKG_DIR) -type d -name "license*" -empty -delete
 ### remove empty directories
 find $(PYTHON3_PKG_DIR) -maxdepth 1 -type d -empty -delete
+### speedup upgrade
+echo '/opt/bin/hass' > /opt/lib/opkg/info/$(PKG_NAME).list
+echo '/opt/etc/init.d/S99hass' >> /opt/lib/opkg/info/$(PKG_NAME).list
 
 printf "\n\t\t\t$$ansi_white %s $$ansi_std\n\n" "*** Prepare your device to use the Home Assistant ***"
 printf "$$ansi_white %s $$ansi_blue %s $$ansi_std\n\n" "Please read the wiki:" "$$URL"
