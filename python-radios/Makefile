@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=radios
-PKG_VERSION:=0.1.1
-PKG_RELEASE:=2
+PKG_VERSION:=0.2.0
+PKG_RELEASE:=1
 
 PYPI_NAME:=radios
-PKG_HASH:=9ac0aaffc1476d47d6766b2adb35aea5039713aec6d20669ff008bffaa4d599e
+PKG_HASH:=617c8f3dfb5824fd268cfb9662967e76e4b7467285f4e22de90973296ca5bd10
 
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE.md
@@ -31,9 +31,11 @@ define Package/python3-radios
 	+python3-awesomeversion \
 	+python3-backoff \
 	+python3-cachetools \
+	+python3-mashumaro \
 	+python3-pycountry \
-	+python3-pydantic \
 	+python3-yarl
+# (rust-lang pkgs)
+  EXTRA_DEPENDS:=python3-orjson
 endef
 
 define Package/python3-radios/description
