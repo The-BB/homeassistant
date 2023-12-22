@@ -1,14 +1,14 @@
-From e2f7abc5feabf1e80290d7ef3f52e7c5450e0dc0 Mon Sep 17 00:00:00 2001
+From 1ce3819641d65ed6179fcf20a5c7e1d7f89d3014 Mon Sep 17 00:00:00 2001
 From: The-BB <tun.chen.bo@gmail.com>
-Date: Sat, 11 Nov 2023 11:47:35 +0300
-Subject: [PATCH] multimedia/yt-dlp: bump to 2023.10.13
+Date: Thu, 21 Dec 2023 16:43:58 +0300
+Subject: [PATCH] multimedia/yt-dlp: bump to 2023.11.16
 
 ---
  multimedia/yt-dlp/Makefile | 8 +++++---
  1 file changed, 5 insertions(+), 3 deletions(-)
 
 diff --git a/multimedia/yt-dlp/Makefile b/multimedia/yt-dlp/Makefile
-index 7ec127416..89a7e0c09 100644
+index 7ec127416..dff12e627 100644
 --- a/multimedia/yt-dlp/Makefile
 +++ b/multimedia/yt-dlp/Makefile
 @@ -1,11 +1,13 @@
@@ -19,12 +19,12 @@ index 7ec127416..89a7e0c09 100644
  PKG_NAME:=yt-dlp
 -PKG_VERSION:=2023.3.4
 -PKG_RELEASE:=2
-+PKG_VERSION:=2023.10.13
++PKG_VERSION:=2023.11.16
 +PKG_RELEASE:=1
  
  PYPI_NAME:=yt-dlp
 -PKG_HASH:=265d5da97a76c15d7d9a4088a67b78acd5dcf6f8cfd8257c52f581ff996ff515
-+PKG_HASH:=e026ea1c435ff36eef1215bc4c5bb8c479938b90054997ba99f63a4541fe63b4
++PKG_HASH:=f0ccdaf12e08b15902601a4671c7ab12906d7b11de3ae75fa6506811c24ec5da
  
  PKG_MAINTAINER:=Michal Vasilek <michal.vasilek@nic.cz>
  PKG_LICENSE:=Unlicense

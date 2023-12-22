@@ -1,7 +1,7 @@
-From 18726d62d56dccf06784f54f262c4168b41ab2ba Mon Sep 17 00:00:00 2001
+From fda1cc0cba99db309019febd785cc5d5f5fe0965 Mon Sep 17 00:00:00 2001
 From: The-BB <tun.chen.bo@gmail.com>
-Date: Sun, 22 Oct 2023 10:07:14 +0300
-Subject: [PATCH] lang/python/python-dbus-fast: bump to 2.12.0
+Date: Thu, 21 Dec 2023 16:52:33 +0300
+Subject: [PATCH] lang/python/python-dbus-fast: bump to 2.14.0
 
 ---
  lang/python/python-dbus-fast/Makefile         |  6 ++++--
@@ -12,7 +12,7 @@ Subject: [PATCH] lang/python/python-dbus-fast: bump to 2.12.0
  create mode 100644 lang/python/python-dbus-fast/patches/600-post.patch
 
 diff --git a/lang/python/python-dbus-fast/Makefile b/lang/python/python-dbus-fast/Makefile
-index 74b79d9bf..a56aec5c7 100644
+index 74b79d9bf..632a2195e 100644
 --- a/lang/python/python-dbus-fast/Makefile
 +++ b/lang/python/python-dbus-fast/Makefile
 @@ -4,15 +4,17 @@
@@ -25,13 +25,13 @@ index 74b79d9bf..a56aec5c7 100644
  
  PKG_NAME:=python-dbus-fast
 -PKG_VERSION:=1.91.2
-+PKG_VERSION:=2.12.0
++PKG_VERSION:=2.14.0
  PKG_RELEASE:=1
  
  PYPI_NAME:=dbus-fast
  PYPI_SOURCE_NAME:=dbus_fast
 -PKG_HASH:=648b70804da35c92ac44af1d321aeb19df6596dbad362adc2f2507fd99f0f5ae
-+PKG_HASH:=849478e11d251fa4ebb99ce5bfee332cb6383c63ef0bc97bae23cef4e0badf9c
++PKG_HASH:=91a88fea66b4e69ce73ac4c1ac04952c4fbd5e9b902400649013778a177129ea
  
  PKG_MAINTAINER:=Quintin Hill <stuff@quintin.me.uk>
  PKG_LICENSE:=MIT
