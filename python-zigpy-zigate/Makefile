@@ -3,14 +3,16 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=zigpy-zigate
-PKG_VERSION:=0.11.0
+PKG_VERSION:=0.12.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=zigpy-zigate
-PKG_HASH:=da2d3b3a1a53cfbcc50505f782d477d355943b061dc6956c94ad0debdee66e86
+PKG_HASH:=49a373a8a7510eeb4adac4628c343bd1ef70a5b2a741b8c33d9068cd1d35e822
 
 PKG_LICENSE:=GPL-3.0-or-later
 PKG_LICENSE_FILES:=COPYING LICENSE
+
+PKG_BUILD_DEPENDS:=python-setuptools-git-versioning/host python-wheel/host
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
@@ -27,9 +29,8 @@ define Package/python3-zigpy-zigate
 	+python3-logging \
 	+python3-urllib \
 	+python3-gpiozero \
-	+python3-pyserial \
-	+python3-pyserial-asyncio \
 	+python3-pyusb \
+	+python3-voluptuous \
 	+python3-zigpy
 endef
 
