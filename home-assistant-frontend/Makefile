@@ -3,13 +3,13 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=home-assistant-frontend
-PKG_VERSION:=20231206.0
+PKG_VERSION:=20231208.2
 PKG_RELEASE:=1
 
 PYPI_NAME:=home_assistant_frontend
 PKG_SOURCE:=$(PYPI_NAME)-$(PKG_VERSION)-py3-none-any.whl
 PKG_SOURCE_URL:=https://github.com/home-assistant/frontend/releases/download/$(PKG_VERSION)
-PKG_HASH:=459459edf79a5b8ec344220ab1eb1d914446db865a703db2dcede9a5ab1b7ed9
+PKG_HASH:=2536193e4bb951d9cc3a5967cf223db5b620c5c7b0c79b64943a2840a240ea9f
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/pypi/$(PYPI_NAME)-$(PKG_VERSION)
 
