@@ -1,6 +1,6 @@
 --- a/homeassistant/package_constraints.txt
 +++ b/homeassistant/package_constraints.txt
-@@ -121,7 +121,7 @@ numpy==1.26.0
+@@ -119,7 +119,7 @@ numpy==1.26.0
  # Prevent dependency conflicts between sisyphus-control and aioambient
  # until upper bounds for sisyphus-control have been updated
  # https://github.com/jkeljo/sisyphus-control/issues/6

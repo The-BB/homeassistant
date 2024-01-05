@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
-PKG_VERSION:=2023.12.4
+PKG_VERSION:=2024.1.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=homeassistant
-PKG_HASH:=75e6b43da702cc25a1321da0c3f915247c180a84fbcc9e76a9341b1e6a9cc14f
+PKG_HASH:=b3396f49f91c3c6e831861d9e6236dcf41016bc0d561aa066564a573b0041b52
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -62,6 +62,7 @@ define Package/homeassistant
 	+python3-slugify \
 	+python3-typing-extensions \
 	+python3-ulid-transform \
+	+python3-urllib3 \
 	+python3-voluptuous \
 	+python3-voluptuous-serialize \
 	+python3-yaml \
@@ -80,7 +81,9 @@ define Package/homeassistant
 	+python3-bluetooth-auto-recovery \
 	+python3-bluetooth-data-tools \
 	+python3-btlewrap \
+	+python3-cached-ipaddress \
 	+python3-cryptodome \
+	+python3-dacite \
 	+python3-dbus-fast \
 	+python3-engineio \
 	+python3-fnv-hash-fast \
@@ -90,6 +93,7 @@ define Package/homeassistant
 	+python3-h11 \
 	+python3-ha-av \
 	+python3-ha-ffmpeg \
+	+python3-habluetooth \
 	+python3-hass-nabucasa \
 	+python3-hassil \
 	+python3-home-assistant-intents \
@@ -99,6 +103,7 @@ define Package/homeassistant
 	+python3-iso4217 \
 	+python3-janus \
 	+python3-libcst \
+	+python3-lxml \
 	+python3-multidict \
 	+python3-mutagen \
 	+python3-numpy \
@@ -116,7 +121,6 @@ define Package/homeassistant
 	+python3-regex \
 	+python3-socketio \
 	+python3-sqlalchemy \
-	+python3-urllib3 \
 	+python3-webrtc-noise-gain \
 	+python3-zeroconf \
 	+scapy
