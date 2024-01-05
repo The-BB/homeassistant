@@ -3,14 +3,16 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=lru-dict
-PKG_VERSION:=1.2.0
+PKG_VERSION:=1.3.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=lru-dict
-PKG_HASH:=13c56782f19d68ddf4d8db0170041192859616514c706b126d0df2ec72a11bd7
+PKG_HASH:=54fd1966d6bd1fcde781596cb86068214edeebff1db13a2cea11079e3fd07b6b
 
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
+
+PKG_BUILD_DEPENDS:=python-wheel/host
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
