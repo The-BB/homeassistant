@@ -8,12 +8,12 @@
  from __future__ import print_function
 --- a/getmac/getmac.py
 +++ b/getmac/getmac.py
-@@ -74,7 +74,7 @@ if _SYST == "Linux":
- 
- PATH = os.environ.get("PATH", os.defpath).split(os.pathsep)
+@@ -131,7 +131,7 @@ FORCE_METHOD = ""  # type: str
+ # The process environment does not change after a process is started
+ PATH = os.environ.get("PATH", os.defpath).split(os.pathsep)  # type: List[str]
  if not WINDOWS:
 -    PATH.extend(("/sbin", "/usr/sbin"))
 +    PATH.extend(("/opt/sbin", "/opt/usr/sbin", "/sbin", "/usr/sbin"))
- 
- # Use a copy of the environment so we don't
- # modify the process's current environment.
+ else:
+     # TODO: Prevent edge case on Windows where our script "getmac.exe"
+     #   gets added to the path ahead of the actual Windows getmac.exe
