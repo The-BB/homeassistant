@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=httpx
-PKG_VERSION:=0.25.0
+PKG_VERSION:=0.26.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=httpx
-PKG_HASH:=47ecda285389cb32bb2691cc6e069e3ab0205956f681c5b2ad2325719751d875
+PKG_HASH:=451b55c30d5185ea6b23c2c793abf9bb237d2a7dfb901ced6ff69ad37ec1dfaf
 
 PKG_LICENSE:=BSD-3-Clause
 PKG_LICENSE_FILES:=LICENSE.md
@@ -25,6 +25,7 @@ define Package/python3-httpx
   TITLE:=the next generation HTTP client
   URL:=https://github.com/encode/httpx
   DEPENDS:= \
+	+python3-anyio \
 	+python3-asyncio \
 	+python3-brotli \
 	+python3-certifi \
