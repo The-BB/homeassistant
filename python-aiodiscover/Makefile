@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=aiodiscover
-PKG_VERSION:=1.5.1
+PKG_VERSION:=1.6.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=aiodiscover
-PKG_HASH:=1aa795293fe6dcb06fd3d1cc035a8a6b37b40c671ba442feffd5ade20ff995f6
+PKG_HASH:=4a41dc1cfed99d4672af5db64c058b00a3eb49b2aa8adae3edd9e5f5253308e7
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE
@@ -25,6 +25,7 @@ define Package/python3-aiodiscover
   DEPENDS:= \
 	+python3-async-timeout \
 	+python3-asyncio \
+	+python3-cached-ipaddress \
 	+python3-dns \
 	+python3-ifaddr \
 	+python3-logging \
