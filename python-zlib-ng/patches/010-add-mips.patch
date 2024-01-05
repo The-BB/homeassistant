@@ -1,0 +1,13 @@
+--- a/src/zlib_ng/zlib-ng/configure
++++ b/src/zlib_ng/zlib-ng/configure
+@@ -333,6 +333,10 @@ if test "$gcc" -eq 1 && ($cc $CFLAGS -c
+         uname=aarch64
+       fi
+       ARCH=aarch64 ;;
++    mips)
++      ARCH=mips ;;
++    mipsel)
++      ARCH=mipsel ;;
+     powerpc | ppc)
+       ARCH=powerpc ;;
+     powerpc64 | ppc64)
