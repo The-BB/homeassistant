@@ -1,0 +1,35 @@
+From 9e7c82163140cf06ed4ed0836d1e69d38f0d7db6 Mon Sep 17 00:00:00 2001
+From: The-BB <tun.chen.bo@gmail.com>
+Date: Fri, 5 Jan 2024 13:48:28 +0300
+Subject: [PATCH] lang/python/python-lxml: bump to 4.9.4
+
+---
+ lang/python/python-lxml/Makefile | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/lang/python/python-lxml/Makefile b/lang/python/python-lxml/Makefile
+index ae067b422..abeffd592 100644
+--- a/lang/python/python-lxml/Makefile
++++ b/lang/python/python-lxml/Makefile
+@@ -4,15 +4,16 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump (hass)
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=python-lxml
+-PKG_VERSION:=4.9.3
++PKG_VERSION:=4.9.4
+ PKG_RELEASE:=1
+ 
+ PYPI_NAME:=lxml
+-PKG_HASH:=48628bd53a426c9eb9bc066a923acaa0878d1e86129fd5359aee99285f4eed9c
++PKG_HASH:=b1541e50b78e15fa06a2670157a1962ef06591d4c998b998047fff5e3236880e
+ 
+ PKG_LICENSE:=BSD-3-Clause
+ PKG_LICENSE_FILES:=LICENSES.txt
+-- 
+2.30.2
+
