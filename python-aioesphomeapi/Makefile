@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=aioesphomeapi
-PKG_VERSION:=19.2.1
+PKG_VERSION:=21.0.1
 PKG_RELEASE:=1
 
 PYPI_NAME:=aioesphomeapi
-PKG_HASH:=6e3c20bec11979c62225e10a681f47ffaf0accf40fab55e63808c2468f5bdca8
+PKG_HASH:=f292c759dc1f3258905fe31284d39bcb926045677f41a1a1b3bf95ca438621c7
 
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
@@ -28,6 +28,7 @@ define Package/python3-aioesphomeapi
 	+python3-asyncio \
 	+python3-logging \
 	+python3-uuid \
+	+python3-aiohappyeyeballs \
 	+python3-chacha20poly1305-reuseable \
 	+python3-noiseprotocol \
 	+python3-protobuf \
