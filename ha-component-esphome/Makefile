@@ -21,7 +21,7 @@ define Package/ha-component-esphome
   PKG_DEFAULT_DEPENDS:= \
 	+python3-base36 \
 	+python3-aioesphomeapi \
-	+python3-bluetooth-data-tools \
+	+python3-bleak-esphome \
 	+python3-esphome-dashboard-api
 endef
 
