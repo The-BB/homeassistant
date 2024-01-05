@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=aiohomekit
-PKG_VERSION:=3.0.9
+PKG_VERSION:=3.1.1
 PKG_RELEASE:=1
 
 PYPI_NAME:=aiohomekit
-PKG_HASH:=0165170db94cf7b5d3d5bba1db490ecbadf0b96b36809334c9c48e4498fe71fe
+PKG_HASH:=2d9cfd51babeec8dd133c87fba15bd5b9c9de2626855f1681a98d631d7608635
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -26,6 +26,7 @@ define Package/python3-aiohomekit
   URL:=https://github.com/Jc2k/aiohomekit
   DEPENDS:= \
 	+python3-aiocoap \
+	+python3-aiohappyeyeballs \
 	+python3-async-interrupt \
 	+python3-asyncio \
 	+python3-bleak-retry-connector \
