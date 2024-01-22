@@ -15,6 +15,7 @@ $PATCH_DIR/lang-python-python-awesomeversion-bump-to-23.11.0.patch
 $PATCH_DIR/lang-python-python-bleak-bump-to-0.21.1.patch
 $PATCH_DIR/lang-python-python-cython-bump-to-3.0.5.patch
 $PATCH_DIR/lang-python-python-dbus-fast-bump-to-2.21.0.patch
+$PATCH_DIR/lang-python-python-jinja2-bump-to-3.1.3.patch
 $PATCH_DIR/lang-python-python-jsonschema-bump-to-4.19.1.patch
 $PATCH_DIR/lang-python-python-lxml-bump-to-4.9.4.patch
 $PATCH_DIR/lang-python-python-psutil-bump-to-5.9.7.patch
