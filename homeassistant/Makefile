@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
-PKG_VERSION:=2024.1.4
+PKG_VERSION:=2024.1.5
 PKG_RELEASE:=1
 
 PYPI_NAME:=homeassistant
-PKG_HASH:=c701226de8e68e69ae47f3ff0a5028724d8d32c99fb7bb51096977ac50970b91
+PKG_HASH:=729b4de8d801ff5aa7bf3fbf12a0c14221f6bd242c39e4a58d25456411574796
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -108,6 +108,7 @@ define Package/homeassistant
 	+python3-mutagen \
 	+python3-numpy \
 	+python3-paho-mqtt \
+	+python3-pandas \
 	+python3-pillow \
 	+python3-protobuf \
 	+python3-psutil-home-assistant \
