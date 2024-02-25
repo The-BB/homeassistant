@@ -22,9 +22,11 @@ define Package/python3-josepy
   SUBMENU:=Python
   TITLE:=JOSE protocol implementation in Python
   URL:=https://github.com/certbot/josepy
-  DEPENDS:=+python3-logging +python3-pyopenssl +python3-setuptools
-# (rust-lang pkgs)
-  EXTRA_DEPENDS:=python3-cryptography
+  DEPENDS:= \
+	+python3-cryptography \
+	+python3-logging \
+	+python3-pyopenssl \
+	+python3-setuptools
 endef
 
 define Package/python3-josepy/description
