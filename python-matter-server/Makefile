@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python-matter-server
-PKG_VERSION:=5.4.1
+PKG_VERSION:=5.5.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=python-matter-server
-PKG_HASH:=c1f8fa7b321f55c957537ad909156be7706037dea1116f75e3d0fa62a714cecc
+PKG_HASH:=01208e2f7cb8f624f77a2246e1a4645b73c8bcac81d2f6feb4d2494c8f7ea21e
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE
@@ -35,7 +35,8 @@ define Package/python3-matter-server
 	+python3-orjson
 # [server]
   DEPENDS+= \
-	+python3-cryptography
+	+python3-cryptography \
+	+python3-zeroconf
 endef
 
 define Package/python3-matter-server/description
