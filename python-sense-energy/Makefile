@@ -29,11 +29,10 @@ define Package/python3-sense-energy
 	+python3-kasa-crypt \
 	+python3-logging \
 	+python3-openssl \
+	+python3-orjson \
 	+python3-requests \
 	+python3-websocket-client \
 	+python3-websockets
-# (rust-lang pkgs)
-  EXTRA_DEPENDS:=python3-orjson
 endef
 
 define Package/python3-sense-energy/description
