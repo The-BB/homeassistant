@@ -22,9 +22,7 @@ define Package/python3-securetar
   SUBMENU:=Python
   TITLE:=module to handle tarfile backups
   URL:=https://github.com/pvizeli/securetar
-  DEPENDS:=+python3-logging
-# (rust-lang pkgs)
-  EXTRA_DEPENDS:=python3-cryptography
+  DEPENDS:=+python3-cryptography +python3-logging
 endef
 
 define Package/python3-securetar/description
