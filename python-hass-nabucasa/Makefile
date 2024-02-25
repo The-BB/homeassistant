@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=hass-nabucasa
-PKG_VERSION:=0.75.1
+PKG_VERSION:=0.76.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=hass-nabucasa
-PKG_HASH:=c3ee856a81301c38016e6b2a5ae36fa633975df53e6163b278696284d00a3647
+PKG_HASH:=f352d9c80bbf553e1a8dfc8bfad0be183932c7d3e0c945f1bfb98eed103dec4e
 
 PKG_LICENSE:=GPL-3.0-or-later
 PKG_LICENSE_FILES:=LICENSE
@@ -29,6 +29,7 @@ define Package/python3-hass-nabucasa
 	+python3-atomicwrites-homeassistant \
 	+python3-attrs \
 	+python3-ciso8601 \
+	+python3-cryptography \
 	+python3-logging \
 	+python3-openssl \
 	+python3-pycognito \
@@ -37,8 +38,6 @@ define Package/python3-hass-nabucasa
 	+python3-urllib \
 	+python3-uuid \
 	+python3-xml
-# (rust-lang pkgs)
-  EXTRA_DEPENDS:=python3-cryptography
 endef
 
 define Package/python3-hass-nabucasa/description
