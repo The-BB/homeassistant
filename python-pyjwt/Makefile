@@ -22,9 +22,7 @@ define Package/python3-pyjwt
   CATEGORY:=Languages
   TITLE:=JSON Web Token implementation in Python
   URL:=http://github.com/jpadilla/pyjwt
-  DEPENDS:=+python3-openssl +python3-urllib
-# (rust-lang pkgs)
-  EXTRA_DEPENDS:=python3-cryptography
+  DEPENDS:=+python3-cryptography +python3-openssl +python3-urllib
 endef
 
 define Package/python3-pyjwt/description
