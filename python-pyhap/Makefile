@@ -25,15 +25,15 @@ define Package/python3-pyhap
   DEPENDS:= \
 	+python3-asyncio \
 	+python3-chacha20poly1305-reuseable \
+	+python3-cryptography \
 	+python3-h11 \
 	+python3-logging \
+	+python3-orjson \
 	+python3-urllib \
 	+python3-uuid \
 	+python3-zeroconf
 #[QRCode]
   DEPENDS+=+python3-base36 +python3-pyqrcode
-# (rust-lang pkgs)
-  EXTRA_DEPENDS:=python3-cryptography, python3-orjson
 endef
 
 define Package/python3-pyhap/description
