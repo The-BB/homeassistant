@@ -26,11 +26,10 @@ define Package/python3-snitun
 	+python3-async-timeout \
 	+python3-asyncio \
 	+python3-attrs \
+	+python3-cryptography \
 	+python3-logging \
 	+python3-multiprocessing \
 	+python3-openssl
-# (rust-lang pkgs)
-  EXTRA_DEPENDS:=python3-cryptography
 endef
 
 define Package/python3-snitun/description
