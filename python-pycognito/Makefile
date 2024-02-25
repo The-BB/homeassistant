@@ -22,9 +22,12 @@ define Package/python3-pycognito
   SUBMENU:=Python
   TITLE:=class to integrate Boto3's Cognito client
   URL:=https://github.com/pvizeli/pycognito
-  DEPENDS:=+python3-boto3 +python3-envs +python3-jose +python3-requests
-# (rust-lang pkgs): python-jose[cryptography]
-  EXTRA_DEPENDS:=python3-cryptography
+  DEPENDS:= \
+	+python3-boto3 \
+	+python3-cryptography \
+	+python3-envs \
+	+python3-jose \
+	+python3-requests
 endef
 
 define Package/python3-pycognito/description
