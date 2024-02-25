@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=aioshelly
-PKG_VERSION:=7.1.0
+PKG_VERSION:=8.0.1
 PKG_RELEASE:=1
 
 PYPI_NAME:=aioshelly
-PKG_HASH:=1cf608f74e6722c8991f5541956b76668275675a7802b13e0f451d1b69d67673
+PKG_HASH:=d2bfab36e620571e8b3141adb2742a3361c8e2983fbe0b987b76c4bdbc3ef056
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE
@@ -27,9 +27,9 @@ define Package/python3-aioshelly
 	+python3-logging \
 	+python3-aiohttp \
 	+python3-bluetooth-data-tools \
+	+python3-habluetooth \
+	+python3-orjson \
 	+python3-yarl
-# (rust-lang pkgs)
-  EXTRA_DEPENDS:=python3-orjson
 endef
 
 define Package/python3-aioshelly/description
