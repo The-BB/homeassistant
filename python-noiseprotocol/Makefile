@@ -22,9 +22,7 @@ define Package/python3-noiseprotocol
   SUBMENU:=Python
   TITLE:=Implementation of Noise Protocol Framework
   URL:=https://github.com/plizonczyk/noiseprotocol
-  DEPENDS:=+python3-light
-# (rust-lang pkgs)
-  EXTRA_DEPENDS:=python3-cryptography
+  DEPENDS:=+python3-cryptography
 endef
 
 define Package/python3-noiseprotocol/description
