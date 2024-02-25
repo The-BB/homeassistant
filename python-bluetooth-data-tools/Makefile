@@ -24,9 +24,7 @@ define Package/python3-bluetooth-data-tools
   SUBMENU:=Python
   TITLE:=Tools for converting bluetooth data and packets
   URL:=https://github.com/Bluetooth-Devices/bluetooth-data-tools
-  DEPENDS:=+python3-logging
-# (rust-lang pkgs)
-  EXTRA_DEPENDS:=python3-cryptography
+  DEPENDS:=+python3-cryptography +python3-logging
 endef
 
 define Package/python3-bluetooth-data-tools/description
