@@ -1,0 +1,35 @@
+From 8f823a79118885d42a0527a5077c997ffb854bc8 Mon Sep 17 00:00:00 2001
+From: The-BB <tun.chen.bo@gmail.com>
+Date: Fri, 9 Feb 2024 13:57:13 +0300
+Subject: [PATCH] lang/python/python-pyopenssl: bump to 24.0.0
+
+---
+ lang/python/python-pyopenssl/Makefile | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/lang/python/python-pyopenssl/Makefile b/lang/python/python-pyopenssl/Makefile
+index 6aed546ab..605cfa6a4 100644
+--- a/lang/python/python-pyopenssl/Makefile
++++ b/lang/python/python-pyopenssl/Makefile
+@@ -4,15 +4,16 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump (hass)
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=python-pyopenssl
+-PKG_VERSION:=23.3.0
++PKG_VERSION:=24.0.0
+ PKG_RELEASE:=1
+ 
+ PYPI_NAME:=pyOpenSSL
+-PKG_HASH:=6b2cba5cc46e822750ec3e5a81ee12819850b11303630d575e98108a079c2b12
++PKG_HASH:=6aa33039a93fffa4563e655b61d11364d01264be8ccb49906101e02a334530bf
+ 
+ PKG_LICENSE:=Apache-2.0
+ PKG_LICENSE_FILES:=LICENSE
+-- 
+2.30.2
+

@@ -1,14 +1,14 @@
-From f67ae32d6e2b0d489460c4af36a197db40c4e282 Mon Sep 17 00:00:00 2001
+From 9b746c0c136b699665ad1f151339d6540fdc801a Mon Sep 17 00:00:00 2001
 From: The-BB <tun.chen.bo@gmail.com>
-Date: Fri, 5 Jan 2024 13:49:40 +0300
-Subject: [PATCH] lang/python/python-psutil: bump to 5.9.7
+Date: Fri, 9 Feb 2024 13:52:18 +0300
+Subject: [PATCH] lang/python/python-psutil: bump to 5.9.8
 
 ---
  lang/python/python-psutil/Makefile | 7 ++++---
  1 file changed, 4 insertions(+), 3 deletions(-)
 
 diff --git a/lang/python/python-psutil/Makefile b/lang/python/python-psutil/Makefile
-index 9e336a307..de930637e 100644
+index b4ba535b2..2d9d3e37d 100644
 --- a/lang/python/python-psutil/Makefile
 +++ b/lang/python/python-psutil/Makefile
 @@ -4,15 +4,16 @@
@@ -21,16 +21,16 @@ index 9e336a307..de930637e 100644
  
  PKG_NAME:=python-psutil
 -PKG_VERSION:=5.9.5
-+PKG_VERSION:=5.9.7
++PKG_VERSION:=5.9.8
  PKG_RELEASE:=1
  
  PYPI_NAME:=psutil
 -PKG_HASH:=5410638e4df39c54d957fc51ce03048acd8e6d60abc0f5107af51e5fb566eb3c
-+PKG_HASH:=3f02134e82cfb5d089fddf20bb2e03fd5cd52395321d1c8458a9e58500ff417c
++PKG_HASH:=6be126e3225486dff286a8fb9a06246a5253f4c7c53b475ea5f5ac934e64194c
  
  PKG_MAINTAINER:=Jan Pavlinec <jan.pavlinec1@gmail.com>
- PKG_LICENSE:=BSD 3-Clause
-@@ -28,7 +29,7 @@ define Package/python3-psutil
+ PKG_LICENSE:=BSD-3-Clause
+@@ -29,7 +30,7 @@ define Package/python3-psutil
    CATEGORY:=Languages
    TITLE:=Process and system monitoring
    URL:=https://github.com/giampaolo/psutil

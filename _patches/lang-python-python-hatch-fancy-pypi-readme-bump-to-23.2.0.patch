@@ -1,0 +1,36 @@
+From a51d890e2549c831196ab7b1078afab02c37fc56 Mon Sep 17 00:00:00 2001
+From: The-BB <tun.chen.bo@gmail.com>
+Date: Fri, 9 Feb 2024 17:10:50 +0300
+Subject: [PATCH] lang/python/python-hatch-fancy-pypi-readme: bump to 23.2.0
+
+---
+ lang/python/python-hatch-fancy-pypi-readme/Makefile | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/lang/python/python-hatch-fancy-pypi-readme/Makefile b/lang/python/python-hatch-fancy-pypi-readme/Makefile
+index 6633a6354..7bc11d343 100644
+--- a/lang/python/python-hatch-fancy-pypi-readme/Makefile
++++ b/lang/python/python-hatch-fancy-pypi-readme/Makefile
+@@ -4,16 +4,17 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# bump to (hass <= attrs)
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=python-hatch-fancy-pypi-readme
+-PKG_VERSION:=23.1.0
++PKG_VERSION:=23.2.0
+ PKG_RELEASE:=1
+ 
+ PYPI_NAME:=hatch-fancy-pypi-readme
+ PYPI_SOURCE_NAME:=hatch_fancy_pypi_readme
+-PKG_HASH:=b1df44063094af1e8248ceacd47a92c9cf313d6b9823bf66af8a927c3960287d
++PKG_HASH:=2762b31de2c78572f87d82986910ff46b89834d3743fa5fcdefc1d215ab21b24
+ 
+ PKG_LICENSE:=MIT
+ PKG_LICENSE_FILES:=LICENSE.txt
+-- 
+2.30.2
+

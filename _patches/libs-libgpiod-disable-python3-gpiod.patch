@@ -1,6 +1,6 @@
-From f79291cf6460e3121410c22d7aa5f5de652dc376 Mon Sep 17 00:00:00 2001
+From c7a33caf8f1695cbf75bd374a565ec7549c11de2 Mon Sep 17 00:00:00 2001
 From: The-BB <tun.chen.bo@gmail.com>
-Date: Tue, 31 Oct 2023 16:39:48 +0300
+Date: Thu, 8 Feb 2024 10:21:34 +0300
 Subject: [PATCH] libs/libgpiod: disable python3-gpiod
 
 ---
