@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=chacha20poly1305-reuseable
-PKG_VERSION:=0.12.0
+PKG_VERSION:=0.12.1
 PKG_RELEASE:=1
 
 PYPI_NAME:=chacha20poly1305_reuseable
-PKG_HASH:=238a1d5af6473a8ed249e6ddad327190b3567a673ad54766c9cb2da5c78a4c9b
+PKG_HASH:=c1ca3de2c78eb87ac006d975729e0b9032ff31597e3c112e78268f4cd431fd6a
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE
@@ -24,9 +24,7 @@ define Package/python3-chacha20poly1305-reuseable
   SUBMENU:=Python
   TITLE:=ChaCha20Poly1305 that is reuseable for asyncio
   URL:=https://github.com/bdraco/chacha20poly1305-reuseable
-  DEPENDS:=+libpython3
-# (rust-lang pkgs)
-  EXTRA_DEPENDS:=python3-cryptography
+  DEPENDS:=+libpython3 +python3-cryptography
 endef
 
 define Package/python3-chacha20poly1305-reuseable/description
