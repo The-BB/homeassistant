@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=meson-python
 PKG_VERSION:=0.13.1
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=meson_python
 PKG_HASH:=63b3170001425c42fa4cfedadb9051cbd28925ff8eed7c40d36ba0099e3c7618
@@ -12,7 +12,7 @@ PKG_HASH:=63b3170001425c42fa4cfedadb9051cbd28925ff8eed7c40d36ba0099e3c7618
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
 
-HOST_BUILD_DEPENDS:=python-pyproject-metadata/host
+HOST_BUILD_DEPENDS:=pyproject-metadata/host
 PKG_HOST_ONLY:=1
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
