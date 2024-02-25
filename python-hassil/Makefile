@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=hassil
-PKG_VERSION:=1.5.1
+PKG_VERSION:=1.6.1
 PKG_RELEASE:=1
 
 PYPI_NAME:=hassil
-PKG_HASH:=18bbc34fc05406f133822a8a697a2417dd768377ce1fe2ac5e799e3972307bd5
+PKG_HASH:=8e43e8d36272e94ab20b962fc0cc3e0c3913f2b1b95dee0488d5440ff247cca7
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -27,11 +27,6 @@ endef
 
 define Package/python3-hassil/description
   The Home Assistant Intent Language (HassIL) parser for intents.
-endef
-
-define Py3Package/python3-hassil/filespec
-+|$(PYTHON3_PKG_DIR)
--|$(PYTHON3_PKG_DIR)/tests
 endef
 
 $(eval $(call Py3Package,python3-hassil))
