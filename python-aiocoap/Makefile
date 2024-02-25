@@ -25,6 +25,7 @@ define Package/python3-aiocoap
   DEPENDS:= \
 	+python3-asyncio \
 	+python3-cbor2 \
+	+python3-cryptography \
 	+python3-dtlssocket \
 	+python3-filelock \
 	+python3-ge25519 \
@@ -36,8 +37,6 @@ define Package/python3-aiocoap
 	+python3-termcolor \
 	+python3-urllib \
 	+python3-websockets
-# (rust-lang pkgs)
-  EXTRA_DEPENDS:=python3-cryptography
 endef
 
 define Package/python3-aiocoap/description
