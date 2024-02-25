@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=aiohomekit
-PKG_VERSION:=3.1.3
+PKG_VERSION:=3.1.4
 PKG_RELEASE:=1
 
 PYPI_NAME:=aiohomekit
-PKG_HASH:=b9b2e0b4cec504c07a1f2c1b0865d699db9d403bb0aa3563a657981318a13b8c
+PKG_HASH:=622ef435e0273ee0faf5022bdf3a756ff18d636247f8a145cdc7f4f20644e5ce
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -34,18 +34,17 @@ define Package/python3-aiohomekit
 	+python3-chacha20poly1305-reuseable \
 	+python3-chacha20poly1305 \
 	+python3-commentjson \
+	+python3-cryptography \
 	+python3-decimal \
 	+python3-logging \
+	+python3-orjson \
 	+python3-uuid \
 	+python3-zeroconf
-# (rust-lang pkgs)
-  EXTRA_DEPENDS:=python3-cryptography, python3-orjson
 endef
 
 define Package/python3-aiohomekit/description
   This library implements the HomeKit protocol for controlling Homekit
   accessories using asyncio.
-  .
   It's primary use is for with Home Assistant. We target the same versions
   of python as them and try to follow their code standards.
 endef
