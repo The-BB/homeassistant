@@ -1,6 +1,6 @@
---- a/setup.py	2021-06-04 19:11:22.000000000 +0300
-+++ b/setup.py	2023-05-29 20:07:15.514749091 +0300
-@@ -63,7 +63,6 @@
+--- a/setup.py
++++ b/setup.py
+@@ -63,7 +63,6 @@ setup(
      ],
      extras_require=extras_require,
      setup_requires=[

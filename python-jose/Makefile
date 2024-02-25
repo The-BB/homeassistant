@@ -22,9 +22,7 @@ define Package/python3-jose
   SUBMENU:=Python
   TITLE:=JOSE implementation in Python
   URL:=http://github.com/mpdavis/python-jose
-  DEPENDS:=+python3-ecdsa +python3-pyasn1 +python3-rsa
-# (rust-lang pkgs)
-  EXTRA_DEPENDS:=python3-cryptography
+  DEPENDS:=+python3-cryptography +python3-ecdsa +python3-pyasn1 +python3-rsa
 endef
 
 define Package/python3-jose/description
