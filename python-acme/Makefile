@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=acme
-PKG_VERSION:=2.7.4
+PKG_VERSION:=2.8.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=acme
-PKG_HASH:=b9d27f49156b111e207be4aae6fc468c273572c99461f05fd65d679e338322f6
+PKG_HASH:=f1f700ce60d84512fcd19a887f03557fd58e861b3fa061861f90cb90fdbbf208
 
 PKG_LICENSE:=Apache-2.0 MIT
 PKG_LICENSE_FILES:=LICENSE.txt
@@ -23,6 +23,7 @@ define Package/python3-acme
   TITLE:=ACME protocol implementation
   URL:=https://github.com/letsencrypt/letsencrypt
   DEPENDS:= \
+	+python3-cryptography \
 	+python3-email \
 	+python3-josepy \
 	+python3-logging \
@@ -31,8 +32,6 @@ define Package/python3-acme
 	+python3-pytz \
 	+python3-requests \
 	+python3-setuptools
-# (rust-lang pkgs)
-  EXTRA_DEPENDS:=python3-cryptography
 endef
 
 define Package/python3-acme/description
