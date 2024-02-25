@@ -32,10 +32,9 @@ define Package/python3-radios
 	+python3-backoff \
 	+python3-cachetools \
 	+python3-mashumaro \
+	+python3-orjson \
 	+python3-pycountry \
 	+python3-yarl
-# (rust-lang pkgs)
-  EXTRA_DEPENDS:=python3-orjson
 endef
 
 define Package/python3-radios/description
