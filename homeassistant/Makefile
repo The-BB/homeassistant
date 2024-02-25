@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
-PKG_VERSION:=2024.1.6
+PKG_VERSION:=2024.2.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=homeassistant
-PKG_HASH:=8a9030fafa9e3dae4a03f1aa865dd6b106f39b33178e6571d0dbdbaccf3848a8
+PKG_HASH:=7a813e8a75cfb12a3db0a710db1562c36bccb4c5050cc6d0cbaee8908b71d02d
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -47,13 +47,16 @@ define Package/homeassistant
 	+python3-atomicwrites-homeassistant \
 	+python3-attrs \
 	+python3-awesomeversion \
+	+python3-bcrypt \
 	+python3-certifi \
 	+python3-ciso8601 \
+	+python3-cryptography \
 	+python3-home-assistant-bluetooth \
 	+python3-httpx \
 	+python3-ifaddr \
 	+python3-jinja2 \
 	+python3-lru-dict \
+	+python3-orjson \
 	+python3-packaging \
 	+python3-pip \
 	+python3-pyjwt \
@@ -82,6 +85,7 @@ define Package/homeassistant
 	+python3-bluetooth-data-tools \
 	+python3-btlewrap \
 	+python3-cached-ipaddress \
+	+python3-chacha20poly1305-reuseable \
 	+python3-cryptodome \
 	+python3-dacite \
 	+python3-dbus-fast \
@@ -132,10 +136,11 @@ define Package/homeassistant
 # scripts/check_config.py
   DEPENDS+= \
 	+python3-colorlog
+# components/matter
+  DEPENDS+= \
+	+python3-matter-server
 
-  EXTRA_DEPENDS:=libpcap, libopenssl-legacy, python3-dev,
-# core (rust-lang pkgs)
-  EXTRA_DEPENDS+=python3-bcrypt, python3-cryptography, python3-orjson
+  EXTRA_DEPENDS:=libpcap, libopenssl-legacy, python3-dev
 endef
 
 define Package/homeassistant/description

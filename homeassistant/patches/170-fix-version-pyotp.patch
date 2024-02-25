@@ -1,0 +1,31 @@
+--- a/homeassistant/auth/mfa_modules/notify.py
++++ b/homeassistant/auth/mfa_modules/notify.py
+@@ -26,7 +26,7 @@ from . import (
+     SetupFlow,
+ )
+ 
+-REQUIREMENTS = ["pyotp==2.8.0"]
++REQUIREMENTS = ["pyotp==2.9.0"]
+ 
+ CONF_MESSAGE = "message"
+ 
+--- a/homeassistant/auth/mfa_modules/totp.py
++++ b/homeassistant/auth/mfa_modules/totp.py
+@@ -19,7 +19,7 @@ from . import (
+     SetupFlow,
+ )
+ 
+-REQUIREMENTS = ["pyotp==2.8.0", "PyQRCode==1.2.1"]
++REQUIREMENTS = ["pyotp==2.9.0", "PyQRCode==1.2.1"]
+ 
+ CONFIG_SCHEMA = MULTI_FACTOR_AUTH_MODULE_SCHEMA.extend({}, extra=vol.PREVENT_EXTRA)
+ 
+--- a/homeassistant/components/otp/manifest.json
++++ b/homeassistant/components/otp/manifest.json
+@@ -6,5 +6,5 @@
+   "iot_class": "local_polling",
+   "loggers": ["pyotp"],
+   "quality_scale": "internal",
+-  "requirements": ["pyotp==2.8.0"]
++  "requirements": ["pyotp==2.9.0"]
+ }
