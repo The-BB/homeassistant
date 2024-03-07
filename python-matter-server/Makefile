@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python-matter-server
-PKG_VERSION:=5.5.0
+PKG_VERSION:=5.7.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=python-matter-server
-PKG_HASH:=01208e2f7cb8f624f77a2246e1a4645b73c8bcac81d2f6feb4d2494c8f7ea21e
+PKG_HASH:=a0e77b7f4b41de7be58fe24bbba8410fae7c346cb74811deb3e33df5a65055ce
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE
