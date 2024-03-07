@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=hass-nabucasa
-PKG_VERSION:=0.76.0
+PKG_VERSION:=0.78.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=hass-nabucasa
-PKG_HASH:=f352d9c80bbf553e1a8dfc8bfad0be183932c7d3e0c945f1bfb98eed103dec4e
+PKG_HASH:=f2bb020398bfa2e9f4cf5a3e88016037f5edc16c1b4b6360f3c4d37aee0fcecd
 
 PKG_LICENSE:=GPL-3.0-or-later
 PKG_LICENSE_FILES:=LICENSE
