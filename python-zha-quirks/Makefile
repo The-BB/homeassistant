@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=zha-quirks
-PKG_VERSION:=0.0.111
+PKG_VERSION:=0.0.112
 PKG_RELEASE:=1
 
 PYPI_NAME:=zha-quirks
-PKG_HASH:=8cb90eda074df397f096516a2840bfafecd0dd4db17ac94c6bdbae4ac68f30da
+PKG_HASH:=719fe19cdfa4ab9f7e13c9c0fe3e7d4f216deea4e7f245dfd111f028b1d480b7
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
