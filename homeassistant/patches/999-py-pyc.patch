@@ -11,7 +11,7 @@
          return [sys.executable] + [arg for arg in sys.argv if arg != "--daemon"]
 --- a/homeassistant/components/python_script/__init__.py
 +++ b/homeassistant/components/python_script/__init__.py
-@@ -129,7 +129,7 @@ def discover_scripts(hass):
+@@ -132,7 +132,7 @@ def discover_scripts(hass):
      else:
          services_dict = {}
  
@@ -20,7 +20,7 @@
          name = os.path.splitext(os.path.basename(fil))[0]
          hass.services.register(
              DOMAIN,
-@@ -149,7 +149,7 @@ def discover_scripts(hass):
+@@ -182,7 +182,7 @@ def guarded_inplacevar(op: str, target:
  @bind_hass
  def execute_script(hass, name, data=None, return_response=False):
      """Execute a script."""
@@ -31,7 +31,7 @@
          source = fil.read()
 --- a/homeassistant/helpers/integration_platform.py
 +++ b/homeassistant/helpers/integration_platform.py
-@@ -51,7 +51,7 @@ async def _async_process_single_integrat
+@@ -53,7 +53,7 @@ def _get_platform(
      except ImportError as err:
          if f"{component_name}.{platform_name}" not in str(err):
              _LOGGER.exception(

@@ -1,14 +1,14 @@
 --- a/homeassistant/package_constraints.txt
 +++ b/homeassistant/package_constraints.txt
-@@ -5,7 +5,7 @@ aiohttp-fast-url-dispatcher==0.3.0
+@@ -6,7 +6,7 @@ aiohttp-fast-url-dispatcher==0.3.0
  aiohttp-zlib-ng==0.3.1
  aiohttp==3.9.3
  aiohttp_cors==0.7.0
 -astral==2.2
 +astral>=2.2,<3.3
+ async-interrupt==1.1.1
  async-upnp-client==0.38.2
  atomicwrites-homeassistant==1.4.1
- attrs==23.2.0
 --- a/pyproject.toml
 +++ b/pyproject.toml
 @@ -27,7 +27,7 @@ dependencies    = [
@@ -17,6 +17,6 @@
      "aiohttp-zlib-ng==0.3.1",
 -    "astral==2.2",
 +    "astral>=2.2,<3.3",
+     "async-interrupt==1.1.1",
      "attrs==23.2.0",
      "atomicwrites-homeassistant==1.4.1",
-     "awesomeversion==24.2.0",

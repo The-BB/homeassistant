@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
-PKG_VERSION:=2024.2.5
+PKG_VERSION:=2024.3.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=homeassistant
-PKG_HASH:=aa151f38c48ce0529443d2dd7a81cb2eb566e5c585ae54c4474dacfad2d500c5
+PKG_HASH:=1bd335595face33bbd058d74456989ef582169f00e1cc8e7091e813a582082e3
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -44,6 +44,7 @@ define Package/homeassistant
 	+python3-aiohttp-fast-url-dispatcher \
 	+python3-aiohttp-zlib-ng \
 	+python3-astral \
+	+python3-async-interrupt \
 	+python3-atomicwrites-homeassistant \
 	+python3-attrs \
 	+python3-awesomeversion \
@@ -73,6 +74,7 @@ define Package/homeassistant
 # package_constraints.txt
   DEPENDS+= \
 	+home-assistant-frontend \
+	+python3-aiodhcpwatcher \
 	+python3-aiodiscover \
 	+python3-aiohttp-cors \
 	+python3-anyio \
@@ -120,15 +122,13 @@ define Package/homeassistant
 	+python3-pydantic \
 	+python3-pynacl \
 	+python3-pyserial \
-	+python3-pysnmplib \
 	+python3-pyturbojpeg \
 	+python3-pyudev \
 	+python3-regex \
 	+python3-socketio \
 	+python3-sqlalchemy \
 	+python3-webrtc-noise-gain \
-	+python3-zeroconf \
-	+scapy
+	+python3-zeroconf
 # auth/mfa_modules/totp.py
   DEPENDS+= \
 	+python3-pyotp \
