@@ -1,0 +1,11 @@
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -127,7 +127,7 @@ module = "tests.*"
+ allow_untyped_defs = true
+ 
+ [build-system]
+-requires = ["setuptools>=65.4.1", "wheel", "poetry-core>=1.0.0", 'requests']
++requires = ["setuptools>=65.4.1", "wheel", "poetry-core>=1.0.0"]
+ build-backend = "poetry.core.masonry.api"
+ 
+ [tool.poetry.build]
