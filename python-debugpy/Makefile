@@ -3,12 +3,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=debugpy
-PKG_VERSION:=1.8.0
+PKG_VERSION:=1.8.1
 PKG_RELEASE:=1
 
 PYPI_NAME:=debugpy
 PYPI_SOURCE_EXT:=zip
-PKG_HASH:=12af2c55b419521e33d5fb21bd022df0b5eb267c3e178f1d374a63a2a6bdccd0
+PKG_HASH:=f696d6be15be87aef621917585f9bb94b1dc9e8aced570db1b8a6fc14e8f9b42
 
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
@@ -39,12 +39,6 @@ endef
 
 define Package/python3-debugpy/description
   debugpy - a debugger for Python.
-endef
-
-define Py3Package/python3-debugpy/filespec
-+|$(PYTHON3_PKG_DIR)
--|$(PYTHON3_PKG_DIR)/$(PYPI_NAME)/_vendored/pydevd/tests_python/resources/_debugger_case_scoped_stepping_target_async.py
--|$(PYTHON3_PKG_DIR)/$(PYPI_NAME)/_vendored/pydevd/tests_python/resources/_pydev_coverage_syntax_error.py
 endef
 
 $(eval $(call Py3Package,python3-debugpy))
