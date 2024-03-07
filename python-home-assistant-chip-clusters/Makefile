@@ -3,13 +3,13 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=home-assistant-chip-clusters
-PKG_VERSION:=2024.1.0
+PKG_VERSION:=2024.2.1
 PKG_RELEASE:=1
 
 PYPI_NAME:=home_assistant_chip_clusters
 PKG_SOURCE:=$(PYPI_NAME)-$(PKG_VERSION)-py3-none-any.whl
-PKG_SOURCE_URL:=https://files.pythonhosted.org/packages/d6/24/0864ac0204a90590ff50ad8813401b8d3253033befaca712320c8a899474/
-PKG_HASH:=e1bb64a801dbc00b32195d4b8e7804a1e4d3e6ac88f1db6a1554e9d25205c268
+PKG_SOURCE_URL:=https://files.pythonhosted.org/packages/85/b6/faf06a3756e4e610cc8117a1ba3e4bb09f5182c360e4fa36d10c3db4e892/
+PKG_HASH:=40cb1fb3d81459e6b3d4b7cc645e49d8e15508f9ee72466fbc5f71e5b439b996
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/pypi/$(PYPI_NAME)-$(PKG_VERSION)
 
