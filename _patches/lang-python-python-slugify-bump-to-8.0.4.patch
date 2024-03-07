@@ -1,0 +1,35 @@
+From 34597bb5518fac67b877e53abc2521ddfdf1b6f0 Mon Sep 17 00:00:00 2001
+From: The-BB <tun.chen.bo@gmail.com>
+Date: Tue, 5 Mar 2024 14:31:19 +0300
+Subject: [PATCH] lang/python/python-slugify: bump to 8.0.4
+
+---
+ lang/python/python-slugify/Makefile | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/lang/python/python-slugify/Makefile b/lang/python/python-slugify/Makefile
+index 2c7b82e70..4a6d20eb9 100644
+--- a/lang/python/python-slugify/Makefile
++++ b/lang/python/python-slugify/Makefile
+@@ -4,15 +4,16 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump to (hass)
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=python-slugify
+-PKG_VERSION:=8.0.1
++PKG_VERSION:=8.0.4
+ PKG_RELEASE:=1
+ 
+ PYPI_NAME:=$(PKG_NAME)
+-PKG_HASH:=ce0d46ddb668b3be82f4ed5e503dbc33dd815d83e2eb6824211310d3fb172a27
++PKG_HASH:=59202371d1d05b54a9e7720c5e038f928f45daaffe41dd10822f3907b937c856
+ 
+ PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
+ PKG_LICENSE:=MIT
+-- 
+2.30.2
+

@@ -1,0 +1,35 @@
+From 99c9da55daec478b6fc8f7d4aa6f46d5bc49b4a8 Mon Sep 17 00:00:00 2001
+From: The-BB <tun.chen.bo@gmail.com>
+Date: Tue, 5 Mar 2024 14:29:16 +0300
+Subject: [PATCH] lang/python/python-ciso8601: bump to 2.3.1
+
+---
+ lang/python/python-ciso8601/Makefile | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/lang/python/python-ciso8601/Makefile b/lang/python/python-ciso8601/Makefile
+index ddcb41ce8..6ddf91781 100644
+--- a/lang/python/python-ciso8601/Makefile
++++ b/lang/python/python-ciso8601/Makefile
+@@ -4,15 +4,16 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump to (hass)
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=python-ciso8601
+-PKG_VERSION:=2.3.0
++PKG_VERSION:=2.3.1
+ PKG_RELEASE:=1
+ 
+ PYPI_NAME:=ciso8601
+-PKG_HASH:=19e3fbd786d8bec3358eac94d8774d365b694b604fd1789244b87083f66c8900
++PKG_HASH:=3212c7ffe5d8080270548b5f2692ffd2039683b6628a8d2ad456122cc5793c4c
+ 
+ PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
+ PKG_LICENSE:=MIT
+-- 
+2.30.2
+

@@ -1,0 +1,36 @@
+From 01a10588b7f12243d79c608297f30b5695be0305 Mon Sep 17 00:00:00 2001
+From: The-BB <tun.chen.bo@gmail.com>
+Date: Tue, 5 Mar 2024 14:32:52 +0300
+Subject: [PATCH] lang/python/python-typing-extensions: bump to 4.10.0
+
+---
+ lang/python/python-typing-extensions/Makefile | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/lang/python/python-typing-extensions/Makefile b/lang/python/python-typing-extensions/Makefile
+index 501eec31f..11b0d06f7 100644
+--- a/lang/python/python-typing-extensions/Makefile
++++ b/lang/python/python-typing-extensions/Makefile
+@@ -4,16 +4,17 @@
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+ #
++# XXX bump to (hass)
+ 
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=python-typing-extensions
+-PKG_VERSION:=4.9.0
++PKG_VERSION:=4.10.0
+ PKG_RELEASE:=1
+ 
+ PYPI_NAME:=typing-extensions
+ PYPI_SOURCE_NAME:=typing_extensions
+-PKG_HASH:=23478f88c37f27d76ac8aee6c905017a143b0b1b886c3c9f66bc2fd94f9f5783
++PKG_HASH:=b0abd7c89e8fb96f98db18d86106ff1d90ab692004eb746cf6eda2682f91b3cb
+ 
+ PKG_MAINTAINER:=Jan Pavlinec <jan.pavlinec1@gmail.com>, Jeffery To <jeffery.to@gmail.com>
+ PKG_LICENSE:=Python-2.0.1 0BSD
+-- 
+2.30.2
+
