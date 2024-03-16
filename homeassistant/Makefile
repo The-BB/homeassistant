@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=homeassistant
-PKG_VERSION:=2024.3.0
+PKG_VERSION:=2024.3.1
 PKG_RELEASE:=1
 
 PYPI_NAME:=homeassistant
-PKG_HASH:=1bd335595face33bbd058d74456989ef582169f00e1cc8e7091e813a582082e3
+PKG_HASH:=58ad8f4d31439d033089702dc6334ea3dbb92955d69ea517a9ddbcea1ab45447
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.md
@@ -52,6 +52,7 @@ define Package/homeassistant
 	+python3-certifi \
 	+python3-ciso8601 \
 	+python3-cryptography \
+	+python3-hass-nabucasa \
 	+python3-home-assistant-bluetooth \
 	+python3-httpx \
 	+python3-ifaddr \
@@ -100,7 +101,6 @@ define Package/homeassistant
 	+python3-ha-av \
 	+python3-ha-ffmpeg \
 	+python3-habluetooth \
-	+python3-hass-nabucasa \
 	+python3-hassil \
 	+python3-home-assistant-intents \
 	+python3-httpcore \
